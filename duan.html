@@ -1,0 +1,1549 @@
+<!DOCTYPE html>
+
+<html lang="vi" style="">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="web_standard" name="shell-type" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&amp;display=swap"
+        rel="stylesheet" />
+    <style>
+        * {
+            font-family: 'Be Vietnam Pro', sans-serif !important;
+        }
+
+        .card-elevate {
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .card-elevate:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px -10px rgba(0, 74, 198, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border-color: rgba(37, 99, 235, 0.4);
+        }
+
+        .glow-btn {
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glow-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px -2px rgba(37, 99, 235, 0.45);
+        }
+    </style>
+    <style>
+        @layer base {
+
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                overscroll-behavior: none;
+            }
+
+            main>:first-child {
+                margin-top: 0 !important;
+            }
+
+            main>:last-child {
+                margin-bottom: 0 !important;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        @keyframes marquee-left {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        @keyframes marquee-right {
+            0% {
+                transform: translateX(-50%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .animate-marquee-left {
+            display: flex;
+            width: max-content;
+            animation: marquee-left 42s linear infinite;
+        }
+
+        .animate-marquee-right {
+            display: flex;
+            width: max-content;
+            animation: marquee-right 42s linear infinite;
+        }
+
+        .marquee-container:hover .animate-marquee-left,
+        .marquee-container:hover .animate-marquee-right {
+            animation-play-state: paused;
+        }
+
+        .partner-card-hover {
+            transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .partner-card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 32px -8px rgba(0, 74, 198, 0.12), 0 4px 12px -2px rgba(37, 99, 235, 0.08);
+            border-color: rgba(37, 99, 235, 0.4);
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script
+        id="tailwind-config">tailwind.config = { "darkMode": "class", "theme": { "extend": { "colors": { "secondary": "#565e74", "on-surface-variant": "#434655", "tertiary-fixed": "#c4e7ff", "surface-bright": "#f8f9ff", "surface-tint": "#0053db", "error-container": "#ffdad6", "on-tertiary-fixed": "#001e2c", "outline-variant": "#c3c6d7", "tertiary-container": "#00759f", "on-secondary-fixed-variant": "#3f465c", "on-error": "#ffffff", "on-tertiary": "#ffffff", "secondary-container": "#dae2fd", "background": "#f8f9ff", "on-background": "#0b1c30", "tertiary": "#005b7c", "on-tertiary-fixed-variant": "#004c69", "on-primary-fixed-variant": "#003ea8", "on-tertiary-container": "#e1f2ff", "on-secondary-container": "#5c647a", "on-primary": "#ffffff", "primary": "#004ac6", "surface-container-highest": "#d3e4fe", "secondary-fixed-dim": "#bec6e0", "inverse-primary": "#b4c5ff", "error": "#ba1a1a", "surface": "#f8f9ff", "primary-fixed-dim": "#b4c5ff", "surface-container-high": "#dce9ff", "surface-variant": "#d3e4fe", "surface-container-lowest": "#ffffff", "inverse-surface": "#213145", "on-secondary": "#ffffff", "on-secondary-fixed": "#131b2e", "surface-dim": "#cbdbf5", "secondary-fixed": "#dae2fd", "outline": "#737686", "on-primary-container": "#eeefff", "tertiary-fixed-dim": "#7bd0ff", "inverse-on-surface": "#eaf1ff", "on-error-container": "#93000a", "primary-container": "#2563eb", "on-surface": "#0b1c30", "surface-container-low": "#eff4ff", "on-primary-fixed": "#00174b", "primary-fixed": "#dbe1ff", "surface-container": "#e5eeff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-lg": "5rem", "gutter-sm": "1rem", "margin": "1.5rem", "space-xs": "0.5rem", "space-4xl": "6rem", "space-lg": "1.5rem", "space-xl": "2rem", "space-sm": "0.75rem", "space-md": "1rem", "margin-md": "3rem", "space-3xl": "4.5rem", "space-3xs": "0.125rem", "gutter-lg": "2rem", "space-2xs": "0.25rem", "space-2xl": "3rem", "gutter": "1.5rem" }, "fontFamily": { "headline-lg-mobile": ["Plus Jakarta Sans"], "display-hero": ["Plus Jakarta Sans"], "body-xl": ["Inter"], "body-lg": ["Inter"], "headline-sm": ["Plus Jakarta Sans"], "body-md": ["Inter"], "label-lg": ["Plus Jakarta Sans"], "headline-xs": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "body-sm": ["Inter"], "metric-stat": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "display-hero-mobile": ["Plus Jakarta Sans"] }, "fontSize": { "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "body-xl": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }], "label-lg": ["15px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "600" }], "headline-xs": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "700" }], "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }], "metric-stat": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.025em", "fontWeight": "700" }], "display-hero-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "800" }] } } } };</script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet" />
+    <style>
+        .material-symbols-outlined,
+        .material-symbols-rounded,
+        .material-icons {
+            font-family: 'Material Symbols Rounded', 'Material Symbols Outlined', 'Material Icons' !important;
+            font-weight: normal !important;
+            font-style: normal !important;
+            line-height: 1 !important;
+            letter-spacing: normal !important;
+            text-transform: none !important;
+            display: inline-block !important;
+            white-space: nowrap !important;
+            word-wrap: normal !important;
+            direction: ltr !important;
+            -webkit-font-feature-settings: 'liga' !important;
+            font-feature-settings: 'liga' !important;
+            -webkit-font-smoothing: antialiased !important;
+        }
+    </style>
+</head>
+
+<body class="bg-surface font-body-md text-on-surface antialiased">
+    <header
+        class="fixed top-0 left-0 w-full z-50 bg-surface-container-lowest/85 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+        <div
+            class="h-20 max-w-[1200px] mx-auto px-margin md:px-margin-md lg:px-margin-lg flex items-center justify-between gap-space-md">
+            <div class="flex items-center gap-space-sm shrink-0"><img
+                    alt="Image from https://teknova.com.vn/assets/logo-BiDi42zj.png" class="h-8 w-auto object-contain"
+                    src="https://lh3.googleusercontent.com/aida/AEtjO1U_1fuB7NnUFYE_RXwQ8cK0o8LL7TVMvHtXbR5Kn3uJ_1VMhVQVsv9KDlYIxZRDBydEcVSLxkto_pyO68RrYrimibn567O7XHNMRsnXdZ1pNWVNTFfU_tZ5BTtKDL4keTz-ZMf_CcVEEJbfCM8onGTrBH-agFRqK2VoITZY7zKoAmDnU2-1ChOI1Ua3hy9_CK74yrQIoiW18GjkQ6f5uTFvCHY4TBbANMTY3_-yyujHMwgfAhp4xyy0z1c" />
+                <div class="flex flex-col"><span
+                        class="font-headline-sm text-headline-sm tracking-tight text-primary leading-none">TEKNOVA</span><span
+                        class="font-label-sm text-label-sm uppercase tracking-wider text-secondary leading-none mt-space-3xs">Innovation
+                        JSC</span></div>
+            </div>
+            <nav class="hidden lg:flex items-center gap-space-sm" data-active-classes="text-primary font-bold"><a
+                    class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap"
+                    data-path="trang-chu" href="#">Trang chủ</a><a
+                    class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap"
+                    data-path="gioi-thieu" href="#">Giới thiệu</a><a
+                    class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap"
+                    data-path="linh-vuc-hoat-dong" href="#">Lĩnh vực hoạt động</a><a aria-current="page"
+                    class="transition-colors text-primary font-bold font-label-md text-label-md whitespace-nowrap"
+                    data-path="du-an-tieu-bieu" href="#">Dự án tiêu biểu</a><a
+                    class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap"
+                    data-path="doi-ngu-chuyen-gia" href="#">Đội ngũ</a><a
+                    class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap"
+                    data-path="lien-he" href="#">Liên hệ</a></nav>
+            <div class="flex items-center gap-space-xs shrink-0"><a
+                    class="hidden sm:inline-flex items-center gap-space-2xs px-space-sm py-1.5 rounded-xl bg-surface-container-low text-on-surface hover:bg-surface-container hover:text-on-surface transition-all font-label-sm text-label-sm shadow-[0_1px_3px_rgba(0,0,0,0.03)] whitespace-nowrap"
+                    href="#"><span class="material-symbols-outlined text-[16px]">download</span><span class="">Tải
+                        Profile PDF</span></a><a
+                    class="inline-flex items-center gap-space-2xs px-space-sm py-1.5 rounded-xl bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary transition-all font-label-sm text-label-sm shadow-[0_4px_14px_rgba(37,99,235,0.35)] whitespace-nowrap"
+                    data-path="lien-he" href="#"><span class="">Tư vấn dự án</span><span
+                        class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+                <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span
+                        class="material-symbols-outlined text-on-primary text-[18px]">person</span></div>
+            </div>
+        </div>
+    </header>
+    <main class="w-full pt-20 bg-surface">
+        <div class="flex flex-col w-full">
+            <!-- Top Atmospheric Gradient Canvas -->
+            <div class="relative w-full overflow-hidden">
+                <div
+                    class="absolute -top-32 left-1/2 -translate-x-1/2 w-[900px] h-[400px] bg-gradient-to-b from-primary/10 via-tertiary-fixed/30 to-transparent blur-3xl pointer-events-none -z-10 rounded-full">
+                </div>
+                <!-- Header & Hero Section -->
+                <section
+                    class="max-w-[1200px] mx-auto px-margin md:px-margin-md lg:px-margin-lg pt-space-2xl pb-space-xl">
+                    <div class="flex flex-col items-center text-center max-w-4xl mx-auto">
+                        <!-- Badge -->
+                        <div
+                            class="inline-flex items-center gap-space-2xs px-space-md py-space-2xs rounded-full bg-secondary-container/60 backdrop-blur-md text-primary font-label-sm text-label-sm uppercase tracking-wider shadow-sm">
+                            <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                            <span class="">Hồ sơ năng lực &amp; Thành quả triển khai</span>
+                        </div>
+                        <!-- Main Headline -->
+                        <h1 class="mt-space-md font-headline-xl text-headline-xl text-on-surface tracking-tight">
+                            Các dự án tiêu biểu được đối tác và khách hàng tin chọn
+                        </h1>
+                        <p
+                            class="mt-space-md font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+                            Hiện thực hóa cam kết chất lượng thông qua hệ sinh thái công nghệ chuẩn hoá, an toàn và sẵn
+                            sàng chuyển đổi số bền vững cho khối Y tế, Dân số và Hành chính công.
+                        </p>
+                        <!-- KPI Metrics Grid (High Impact Pill Cards from Moodboard) -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-space-md w-full mt-space-2xl">
+                            <div
+                                class="p-space-lg rounded-2xl bg-surface-container-lowest/90 backdrop-blur-md shadow-[0_4px_24px_rgba(0,74,198,0.06)] flex flex-col items-center justify-center transition-transform hover:-translate-y-1 duration-300">
+                                <span class="font-metric-stat text-metric-stat text-primary leading-none">38+</span>
+                                <span
+                                    class="font-label-md text-label-md text-on-surface-variant mt-space-xs text-center">Hệ
+                                    thống phần mềm vận hành</span>
+                                <span
+                                    class="mt-space-2xs text-[11px] font-label-sm uppercase tracking-wider text-tertiary font-bold px-space-xs py-0.5 rounded-full bg-surface-container-low">Triển
+                                    khai ổn định</span>
+                            </div>
+                            <div
+                                class="p-space-lg rounded-2xl bg-surface-container-lowest/90 backdrop-blur-md shadow-[0_4px_24px_rgba(0,74,198,0.06)] flex flex-col items-center justify-center transition-transform hover:-translate-y-1 duration-300">
+                                <span
+                                    class="font-metric-stat text-metric-stat text-primary-container leading-none">07</span>
+                                <span
+                                    class="font-label-md text-label-md text-on-surface-variant mt-space-xs text-center">Đại
+                                    dự án cấp đô thị &amp; bệnh viện</span>
+                                <span
+                                    class="mt-space-2xs text-[11px] font-label-sm uppercase tracking-wider text-tertiary font-bold px-space-xs py-0.5 rounded-full bg-surface-container-low">Cấp
+                                    Sở &amp; Bệnh viện TW</span>
+                            </div>
+                            <div
+                                class="p-space-lg rounded-2xl bg-surface-container-lowest/90 backdrop-blur-md shadow-[0_4px_24px_rgba(0,74,198,0.06)] flex flex-col items-center justify-center transition-transform hover:-translate-y-1 duration-300">
+                                <span class="font-metric-stat text-metric-stat text-primary leading-none">06+</span>
+                                <span
+                                    class="font-label-md text-label-md text-on-surface-variant mt-space-xs text-center">Đối
+                                    tác y tế công lập cấp tỉnh</span>
+                                <span
+                                    class="mt-space-2xs text-[11px] font-label-sm uppercase tracking-wider text-tertiary font-bold px-space-xs py-0.5 rounded-full bg-surface-container-low">Tích
+                                    hợp EMR chuẩn BYT</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Filter Control Bar -->
+                <section class="max-w-[1200px] mx-auto px-margin md:px-margin-md lg:px-margin-lg pb-space-lg">
+                    <div
+                        class="flex items-center justify-center flex-wrap gap-space-xs p-space-xs bg-surface-container-low/80 backdrop-blur-lg rounded-2xl shadow-sm">
+                        <button
+                            class="filter-btn active-filter px-space-lg py-space-xs rounded-xl font-label-md text-label-md transition-all bg-primary text-on-primary shadow-sm flex items-center gap-space-2xs"
+                            data-filter="all" onclick="filterProjects('all')">
+                            <span class="material-symbols-outlined text-[18px]">apps</span>
+                            <span class="">Tất cả dự án</span>
+                        </button>
+                        <button
+                            class="filter-btn px-space-lg py-space-xs rounded-xl font-label-md text-label-md transition-all text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest flex items-center gap-space-2xs"
+                            data-filter="emr" onclick="filterProjects('emr')">
+                            <span class="material-symbols-outlined text-[18px]">local_hospital</span>
+                            <span class="">Y tế &amp; Bệnh viện điện tử (EMR)</span>
+                        </button>
+                        <button
+                            class="filter-btn px-space-lg py-space-xs rounded-xl font-label-md text-label-md transition-all text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest flex items-center gap-space-2xs"
+                            data-filter="public-admin" onclick="filterProjects('public-admin')">
+                            <span class="material-symbols-outlined text-[18px]">account_balance</span>
+                            <span class="">Hành chính công &amp; Dân số</span>
+                        </button>
+                        <button
+                            class="filter-btn px-space-lg py-space-xs rounded-xl font-label-md text-label-md transition-all text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest flex items-center gap-space-2xs"
+                            data-filter="zalo-oa" onclick="filterProjects('zalo-oa')">
+                            <span class="material-symbols-outlined text-[18px]">chat</span>
+                            <span class="">Tích hợp Zalo OA &amp; Tiện ích số</span>
+                        </button>
+                        <button
+                            class="filter-btn px-space-lg py-space-xs rounded-xl font-label-md text-label-md transition-all text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest flex items-center gap-space-2xs"
+                            data-filter="cashless" onclick="filterProjects('cashless')">
+                            <span class="material-symbols-outlined text-[18px]">payments</span>
+                            <span class="">Thanh toán số không tiền mặt</span>
+                        </button>
+                    </div>
+                </section>
+                <!-- Case Studies Bento Grid -->
+                <section class="max-w-[1200px] mx-auto px-margin md:px-margin-md lg:px-margin-lg pb-space-3xl">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-space-lg" id="project-grid">
+                        <!-- Project 1: Bệnh viện Phổi Đà Nẵng EMR (Featured 8 Cols) -->
+                        <article
+                            class="project-card lg:col-span-8 flex flex-col justify-between p-space-xl rounded-3xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_4px_24px_rgba(0,74,198,0.06)] hover:shadow-[0_16px_36px_rgba(0,74,198,0.12)] transition-all duration-300 group card-elevate"
+                            data-category="emr">
+                            <div>
+                                <div class="flex flex-wrap items-center justify-between gap-space-xs pb-space-md">
+                                    <div class="flex items-center gap-space-2xs">
+                                        <span
+                                            class="px-space-sm py-1 rounded-full bg-surface-container-highest text-primary font-label-sm text-label-sm font-bold uppercase tracking-wide">Y
+                                            tế &amp; Bệnh viện số</span>
+                                        <span
+                                            class="px-space-sm py-1 rounded-full bg-secondary-container/40 text-secondary font-label-sm text-label-sm">Năm
+                                            2024 - 2025</span>
+                                    </div>
+                                    <div
+                                        class="flex items-center gap-space-2xs text-secondary font-label-md text-label-md">
+                                        <span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+                                        <span class="">Khách hàng chính thức</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-space-xs my-space-xs">
+                                    <div
+                                        class="w-10 h-10 rounded-xl bg-primary-fixed flex items-center justify-center text-primary shrink-0">
+                                        <span class="material-symbols-outlined text-[24px]">domain</span>
+                                    </div>
+                                    <span class="font-headline-sm text-headline-sm text-on-surface font-bold">Bệnh viện
+                                        Phổi Đà Nẵng</span>
+                                </div>
+                                <h3
+                                    class="font-headline-md text-headline-md text-primary mt-space-2xs tracking-tight group-hover:text-primary-container transition-colors">
+                                    Hệ thống Bệnh án điện tử (EMR) chuẩn Bộ Y tế
+                                </h3>
+                                <p
+                                    class="font-body-md text-body-md text-on-surface-variant mt-space-sm leading-relaxed">
+                                    Cung cấp gói giải pháp dịch vụ thuê phần mềm Bệnh án điện tử toàn diện: Quản lý hồ
+                                    sơ bệnh nhân không giấy tờ, tích hợp chữ ký số bác sĩ (PKI), liên thông chuẩn
+                                    HL7/FHIR và đồng bộ thông suốt với hệ thống PACS/RIS/LIS.
+                                </p>
+                                <!-- Visual Feature Preview Mockup inside Card -->
+                                <div
+                                    class="mt-space-lg p-space-md rounded-2xl bg-surface-container-low flex flex-col gap-space-sm">
+                                    <div class="flex items-center justify-between">
+                                        <span
+                                            class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Tỷ
+                                            lệ số hóa hồ sơ điều trị</span>
+                                        <span class="font-label-md text-label-md font-bold text-primary">100% Không dùng
+                                            bệnh án giấy</span>
+                                    </div>
+                                    <div class="w-full h-2 rounded-full bg-surface-container-highest overflow-hidden">
+                                        <div class="h-full bg-primary rounded-full w-full"></div>
+                                    </div>
+                                    <div
+                                        class="flex flex-wrap items-center gap-space-xs pt-space-2xs font-body-sm text-body-sm text-secondary">
+                                        <span
+                                            class="inline-flex items-center gap-1 bg-surface-container-lowest px-2 py-0.5 rounded-lg"><span
+                                                class="w-1.5 h-1.5 rounded-full bg-primary"></span>Chữ ký số
+                                            SmartCA</span>
+                                        <span
+                                            class="inline-flex items-center gap-1 bg-surface-container-lowest px-2 py-0.5 rounded-lg"><span
+                                                class="w-1.5 h-1.5 rounded-full bg-primary"></span>Bảo mật dữ liệu y
+                                            tế</span>
+                                        <span
+                                            class="inline-flex items-center gap-1 bg-surface-container-lowest px-2 py-0.5 rounded-lg"><span
+                                                class="w-1.5 h-1.5 rounded-full bg-primary"></span>Chuẩn liên thông
+                                            BYT</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between pt-space-lg mt-space-md">
+                                <div class="flex items-center gap-space-2xs">
+                                    <span
+                                        class="px-space-xs py-1 rounded-lg bg-surface-container text-on-surface-variant font-label-sm text-label-sm">PostgreSQL</span>
+                                    <span
+                                        class="px-space-xs py-1 rounded-lg bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Microservices</span>
+                                    <span
+                                        class="px-space-xs py-1 rounded-lg bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Docker</span>
+                                </div>
+                                <button
+                                    class="inline-flex items-center gap-space-2xs text-primary font-label-lg text-label-lg group-hover:translate-x-1 transition-transform"
+                                    onclick="openProjectModal('Bệnh viện Phổi Đà Nẵng - EMR')">
+                                    <span class="">Xem chi tiết giải pháp</span>
+                                    <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                                </button>
+                            </div>
+                        </article>
+                        <!-- Project 2: TTYT Ngũ Hành Sơn EMR 2025 (4 Cols) -->
+                        <article
+                            class="project-card lg:col-span-4 flex flex-col justify-between p-space-xl rounded-3xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_4px_24px_rgba(0,74,198,0.06)] hover:shadow-[0_16px_36px_rgba(0,74,198,0.12)] transition-all duration-300 group card-elevate"
+                            data-category="emr">
+                            <div>
+                                <div class="flex items-center justify-between pb-space-md">
+                                    <span
+                                        class="px-space-sm py-1 rounded-full bg-surface-container-highest text-primary font-label-sm text-label-sm font-bold uppercase tracking-wide">Y
+                                        tế cơ sở</span>
+                                    <span
+                                        class="px-space-sm py-1 rounded-full bg-secondary-container/40 text-secondary font-label-sm text-label-sm">2025</span>
+                                </div>
+                                <div class="flex items-center gap-space-2xs my-space-xs">
+                                    <span
+                                        class="material-symbols-outlined text-primary text-[22px]">medical_services</span>
+                                    <span class="font-headline-sm text-headline-sm text-on-surface font-semibold">TTYT
+                                        Ngũ Hành Sơn</span>
+                                </div>
+                                <h3
+                                    class="font-headline-md text-headline-md text-primary mt-space-2xs tracking-tight group-hover:text-primary-container transition-colors">
+                                    Bệnh án điện tử EMR 2025
+                                </h3>
+                                <p
+                                    class="font-body-md text-body-md text-on-surface-variant mt-space-sm leading-relaxed">
+                                    Thuê phần mềm Bệnh án điện tử nâng cấp toàn diện quy trình khám chữa bệnh ngoại trú
+                                    &amp; nội trú, tự động cảnh báo tương tác thuốc và chuẩn hóa viện phí.
+                                </p>
+                                <div
+                                    class="mt-space-md p-space-md rounded-2xl bg-surface-container-low flex items-center justify-between">
+                                    <div>
+                                        <span class="block font-label-sm text-label-sm uppercase text-secondary">Tốc độ
+                                            xử lý hồ sơ</span>
+                                        <span class="font-headline-sm text-headline-sm text-primary font-bold">Giảm
+                                            65%</span>
+                                    </div>
+                                    <span class="material-symbols-outlined text-primary text-[32px]">bolt</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between pt-space-lg mt-space-md">
+                                <span
+                                    class="px-space-xs py-1 rounded-lg bg-surface-container text-on-surface-variant font-label-sm text-label-sm">HL7
+                                    / Cloud EMR</span>
+                                <button
+                                    class="inline-flex items-center gap-space-2xs text-primary font-label-lg text-label-lg group-hover:translate-x-1 transition-transform"
+                                    onclick="openProjectModal('TTYT Ngũ Hành Sơn - EMR')">
+                                    <span class="">Chi tiết</span>
+                                    <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                                </button>
+                            </div>
+                        </article>
+                        <!-- Project 3: Cập nhật mẫu đơn thuốc điện tử TT26 (4 Cols) -->
+                        <article
+                            class="project-card lg:col-span-4 flex flex-col justify-between p-space-xl rounded-3xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_4px_24px_rgba(0,74,198,0.06)] hover:shadow-[0_16px_36px_rgba(0,74,198,0.12)] transition-all duration-300 group card-elevate"
+                            data-category="emr">
+                            <div>
+                                <div class="flex items-center justify-between pb-space-md">
+                                    <span
+                                        class="px-space-sm py-1 rounded-full bg-secondary-container/40 text-on-secondary-container font-label-sm text-label-sm font-bold uppercase tracking-wide">Tuân
+                                        thủ quy chế</span>
+                                    <span
+                                        class="px-space-sm py-1 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm">2025</span>
+                                </div>
+                                <div class="flex items-center gap-space-2xs my-space-xs">
+                                    <span
+                                        class="material-symbols-outlined text-tertiary text-[22px]">prescriptions</span>
+                                    <span class="font-headline-sm text-headline-sm text-on-surface font-semibold">TTYT
+                                        Liên Chiểu</span>
+                                </div>
+                                <h3
+                                    class="font-headline-md text-headline-md text-primary mt-space-2xs tracking-tight group-hover:text-primary-container transition-colors">
+                                    Đơn thuốc điện tử TT 26/2025/TT-BYT
+                                </h3>
+                                <p
+                                    class="font-body-md text-body-md text-on-surface-variant mt-space-sm leading-relaxed">
+                                    Cập nhật biểu mẫu và phân hệ kê đơn thuốc điện tử quốc gia, định danh mã liên thông
+                                    đơn thuốc, gửi tự động SMS/Zalo cho người bệnh.
+                                </p>
+                                <div
+                                    class="mt-space-md p-space-md rounded-2xl bg-surface-container-low flex items-center justify-between">
+                                    <div>
+                                        <span class="block font-label-sm text-label-sm uppercase text-secondary">Liên
+                                            thông cổng Dược QG</span>
+                                        <span class="font-headline-sm text-headline-sm text-tertiary font-bold">100% Hợp
+                                            chuẩn</span>
+                                    </div>
+                                    <span class="material-symbols-outlined text-tertiary text-[32px]">checklist</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between pt-space-lg mt-space-md">
+                                <span
+                                    class="px-space-xs py-1 rounded-lg bg-surface-container text-on-surface-variant font-label-sm text-label-sm">API
+                                    Quốc gia / HL7</span>
+                                <button
+                                    class="inline-flex items-center gap-space-2xs text-primary font-label-lg text-label-lg group-hover:translate-x-1 transition-transform"
+                                    onclick="openProjectModal('TTYT Liên Chiểu - Đơn thuốc điện tử')">
+                                    <span class="">Chi tiết</span>
+                                    <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                                </button>
+                            </div>
+                        </article>
+                        <!-- Project 4: Zalo OA Bệnh viện Phổi Đà Nẵng (4 Cols) -->
+                        <article
+                            class="project-card lg:col-span-4 flex flex-col justify-between p-space-xl rounded-3xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_4px_24px_rgba(0,74,198,0.06)] hover:shadow-[0_16px_36px_rgba(0,74,198,0.12)] transition-all duration-300 group card-elevate"
+                            data-category="zalo-oa">
+                            <div>
+                                <div class="flex items-center justify-between pb-space-md">
+                                    <span
+                                        class="px-space-sm py-1 rounded-full bg-surface-container-highest text-primary font-label-sm text-label-sm font-bold uppercase tracking-wide">Zalo
+                                        Official Account</span>
+                                    <span
+                                        class="px-space-sm py-1 rounded-full bg-secondary-container/40 text-secondary font-label-sm text-label-sm">2024</span>
+                                </div>
+                                <div class="flex items-center gap-space-2xs my-space-xs">
+                                    <span class="material-symbols-outlined text-primary text-[22px]">contactless</span>
+                                    <span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Bệnh
+                                        viện Phổi Đà Nẵng</span>
+                                </div>
+                                <h3
+                                    class="font-headline-md text-headline-md text-primary mt-space-2xs tracking-tight group-hover:text-primary-container transition-colors">
+                                    Quảng bá &amp; Đồng bộ kết quả qua Zalo OA
+                                </h3>
+                                <p
+                                    class="font-body-md text-body-md text-on-surface-variant mt-space-sm leading-relaxed">
+                                    Giải pháp tích hợp cổng Zalo OA với HIS bệnh viện: Tự động gửi kết quả xét nghiệm,
+                                    lịch hẹn tái khám, hướng dẫn dùng thuốc bảo mật đến trực tiếp điện thoại công dân.
+                                </p>
+                                <div
+                                    class="mt-space-md p-space-md rounded-2xl bg-surface-container-low flex items-center justify-between">
+                                    <div>
+                                        <span class="block font-label-sm text-label-sm uppercase text-secondary">Tỷ lệ
+                                            tương tác bệnh nhân</span>
+                                        <span class="font-headline-sm text-headline-sm text-primary font-bold">+340% Sau
+                                            triển khai</span>
+                                    </div>
+                                    <span
+                                        class="material-symbols-outlined text-primary text-[32px]">mark_chat_read</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between pt-space-lg mt-space-md">
+                                <span
+                                    class="px-space-xs py-1 rounded-lg bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Zalo
+                                    Open API / Webhook</span>
+                                <button
+                                    class="inline-flex items-center gap-space-2xs text-primary font-label-lg text-label-lg group-hover:translate-x-1 transition-transform"
+                                    onclick="openProjectModal('Zalo OA - BV Phổi Đà Nẵng')">
+                                    <span class="">Chi tiết</span>
+                                    <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                                </button>
+                            </div>
+                        </article>
+                        <!-- Project 5: Dữ liệu dân số Chi cục Dân số TP Đà Nẵng (4 Cols) -->
+                        <article
+                            class="project-card lg:col-span-4 flex flex-col justify-between p-space-xl rounded-3xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_4px_24px_rgba(0,74,198,0.06)] hover:shadow-[0_16px_36px_rgba(0,74,198,0.12)] transition-all duration-300 group card-elevate"
+                            data-category="public-admin">
+                            <div>
+                                <div class="flex items-center justify-between pb-space-md">
+                                    <span
+                                        class="px-space-sm py-1 rounded-full bg-surface-container-highest text-primary font-label-sm text-label-sm font-bold uppercase tracking-wide">Dữ
+                                        liệu &amp; Thống kê</span>
+                                    <span
+                                        class="px-space-sm py-1 rounded-full bg-secondary-container/40 text-secondary font-label-sm text-label-sm">2024</span>
+                                </div>
+                                <div class="flex items-center gap-space-2xs my-space-xs">
+                                    <span
+                                        class="material-symbols-outlined text-primary-container text-[22px]">analytics</span>
+                                    <span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Chi
+                                        cục Dân số TP Đà Nẵng</span>
+                                </div>
+                                <h3
+                                    class="font-headline-md text-headline-md text-primary mt-space-2xs tracking-tight group-hover:text-primary-container transition-colors">
+                                    Hệ thống Web Thống kê Dân số Toàn diện
+                                </h3>
+                                <p
+                                    class="font-body-md text-body-md text-on-surface-variant mt-space-sm leading-relaxed">
+                                    Xây dựng nền tảng Web tổng hợp số liệu dân cư, dashboard trực quan hóa biến động dân
+                                    số, hỗ trợ chỉ đạo điều hành và tự động hóa xuất báo cáo định kỳ các cấp cơ sở.
+                                </p>
+                                <div
+                                    class="mt-space-md p-space-md rounded-2xl bg-surface-container-low flex items-center justify-between">
+                                    <div>
+                                        <span class="block font-label-sm text-label-sm uppercase text-secondary">Tuyến
+                                            xã/phường kết nối</span>
+                                        <span class="font-headline-sm text-headline-sm text-primary font-bold">56/56 Đơn
+                                            vị</span>
+                                    </div>
+                                    <span class="material-symbols-outlined text-primary text-[32px]">pie_chart</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between pt-space-lg mt-space-md">
+                                <span
+                                    class="px-space-xs py-1 rounded-lg bg-surface-container text-on-surface-variant font-label-sm text-label-sm">BI
+                                    Analytics / SQL</span>
+                                <button
+                                    class="inline-flex items-center gap-space-2xs text-primary font-label-lg text-label-lg group-hover:translate-x-1 transition-transform"
+                                    onclick="openProjectModal('Dữ liệu Dân số Đà Nẵng')">
+                                    <span class="">Chi tiết</span>
+                                    <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                                </button>
+                            </div>
+                        </article>
+                        <!-- Project 6: Thanh toán viện phí không dùng tiền mặt (6 Cols) -->
+                        <article
+                            class="project-card lg:col-span-6 flex flex-col justify-between p-space-xl rounded-3xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_4px_24px_rgba(0,74,198,0.06)] hover:shadow-[0_16px_36px_rgba(0,74,198,0.12)] transition-all duration-300 group card-elevate"
+                            data-category="cashless">
+                            <div>
+                                <div class="flex items-center justify-between pb-space-md">
+                                    <span
+                                        class="px-space-sm py-1 rounded-full bg-surface-container-highest text-primary font-label-sm text-label-sm font-bold uppercase tracking-wide">FinTech
+                                        Y tế</span>
+                                    <span
+                                        class="px-space-sm py-1 rounded-full bg-secondary-container/40 text-secondary font-label-sm text-label-sm">2024
+                                        - 2025</span>
+                                </div>
+                                <div class="flex items-center gap-space-2xs my-space-xs">
+                                    <span
+                                        class="material-symbols-outlined text-primary text-[22px]">account_balance_wallet</span>
+                                    <span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Chuỗi
+                                        cơ sở KCB Đà Nẵng</span>
+                                </div>
+                                <h3
+                                    class="font-headline-md text-headline-md text-primary mt-space-2xs tracking-tight group-hover:text-primary-container transition-colors">
+                                    Hệ thống Thanh toán Viện phí Không dùng Tiền mặt
+                                </h3>
+                                <p
+                                    class="font-body-md text-body-md text-on-surface-variant mt-space-sm leading-relaxed">
+                                    Giải pháp liên thông cổng thanh toán QR Động Napas 247, thẻ ngân hàng và ví điện tử
+                                    tích hợp sâu vào hóa đơn bệnh viện. Giảm thời gian chờ đợi tại quầy thu viện phí từ
+                                    25 phút xuống dưới 45 giây.
+                                </p>
+                                <div
+                                    class="mt-space-md grid grid-cols-2 gap-space-sm p-space-md rounded-2xl bg-surface-container-low">
+                                    <div>
+                                        <span class="block font-label-sm text-label-sm uppercase text-secondary">Tỷ lệ
+                                            thanh toán không tiền mặt</span>
+                                        <span
+                                            class="font-headline-sm text-headline-sm text-primary font-bold">78.5%</span>
+                                    </div>
+                                    <div>
+                                        <span class="block font-label-sm text-label-sm uppercase text-secondary">Thời
+                                            gian đối soát</span>
+                                        <span class="font-headline-sm text-headline-sm text-primary font-bold">Tức thời
+                                            (Real-time)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between pt-space-lg mt-space-md">
+                                <span
+                                    class="px-space-xs py-1 rounded-lg bg-surface-container text-on-surface-variant font-label-sm text-label-sm">VietQR
+                                    / ISO 8583 / PCI-DSS</span>
+                                <button
+                                    class="inline-flex items-center gap-space-2xs text-primary font-label-lg text-label-lg group-hover:translate-x-1 transition-transform"
+                                    onclick="openProjectModal('Thanh toán viện phí không tiền mặt')">
+                                    <span class="">Xem giải pháp FinTech</span>
+                                    <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                                </button>
+                            </div>
+                        </article>
+                        <!-- Project 7: Chuyển đổi số Phường Ngũ Hành Sơn (6 Cols) -->
+                        <article
+                            class="project-card lg:col-span-6 flex flex-col justify-between p-space-xl rounded-3xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_4px_24px_rgba(0,74,198,0.06)] hover:shadow-[0_16px_36px_rgba(0,74,198,0.12)] transition-all duration-300 group card-elevate"
+                            data-category="public-admin">
+                            <div>
+                                <div class="flex items-center justify-between pb-space-md">
+                                    <span
+                                        class="px-space-sm py-1 rounded-full bg-secondary-container/50 text-on-secondary-container font-label-sm text-label-sm font-bold uppercase tracking-wide">Chính
+                                        quyền điện tử</span>
+                                    <span
+                                        class="px-space-sm py-1 rounded-full bg-secondary-container/40 text-secondary font-label-sm text-label-sm">2024</span>
+                                </div>
+                                <div class="flex items-center gap-space-2xs my-space-xs">
+                                    <span
+                                        class="material-symbols-outlined text-primary-container text-[22px]">location_city</span>
+                                    <span class="font-headline-sm text-headline-sm text-on-surface font-semibold">UBND
+                                        Phường Ngũ Hành Sơn</span>
+                                </div>
+                                <h3
+                                    class="font-headline-md text-headline-md text-primary mt-space-2xs tracking-tight group-hover:text-primary-container transition-colors">
+                                    Cổng Chuyển đổi số &amp; Quản trị Hành chính Công Cấp Phường
+                                </h3>
+                                <p
+                                    class="font-body-md text-body-md text-on-surface-variant mt-space-sm leading-relaxed">
+                                    Số hóa toàn diện 100% thủ tục hành chính, tra cứu tiến độ xử lý hồ sơ trực tuyến cho
+                                    người dân, đồng bộ lịch công tác số và phân loại phản ánh kiến nghị tại địa bàn cơ
+                                    sở.
+                                </p>
+                                <div
+                                    class="mt-space-md grid grid-cols-2 gap-space-sm p-space-md rounded-2xl bg-surface-container-low">
+                                    <div>
+                                        <span class="block font-label-sm text-label-sm uppercase text-secondary">Hài
+                                            lòng của người dân</span>
+                                        <span class="font-headline-sm text-headline-sm text-primary font-bold">99.2%
+                                            Đánh giá tốt</span>
+                                    </div>
+                                    <div>
+                                        <span class="block font-label-sm text-label-sm uppercase text-secondary">Hồ sơ
+                                            giải quyết đúng hạn</span>
+                                        <span class="font-headline-sm text-headline-sm text-primary font-bold">100%
+                                            Tuyệt đối</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between pt-space-lg mt-space-md">
+                                <span
+                                    class="px-space-xs py-1 rounded-lg bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Single-Sign-On
+                                    / DVC QG</span>
+                                <button
+                                    class="inline-flex items-center gap-space-2xs text-primary font-label-lg text-label-lg group-hover:translate-x-1 transition-transform"
+                                    onclick="openProjectModal('Cổng CĐS Phường Ngũ Hành Sơn')">
+                                    <span class="">Xem giải pháp Chính phủ số</span>
+                                    <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+                <!-- Partners & Clients Section: Enterprise Marquee & Credibility Showcase -->
+                <section
+                    class="max-w-[1240px] mx-auto px-margin md:px-margin-md lg:px-margin-lg pb-space-3xl overflow-hidden">
+                    <div
+                        class="relative rounded-3xl bg-surface-container-low/80 border border-surface-container-highest/60 backdrop-blur-xl p-space-xl md:p-space-2xl shadow-[0_12px_40px_rgba(0,74,198,0.04)]">
+                        <!-- Section Header -->
+                        <div class="flex flex-col items-center text-center max-w-3xl mx-auto mb-space-2xl">
+                            <div
+                                class="inline-flex items-center gap-space-2xs px- space-md px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary font-label-sm text-label-sm uppercase tracking-wider shadow-[0_0_20px_rgba(37,99,235,0.15)]">
+                                <svg class="w-4 h-4 text-primary fill-current" viewbox="0 0 24 24">
+                                    <path
+                                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15-5-5 1.41-1.41L11 14.17l7.59-7.59L20 8l-9 9z">
+                                    </path>
+                                </svg>
+                                <span class="font-semibold">ĐỐI TÁC CHIẾN LƯỢC &amp; ĐƠN VỊ ĐỒNG HÀNH</span>
+                            </div>
+                            <h2
+                                class="mt-space-md font-headline-lg md:font-headline-xl text-headline-lg md:text-headline-xl text-on-surface font-extrabold tracking-tight">
+                                Mạng Lưới <span
+                                    class="bg-gradient-to-r from-primary via-primary-container to-tertiary bg-clip-text text-transparent">Đối
+                                    Tác &amp; Khách Hàng</span> Tiêu Biểu
+                            </h2>
+                            <p
+                                class="mt-space-xs font-body-md md:font-body-lg text-body-md text-on-surface-variant leading-relaxed max-w-2xl">
+                                Hơn 50+ bệnh viện công lập, trung tâm y tế, sở ban ngành hành chính công và các tập đoàn
+                                công nghệ số tin cậy lựa chọn TEKNOVA làm đơn vị triển khai giải pháp.
+                            </p>
+                        </div>
+                        <!-- Marquee Area with Left & Right Gradient Overlays -->
+                        <div class="relative w-full overflow-hidden marquee-container py-space-xs">
+                            <!-- Gradient Fade Masks -->
+                            <div
+                                class="pointer-events-none absolute left-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-r from-surface-container-low via-surface-container-low/90 to-transparent z-10">
+                            </div>
+                            <div
+                                class="pointer-events-none absolute right-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-l from-surface-container-low via-surface-container-low/90 to-transparent z-10">
+                            </div>
+                            <!-- Row 1: Left to Right / Continuous Loop -->
+                            <div class="flex gap-space-md animate-marquee-left mb-space-md">
+                                <!-- Item 1 -->
+                                <div
+                                    class="w-[310px] shrink-0 p-space-md rounded-2xl bg-surface-container-lowest border border-blue-100/90 shadow-[0_2px_12px_rgba(0,0,0,0.03)] partner-card-hover flex items-center gap-space-sm">
+                                    <div
+                                        class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 text-primary">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+                                            viewbox="0 0 24 24">
+                                            <path
+                                                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex flex-col min-w-0">
+                                        <span
+                                            class="font-headline-xs text-headline-xs text-on-surface font-bold truncate">Bệnh
+                                            viện Phổi Đà Nẵng</span>
+                                        <div class="flex items-center gap-1 mt-1">
+                                            <span
+                                                class="px-2 py-0.5 rounded-md bg-primary-fixed text-primary font-label-sm text-[11px] font-semibold">Bệnh
+                                                viện Hạng I</span>
+                                            <span class="text-secondary text-xs">• EMR BYT</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Item 2 -->
+                                <div
+                                    class="w-[310px] shrink-0 p-space-md rounded-2xl bg-surface-container-lowest border border-blue-100/90 shadow-[0_2px_12px_rgba(0,0,0,0.03)] partner-card-hover flex items-center gap-space-sm">
+                                    <div
+                                        class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center shrink-0 text-emerald-600">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+                                            viewbox="0 0 24 24">
+                                            <path
+                                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex flex-col min-w-0">
+                                        <span
+                                            class="font-headline-xs text-headline-xs text-on-surface font-bold truncate">TTYT
+                                            Quận Ngũ Hành Sơn</span>
+                                        <div class="flex items-center gap-1 mt-1">
+                                            <span
+                                                class="px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-800 font-label-sm text-[11px] font-semibold">Hệ
+                                                thống Smart EMR</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Item 3 -->
+                                <div
+                                    class="w-[310px] shrink-0 p-space-md rounded-2xl bg-surface-container-lowest border border-blue-100/90 shadow-[0_2px_12px_rgba(0,0,0,0.03)] partner-card-hover flex items-center gap-space-sm">
+                                    <div
+                                        class="w-12 h-12 rounded-xl bg-tertiary-container/15 flex items-center justify-center shrink-0 text-tertiary">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+                                            viewbox="0 0 24 24">
+                                            <path
+                                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex flex-col min-w-0">
+                                        <span
+                                            class="font-headline-xs text-headline-xs text-on-surface font-bold truncate">TTYT
+                                            Quận Liên Chiểu</span>
+                                        <div class="flex items-center gap-1 mt-1">
+                                            <span
+                                                class="px-2 py-0.5 rounded-md bg-cyan-100 text-cyan-800 font-label-sm text-[11px] font-semibold">Đơn
+                                                thuốc TT26</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Item 4 -->
+                                <div
+                                    class="w-[310px] shrink-0 p-space-md rounded-2xl bg-surface-container-lowest border border-blue-100/90 shadow-[0_2px_12px_rgba(0,0,0,0.03)] partner-card-hover flex items-center gap-space-sm">
+                                    <div
+                                        class="w-12 h-12 rounded-xl bg-indigo-500/10 flex items-center justify-center shrink-0 text-indigo-600">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+                                            viewbox="0 0 24 24">
+                                            <path
+                                                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex flex-col min-w-0">
+                                        <span
+                                            class="font-headline-xs text-headline-xs text-on-surface font-bold truncate">Chi
+                                            cục Dân số - KHHGĐ ĐN</span>
+                                        <div class="flex items-center gap-1 mt-1">
+                                            <span
+                                                class="px-2 py-0.5 rounded-md bg-indigo-100 text-indigo-800 font-label-sm text-[11px] font-semibold">Chính
+                                                quyền số</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Item 5 -->
+                                <div
+                                    class="w-[310px] shrink-0 p-space-md rounded-2xl bg-surface-container-lowest border border-blue-100/90 shadow-[0_2px_12px_rgba(0,0,0,0.03)] partner-card-hover flex items-center gap-space-sm">
+                                    <div
+                                        class="w-12 h-12 rounded-xl bg-blue-600/10 flex items-center justify-center shrink-0 text-blue-700">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+                                            viewbox="0 0 24 24">
+                                            <path
+                                                d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex flex-col min-w-0">
+                                        <span
+                                            class="font-headline-xs text-headline-xs text-on-surface font-bold truncate">Vietcombank</span>
+                                        <div class="flex items-center gap-1 mt-1">
+                                            <span
+                                                class="px-2 py-0.5 rounded-md bg-blue-100 text-blue-800 font-label-sm text-[11px] font-semibold">Fintech
+                                                Viện phí</span>
+                                            <span class="text-secondary text-xs">• VietQR 247</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Item 6 -->
+                                <div
+                                    class="w-[310px] shrink-0 p-space-md rounded-2xl bg-surface-container-lowest border border-blue-100/90 shadow-[0_2px_12px_rgba(0,0,0,0.03)] partner-card-hover flex items-center gap-space-sm">
+                                    <div
+                                        class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center shrink-0 text-amber-600">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+                                            viewbox="0 0 24 24">
+                                            <path
+                                                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex flex-col min-w-0">
+                                        <span
+                                            class="font-headline-xs text-headline-xs text-on-surface font-bold truncate">UBND
+                                            Phường Ngũ Hành Sơn</span>
+                                        <div class="flex items-center gap-1 mt-1">
+                                            <span
+                                                class="px-2 py-0.5 rounded-md bg-amber-100 text-amber-800 font-label-sm text-[11px] font-semibold">Hành
+                                                chính công</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Duplicate Row 1 for Infinite Scroll -->
+                                <div
+                                    class="w-[310px] shrink-0 p-space-md rounded-2xl bg-surface-container-lowest border border-blue-100/90 shadow-[0_2px_12px_rgba(0,0,0,0.03)] partner-card-hover flex items-center gap-space-sm">
+                                    <div
+                                        class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 text-primary">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+                                            viewbox="0 0 24 24">
+                                            <path
+                                                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex flex-col min-w-0">
+                                        <span
+                                            class="font-headline-xs text-headline-xs text-on-surface font-bold truncate">Bệnh
+                                            viện Phổi Đà Nẵng</span>
+                                        <div class="flex items-center gap-1 mt-1">
+                                            <span
+                                                class="px-2 py-0.5 rounded-md bg-primary-fixed text-primary font-label-sm text-[11px] font-semibold">Bệnh
+                                                viện Hạng I</span>
+                                            <span class="text-secondary text-xs">• EMR BYT</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="w-[310px] shrink-0 p-space-md rounded-2xl bg-surface-container-lowest border border-blue-100/90 shadow-[0_2px_12px_rgba(0,0,0,0.03)] partner-card-hover flex items-center gap-space-sm">
+                                    <div
+                                        class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center shrink-0 text-emerald-600">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+                                            viewbox="0 0 24 24">
+                                            <path
+                                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex flex-col min-w-0">
+                                        <span
+                                            class="font-headline-xs text-headline-xs text-on-surface font-bold truncate">TTYT
+                                            Quận Ngũ Hành Sơn</span>
+                                        <div class="flex items-center gap-1 mt-1">
+                                            <span
+                                                class="px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-800 font-label-sm text-[11px] font-semibold">Hệ
+                                                thống Smart EMR</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="w-[310px] shrink-0 p-space-md rounded-2xl bg-surface-container-lowest border border-blue-100/90 shadow-[0_2px_12px_rgba(0,0,0,0.03)] partner-card-hover flex items-center gap-space-sm">
+                                    <div
+                                        class="w-12 h-12 rounded-xl bg-tertiary-container/15 flex items-center justify-center shrink-0 text-tertiary">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+                                            viewbox="0 0 24 24">
+                                            <path
+                                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex flex-col min-w-0">
+                                        <span
+                                            class="font-headline-xs text-headline-xs text-on-surface font-bold truncate">TTYT
+                                            Quận Liên Chiểu</span>
+                                        <div class="flex items-center gap-1 mt-1">
+                                            <span
+                                                class="px-2 py-0.5 rounded-md bg-cyan-100 text-cyan-800 font-label-sm text-[11px] font-semibold">Đơn
+                                                thuốc TT26</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="w-[310px] shrink-0 p-space-md rounded-2xl bg-surface-container-lowest border border-blue-100/90 shadow-[0_2px_12px_rgba(0,0,0,0.03)] partner-card-hover flex items-center gap-space-sm">
+                                    <div
+                                        class="w-12 h-12 rounded-xl bg-indigo-500/10 flex items-center justify-center shrink-0 text-indigo-600">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+                                            viewbox="0 0 24 24">
+                                            <path
+                                                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex flex-col min-w-0">
+                                        <span
+                                            class="font-headline-xs text-headline-xs text-on-surface font-bold truncate">Chi
+                                            cục Dân số - KHHGĐ ĐN</span>
+                                        <div class="flex items-center gap-1 mt-1">
+                                            <span
+                                                class="px-2 py-0.5 rounded-md bg-indigo-100 text-indigo-800 font-label-sm text-[11px] font-semibold">Chính
+                                                quyền số</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="w-[310px] shrink-0 p-space-md rounded-2xl bg-surface-container-lowest border border-blue-100/90 shadow-[0_2px_12px_rgba(0,0,0,0.03)] partner-card-hover flex items-center gap-space-sm">
+                                    <div
+                                        class="w-12 h-12 rounded-xl bg-blue-600/10 flex items-center justify-center shrink-0 text-blue-700">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+                                            viewbox="0 0 24 24">
+                                            <path
+                                                d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex flex-col min-w-0">
+                                        <span
+                                            class="font-headline-xs text-headline-xs text-on-surface font-bold truncate">Vietcombank</span>
+                                        <div class="flex items-center gap-1 mt-1">
+                                            <span
+                                                class="px-2 py-0.5 rounded-md bg-blue-100 text-blue-800 font-label-sm text-[11px] font-semibold">Fintech
+                                                Viện phí</span>
+                                            <span class="text-secondary text-xs">• VietQR 247</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="w-[310px] shrink-0 p-space-md rounded-2xl bg-surface-container-lowest border border-blue-100/90 shadow-[0_2px_12px_rgba(0,0,0,0.03)] partner-card-hover flex items-center gap-space-sm">
+                                    <div
+                                        class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center shrink-0 text-amber-600">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+                                            viewbox="0 0 24 24">
+                                            <path
+                                                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex flex-col min-w-0">
+                                        <span
+                                            class="font-headline-xs text-headline-xs text-on-surface font-bold truncate">UBND
+                                            Phường Ngũ Hành Sơn</span>
+                                        <div class="flex items-center gap-1 mt-1">
+                                            <span
+                                                class="px-2 py-0.5 rounded-md bg-amber-100 text-amber-800 font-label-sm text-[11px] font-semibold">Hành
+                                                chính công</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Row 2: Right to Left (Reverse Direction) -->
+                            <div class="flex gap-space-md animate-marquee-right">
+                                <!-- Item 7 -->
+                                <div
+                                    class="w-[310px] shrink-0 p-space-md rounded-2xl bg-surface-container-lowest border border-blue-100/90 shadow-[0_2px_12px_rgba(0,0,0,0.03)] partner-card-hover flex items-center gap-space-sm">
+                                    <div
+                                        class="w-12 h-12 rounded-xl bg-rose-500/10 flex items-center justify-center shrink-0 text-rose-600">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+                                            viewbox="0 0 24 24">
+                                            <path
+                                                d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex flex-col min-w-0">
+                                        <span
+                                            class="font-headline-xs text-headline-xs text-on-surface font-bold truncate">Zalo
+                                            Cloud Partner</span>
+                                        <div class="flex items-center gap-1 mt-1">
+                                            <span
+                                                class="px-2 py-0.5 rounded-md bg-rose-100 text-rose-800 font-label-sm text-[11px] font-semibold">Zalo
+                                                OA Gateway</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Item 8 -->
+                                <div
+                                    class="w-[310px] shrink-0 p-space-md rounded-2xl bg-surface-container-lowest border border-blue-100/90 shadow-[0_2px_12px_rgba(0,0,0,0.03)] partner-card-hover flex items-center gap-space-sm">
+                                    <div
+                                        class="w-12 h-12 rounded-xl bg-sky-500/10 flex items-center justify-center shrink-0 text-sky-600">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+                                            viewbox="0 0 24 24">
+                                            <path
+                                                d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 00-9.78 2.096A4.001 4.001 0 003 15z"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex flex-col min-w-0">
+                                        <span
+                                            class="font-headline-xs text-headline-xs text-on-surface font-bold truncate">VNPT
+                                            Healthcare</span>
+                                        <div class="flex items-center gap-1 mt-1">
+                                            <span
+                                                class="px-2 py-0.5 rounded-md bg-sky-100 text-sky-800 font-label-sm text-[11px] font-semibold">Hạ
+                                                tầng Viễn thông</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Item 9 -->
+                                <div
+                                    class="w-[310px] shrink-0 p-space-md rounded-2xl bg-surface-container-lowest border border-blue-100/90 shadow-[0_2px_12px_rgba(0,0,0,0.03)] partner-card-hover flex items-center gap-space-sm">
+                                    <div
+                                        class="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center shrink-0 text-orange-600">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+                                            viewbox="0 0 24 24">
+                                            <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round"
+                                                stroke-linejoin="round"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex flex-col min-w-0">
+                                        <span
+                                            class="font-headline-xs text-headline-xs text-on-surface font-bold truncate">FPT
+                                            Smart Cloud</span>
+                                        <div class="flex items-center gap-1 mt-1">
+                                            <span
+                                                class="px-2 py-0.5 rounded-md bg-orange-100 text-orange-800 font-label-sm text-[11px] font-semibold">Đám
+                                                mây &amp; AI</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Item 10 -->
+                                <div
+                                    class="w-[310px] shrink-0 p-space-md rounded-2xl bg-surface-container-lowest border border-blue-100/90 shadow-[0_2px_12px_rgba(0,0,0,0.03)] partner-card-hover flex items-center gap-space-sm">
+                                    <div
+                                        class="w-12 h-12 rounded-xl bg-blue-700/10 flex items-center justify-center shrink-0 text-blue-800">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+                                            viewbox="0 0 24 24">
+                                            <path
+                                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex flex-col min-w-0">
+                                        <span
+                                            class="font-headline-xs text-headline-xs text-on-surface font-bold truncate">Fortinet
+                                            &amp; Cisco</span>
+                                        <div class="flex items-center gap-1 mt-1">
+                                            <span
+                                                class="px-2 py-0.5 rounded-md bg-blue-100 text-blue-900 font-label-sm text-[11px] font-semibold">Bảo
+                                                mật Cấp độ 3</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Item 11 -->
+                                <div
+                                    class="w-[310px] shrink-0 p-space-md rounded-2xl bg-surface-container-lowest border border-blue-100/90 shadow-[0_2px_12px_rgba(0,0,0,0.03)] partner-card-hover flex items-center gap-space-sm">
+                                    <div
+                                        class="w-12 h-12 rounded-xl bg-teal-500/10 flex items-center justify-center shrink-0 text-teal-600">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+                                            viewbox="0 0 24 24">
+                                            <path
+                                                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex flex-col min-w-0">
+                                        <span
+                                            class="font-headline-xs text-headline-xs text-on-surface font-bold truncate">VietinBank
+                                            &amp; BIDV</span>
+                                        <div class="flex items-center gap-1 mt-1">
+                                            <span
+                                                class="px-2 py-0.5 rounded-md bg-teal-100 text-teal-800 font-label-sm text-[11px] font-semibold">Cổng
+                                                liên thông Napas</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Item 12 -->
+                                <div
+                                    class="w-[310px] shrink-0 p-space-md rounded-2xl bg-surface-container-lowest border border-blue-100/90 shadow-[0_2px_12px_rgba(0,0,0,0.03)] partner-card-hover flex items-center gap-space-sm">
+                                    <div
+                                        class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center shrink-0 text-purple-600">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+                                            viewbox="0 0 24 24">
+                                            <path
+                                                d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex flex-col min-w-0">
+                                        <span
+                                            class="font-headline-xs text-headline-xs text-on-surface font-bold truncate">Microsoft
+                                            Solutions</span>
+                                        <div class="flex items-center gap-1 mt-1">
+                                            <span
+                                                class="px-2 py-0.5 rounded-md bg-purple-100 text-purple-800 font-label-sm text-[11px] font-semibold">Đối
+                                                tác Cloud &amp; Dev</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Duplicate Row 2 for Infinite Scroll -->
+                                <div
+                                    class="w-[310px] shrink-0 p-space-md rounded-2xl bg-surface-container-lowest border border-blue-100/90 shadow-[0_2px_12px_rgba(0,0,0,0.03)] partner-card-hover flex items-center gap-space-sm">
+                                    <div
+                                        class="w-12 h-12 rounded-xl bg-rose-500/10 flex items-center justify-center shrink-0 text-rose-600">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+                                            viewbox="0 0 24 24">
+                                            <path
+                                                d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex flex-col min-w-0">
+                                        <span
+                                            class="font-headline-xs text-headline-xs text-on-surface font-bold truncate">Zalo
+                                            Cloud Partner</span>
+                                        <div class="flex items-center gap-1 mt-1">
+                                            <span
+                                                class="px-2 py-0.5 rounded-md bg-rose-100 text-rose-800 font-label-sm text-[11px] font-semibold">Zalo
+                                                OA Gateway</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="w-[310px] shrink-0 p-space-md rounded-2xl bg-surface-container-lowest border border-blue-100/90 shadow-[0_2px_12px_rgba(0,0,0,0.03)] partner-card-hover flex items-center gap-space-sm">
+                                    <div
+                                        class="w-12 h-12 rounded-xl bg-sky-500/10 flex items-center justify-center shrink-0 text-sky-600">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+                                            viewbox="0 0 24 24">
+                                            <path
+                                                d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 00-9.78 2.096A4.001 4.001 0 003 15z"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex flex-col min-w-0">
+                                        <span
+                                            class="font-headline-xs text-headline-xs text-on-surface font-bold truncate">VNPT
+                                            Healthcare</span>
+                                        <div class="flex items-center gap-1 mt-1">
+                                            <span
+                                                class="px-2 py-0.5 rounded-md bg-sky-100 text-sky-800 font-label-sm text-[11px] font-semibold">Hạ
+                                                tầng Viễn thông</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="w-[310px] shrink-0 p-space-md rounded-2xl bg-surface-container-lowest border border-blue-100/90 shadow-[0_2px_12px_rgba(0,0,0,0.03)] partner-card-hover flex items-center gap-space-sm">
+                                    <div
+                                        class="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center shrink-0 text-orange-600">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+                                            viewbox="0 0 24 24">
+                                            <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round"
+                                                stroke-linejoin="round"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex flex-col min-w-0">
+                                        <span
+                                            class="font-headline-xs text-headline-xs text-on-surface font-bold truncate">FPT
+                                            Smart Cloud</span>
+                                        <div class="flex items-center gap-1 mt-1">
+                                            <span
+                                                class="px-2 py-0.5 rounded-md bg-orange-100 text-orange-800 font-label-sm text-[11px] font-semibold">Đám
+                                                mây &amp; AI</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="w-[310px] shrink-0 p-space-md rounded-2xl bg-surface-container-lowest border border-blue-100/90 shadow-[0_2px_12px_rgba(0,0,0,0.03)] partner-card-hover flex items-center gap-space-sm">
+                                    <div
+                                        class="w-12 h-12 rounded-xl bg-blue-700/10 flex items-center justify-center shrink-0 text-blue-800">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+                                            viewbox="0 0 24 24">
+                                            <path
+                                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex flex-col min-w-0">
+                                        <span
+                                            class="font-headline-xs text-headline-xs text-on-surface font-bold truncate">Fortinet
+                                            &amp; Cisco</span>
+                                        <div class="flex items-center gap-1 mt-1">
+                                            <span
+                                                class="px-2 py-0.5 rounded-md bg-blue-100 text-blue-900 font-label-sm text-[11px] font-semibold">Bảo
+                                                mật Cấp độ 3</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="w-[310px] shrink-0 p-space-md rounded-2xl bg-surface-container-lowest border border-blue-100/90 shadow-[0_2px_12px_rgba(0,0,0,0.03)] partner-card-hover flex items-center gap-space-sm">
+                                    <div
+                                        class="w-12 h-12 rounded-xl bg-teal-500/10 flex items-center justify-center shrink-0 text-teal-600">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+                                            viewbox="0 0 24 24">
+                                            <path
+                                                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex flex-col min-w-0">
+                                        <span
+                                            class="font-headline-xs text-headline-xs text-on-surface font-bold truncate">VietinBank
+                                            &amp; BIDV</span>
+                                        <div class="flex items-center gap-1 mt-1">
+                                            <span
+                                                class="px-2 py-0.5 rounded-md bg-teal-100 text-teal-800 font-label-sm text-[11px] font-semibold">Cổng
+                                                liên thông Napas</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="w-[310px] shrink-0 p-space-md rounded-2xl bg-surface-container-lowest border border-blue-100/90 shadow-[0_2px_12px_rgba(0,0,0,0.03)] partner-card-hover flex items-center gap-space-sm">
+                                    <div
+                                        class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center shrink-0 text-purple-600">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+                                            viewbox="0 0 24 24">
+                                            <path
+                                                d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex flex-col min-w-0">
+                                        <span
+                                            class="font-headline-xs text-headline-xs text-on-surface font-bold truncate">Microsoft
+                                            Solutions</span>
+                                        <div class="flex items-center gap-1 mt-1">
+                                            <span
+                                                class="px-2 py-0.5 rounded-md bg-purple-100 text-purple-800 font-label-sm text-[11px] font-semibold">Đối
+                                                tác Cloud &amp; Dev</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Credibility & Trust Stat Strip -->
+                        <div
+                            class="mt-space-2xl pt-space-lg border-t border-surface-container-highest/80 grid grid-cols-1 md:grid-cols-3 gap-space-md">
+                            <div
+                                class="flex items-center gap-space-sm p-space-sm rounded-2xl bg-surface-container-lowest/80 border border-blue-50">
+                                <div
+                                    class="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+                                        viewbox="0 0 24 24">
+                                        <path
+                                            d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                                            stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="font-headline-sm font-bold text-primary leading-tight">50+</div>
+                                    <div class="font-body-sm text-secondary">Cơ sở Y tế &amp; Cơ quan hành chính</div>
+                                </div>
+                            </div>
+                            <div
+                                class="flex items-center gap-space-sm p-space-sm rounded-2xl bg-surface-container-lowest/80 border border-blue-50">
+                                <div
+                                    class="w-11 h-11 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-600 shrink-0">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+                                        viewbox="0 0 24 24">
+                                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="font-headline-sm font-bold text-emerald-600 leading-tight">100%</div>
+                                    <div class="font-body-sm text-secondary">Nghiệm thu đạt chuẩn BYT &amp; Thông tư
+                                        liên quan</div>
+                                </div>
+                            </div>
+                            <div
+                                class="flex items-center gap-space-sm p-space-sm rounded-2xl bg-surface-container-lowest/80 border border-blue-50">
+                                <div
+                                    class="w-11 h-11 rounded-xl bg-tertiary-container/15 flex items-center justify-center text-tertiary shrink-0">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+                                        viewbox="0 0 24 24">
+                                        <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="font-headline-sm font-bold text-tertiary leading-tight">99.98%</div>
+                                    <div class="font-body-sm text-secondary">Uptime &amp; Cam kết SLA hỗ trợ 24/7/365
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- High-Impact Glassmorphism CTA Section (Inspired by Moodboard) -->
+                <section class="max-w-[1200px] mx-auto px-margin md:px-margin-md lg:px-margin-lg pb-space-4xl">
+                    <div
+                        class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary via-primary-container to-tertiary text-on-primary p-space-2xl md:p-space-3xl shadow-[0_20px_50px_rgba(0,74,198,0.3)]">
+                        <!-- Ambient Glass Accents -->
+                        <div
+                            class="absolute -right-20 -bottom-20 w-96 h-96 rounded-full bg-surface-container-lowest/10 blur-2xl pointer-events-none">
+                        </div>
+                        <div
+                            class="absolute -left-10 -top-10 w-80 h-80 rounded-full bg-tertiary-fixed/20 blur-xl pointer-events-none">
+                        </div>
+                        <div
+                            class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-space-xl">
+                            <div class="max-w-2xl flex flex-col">
+                                <div
+                                    class="inline-flex items-center gap-space-2xs px-space-md py-1 rounded-full bg-surface-container-lowest/20 backdrop-blur-md w-fit mb-space-md text-on-primary font-label-sm text-label-sm tracking-wider uppercase">
+                                    <span class="material-symbols-outlined text-[16px]">rocket_launch</span>
+                                    <span class="">Sẵn sàng cùng TEKNOVA</span>
+                                </div>
+                                <h2 class="font-headline-xl text-headline-xl text-on-primary tracking-tight">
+                                    Bắt đầu hiện đại hóa hệ thống quản trị của bạn ngay hôm nay
+                                </h2>
+                                <p class="font-body-lg text-body-lg text-on-primary/90 mt-space-sm leading-relaxed">
+                                    Đội ngũ kỹ sư và chuyên gia CNTT y tế của TEKNOVA luôn sẵn sàng khảo sát thực tế, tư
+                                    vấn lộ trình thuê phần mềm tối ưu ngân sách và hỗ trợ Demo hệ thống 1-on-1 theo nhu
+                                    cầu riêng biệt.
+                                </p>
+                            </div>
+                            <!-- Action Box -->
+                            <div class="flex flex-col sm:flex-row lg:flex-col gap-space-sm shrink-0">
+                                <a class="px-space-xl py-space-md rounded-2xl bg-surface-container-lowest text-primary hover:bg-surface hover:scale-[1.02] transition-all font-label-lg text-label-lg text-center shadow-[0_4px_20px_rgba(0,0,0,0.15)] flex items-center justify-center gap-space-2xs"
+                                    data-path="lien-he" href="#">
+                                    <span class="">Đăng ký tư vấn &amp; Báo giá</span>
+                                    <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+                                </a>
+                                <a class="px-space-xl py-space-md rounded-2xl bg-surface-container-lowest/15 backdrop-blur-md text-on-primary hover:bg-surface-container-lowest/25 transition-all font-label-lg text-label-lg text-center flex items-center justify-center gap-space-2xs"
+                                    href="tel:0935722579">
+                                    <span class="material-symbols-outlined text-[20px]">call</span>
+                                    <span class="">Hotline 24/7: 0935 722 579</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- Interactive Project Detail Modal -->
+            <div class="fixed inset-0 z-50 flex items-center justify-center p-space-md bg-inverse-surface/40 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300"
+                id="projectModal">
+                <div class="relative w-full max-w-xl p-space-xl rounded-3xl bg-surface-container-lowest shadow-2xl scale-95 transition-transform duration-300 flex flex-col gap-space-md"
+                    id="modalCard">
+                    <div class="flex items-center justify-between">
+                        <span class="font-headline-sm text-headline-sm text-primary font-bold" id="modalTitle">Chi tiết
+                            dự án</span>
+                        <button
+                            class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface"
+                            onclick="closeProjectModal()">
+                            <span class="material-symbols-outlined text-[20px]">close</span>
+                        </button>
+                    </div>
+                    <div
+                        class="p-space-md rounded-2xl bg-surface-container-low flex flex-col gap-space-xs font-body-md text-body-md text-on-surface-variant">
+                        <div class="flex justify-between">
+                            <span class="font-label-md text-label-md text-secondary">Mô hình triển khai:</span>
+                            <span class="font-label-md text-label-md text-on-surface font-semibold">Thuê phần mềm trọn
+                                gói (SaaS/On-Premise)</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="font-label-md text-label-md text-secondary">Hỗ trợ kỹ thuật:</span>
+                            <span class="font-label-md text-label-md text-on-surface font-semibold">24/7 SLA Cấp
+                                1</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="font-label-md text-label-md text-secondary">Tiêu chuẩn an toàn TT:</span>
+                            <span class="font-label-md text-label-md text-on-surface font-semibold">Hồ sơ bảo đảm an
+                                toàn hệ thống cấp độ 3</span>
+                        </div>
+                    </div>
+                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                        Giải pháp được thiết kế tùy biến chuyên sâu cho đơn vị, đáp ứng đầy đủ thông tư hướng dẫn của Bộ
+                        Y tế và tiêu chuẩn dữ liệu Chính phủ điện tử.
+                    </p>
+                    <div class="flex items-center justify-end gap-space-xs pt-space-xs">
+                        <button
+                            class="px-space-lg py-space-xs rounded-xl bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors"
+                            onclick="closeProjectModal()">
+                            Đóng
+                        </button>
+                        <a class="px-space-lg py-space-xs rounded-xl bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-colors"
+                            data-path="lien-he" href="#">
+                            Liên hệ tư vấn dự án tương tự
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Interactive Filter & Modal Logic -->
+            <script>
+                function filterProjects(category) {
+                    const cards = document.querySelectorAll('.project-card');
+                    const buttons = document.querySelectorAll('.filter-btn');
+
+                    // Update button visual styles
+                    buttons.forEach(btn => {
+                        if (btn.getAttribute('data-filter') === category) {
+                            btn.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+                            btn.classList.remove('text-on-surface-variant', 'hover:bg-surface-container-lowest');
+                        } else {
+                            btn.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+                            btn.classList.add('text-on-surface-variant', 'hover:bg-surface-container-lowest');
+                        }
+                    });
+
+                    // Show/Hide project cards
+                    cards.forEach(card => {
+                        const itemCategory = card.getAttribute('data-category');
+                        if (category === 'all' || itemCategory === category) {
+                            card.style.display = 'flex';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                }
+
+                function openProjectModal(title) {
+                    const modal = document.getElementById('projectModal');
+                    const card = document.getElementById('modalCard');
+                    const modalTitle = document.getElementById('modalTitle');
+
+                    modalTitle.innerText = title;
+                    modal.classList.remove('opacity-0', 'pointer-events-none');
+                    card.classList.remove('scale-95');
+                    card.classList.add('scale-100');
+                }
+
+                function closeProjectModal() {
+                    const modal = document.getElementById('projectModal');
+                    const card = document.getElementById('modalCard');
+
+                    modal.classList.add('opacity-0', 'pointer-events-none');
+                    card.classList.remove('scale-100');
+                    card.classList.add('scale-95');
+                }
+
+                // Modal close when clicking outside backdrop
+                document.getElementById('projectModal').addEventListener('click', function (e) {
+                    if (e.target === this) {
+                        closeProjectModal();
+                    }
+                });
+            </script>
+        </div>
+    </main>
+    <footer class="w-full bg-surface-container-low pt-space-3xl pb-space-xl shadow-[0_-1px_8px_rgba(0,0,0,0.02)]">
+        <div class="max-w-[1200px] mx-auto px-margin md:px-margin-md lg:px-margin-lg">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-space-xl pb-space-2xl">
+                <div class="lg:col-span-4 flex flex-col items-start gap-space-sm">
+                    <div class="flex items-center gap-space-sm"><img
+                            alt="Image from https://teknova.com.vn/assets/logo-BiDi42zj.png"
+                            class="h-8 w-auto object-contain"
+                            src="https://lh3.googleusercontent.com/aida/AEtjO1U_1fuB7NnUFYE_RXwQ8cK0o8LL7TVMvHtXbR5Kn3uJ_1VMhVQVsv9KDlYIxZRDBydEcVSLxkto_pyO68RrYrimibn567O7XHNMRsnXdZ1pNWVNTFfU_tZ5BTtKDL4keTz-ZMf_CcVEEJbfCM8onGTrBH-agFRqK2VoITZY7zKoAmDnU2-1ChOI1Ua3hy9_CK74yrQIoiW18GjkQ6f5uTFvCHY4TBbANMTY3_-yyujHMwgfAhp4xyy0z1c" /><span
+                            class="font-headline-sm text-headline-sm text-primary font-bold">TEKNOVA</span></div>
+                    <div
+                        class="inline-flex items-center px-space-sm py-space-3xs rounded-full bg-surface-container-highest text-primary font-label-sm text-label-sm tracking-widest uppercase">
+                        NOW OR NEVER</div>
+                    <p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Công ty Cổ phần Đổi mới Sáng
+                        tạo TEKNOVA - Tiên phong giải pháp phần mềm, chuyển đổi số y tế, giáo dục, hành chính công và
+                        viễn thông.</p>
+                </div>
+                <div class="lg:col-span-3 flex flex-col gap-space-sm">
+                    <h4 class="font-headline-xs text-headline-xs text-on-surface">Lĩnh vực dịch vụ</h4>
+                    <ul class="flex flex-col gap-space-xs font-body-md text-body-md text-on-surface-variant">
+                        <li class=""><a class="hover:text-primary transition-colors" data-path="linh-vuc-hoat-dong"
+                                href="#">Phần mềm theo yêu cầu</a></li>
+                        <li class=""><a class="hover:text-primary transition-colors" data-path="linh-vuc-hoat-dong"
+                                href="#">Chuyển đổi số &amp; Cloud</a></li>
+                        <li class=""><a class="hover:text-primary transition-colors" data-path="linh-vuc-hoat-dong"
+                                href="#">Giải pháp Y tế Bệnh viện EMR</a></li>
+                        <li class=""><a class="hover:text-primary transition-colors" data-path="linh-vuc-hoat-dong"
+                                href="#">Phân phối thiết bị CNTT</a></li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-2 flex flex-col gap-space-sm">
+                    <h4 class="font-headline-xs text-headline-xs text-on-surface">Liên kết nhanh</h4>
+                    <ul class="flex flex-col gap-space-xs font-body-md text-body-md text-on-surface-variant">
+                        <li class=""><a class="hover:text-primary transition-colors" data-path="gioi-thieu" href="#">Về
+                                TEKNOVA</a></li>
+                        <li class=""><a class="hover:text-primary transition-colors" data-path="du-an-tieu-bieu"
+                                href="#">Dự án tiêu biểu</a></li>
+                        <li class=""><a class="hover:text-primary transition-colors" data-path="doi-ngu-chuyen-gia"
+                                href="#">Đội ngũ chuyên gia</a></li>
+                        <li class=""><a class="hover:text-primary transition-colors" data-path="gioi-thieu" href="#">Sơ
+                                đồ tổ chức</a></li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-3 flex flex-col gap-space-sm">
+                    <h4 class="font-headline-xs text-headline-xs text-on-surface">Thông tin liên hệ</h4>
+                    <div class="flex flex-col gap-space-xs font-body-md text-body-md text-on-surface-variant">
+                        <div class="flex items-start gap-space-xs"><span
+                                class="material-symbols-outlined text-[20px] text-primary shrink-0">location_on</span><span
+                                class="">K131/18 Lý Thái Tổ, Đà Nẵng</span></div>
+                        <div class="flex items-center gap-space-xs"><span
+                                class="material-symbols-outlined text-[20px] text-primary shrink-0">call</span><span
+                                class="">Hotline: 0935 722 579</span></div>
+                        <div class="flex items-center gap-space-xs"><span
+                                class="material-symbols-outlined text-[20px] text-primary shrink-0">mail</span><span
+                                class="">Teknova0925@gmail.com</span></div>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-sm font-body-sm text-body-sm text-secondary">
+                <p class="">© 2026 TEKNOVA. Tất cả quyền được bảo lưu.</p>
+                <div class="flex items-center gap-space-md"><a class="hover:text-primary transition-colors"
+                        href="#">Điều khoản sử dụng</a><a class="hover:text-primary transition-colors" href="#">Chính
+                        sách bảo mật</a></div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

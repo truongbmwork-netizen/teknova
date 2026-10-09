@@ -1,0 +1,1436 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="web_standard" name="shell-type" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0..1,0"
+        rel="stylesheet" />
+    <style>
+        .material-symbols-outlined,
+        .material-symbols-rounded {
+            font-family: 'Material Symbols Rounded', 'Material Symbols Outlined', sans-serif !important;
+            display: inline-block;
+            vertical-align: middle;
+            line-height: 1;
+            font-weight: normal;
+            font-style: normal;
+            font-size: inherit;
+            letter-spacing: normal;
+            text-transform: none;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+            font-feature-settings: 'liga';
+        }
+    </style>
+    <style>
+        @layer base {
+
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                overscroll-behavior: none;
+            }
+
+            main>:first-child {
+                margin-top: 0 !important;
+            }
+
+            main>:last-child {
+                margin-bottom: 0 !important;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+        id="tailwind-config">tailwind.config = { "darkMode": "class", "theme": { "extend": { "colors": { "secondary": "#565e74", "on-surface-variant": "#434655", "tertiary-fixed": "#c4e7ff", "surface-bright": "#f8f9ff", "surface-tint": "#0053db", "error-container": "#ffdad6", "on-tertiary-fixed": "#001e2c", "outline-variant": "#c3c6d7", "tertiary-container": "#00759f", "on-secondary-fixed-variant": "#3f465c", "on-error": "#ffffff", "on-tertiary": "#ffffff", "secondary-container": "#dae2fd", "background": "#f8f9ff", "on-background": "#0b1c30", "tertiary": "#005b7c", "on-tertiary-fixed-variant": "#004c69", "on-primary-fixed-variant": "#003ea8", "on-tertiary-container": "#e1f2ff", "on-secondary-container": "#5c647a", "on-primary": "#ffffff", "primary": "#004ac6", "surface-container-highest": "#d3e4fe", "secondary-fixed-dim": "#bec6e0", "inverse-primary": "#b4c5ff", "error": "#ba1a1a", "surface": "#f8f9ff", "primary-fixed-dim": "#b4c5ff", "surface-container-high": "#dce9ff", "surface-variant": "#d3e4fe", "surface-container-lowest": "#ffffff", "inverse-surface": "#213145", "on-secondary": "#ffffff", "on-secondary-fixed": "#131b2e", "surface-dim": "#cbdbf5", "secondary-fixed": "#dae2fd", "outline": "#737686", "on-primary-container": "#eeefff", "tertiary-fixed-dim": "#7bd0ff", "inverse-on-surface": "#eaf1ff", "on-error-container": "#93000a", "primary-container": "#2563eb", "on-surface": "#0b1c30", "surface-container-low": "#eff4ff", "on-primary-fixed": "#00174b", "primary-fixed": "#dbe1ff", "surface-container": "#e5eeff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-lg": "5rem", "gutter-sm": "1rem", "margin": "1.5rem", "space-xs": "0.5rem", "space-4xl": "6rem", "space-lg": "1.5rem", "space-xl": "2rem", "space-sm": "0.75rem", "space-md": "1rem", "margin-md": "3rem", "space-3xl": "4.5rem", "space-3xs": "0.125rem", "gutter-lg": "2rem", "space-2xs": "0.25rem", "space-2xl": "3rem", "gutter": "1.5rem" }, "fontFamily": { "headline-lg-mobile": ["Plus Jakarta Sans"], "display-hero": ["Plus Jakarta Sans"], "body-xl": ["Inter"], "body-lg": ["Inter"], "headline-sm": ["Plus Jakarta Sans"], "body-md": ["Inter"], "label-lg": ["Plus Jakarta Sans"], "headline-xs": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "body-sm": ["Inter"], "metric-stat": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "display-hero-mobile": ["Plus Jakarta Sans"] }, "fontSize": { "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "body-xl": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }], "label-lg": ["15px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "600" }], "headline-xs": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "700" }], "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }], "metric-stat": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.025em", "fontWeight": "700" }], "display-hero-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "800" }] } } } };</script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet" />
+    <style>
+        .material-symbols-outlined,
+        .material-symbols-rounded,
+        .material-icons {
+            font-family: 'Material Symbols Rounded', 'Material Symbols Outlined', 'Material Icons' !important;
+            font-weight: normal !important;
+            font-style: normal !important;
+            font-size: 24px;
+            line-height: 1 !important;
+            letter-spacing: normal !important;
+            text-transform: none !important;
+            display: inline-block !important;
+            white-space: nowrap !important;
+            word-wrap: normal !important;
+            direction: ltr !important;
+            -webkit-font-feature-settings: 'liga' !important;
+            font-feature-settings: 'liga' !important;
+            -webkit-font-smoothing: antialiased !important;
+        }
+    </style>
+</head>
+
+<body class="bg-surface font-body-md text-on-surface antialiased">
+    <header
+        class="fixed top-0 left-0 w-full z-50 bg-surface-container-lowest/85 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+        <div
+            class="h-20 max-w-[1200px] mx-auto px-margin md:px-margin-md lg:px-margin-lg flex items-center justify-between gap-space-md">
+            <div class="flex items-center gap-space-sm shrink-0"><img
+                    alt="Image from https://teknova.com.vn/assets/logo-BiDi42zj.png" class="h-8 w-auto object-contain"
+                    src="https://lh3.googleusercontent.com/aida/AEtjO1U_1fuB7NnUFYE_RXwQ8cK0o8LL7TVMvHtXbR5Kn3uJ_1VMhVQVsv9KDlYIxZRDBydEcVSLxkto_pyO68RrYrimibn567O7XHNMRsnXdZ1pNWVNTFfU_tZ5BTtKDL4keTz-ZMf_CcVEEJbfCM8onGTrBH-agFRqK2VoITZY7zKoAmDnU2-1ChOI1Ua3hy9_CK74yrQIoiW18GjkQ6f5uTFvCHY4TBbANMTY3_-yyujHMwgfAhp4xyy0z1c" />
+                <div class="flex flex-col"><span
+                        class="font-headline-sm text-headline-sm tracking-tight text-primary leading-none">TEKNOVA</span><span
+                        class="font-label-sm text-label-sm uppercase tracking-wider text-secondary leading-none mt-space-3xs">Innovation
+                        JSC</span></div>
+            </div>
+            <nav class="hidden lg:flex items-center gap-space-md shrink-0" data-active-classes="text-primary font-bold">
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap"
+                    data-path="trang-chu" href="#">Trang chủ</a><a
+                    class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap"
+                    data-path="gioi-thieu" href="#">Giới thiệu</a><a aria-current="page"
+                    class="transition-colors text-primary font-bold font-label-md text-label-md whitespace-nowrap"
+                    data-path="linh-vuc-hoat-dong" href="#">Lĩnh vực hoạt động</a><a
+                    class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap"
+                    data-path="du-an-tieu-bieu" href="#">Dự án tiêu biểu</a><a
+                    class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap"
+                    data-path="doi-ngu-chuyen-gia" href="#">Đội ngũ</a><a
+                    class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap"
+                    data-path="lien-he" href="#">Liên hệ</a>
+            </nav>
+            <div class="flex items-center gap-space-xs shrink-0"><a
+                    class="hidden sm:inline-flex items-center gap-space-2xs px-space-sm py-space-xs rounded-xl bg-surface-container-low text-on-surface hover:bg-surface-container hover:text-on-surface transition-all font-label-md text-label-md shadow-[0_1px_3px_rgba(0,0,0,0.03)] whitespace-nowrap"
+                    href="#"><span class="material-symbols-outlined text-[16px]">download</span><span class="">Tải
+                        Profile PDF</span></a><a
+                    class="inline-flex items-center gap-space-2xs px-space-sm py-space-xs rounded-xl bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary transition-all font-label-md text-label-md shadow-[0_4px_14px_rgba(37,99,235,0.35)] whitespace-nowrap"
+                    data-path="lien-he" href="#"><span class="">Tư vấn dự án</span><span
+                        class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+                <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-space-2xs shrink-0">
+                    <span class="material-symbols-outlined text-on-primary text-[18px]">person</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="w-full pt-20 bg-surface">
+        <div class="flex flex-col w-full">
+            <!-- Subtle Ambient Glow -->
+            <div class="relative w-full overflow-hidden">
+                <div
+                    class="absolute -top-32 left-1/2 -translate-x-1/2 w-[900px] h-[380px] bg-gradient-to-b from-primary/10 via-primary-fixed/30 to-transparent blur-3xl pointer-events-none rounded-full">
+                </div>
+                <!-- Section 1: Hero Header -->
+                <section
+                    class="relative max-w-[1200px] mx-auto px-margin md:px-margin-md lg:px-margin-lg pt-space-2xl pb-space-xl">
+                    <div class="flex flex-col items-center text-center max-w-3xl mx-auto">
+                        <div
+                            class="inline-flex items-center gap-space-2xs px-space-md py-space-3xs rounded-full bg-secondary-container/60 shadow-sm">
+                            <span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+                            <span class="font-label-sm text-label-sm text-primary uppercase tracking-wider">DỊCH VỤ
+                                CHUYÊN MÔN • ENTERPRISE TIERS</span>
+                        </div>
+                        <h1
+                            class="mt-space-md font-display-hero text-headline-xl md:text-display-hero text-on-surface tracking-tight">
+                            Lĩnh vực Hoạt động &amp; <span class="text-primary">Giải pháp Chuyên sâu</span>
+                        </h1>
+                        <p class="mt-space-md font-body-xl text-body-xl text-on-surface-variant leading-relaxed">
+                            Năng lực kỹ nghệ phần mềm cấp doanh nghiệp, chuẩn hóa chuyển đổi số Y tế quốc gia, dịch vụ
+                            điện toán đám mây và kiến trúc hạ tầng bảo mật cấp cao cho chính phủ &amp; tập đoàn.
+                        </p>
+                        <!-- KPI Strip -->
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm w-full mt-space-2xl pt-space-lg">
+                            <div
+                                class="flex flex-col items-center p-space-md rounded-xl bg-surface-container-lowest shadow-sm">
+                                <span class="font-metric-stat text-headline-lg text-primary">100%</span>
+                                <span class="font-label-md text-label-md text-secondary mt-space-3xs">Chuẩn BYT &amp;
+                                    BHYT</span>
+                            </div>
+                            <div
+                                class="flex flex-col items-center p-space-md rounded-xl bg-surface-container-lowest shadow-sm">
+                                <span class="font-metric-stat text-headline-lg text-primary">99.98%</span>
+                                <span class="font-label-md text-label-md text-secondary mt-space-3xs">SLA Vận hành
+                                    Cloud</span>
+                            </div>
+                            <div
+                                class="flex flex-col items-center p-space-md rounded-xl bg-surface-container-lowest shadow-sm">
+                                <span class="font-metric-stat text-headline-lg text-primary">45+</span>
+                                <span class="font-label-md text-label-md text-secondary mt-space-3xs">Dự án Bệnh viện
+                                    &amp; Tỉnh</span>
+                            </div>
+                            <div
+                                class="flex flex-col items-center p-space-md rounded-xl bg-surface-container-lowest shadow-sm">
+                                <span class="font-metric-stat text-headline-lg text-primary">&lt; 15m</span>
+                                <span class="font-label-md text-label-md text-secondary mt-space-3xs">Phản hồi khẩn cấp
+                                    24/7</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Section 2: 4 Mảng Mũi Nhọn & Tabbed Architecture -->
+                <section class="w-full py-space-lg overflow-hidden border-y border-surface-container">
+                    <style>
+                        @keyframes partner-marquee {
+                            0% {
+                                transform: translateX(-50%);
+                            }
+
+                            100% {
+                                transform: translateX(0%);
+                            }
+                        }
+
+                        .animate-marquee-ltr {
+                            display: flex;
+                            width: max-content;
+                            animation: partner-marquee 35s linear infinite;
+                        }
+
+                        .animate-marquee-ltr:hover {
+                            animation-play-state: paused;
+                        }
+                    </style>
+                    <div
+                        class="max-w-[1200px] mx-auto px-margin md:px-margin-md lg:px-margin-lg text-center mb-space-md">
+                        <div
+                            class="inline-flex items-center gap-space-2xs px-space-md py-space-3xs rounded-full bg-secondary-container/60 mb-space-2xs shadow-sm">
+                            <span class="w-2 h-2 rounded-full bg-primary"></span><span
+                                class="font-label-sm text-label-sm text-primary uppercase tracking-wider">ĐỐI TÁC CHIẾN
+                                LƯỢC &amp; KHÁCH HÀNG TIÊU BIỂU</span>
+                        </div>
+                        <p class="font-body-md text-body-md text-on-surface-variant">Được tin chọn bởi hơn 50+ bệnh
+                            viện, sở ban ngành &amp; đối tác công nghệ hàng đầu</p>
+                    </div>
+                    <div class="relative w-full overflow-hidden">
+                        <div
+                            class="pointer-events-none absolute left-0 top-0 bottom-0 w-24 md:w-40 z-10 bg-gradient-to-r from-surface to-transparent">
+                        </div>
+                        <div
+                            class="pointer-events-none absolute right-0 top-0 bottom-0 w-24 md:w-40 z-10 bg-gradient-to-l from-surface to-transparent">
+                        </div>
+                        <div class="animate-marquee-ltr flex items-center gap-space-md py-space-xs">
+                            <div class="flex items-center gap-space-md shrink-0">
+                                <div
+                                    class="flex items-center gap-space-xs px-space-md py-space-xs rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm hover:shadow-md hover:border-primary transition-all">
+                                    <span
+                                        class="material-symbols-outlined text-primary text-[20px]">local_hospital</span><span
+                                        class="font-label-md text-label-md text-on-surface whitespace-nowrap">BV Phổi Đà
+                                        Nẵng</span>
+                                </div>
+                                <div
+                                    class="flex items-center gap-space-xs px-space-md py-space-xs rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm hover:shadow-md hover:border-primary transition-all">
+                                    <span
+                                        class="material-symbols-outlined text-primary text-[20px]">medical_services</span><span
+                                        class="font-label-md text-label-md text-on-surface whitespace-nowrap">TTYT Ngũ
+                                        Hành Sơn</span>
+                                </div>
+                                <div
+                                    class="flex items-center gap-space-xs px-space-md py-space-xs rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm hover:shadow-md hover:border-primary transition-all">
+                                    <span
+                                        class="material-symbols-outlined text-primary text-[20px]">health_and_safety</span><span
+                                        class="font-label-md text-label-md text-on-surface whitespace-nowrap">TTYT Liên
+                                        Chiểu</span>
+                                </div>
+                                <div
+                                    class="flex items-center gap-space-xs px-space-md py-space-xs rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm hover:shadow-md hover:border-primary transition-all">
+                                    <span class="material-symbols-outlined text-primary text-[20px]">domain</span><span
+                                        class="font-label-md text-label-md text-on-surface whitespace-nowrap">Vinmec
+                                        Healthcare</span>
+                                </div>
+                                <div
+                                    class="flex items-center gap-space-xs px-space-md py-space-xs rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm hover:shadow-md hover:border-primary transition-all">
+                                    <span
+                                        class="material-symbols-outlined text-primary text-[20px]">biotechnology</span><span
+                                        class="font-label-md text-label-md text-on-surface whitespace-nowrap">Medlatec
+                                        Group</span>
+                                </div>
+                                <div
+                                    class="flex items-center gap-space-xs px-space-md py-space-xs rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm hover:shadow-md hover:border-primary transition-all">
+                                    <span
+                                        class="material-symbols-outlined text-primary text-[20px]">cell_tower</span><span
+                                        class="font-label-md text-label-md text-on-surface whitespace-nowrap">Viettel
+                                        Digital</span>
+                                </div>
+                                <div
+                                    class="flex items-center gap-space-xs px-space-md py-space-xs rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm hover:shadow-md hover:border-primary transition-all">
+                                    <span
+                                        class="material-symbols-outlined text-primary text-[20px]">wifi_tethering</span><span
+                                        class="font-label-md text-label-md text-on-surface whitespace-nowrap">VNPT
+                                        Healthcare</span>
+                                </div>
+                                <div
+                                    class="flex items-center gap-space-xs px-space-md py-space-xs rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm hover:shadow-md hover:border-primary transition-all">
+                                    <span class="material-symbols-outlined text-primary text-[20px]">router</span><span
+                                        class="font-label-md text-label-md text-on-surface whitespace-nowrap">Cisco
+                                        Systems</span>
+                                </div>
+                                <div
+                                    class="flex items-center gap-space-xs px-space-md py-space-xs rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm hover:shadow-md hover:border-primary transition-all">
+                                    <span
+                                        class="material-symbols-outlined text-primary text-[20px]">security</span><span
+                                        class="font-label-md text-label-md text-on-surface whitespace-nowrap">Fortinet
+                                        Security</span>
+                                </div>
+                                <div
+                                    class="flex items-center gap-space-xs px-space-md py-space-xs rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm hover:shadow-md hover:border-primary transition-all">
+                                    <span
+                                        class="material-symbols-outlined text-primary text-[20px]">cloud_done</span><span
+                                        class="font-label-md text-label-md text-on-surface whitespace-nowrap">Microsoft
+                                        Partner</span>
+                                </div>
+                                <div
+                                    class="flex items-center gap-space-xs px-space-md py-space-xs rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm hover:shadow-md hover:border-primary transition-all">
+                                    <span
+                                        class="material-symbols-outlined text-primary text-[20px]">account_balance</span><span
+                                        class="font-label-md text-label-md text-on-surface whitespace-nowrap">Vietcombank</span>
+                                </div>
+                                <div
+                                    class="flex items-center gap-space-xs px-space-md py-space-xs rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm hover:shadow-md hover:border-primary transition-all">
+                                    <span
+                                        class="material-symbols-outlined text-primary text-[20px]">credit_card</span><span
+                                        class="font-label-md text-label-md text-on-surface whitespace-nowrap">VietinBank</span>
+                                </div>
+                                <div
+                                    class="flex items-center gap-space-xs px-space-md py-space-xs rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm hover:shadow-md hover:border-primary transition-all">
+                                    <span
+                                        class="material-symbols-outlined text-primary text-[20px]">payments</span><span
+                                        class="font-label-md text-label-md text-on-surface whitespace-nowrap">BIDV Smart
+                                        Banking</span>
+                                </div>
+                                <div
+                                    class="flex items-center gap-space-xs px-space-md py-space-xs rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm hover:shadow-md hover:border-primary transition-all">
+                                    <span class="material-symbols-outlined text-primary text-[20px]">forum</span><span
+                                        class="font-label-md text-label-md text-on-surface whitespace-nowrap">Zalo OA
+                                        Cloud</span>
+                                </div>
+                                <div
+                                    class="flex items-center gap-space-xs px-space-md py-space-xs rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm hover:shadow-md hover:border-primary transition-all">
+                                    <span class="material-symbols-outlined text-primary text-[20px]">cloud</span><span
+                                        class="font-label-md text-label-md text-on-surface whitespace-nowrap">FPT Smart
+                                        Cloud</span>
+                                </div>
+                                <div
+                                    class="flex items-center gap-space-xs px-space-md py-space-xs rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm hover:shadow-md hover:border-primary transition-all">
+                                    <span class="material-symbols-outlined text-primary text-[20px]">groups</span><span
+                                        class="font-label-md text-label-md text-on-surface whitespace-nowrap">Chi cục
+                                        Dân số Đà Nẵng</span>
+                                </div>
+                                <div
+                                    class="flex items-center gap-space-xs px-space-md py-space-xs rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm hover:shadow-md hover:border-primary transition-all">
+                                    <span
+                                        class="material-symbols-outlined text-primary text-[20px]">location_city</span><span
+                                        class="font-label-md text-label-md text-on-surface whitespace-nowrap">Đà Nẵng
+                                        Smart City</span>
+                                </div>
+                                <div
+                                    class="flex items-center gap-space-xs px-space-md py-space-xs rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm hover:shadow-md hover:border-primary transition-all">
+                                    <span class="material-symbols-outlined text-primary text-[20px]">hub</span><span
+                                        class="font-label-md text-label-md text-on-surface whitespace-nowrap">Trục Liên
+                                        thông Dữ liệu</span>
+                                </div>
+                            </div>
+                            <div aria-hidden="true" class="flex items-center gap-space-md shrink-0">
+                                <div
+                                    class="flex items-center gap-space-xs px-space-md py-space-xs rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm hover:shadow-md hover:border-primary transition-all">
+                                    <span
+                                        class="material-symbols-outlined text-primary text-[20px]">local_hospital</span><span
+                                        class="font-label-md text-label-md text-on-surface whitespace-nowrap">BV Phổi Đà
+                                        Nẵng</span>
+                                </div>
+                                <div
+                                    class="flex items-center gap-space-xs px-space-md py-space-xs rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm hover:shadow-md hover:border-primary transition-all">
+                                    <span
+                                        class="material-symbols-outlined text-primary text-[20px]">medical_services</span><span
+                                        class="font-label-md text-label-md text-on-surface whitespace-nowrap">TTYT Ngũ
+                                        Hành Sơn</span>
+                                </div>
+                                <div
+                                    class="flex items-center gap-space-xs px-space-md py-space-xs rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm hover:shadow-md hover:border-primary transition-all">
+                                    <span
+                                        class="material-symbols-outlined text-primary text-[20px]">health_and_safety</span><span
+                                        class="font-label-md text-label-md text-on-surface whitespace-nowrap">TTYT Liên
+                                        Chiểu</span>
+                                </div>
+                                <div
+                                    class="flex items-center gap-space-xs px-space-md py-space-xs rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm hover:shadow-md hover:border-primary transition-all">
+                                    <span class="material-symbols-outlined text-primary text-[20px]">domain</span><span
+                                        class="font-label-md text-label-md text-on-surface whitespace-nowrap">Vinmec
+                                        Healthcare</span>
+                                </div>
+                                <div
+                                    class="flex items-center gap-space-xs px-space-md py-space-xs rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm hover:shadow-md hover:border-primary transition-all">
+                                    <span
+                                        class="material-symbols-outlined text-primary text-[20px]">biotechnology</span><span
+                                        class="font-label-md text-label-md text-on-surface whitespace-nowrap">Medlatec
+                                        Group</span>
+                                </div>
+                                <div
+                                    class="flex items-center gap-space-xs px-space-md py-space-xs rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm hover:shadow-md hover:border-primary transition-all">
+                                    <span
+                                        class="material-symbols-outlined text-primary text-[20px]">cell_tower</span><span
+                                        class="font-label-md text-label-md text-on-surface whitespace-nowrap">Viettel
+                                        Digital</span>
+                                </div>
+                                <div
+                                    class="flex items-center gap-space-xs px-space-md py-space-xs rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm hover:shadow-md hover:border-primary transition-all">
+                                    <span
+                                        class="material-symbols-outlined text-primary text-[20px]">wifi_tethering</span><span
+                                        class="font-label-md text-label-md text-on-surface whitespace-nowrap">VNPT
+                                        Healthcare</span>
+                                </div>
+                                <div
+                                    class="flex items-center gap-space-xs px-space-md py-space-xs rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm hover:shadow-md hover:border-primary transition-all">
+                                    <span class="material-symbols-outlined text-primary text-[20px]">router</span><span
+                                        class="font-label-md text-label-md text-on-surface whitespace-nowrap">Cisco
+                                        Systems</span>
+                                </div>
+                                <div
+                                    class="flex items-center gap-space-xs px-space-md py-space-xs rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm hover:shadow-md hover:border-primary transition-all">
+                                    <span
+                                        class="material-symbols-outlined text-primary text-[20px]">security</span><span
+                                        class="font-label-md text-label-md text-on-surface whitespace-nowrap">Fortinet
+                                        Security</span>
+                                </div>
+                                <div
+                                    class="flex items-center gap-space-xs px-space-md py-space-xs rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm hover:shadow-md hover:border-primary transition-all">
+                                    <span
+                                        class="material-symbols-outlined text-primary text-[20px]">cloud_done</span><span
+                                        class="font-label-md text-label-md text-on-surface whitespace-nowrap">Microsoft
+                                        Partner</span>
+                                </div>
+                                <div
+                                    class="flex items-center gap-space-xs px-space-md py-space-xs rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm hover:shadow-md hover:border-primary transition-all">
+                                    <span
+                                        class="material-symbols-outlined text-primary text-[20px]">account_balance</span><span
+                                        class="font-label-md text-label-md text-on-surface whitespace-nowrap">Vietcombank</span>
+                                </div>
+                                <div
+                                    class="flex items-center gap-space-xs px-space-md py-space-xs rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm hover:shadow-md hover:border-primary transition-all">
+                                    <span
+                                        class="material-symbols-outlined text-primary text-[20px]">credit_card</span><span
+                                        class="font-label-md text-label-md text-on-surface whitespace-nowrap">VietinBank</span>
+                                </div>
+                                <div
+                                    class="flex items-center gap-space-xs px-space-md py-space-xs rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm hover:shadow-md hover:border-primary transition-all">
+                                    <span
+                                        class="material-symbols-outlined text-primary text-[20px]">payments</span><span
+                                        class="font-label-md text-label-md text-on-surface whitespace-nowrap">BIDV Smart
+                                        Banking</span>
+                                </div>
+                                <div
+                                    class="flex items-center gap-space-xs px-space-md py-space-xs rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm hover:shadow-md hover:border-primary transition-all">
+                                    <span class="material-symbols-outlined text-primary text-[20px]">forum</span><span
+                                        class="font-label-md text-label-md text-on-surface whitespace-nowrap">Zalo OA
+                                        Cloud</span>
+                                </div>
+                                <div
+                                    class="flex items-center gap-space-xs px-space-md py-space-xs rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm hover:shadow-md hover:border-primary transition-all">
+                                    <span class="material-symbols-outlined text-primary text-[20px]">cloud</span><span
+                                        class="font-label-md text-label-md text-on-surface whitespace-nowrap">FPT Smart
+                                        Cloud</span>
+                                </div>
+                                <div
+                                    class="flex items-center gap-space-xs px-space-md py-space-xs rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm hover:shadow-md hover:border-primary transition-all">
+                                    <span class="material-symbols-outlined text-primary text-[20px]">groups</span><span
+                                        class="font-label-md text-label-md text-on-surface whitespace-nowrap">Chi cục
+                                        Dân số Đà Nẵng</span>
+                                </div>
+                                <div
+                                    class="flex items-center gap-space-xs px-space-md py-space-xs rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm hover:shadow-md hover:border-primary transition-all">
+                                    <span
+                                        class="material-symbols-outlined text-primary text-[20px]">location_city</span><span
+                                        class="font-label-md text-label-md text-on-surface whitespace-nowrap">Đà Nẵng
+                                        Smart City</span>
+                                </div>
+                                <div
+                                    class="flex items-center gap-space-xs px-space-md py-space-xs rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm hover:shadow-md hover:border-primary transition-all">
+                                    <span class="material-symbols-outlined text-primary text-[20px]">hub</span><span
+                                        class="font-label-md text-label-md text-on-surface whitespace-nowrap">Trục Liên
+                                        thông Dữ liệu</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="max-w-[1200px] mx-auto px-margin md:px-margin-md lg:px-margin-lg py-space-xl">
+                    <!-- Section Header -->
+                    <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-xl">
+                        <div>
+                            <div
+                                class="inline-flex items-center gap-space-2xs text-primary font-label-sm text-label-sm uppercase tracking-widest">
+                                <span class="material-symbols-outlined text-[16px]">domain_verification</span>
+                                Hệ sinh thái cốt lõi
+                            </div>
+                            <h2 class="mt-space-2xs font-headline-xl text-headline-xl text-on-surface">
+                                4 Trụ cột Công nghệ Mũi nhọn
+                            </h2>
+                        </div>
+                        <p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+                            Được xây dựng với kiến trúc module mở, khả năng tích hợp API đa nền tảng và tuân thủ nghiêm
+                            ngặt khung kiến trúc chính phủ điện tử 2.0.
+                        </p>
+                    </div>
+                    <!-- Interactive Tab Selection -->
+                    <div class="flex items-center gap-space-xs overflow-x-auto pb-space-xs mb-space-lg"
+                        id="pillars-tab-nav">
+                        <button
+                            class="pillar-tab-btn px-space-lg py-space-sm rounded-xl font-label-lg text-label-lg transition-all flex items-center gap-space-2xs bg-primary text-on-primary shadow-md"
+                            data-target="pillar-emr" onclick="switchPillar('pillar-emr')">
+                            <span class="material-symbols-outlined text-[20px]">local_hospital</span>
+                            <span class="">Y tế &amp; Bệnh án Điện tử (EMR)</span>
+                        </button>
+                        <button
+                            class="pillar-tab-btn px-space-lg py-space-sm rounded-xl font-label-lg text-label-lg transition-all flex items-center gap-space-2xs bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container shadow-sm"
+                            data-target="pillar-custom" onclick="switchPillar('pillar-custom')">
+                            <span class="material-symbols-outlined text-[20px]">terminal</span>
+                            <span class="">Phần mềm &amp; App theo yêu cầu</span>
+                        </button>
+                        <button
+                            class="pillar-tab-btn px-space-lg py-space-sm rounded-xl font-label-lg text-label-lg transition-all flex items-center gap-space-2xs bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container shadow-sm"
+                            data-target="pillar-ai" onclick="switchPillar('pillar-ai')">
+                            <span class="material-symbols-outlined text-[20px]">smart_toy</span>
+                            <span class="">AI, Cloud &amp; Dữ liệu lớn</span>
+                        </button>
+                        <button
+                            class="pillar-tab-btn px-space-lg py-space-sm rounded-xl font-label-lg text-label-lg transition-all flex items-center gap-space-2xs bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container shadow-sm"
+                            data-target="pillar-infra" onclick="switchPillar('pillar-infra')">
+                            <span class="material-symbols-outlined text-[20px]">security</span>
+                            <span class="">Hạ tầng &amp; An toàn Thông tin</span>
+                        </button>
+                    </div>
+                    <!-- Tab Content 1: EMR Healthcare (Default Active) -->
+                    <div class="pillar-content grid grid-cols-1 lg:grid-cols-12 gap-space-lg" id="pillar-emr">
+                        <div class="lg:col-span-7 flex flex-col gap-space-lg">
+                            <div
+                                class="p-space-xl rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+                                <div>
+                                    <div class="flex items-center justify-between mb-space-md">
+                                        <span
+                                            class="inline-flex items-center gap-space-3xs px-space-sm py-space-3xs rounded-full bg-secondary-container text-primary font-label-sm text-label-sm">
+                                            <span class="material-symbols-outlined text-[14px]">verified</span>
+                                            KHUNG THÔNG TƯ 46 &amp; TT 26/2025/TT-BYT
+                                        </span>
+                                        <span class="font-label-sm text-label-sm text-secondary">MÃ: TEK-EMR-PRO</span>
+                                    </div>
+                                    <h3 class="font-headline-lg text-headline-lg text-on-surface mb-space-sm">
+                                        Giải pháp Bệnh án Điện tử Thông minh (Smart EMR) &amp; Hệ sinh thái Y tế Số
+                                    </h3>
+                                    <p class="font-body-lg text-body-lg text-on-surface-variant mb-space-lg">
+                                        Hệ thống EMR đạt chuẩn không sử dụng hồ sơ bệnh án giấy, đồng bộ dữ liệu hình
+                                        ảnh PACS, kết quả xét nghiệm LIS và cổng thông tin Giám định BHYT theo thời gian
+                                        thực.
+                                    </p>
+                                </div>
+                                <div
+                                    class="grid grid-cols-1 sm:grid-cols-2 gap-space-md pt-space-md bg-surface-container-low/60 p-space-md rounded-lg">
+                                    <div class="flex items-start gap-space-sm">
+                                        <div
+                                            class="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                                            <span
+                                                class="material-symbols-outlined text-primary text-[20px]">prescriptions</span>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-headline-xs text-headline-xs text-on-surface">Đơn thuốc điện
+                                                tử quốc gia</h4>
+                                            <p class="font-body-md text-body-md text-on-surface-variant">Liên thông mã
+                                                định danh người kê đơn, dược thư quốc gia tự động cảnh báo dị ứng.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-space-sm">
+                                        <div
+                                            class="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                                            <span
+                                                class="material-symbols-outlined text-primary text-[20px]">credit_card</span>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-headline-xs text-headline-xs text-on-surface">Thanh toán
+                                                không tiền mặt</h4>
+                                            <p class="font-body-md text-body-md text-on-surface-variant">Tích hợp VietQR
+                                                tĩnh/động, POS ngân hàng, thẻ khám bệnh thông minh liên kết viện phí.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-space-sm">
+                                        <div
+                                            class="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                                            <span
+                                                class="material-symbols-outlined text-primary text-[20px]">save_as</span>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-headline-xs text-headline-xs text-on-surface">Ký số tập
+                                                trung HSM / Token</h4>
+                                            <p class="font-body-md text-body-md text-on-surface-variant">Tích hợp ký số
+                                                điện tử bác sĩ, hộ lý theo chuẩn bảo mật PKI không cần tháo token rời.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-space-sm">
+                                        <div
+                                            class="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                                            <span class="material-symbols-outlined text-primary text-[20px]">sync</span>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-headline-xs text-headline-xs text-on-surface">Cổng giám định
+                                                BHYT 4210</h4>
+                                            <p class="font-body-md text-body-md text-on-surface-variant">XML liên thông
+                                                tức thì, tự động kiểm tra đối chiếu thẻ và chi phí tránh xuất toán.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-5 flex flex-col gap-space-md">
+                            <div
+                                class="p-space-xl rounded-xl bg-gradient-to-br from-primary to-primary-container text-on-primary shadow-lg flex flex-col justify-between h-full">
+                                <div>
+                                    <div class="flex items-center justify-between pb-space-sm">
+                                        <span
+                                            class="font-label-md text-label-md uppercase tracking-wider text-on-primary/80">Kiến
+                                            trúc Luồng EMR</span>
+                                        <span
+                                            class="px-space-xs py-space-3xs rounded-full bg-surface-container-lowest/20 font-label-sm text-label-sm">HL7
+                                            FHIR v4</span>
+                                    </div>
+                                    <h4 class="font-headline-md text-headline-md mb-space-sm">Mô hình Đồng bộ Dữ liệu Y
+                                        tế Tức thì</h4>
+                                    <p class="font-body-md text-body-md text-on-primary/90 mb-space-lg">
+                                        Mọi tác vụ từ Tiếp đón → Khám lâm sàng → Chỉ định CLS → Thu ngân được phản hồi
+                                        trong vòng &lt; 0.2s với kiến trúc Message Queue RabbitMQ &amp; Redis Cluster.
+                                    </p>
+                                </div>
+                                <!-- Visual Flow Micro-Diagram -->
+                                <div
+                                    class="p-space-md rounded-lg bg-surface-container-lowest/10 backdrop-blur-md flex flex-col gap-space-sm">
+                                    <div
+                                        class="flex items-center justify-between font-label-sm text-label-sm text-on-primary">
+                                        <span class="">Trạm tiếp nhận (HIS)</span>
+                                        <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                                        <span class="">Lưu trữ PACS/LIS</span>
+                                        <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                                        <span class="">Cổng BHYT</span>
+                                    </div>
+                                    <div class="w-full bg-surface-container-lowest/20 h-2 rounded-full overflow-hidden">
+                                        <div class="bg-surface-container-lowest h-full w-4/5 rounded-full"></div>
+                                    </div>
+                                    <div
+                                        class="flex justify-between items-center text-on-primary/80 font-body-sm text-body-sm">
+                                        <span class="">Độ trễ trung bình: 142ms</span>
+                                        <span class="font-bold text-on-primary">Đạt chuẩn Bộ TT&amp;TT</span>
+                                    </div>
+                                </div>
+                                <div class="pt-space-md">
+                                    <a class="w-full inline-flex items-center justify-center gap-space-2xs py-space-sm px-space-md rounded-xl bg-surface-container-lowest text-primary font-label-lg text-label-lg hover:bg-surface-container transition-all"
+                                        data-path="lien-he" href="#">
+                                        <span class="">Nhận đề án triển khai EMR Bệnh viện</span>
+                                        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tab Content 2: Custom Software (Hidden by default) -->
+                    <div class="pillar-content hidden grid grid-cols-1 lg:grid-cols-12 gap-space-lg" id="pillar-custom">
+                        <div class="lg:col-span-7 flex flex-col gap-space-lg">
+                            <div class="p-space-xl rounded-xl bg-surface-container-lowest shadow-sm">
+                                <span
+                                    class="inline-flex items-center gap-space-3xs px-space-sm py-space-3xs rounded-full bg-secondary-container text-primary font-label-sm text-label-sm mb-space-md">
+                                    <span class="material-symbols-outlined text-[14px]">code</span>
+                                    DEVELOPMENT EXCELLENCE
+                                </span>
+                                <h3 class="font-headline-lg text-headline-lg text-on-surface mb-space-sm">
+                                    Phát triển Phần mềm &amp; Hệ thống Theo Yêu cầu Chuyên biệt
+                                </h3>
+                                <p class="font-body-lg text-body-lg text-on-surface-variant mb-space-lg">
+                                    Thiết kế giải pháp chuyên biệt từ kiến trúc Microservices đến ứng dụng di động đa
+                                    nền tảng (Flutter / React Native), phục vụ các bài toán vận hành phức tạp của khối
+                                    doanh nghiệp và cơ quan công quyền.
+                                </p>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+                                    <div class="p-space-md rounded-lg bg-surface-container-low">
+                                        <h4
+                                            class="font-headline-xs text-headline-xs text-on-surface flex items-center gap-space-2xs">
+                                            <span
+                                                class="material-symbols-outlined text-primary text-[18px]">account_tree</span>
+                                            Hệ thống ERP / CRM May đo
+                                        </h4>
+                                        <p class="font-body-md text-body-md text-on-surface-variant mt-space-2xs">
+                                            Quản trị chuỗi cung ứng, kho vận, nhân sự và tài chính tích hợp hóa đơn điện
+                                            tử và chữ ký số.
+                                        </p>
+                                    </div>
+                                    <div class="p-space-md rounded-lg bg-surface-container-low">
+                                        <h4
+                                            class="font-headline-xs text-headline-xs text-on-surface flex items-center gap-space-2xs">
+                                            <span
+                                                class="material-symbols-outlined text-primary text-[18px]">phone_iphone</span>
+                                            Web &amp; Mobile App Tiện ích
+                                        </h4>
+                                        <p class="font-body-md text-body-md text-on-surface-variant mt-space-2xs">
+                                            Ứng dụng chăm sóc công dân, ứng dụng đặt lịch dịch vụ, thanh toán số với
+                                            trải nghiệm người dùng siêu mượt.
+                                        </p>
+                                    </div>
+                                    <div class="p-space-md rounded-lg bg-surface-container-low">
+                                        <h4
+                                            class="font-headline-xs text-headline-xs text-on-surface flex items-center gap-space-2xs">
+                                            <span
+                                                class="material-symbols-outlined text-primary text-[18px]">database</span>
+                                            Quản trị CSDL Chuyên ngành
+                                        </h4>
+                                        <p class="font-body-md text-body-md text-on-surface-variant mt-space-2xs">
+                                            Chuẩn hóa cơ sở dữ liệu quốc gia về tài nguyên, lao động, hộ tịch với kiến
+                                            trúc phân tán High-Availability.
+                                        </p>
+                                    </div>
+                                    <div class="p-space-md rounded-lg bg-surface-container-low">
+                                        <h4
+                                            class="font-headline-xs text-headline-xs text-on-surface flex items-center gap-space-2xs">
+                                            <span class="material-symbols-outlined text-primary text-[18px]">hub</span>
+                                            API Gateway &amp; Trục Liên thông
+                                        </h4>
+                                        <p class="font-body-md text-body-md text-on-surface-variant mt-space-2xs">
+                                            Kết nối LGSP/NGSP quốc gia, mở cổng API tích hợp hệ thống cũ (Legacy system)
+                                            an toàn.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="lg:col-span-5 flex flex-col justify-between p-space-xl rounded-xl bg-surface-container shadow-sm">
+                            <div>
+                                <h4 class="font-headline-md text-headline-md text-on-surface mb-space-sm">Ngăn xếp Công
+                                    nghệ Hiện đại</h4>
+                                <p class="font-body-md text-body-md text-on-surface-variant mb-space-lg">
+                                    Mã nguồn sạch, tự động hóa kiểm thử CI/CD và kiến trúc Containerized sẵn sàng mở
+                                    rộng quy mô triệu người dùng.
+                                </p>
+                                <div class="flex flex-wrap gap-space-2xs mb-space-xl">
+                                    <span
+                                        class="px-space-sm py-space-3xs rounded-md bg-surface-container-lowest text-primary font-label-md text-label-md shadow-sm">Golang</span>
+                                    <span
+                                        class="px-space-sm py-space-3xs rounded-md bg-surface-container-lowest text-primary font-label-md text-label-md shadow-sm">Node.js</span>
+                                    <span
+                                        class="px-space-sm py-space-3xs rounded-md bg-surface-container-lowest text-primary font-label-md text-label-md shadow-sm">Next.js
+                                        / React</span>
+                                    <span
+                                        class="px-space-sm py-space-3xs rounded-md bg-surface-container-lowest text-primary font-label-md text-label-md shadow-sm">Flutter</span>
+                                    <span
+                                        class="px-space-sm py-space-3xs rounded-md bg-surface-container-lowest text-primary font-label-md text-label-md shadow-sm">PostgreSQL</span>
+                                    <span
+                                        class="px-space-sm py-space-3xs rounded-md bg-surface-container-lowest text-primary font-label-md text-label-md shadow-sm">Kubernetes</span>
+                                    <span
+                                        class="px-space-sm py-space-3xs rounded-md bg-surface-container-lowest text-primary font-label-md text-label-md shadow-sm">Kafka</span>
+                                </div>
+                            </div>
+                            <div
+                                class="p-space-md rounded-lg bg-surface-container-lowest flex items-center justify-between">
+                                <div>
+                                    <div class="font-headline-sm text-headline-sm text-primary">14 Ngày</div>
+                                    <div class="font-body-sm text-body-sm text-secondary">Từ ý tưởng đến Prototype chạy
+                                        thử nghiệm</div>
+                                </div>
+                                <a class="p-space-xs rounded-lg bg-primary text-on-primary" data-path="lien-he"
+                                    href="#">
+                                    <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tab Content 3: AI, Cloud & Big Data (Hidden by default) -->
+                    <div class="pillar-content hidden grid grid-cols-1 lg:grid-cols-12 gap-space-lg" id="pillar-ai">
+                        <div class="lg:col-span-7 flex flex-col gap-space-lg">
+                            <div class="p-space-xl rounded-xl bg-surface-container-lowest shadow-sm">
+                                <span
+                                    class="inline-flex items-center gap-space-3xs px-space-sm py-space-3xs rounded-full bg-secondary-container text-primary font-label-sm text-label-sm mb-space-md">
+                                    <span class="material-symbols-outlined text-[14px]">psychology</span>
+                                    INTELLIGENCE ARCHITECTURE
+                                </span>
+                                <h3 class="font-headline-lg text-headline-lg text-on-surface mb-space-sm">
+                                    Chuyển đổi số, Trí tuệ Nhân tạo &amp; Điện toán Đám mây
+                                </h3>
+                                <p class="font-body-lg text-body-lg text-on-surface-variant mb-space-lg">
+                                    Giải phóng giá trị từ dữ liệu phân tán. Chúng tôi tích hợp mô hình ngôn ngữ lớn (LLM
+                                    On-Premise), giải pháp OCR thông minh và nền tảng BI trực quan giúp lãnh đạo ra
+                                    quyết định chính xác theo thời gian thực.
+                                </p>
+                                <div class="space-y-space-md">
+                                    <div
+                                        class="p-space-md rounded-lg bg-surface-container-low flex items-start gap-space-md">
+                                        <span
+                                            class="material-symbols-outlined text-primary text-[28px] shrink-0">dashboard_customize</span>
+                                        <div>
+                                            <h4 class="font-headline-xs text-headline-xs text-on-surface">Trung tâm Điều
+                                                hành Thông minh (IOC &amp; BI Dashboard)</h4>
+                                            <p class="font-body-md text-body-md text-on-surface-variant mt-space-3xs">
+                                                Tổng hợp chỉ số toàn diện của bệnh viện, sở ngành trên màn hình đồ thị
+                                                trực quan, cảnh báo vượt ngưỡng tự động.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="p-space-md rounded-lg bg-surface-container-low flex items-start gap-space-md">
+                                        <span
+                                            class="material-symbols-outlined text-primary text-[28px] shrink-0">document_scanner</span>
+                                        <div>
+                                            <h4 class="font-headline-xs text-headline-xs text-on-surface">OCR &amp; Số
+                                                hóa Hồ sơ Lưu trữ Văn bản</h4>
+                                            <p class="font-body-md text-body-md text-on-surface-variant mt-space-3xs">
+                                                Nhận diện ký tự quang học tiếng Việt độ chính xác &gt; 98.5%, tự động
+                                                bóc tách trường dữ liệu hồ sơ bệnh án cũ và công văn.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="p-space-md rounded-lg bg-surface-container-low flex items-start gap-space-md">
+                                        <span
+                                            class="material-symbols-outlined text-primary text-[28px] shrink-0">support_agent</span>
+                                        <div>
+                                            <h4 class="font-headline-xs text-headline-xs text-on-surface">Trợ lý Ảo AI
+                                                Tự vận hành (Internal Enterprise AI)</h4>
+                                            <p class="font-body-md text-body-md text-on-surface-variant mt-space-3xs">
+                                                Tra cứu quy trình nội bộ, hỗ trợ giải đáp thủ tục công dân 24/7 với dữ
+                                                liệu được mã hóa cục bộ hoàn toàn.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="lg:col-span-5 flex flex-col justify-between p-space-xl rounded-xl bg-surface-container shadow-sm">
+                            <div>
+                                <h4 class="font-headline-md text-headline-md text-on-surface mb-space-sm">Năng lực Lưu
+                                    trữ &amp; Xử lý Đám mây</h4>
+                                <p class="font-body-md text-body-md text-on-surface-variant mb-space-lg">
+                                    Hạ tầng Hybrid Cloud đạt chứng nhận an toàn dữ liệu ISO/IEC 27001 và chuẩn an toàn
+                                    thông tin cấp độ 3.
+                                </p>
+                                <div
+                                    class="p-space-md rounded-lg bg-surface-container-lowest space-y-space-sm mb-space-lg">
+                                    <div
+                                        class="flex justify-between items-center text-body-sm font-body-sm text-secondary">
+                                        <span class="">Tốc độ xử lý bóc tách OCR</span>
+                                        <span class="text-primary font-bold">~ 0.8 giây / trang</span>
+                                    </div>
+                                    <div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+                                        <div class="bg-primary h-full w-[92%] rounded-full"></div>
+                                    </div>
+                                    <div
+                                        class="flex justify-between items-center text-body-sm font-body-sm text-secondary">
+                                        <span class="">Tỷ lệ nén dữ liệu y tế PACS</span>
+                                        <span class="text-primary font-bold">Giảm 65% dung lượng</span>
+                                    </div>
+                                    <div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+                                        <div class="bg-primary h-full w-[65%] rounded-full"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="w-full py-space-sm px-space-md rounded-xl bg-primary text-on-primary text-center font-label-lg text-label-lg shadow-md hover:bg-primary-container transition-all"
+                                data-path="lien-he" href="#">
+                                Đăng ký khảo sát AI &amp; Cloud
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Tab Content 4: Infrastructure & Security (Hidden by default) -->
+                    <div class="pillar-content hidden grid grid-cols-1 lg:grid-cols-12 gap-space-lg" id="pillar-infra">
+                        <div class="lg:col-span-7 flex flex-col gap-space-lg">
+                            <div class="p-space-xl rounded-xl bg-surface-container-lowest shadow-sm">
+                                <span
+                                    class="inline-flex items-center gap-space-3xs px-space-sm py-space-3xs rounded-full bg-secondary-container text-primary font-label-sm text-label-sm mb-space-md">
+                                    <span class="material-symbols-outlined text-[14px]">shield</span>
+                                    ENTERPRISE DEFENSE
+                                </span>
+                                <h3 class="font-headline-lg text-headline-lg text-on-surface mb-space-sm">
+                                    Hạ tầng Trung tâm Dữ liệu &amp; An toàn Thông tin Cấp độ
+                                </h3>
+                                <p class="font-body-lg text-body-lg text-on-surface-variant mb-space-lg">
+                                    Cung cấp trọn gói từ thiết bị phần cứng chính hãng (Cisco, Dell, Fortinet) đến dịch
+                                    vụ đánh giá lỗ hổng bảo mật Pentest, thiết lập phòng thủ chuyên sâu theo Nghị định
+                                    85/2016/NĐ-CP.
+                                </p>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+                                    <div class="p-space-md rounded-lg bg-surface-container-low">
+                                        <h4
+                                            class="font-headline-xs text-headline-xs text-on-surface flex items-center gap-space-2xs">
+                                            <span class="material-symbols-outlined text-primary text-[18px]">dns</span>
+                                            Máy chủ &amp; SAN Storage
+                                        </h4>
+                                        <p class="font-body-md text-body-md text-on-surface-variant mt-space-2xs">
+                                            Thiết kế cụm máy chủ ảo hóa VMware/Proxmox, dự phòng nóng N+1 chống gián
+                                            đoạn dịch vụ.
+                                        </p>
+                                    </div>
+                                    <div class="p-space-md rounded-lg bg-surface-container-low">
+                                        <h4
+                                            class="font-headline-xs text-headline-xs text-on-surface flex items-center gap-space-2xs">
+                                            <span
+                                                class="material-symbols-outlined text-primary text-[18px]">vpn_lock</span>
+                                            Tường lửa &amp; Bảo mật Mạng
+                                        </h4>
+                                        <p class="font-body-md text-body-md text-on-surface-variant mt-space-2xs">
+                                            Triển khai giải pháp Next-Gen Firewall (NGFW), chống DDoS, phân tách mạng
+                                            nội bộ và vùng DMZ.
+                                        </p>
+                                    </div>
+                                    <div class="p-space-md rounded-lg bg-surface-container-low">
+                                        <h4
+                                            class="font-headline-xs text-headline-xs text-on-surface flex items-center gap-space-2xs">
+                                            <span
+                                                class="material-symbols-outlined text-primary text-[18px]">security_update_good</span>
+                                            Đánh giá An toàn Cấp độ 3
+                                        </h4>
+                                        <p class="font-body-md text-body-md text-on-surface-variant mt-space-2xs">
+                                            Lập hồ sơ đề xuất cấp độ, kiểm thử mã độc và tối ưu hóa hệ điều hành bảo vệ
+                                            dữ liệu bí mật.
+                                        </p>
+                                    </div>
+                                    <div class="p-space-md rounded-lg bg-surface-container-low">
+                                        <h4
+                                            class="font-headline-xs text-headline-xs text-on-surface flex items-center gap-space-2xs">
+                                            <span
+                                                class="material-symbols-outlined text-primary text-[18px]">settings_backup_restore</span>
+                                            Sao lưu DR &amp; Phục hồi Thảm họa
+                                        </h4>
+                                        <p class="font-body-md text-body-md text-on-surface-variant mt-space-2xs">
+                                            Giải pháp backup tự động đa điểm theo nguyên tắc 3-2-1, khôi phục dữ liệu
+                                            tức thì khi gặp sự cố.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="lg:col-span-5 flex flex-col justify-between p-space-xl rounded-xl bg-surface-container shadow-sm">
+                            <div>
+                                <h4 class="font-headline-md text-headline-md text-on-surface mb-space-sm">Đối tác Công
+                                    nghệ Hạ tầng</h4>
+                                <p class="font-body-md text-body-md text-on-surface-variant mb-space-lg">
+                                    TEKNOVA là đơn vị tích hợp hệ thống uy tín liên kết phân phối cùng các tập đoàn công
+                                    nghệ hàng đầu thế giới.
+                                </p>
+                                <div class="grid grid-cols-2 gap-space-sm mb-space-xl">
+                                    <div
+                                        class="p-space-md rounded-lg bg-surface-container-lowest text-center font-headline-xs text-headline-xs text-secondary">
+                                        DELL EMC
+                                    </div>
+                                    <div
+                                        class="p-space-md rounded-lg bg-surface-container-lowest text-center font-headline-xs text-headline-xs text-secondary">
+                                        CISCO
+                                    </div>
+                                    <div
+                                        class="p-space-md rounded-lg bg-surface-container-lowest text-center font-headline-xs text-headline-xs text-secondary">
+                                        FORTINET
+                                    </div>
+                                    <div
+                                        class="p-space-md rounded-lg bg-surface-container-lowest text-center font-headline-xs text-headline-xs text-secondary">
+                                        HPE
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="w-full py-space-sm px-space-md rounded-xl bg-primary text-on-primary text-center font-label-lg text-label-lg shadow-md hover:bg-primary-container transition-all"
+                                data-path="lien-he" href="#">
+                                Yêu cầu báo giá thiết bị &amp; Hạ tầng
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                <!-- Section 3: Quy trình triển khai 4 bước chuẩn mực (Horizontal Flow Moodboard Inspiration) -->
+                <section class="max-w-[1200px] mx-auto px-margin md:px-margin-md lg:px-margin-lg py-space-2xl">
+                    <div class="text-center max-w-2xl mx-auto mb-space-2xl">
+                        <div
+                            class="inline-flex items-center gap-space-2xs px-space-md py-space-3xs rounded-full bg-secondary-container/60 mb-space-2xs">
+                            <span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">PHƯƠNG PHÁP
+                                LUẬN</span>
+                        </div>
+                        <h2 class="font-headline-xl text-headline-xl text-on-surface">
+                            Quy trình Triển khai Chuẩn mực 4 Bước
+                        </h2>
+                        <p class="font-body-lg text-body-lg text-on-surface-variant mt-space-xs">
+                            Đảm bảo dự án bàn giao đúng tiến độ, tối ưu ngân sách đầu tư và đáp ứng tuyệt đối tiêu chuẩn
+                            kiểm duyệt của cơ quan chủ quản.
+                        </p>
+                    </div>
+                    <!-- Horizontal Cards with Step Markers -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md relative">
+                        <!-- Step 1 -->
+                        <div
+                            class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between hover:shadow-md transition-all">
+                            <div>
+                                <div class="flex items-center justify-between mb-space-md">
+                                    <span
+                                        class="px-space-sm py-space-3xs rounded-full bg-primary text-on-primary font-label-sm text-label-sm uppercase font-bold tracking-wider">
+                                        BƯỚC 01
+                                    </span>
+                                    <span
+                                        class="material-symbols-outlined text-secondary text-[24px]">troubleshoot</span>
+                                </div>
+                                <h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-2xs">
+                                    Khảo sát &amp; Kiến trúc
+                                </h3>
+                                <p class="font-body-md text-body-md text-on-surface-variant">
+                                    Đánh giá thực trạng hạ tầng, tiếp nhận yêu cầu nghiệp vụ chi tiết và lập hồ sơ phân
+                                    tích tính khả thi kỹ thuật.
+                                </p>
+                            </div>
+                            <div
+                                class="pt-space-md mt-space-md bg-surface-container-low/50 -mx-space-lg -mb-space-lg p-space-md rounded-b-xl">
+                                <span class="font-label-sm text-label-sm text-primary block">• Output: Bản vẽ SRS &amp;
+                                    Luồng dữ liệu</span>
+                            </div>
+                        </div>
+                        <!-- Step 2 -->
+                        <div
+                            class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between hover:shadow-md transition-all">
+                            <div>
+                                <div class="flex items-center justify-between mb-space-md">
+                                    <span
+                                        class="px-space-sm py-space-3xs rounded-full bg-primary text-on-primary font-label-sm text-label-sm uppercase font-bold tracking-wider">
+                                        BƯỚC 02
+                                    </span>
+                                    <span
+                                        class="material-symbols-outlined text-secondary text-[24px]">design_services</span>
+                                </div>
+                                <h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-2xs">
+                                    Thiết kế &amp; Prototype
+                                </h3>
+                                <p class="font-body-md text-body-md text-on-surface-variant">
+                                    Xây dựng bản mẫu tương tác UI/UX, mô phỏng trải nghiệm thao tác của người dùng cuối
+                                    và thống nhất kiến trúc CSDL.
+                                </p>
+                            </div>
+                            <div
+                                class="pt-space-md mt-space-md bg-surface-container-low/50 -mx-space-lg -mb-space-lg p-space-md rounded-b-xl">
+                                <span class="font-label-sm text-label-sm text-primary block">• Output: Interactive
+                                    Prototype &amp; DB Schema</span>
+                            </div>
+                        </div>
+                        <!-- Step 3 -->
+                        <div
+                            class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between hover:shadow-md transition-all">
+                            <div>
+                                <div class="flex items-center justify-between mb-space-md">
+                                    <span
+                                        class="px-space-sm py-space-3xs rounded-full bg-primary text-on-primary font-label-sm text-label-sm uppercase font-bold tracking-wider">
+                                        BƯỚC 03
+                                    </span>
+                                    <span
+                                        class="material-symbols-outlined text-secondary text-[24px]">developer_board</span>
+                                </div>
+                                <h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-2xs">
+                                    Phát triển &amp; Thử nghiệm
+                                </h3>
+                                <p class="font-body-md text-body-md text-on-surface-variant">
+                                    Lập trình Agile/Scrum theo từng sprint, kiểm thử tải (Load Test), rà soát bảo mật mã
+                                    nguồn và tập huấn chuyển giao.
+                                </p>
+                            </div>
+                            <div
+                                class="pt-space-md mt-space-md bg-surface-container-low/50 -mx-space-lg -mb-space-lg p-space-md rounded-b-xl">
+                                <span class="font-label-sm text-label-sm text-primary block">• Output: Hệ thống chạy thử
+                                    (UAT) đạt chuẩn</span>
+                            </div>
+                        </div>
+                        <!-- Step 4 -->
+                        <div
+                            class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between hover:shadow-md transition-all">
+                            <div>
+                                <div class="flex items-center justify-between mb-space-md">
+                                    <span
+                                        class="px-space-sm py-space-3xs rounded-full bg-primary text-on-primary font-label-sm text-label-sm uppercase font-bold tracking-wider">
+                                        BƯỚC 04
+                                    </span>
+                                    <span class="material-symbols-outlined text-secondary text-[24px]">support</span>
+                                </div>
+                                <h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-2xs">
+                                    Bảo trì &amp; Hỗ trợ 24/7
+                                </h3>
+                                <p class="font-body-md text-body-md text-on-surface-variant">
+                                    Triển khai chính thức lên môi trường Production, giám sát thông số thời gian thực và
+                                    hỗ trợ ứng cứu kỹ thuật 24/7.
+                                </p>
+                            </div>
+                            <div
+                                class="pt-space-md mt-space-md bg-surface-container-low/50 -mx-space-lg -mb-space-lg p-space-md rounded-b-xl">
+                                <span class="font-label-sm text-label-sm text-primary block">• Output: SLA bảo dưỡng
+                                    &amp; Biên bản nghiệm thu</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Section 4: SLA Quality Commitments Table -->
+                <section class="max-w-[1200px] mx-auto px-margin md:px-margin-md lg:px-margin-lg py-space-xl">
+                    <div class="p-space-xl rounded-xl bg-surface-container-lowest shadow-sm">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md pb-space-lg">
+                            <div>
+                                <div
+                                    class="inline-flex items-center gap-space-3xs text-primary font-label-sm text-label-sm uppercase tracking-wider">
+                                    <span class="material-symbols-outlined text-[16px]">verified_user</span>
+                                    SERVICE LEVEL AGREEMENT (SLA)
+                                </div>
+                                <h2 class="font-headline-lg text-headline-lg text-on-surface mt-space-3xs">
+                                    Bảng Cam kết Chất lượng Dịch vụ Doanh nghiệp
+                                </h2>
+                            </div>
+                            <span
+                                class="font-label-md text-label-md px-space-md py-space-xs rounded-lg bg-surface-container text-on-surface-variant shrink-0">
+                                Áp dụng cho mọi hợp đồng ký kết
+                            </span>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left font-body-md text-body-md">
+                                <thead>
+                                    <tr class="bg-surface-container-low text-on-surface">
+                                        <th
+                                            class="py-space-md px-space-lg font-headline-xs text-headline-xs rounded-l-lg">
+                                            Tiêu chí Cam kết</th>
+                                        <th class="py-space-md px-space-lg font-headline-xs text-headline-xs">Mức độ
+                                            Dịch vụ (SLA)</th>
+                                        <th class="py-space-md px-space-lg font-headline-xs text-headline-xs">Quy chuẩn
+                                            Pháp lý / Công nghệ</th>
+                                        <th
+                                            class="py-space-md px-space-lg font-headline-xs text-headline-xs rounded-r-lg">
+                                            Hình thức Xử lý</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-on-surface-variant">
+                                    <tr class="hover:bg-surface-container-low/40 transition-colors">
+                                        <td
+                                            class="py-space-md px-space-lg font-headline-xs text-headline-xs text-on-surface">
+                                            Tính liên tục hệ thống (Uptime)
+                                        </td>
+                                        <td class="py-space-md px-space-lg font-bold text-primary">
+                                            ≥ 99.9% / năm
+                                        </td>
+                                        <td class="py-space-md px-space-lg">
+                                            Tier-3 Data Center, Dual-WAN HA
+                                        </td>
+                                        <td class="py-space-md px-space-lg">
+                                            Tự động chuyển đổi dự phòng &lt; 30 giây
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-surface-container-low/40 transition-colors">
+                                        <td
+                                            class="py-space-md px-space-lg font-headline-xs text-headline-xs text-on-surface">
+                                            Ứng cứu khẩn cấp (Emergency SLA)
+                                        </td>
+                                        <td class="py-space-md px-space-lg font-bold text-primary">
+                                            ≤ 15 phút phản hồi
+                                        </td>
+                                        <td class="py-space-md px-space-lg">
+                                            Trực vận hành 24/7/365 Dedicated
+                                        </td>
+                                        <td class="py-space-md px-space-lg">
+                                            Cử kỹ sư can thiệp từ xa / tại chỗ
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-surface-container-low/40 transition-colors">
+                                        <td
+                                            class="py-space-md px-space-lg font-headline-xs text-headline-xs text-on-surface">
+                                            Tuân thủ Pháp lý Y tế &amp; Dữ liệu
+                                        </td>
+                                        <td class="py-space-md px-space-lg font-bold text-primary">
+                                            100% Khớp quy chuẩn
+                                        </td>
+                                        <td class="py-space-md px-space-lg">
+                                            TT 46/2018/TT-BYT &amp; TT 26/2025/TT-BYT
+                                        </td>
+                                        <td class="py-space-md px-space-lg">
+                                            Cập nhật miễn phí theo thông tư mới
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-surface-container-low/40 transition-colors">
+                                        <td
+                                            class="py-space-md px-space-lg font-headline-xs text-headline-xs text-on-surface">
+                                            Bảo mật An toàn Thông tin
+                                        </td>
+                                        <td class="py-space-md px-space-lg font-bold text-primary">
+                                            Cấp độ 3 Nhà nước
+                                        </td>
+                                        <td class="py-space-md px-space-lg">
+                                            Nghị định 85/2016/NĐ-CP &amp; ISO 27001
+                                        </td>
+                                        <td class="py-space-md px-space-lg">
+                                            Mã hóa AES-256 dữ liệu tại chỗ &amp; đường truyền
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+                <!-- Section 5: Consultation Form and Action Card -->
+                <section
+                    class="max-w-[1200px] mx-auto px-margin md:px-margin-md lg:px-margin-lg py-space-2xl mb-space-xl">
+                    <div
+                        class="relative rounded-2xl bg-gradient-to-br from-surface-container-low to-secondary-container/40 p-space-xl md:p-space-2xl overflow-hidden shadow-sm">
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+                            <!-- Text Info -->
+                            <div class="lg:col-span-5 flex flex-col gap-space-md">
+                                <div
+                                    class="inline-flex items-center gap-space-2xs px-space-md py-space-3xs rounded-full bg-primary/10 text-primary font-label-sm text-label-sm w-fit">
+                                    <span class="material-symbols-outlined text-[16px]">contact_support</span>
+                                    TƯ VẤN KIẾN TRÚC MIỄN PHÍ
+                                </div>
+                                <h2 class="font-headline-xl text-headline-xl text-on-surface">
+                                    Sẵn sàng Nâng cấp Hệ thống Công nghệ Cùng TEKNOVA?
+                                </h2>
+                                <p class="font-body-lg text-body-lg text-on-surface-variant">
+                                    Đội ngũ kiến trúc sư trưởng và chuyên gia giải pháp y tế số của chúng tôi sẽ phân
+                                    tích hiện trạng và gửi kế hoạch đề xuất sơ bộ trong vòng 24 giờ làm việc.
+                                </p>
+                                <div
+                                    class="flex flex-col gap-space-xs font-body-md text-body-md text-on-surface pt-space-xs">
+                                    <div class="flex items-center gap-space-xs">
+                                        <span
+                                            class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                        <span class="">Khảo sát hạ tầng &amp; tư vấn giải pháp không cam kết ràng
+                                            buộc</span>
+                                    </div>
+                                    <div class="flex items-center gap-space-xs">
+                                        <span
+                                            class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                        <span class="">Bảo mật tuyệt đối thông tin dữ liệu của khách hàng (NDA)</span>
+                                    </div>
+                                    <div class="flex items-center gap-space-xs">
+                                        <span
+                                            class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                        <span class="">Lộ trình chi phí minh bạch, chia giai đoạn rõ ràng</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Quick Form -->
+                            <div class="lg:col-span-7">
+                                <div class="p-space-xl rounded-xl bg-surface-container-lowest shadow-md">
+                                    <form class="flex flex-col gap-space-md" id="solutionConsultForm"
+                                        onsubmit="handleFormSubmit(event)">
+                                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+                                            <div>
+                                                <label
+                                                    class="block font-label-md text-label-md text-on-surface mb-space-2xs"
+                                                    for="fullName">
+                                                    Họ và tên của bạn <span class="text-error">*</span>
+                                                </label>
+                                                <input
+                                                    class="w-full px-space-md py-space-sm rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary transition-all"
+                                                    id="fullName" placeholder="Nguyễn Văn A" required="" type="text" />
+                                            </div>
+                                            <div>
+                                                <label
+                                                    class="block font-label-md text-label-md text-on-surface mb-space-2xs"
+                                                    for="phoneNumber">
+                                                    Số điện thoại liên hệ <span class="text-error">*</span>
+                                                </label>
+                                                <input
+                                                    class="w-full px-space-md py-space-sm rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary transition-all"
+                                                    id="phoneNumber" placeholder="09xx xxx xxx" required=""
+                                                    type="tel" />
+                                            </div>
+                                        </div>
+                                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+                                            <div>
+                                                <label
+                                                    class="block font-label-md text-label-md text-on-surface mb-space-2xs"
+                                                    for="workEmail">
+                                                    Email công việc <span class="text-error">*</span>
+                                                </label>
+                                                <input
+                                                    class="w-full px-space-md py-space-sm rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary transition-all"
+                                                    id="workEmail" placeholder="name@domain.vn" required=""
+                                                    type="email" />
+                                            </div>
+                                            <div>
+                                                <label
+                                                    class="block font-label-md text-label-md text-on-surface mb-space-2xs"
+                                                    for="organization">
+                                                    Cơ quan / Đơn vị công tác
+                                                </label>
+                                                <input
+                                                    class="w-full px-space-md py-space-sm rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary transition-all"
+                                                    id="organization" placeholder="Bệnh viện đa khoa / Tập đoàn..."
+                                                    type="text" />
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <label
+                                                class="block font-label-md text-label-md text-on-surface mb-space-2xs"
+                                                for="serviceCategory">
+                                                Lĩnh vực bạn quan tâm <span class="text-error">*</span>
+                                            </label>
+                                            <select
+                                                class="w-full px-space-md py-space-sm rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary transition-all"
+                                                id="serviceCategory" required="">
+                                                <option value="emr">Giải pháp Y tế Thông minh &amp; Bệnh án điện tử EMR
+                                                </option>
+                                                <option value="custom">Phát triển Phần mềm &amp; Ứng dụng Quản trị May
+                                                    đo</option>
+                                                <option value="cloud_ai">Chuyển đổi số, IOC Dashboard &amp; Ứng dụng AI
+                                                </option>
+                                                <option value="infrastructure">Hạ tầng Mạng, An toàn thông tin Cấp độ 3
+                                                    &amp; Thiết bị</option>
+                                                <option value="all">Tư vấn tổng thể chuyển đổi số toàn diện</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label
+                                                class="block font-label-md text-label-md text-on-surface mb-space-2xs"
+                                                for="notes">
+                                                Yêu cầu hoặc mục tiêu cụ thể
+                                            </label>
+                                            <textarea
+                                                class="w-full px-space-md py-space-sm rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary transition-all"
+                                                id="notes"
+                                                placeholder="Mô tả sơ lược hiện trạng quy mô bệnh viện/doanh nghiệp hoặc thời hạn mong muốn..."
+                                                rows="3"></textarea>
+                                        </div>
+                                        <div class="pt-space-2xs">
+                                            <button
+                                                class="w-full py-space-md px-space-lg rounded-xl bg-primary text-on-primary font-label-lg text-label-lg flex items-center justify-center gap-space-2xs shadow-md hover:bg-primary-container transition-all"
+                                                type="submit">
+                                                <span class="">Gửi yêu cầu &amp; Nhận đề xuất giải pháp</span>
+                                                <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+                                            </button>
+                                            <p class="hidden text-center text-primary font-label-md text-label-md mt-space-sm"
+                                                id="submitSuccessMsg">
+                                                ✓ Yêu cầu đã được tiếp nhận. Đội ngũ kỹ sư TEKNOVA sẽ liên hệ bạn ngay.
+                                            </p>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- Interactive Logic for Pillar Tabs & Submission -->
+            <script>
+                function switchPillar(targetId) {
+                    // Toggle Tab Buttons Appearance
+                    const buttons = document.querySelectorAll('.pillar-tab-btn');
+                    buttons.forEach(btn => {
+                        if (btn.getAttribute('data-target') === targetId) {
+                            btn.classList.remove('bg-surface-container-lowest', 'text-on-surface-variant', 'hover:bg-surface-container');
+                            btn.classList.add('bg-primary', 'text-on-primary', 'shadow-md');
+                        } else {
+                            btn.classList.remove('bg-primary', 'text-on-primary', 'shadow-md');
+                            btn.classList.add('bg-surface-container-lowest', 'text-on-surface-variant', 'hover:bg-surface-container');
+                        }
+                    });
+
+                    // Toggle Pillar Content Sections
+                    const contents = document.querySelectorAll('.pillar-content');
+                    contents.forEach(content => {
+                        if (content.id === targetId) {
+                            content.classList.remove('hidden');
+                        } else {
+                            content.classList.add('hidden');
+                        }
+                    });
+                }
+
+                function handleFormSubmit(event) {
+                    event.preventDefault();
+                    const successMsg = document.getElementById('submitSuccessMsg');
+                    if (successMsg) {
+                        successMsg.classList.remove('hidden');
+                        setTimeout(() => {
+                            document.getElementById('solutionConsultForm').reset();
+                        }, 1500);
+                    }
+                }
+            </script>
+        </div>
+    </main>
+    <footer class="w-full bg-surface-container-low pt-space-3xl pb-space-xl shadow-[0_-1px_8px_rgba(0,0,0,0.02)]">
+        <div class="max-w-[1200px] mx-auto px-margin md:px-margin-md lg:px-margin-lg">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-space-xl pb-space-2xl">
+                <div class="lg:col-span-4 flex flex-col items-start gap-space-sm">
+                    <div class="flex items-center gap-space-sm"><img
+                            alt="Image from https://teknova.com.vn/assets/logo-BiDi42zj.png"
+                            class="h-8 w-auto object-contain"
+                            src="https://lh3.googleusercontent.com/aida/AEtjO1U_1fuB7NnUFYE_RXwQ8cK0o8LL7TVMvHtXbR5Kn3uJ_1VMhVQVsv9KDlYIxZRDBydEcVSLxkto_pyO68RrYrimibn567O7XHNMRsnXdZ1pNWVNTFfU_tZ5BTtKDL4keTz-ZMf_CcVEEJbfCM8onGTrBH-agFRqK2VoITZY7zKoAmDnU2-1ChOI1Ua3hy9_CK74yrQIoiW18GjkQ6f5uTFvCHY4TBbANMTY3_-yyujHMwgfAhp4xyy0z1c" /><span
+                            class="font-headline-sm text-headline-sm text-primary font-bold">TEKNOVA</span></div>
+                    <div
+                        class="inline-flex items-center px-space-sm py-space-3xs rounded-full bg-surface-container-highest text-primary font-label-sm text-label-sm tracking-widest uppercase">
+                        NOW OR NEVER</div>
+                    <p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Công ty Cổ phần Đổi mới Sáng
+                        tạo TEKNOVA - Tiên phong giải pháp phần mềm, chuyển đổi số y tế, giáo dục, hành chính công và
+                        viễn thông.</p>
+                </div>
+                <div class="lg:col-span-3 flex flex-col gap-space-sm">
+                    <h4 class="font-headline-xs text-headline-xs text-on-surface">Lĩnh vực dịch vụ</h4>
+                    <ul class="flex flex-col gap-space-xs font-body-md text-body-md text-on-surface-variant">
+                        <li class=""><a class="hover:text-primary transition-colors" data-path="linh-vuc-hoat-dong"
+                                href="#">Phần mềm theo yêu cầu</a></li>
+                        <li class=""><a class="hover:text-primary transition-colors" data-path="linh-vuc-hoat-dong"
+                                href="#">Chuyển đổi số &amp; Cloud</a></li>
+                        <li class=""><a class="hover:text-primary transition-colors" data-path="linh-vuc-hoat-dong"
+                                href="#">Giải pháp Y tế Bệnh viện EMR</a></li>
+                        <li class=""><a class="hover:text-primary transition-colors" data-path="linh-vuc-hoat-dong"
+                                href="#">Phân phối thiết bị CNTT</a></li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-2 flex flex-col gap-space-sm">
+                    <h4 class="font-headline-xs text-headline-xs text-on-surface">Liên kết nhanh</h4>
+                    <ul class="flex flex-col gap-space-xs font-body-md text-body-md text-on-surface-variant">
+                        <li class=""><a class="hover:text-primary transition-colors" data-path="gioi-thieu" href="#">Về
+                                TEKNOVA</a></li>
+                        <li class=""><a class="hover:text-primary transition-colors" data-path="du-an-tieu-bieu"
+                                href="#">Dự án tiêu biểu</a></li>
+                        <li class=""><a class="hover:text-primary transition-colors" data-path="doi-ngu-chuyen-gia"
+                                href="#">Đội ngũ chuyên gia</a></li>
+                        <li class=""><a class="hover:text-primary transition-colors" data-path="gioi-thieu" href="#">Sơ
+                                đồ tổ chức</a></li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-3 flex flex-col gap-space-sm">
+                    <h4 class="font-headline-xs text-headline-xs text-on-surface">Thông tin liên hệ</h4>
+                    <div class="flex flex-col gap-space-xs font-body-md text-body-md text-on-surface-variant">
+                        <div class="flex items-start gap-space-xs"><span
+                                class="material-symbols-outlined text-[20px] text-primary shrink-0">location_on</span><span
+                                class="">K131/18 Lý Thái Tổ, Đà Nẵng</span></div>
+                        <div class="flex items-center gap-space-xs"><span
+                                class="material-symbols-outlined text-[20px] text-primary shrink-0">call</span><span
+                                class="">Hotline: 0935 722 579</span></div>
+                        <div class="flex items-center gap-space-xs"><span
+                                class="material-symbols-outlined text-[20px] text-primary shrink-0">mail</span><span
+                                class="">Teknova0925@gmail.com</span></div>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-sm font-body-sm text-body-sm text-secondary">
+                <p class="">© 2026 TEKNOVA. Tất cả quyền được bảo lưu.</p>
+                <div class="flex items-center gap-space-md"><a class="hover:text-primary transition-colors"
+                        href="#">Điều khoản sử dụng</a><a class="hover:text-primary transition-colors" href="#">Chính
+                        sách bảo mật</a></div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
