@@ -259,10 +259,6 @@
       position: relative !important;
       letter-spacing: -0.02em;
       vertical-align: baseline !important;
-      transition: filter 0.3s ease;
-    }
-    .motion-number-trend:hover {
-      filter: drop-shadow(0 2px 8px rgba(0, 102, 204, 0.25));
     }
     .motion-digit-viewport {
       display: inline-block !important;
@@ -327,7 +323,7 @@
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           const el = entry.target;
-          if (el._motionAnimate) {
+          if (el._motionAnimate && !el._motionHasAnimated) {
             el._motionAnimate();
             observer.unobserve(el);
           }
@@ -394,11 +390,9 @@
         return;
       }
 
-      let lastTrigger = 0;
       function animate() {
-        const now = Date.now();
-        if (now - lastTrigger < 500) return;
-        lastTrigger = now;
+        if (el._motionHasAnimated) return;
+        el._motionHasAnimated = true;
 
         digitStrips.forEach(function (item) {
           item.strip.style.transition = 'none';
@@ -428,15 +422,14 @@
 
       el._motionAnimate = animate;
 
-      // Card hover re-trigger
-      const card = el.closest('div, section');
-      if (card) {
-        card.addEventListener('mouseenter', function () {
-          animate();
-        });
+      // Run once immediately if already visible on page load, otherwise wait for scroll
+      const rect = el.getBoundingClientRect();
+      const inView = rect.top < (window.innerHeight || document.documentElement.clientHeight) && rect.bottom > 0;
+      if (inView) {
+        animate();
+      } else {
+        observer.observe(el);
       }
-
-      observer.observe(el);
     });
   }
 
