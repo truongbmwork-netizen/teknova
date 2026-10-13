@@ -247,6 +247,199 @@
     if (drawer) drawer.classList.add('hidden');
   }
 
+  // ── Motion Number Trend Engine (motion.dev number-trend) ───────────────────
+  const NUMBER_TREND_STYLES = `
+    .motion-number-trend {
+      display: inline-flex !important;
+      align-items: baseline !important;
+      justify-content: center !important;
+      font-variant-numeric: tabular-nums !important;
+      font-feature-settings: "tnum" !important;
+      line-height: 1 !important;
+      position: relative !important;
+      letter-spacing: -0.02em;
+      vertical-align: baseline !important;
+      transition: filter 0.3s ease;
+    }
+    .motion-number-trend:hover {
+      filter: drop-shadow(0 2px 8px rgba(0, 102, 204, 0.25));
+    }
+    .motion-digit-viewport {
+      display: inline-block !important;
+      height: 1em !important;
+      line-height: 1em !important;
+      overflow: hidden !important;
+      vertical-align: baseline !important;
+      position: relative !important;
+      width: 1ch !important;
+      text-align: center !important;
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 18%, #000 82%, transparent 100%);
+      mask-image: linear-gradient(to bottom, transparent 0%, #000 18%, #000 82%, transparent 100%);
+    }
+    .motion-digit-strip {
+      display: flex !important;
+      flex-direction: column !important;
+      transform: translateY(0);
+      will-change: transform;
+      transition: transform 1.35s cubic-bezier(0.34, 1.35, 0.64, 1);
+    }
+    .motion-digit-item {
+      height: 1em !important;
+      line-height: 1em !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      user-select: none !important;
+    }
+    .motion-char-static {
+      display: inline-block !important;
+      height: 1em !important;
+      line-height: 1em !important;
+      vertical-align: baseline !important;
+      transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .motion-trend-pop {
+      animation: motionTrendPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
+    @keyframes motionTrendPop {
+      0% { transform: scale(0.65) translateY(4px); opacity: 0; }
+      70% { transform: scale(1.18) translateY(-2px); opacity: 1; }
+      100% { transform: scale(1) translateY(0); opacity: 1; }
+    }
+  `;
+
+  function injectNumberTrendStyles() {
+    if (document.getElementById('motion-number-trend-styles')) return;
+    const style = document.createElement('style');
+    style.id = 'motion-number-trend-styles';
+    style.textContent = NUMBER_TREND_STYLES;
+    document.head.appendChild(style);
+  }
+
+  function initNumberTrends() {
+    injectNumberTrendStyles();
+    const elements = document.querySelectorAll('.font-metric-stat, [data-number-trend]');
+    if (!elements.length) return;
+
+    const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          if (el._motionAnimate) {
+            el._motionAnimate();
+            observer.unobserve(el);
+          }
+        }
+      });
+    }, { threshold: 0.15 });
+
+    elements.forEach(function (el, index) {
+      if (el._motionSetup) return;
+      el._motionSetup = true;
+
+      const raw = el.getAttribute('data-raw') || el.textContent.trim();
+      el.setAttribute('data-raw', raw);
+      el.setAttribute('aria-label', raw);
+
+      el.classList.add('motion-number-trend');
+      el.innerHTML = '';
+
+      const digitStrips = [];
+      const staticChars = [];
+
+      Array.from(raw).forEach(function (ch) {
+        if (/[0-9]/.test(ch)) {
+          const targetDigit = parseInt(ch, 10);
+          const viewport = document.createElement('span');
+          viewport.className = 'motion-digit-viewport';
+          viewport.setAttribute('aria-hidden', 'true');
+
+          const strip = document.createElement('span');
+          strip.className = 'motion-digit-strip';
+
+          const targetIndex = 10 + targetDigit;
+          for (let cycle = 0; cycle < 2; cycle++) {
+            for (let d = 0; d <= 9; d++) {
+              const item = document.createElement('span');
+              item.className = 'motion-digit-item';
+              item.textContent = d;
+              strip.appendChild(item);
+            }
+          }
+          const extra = document.createElement('span');
+          extra.className = 'motion-digit-item';
+          extra.textContent = (targetDigit + 1) % 10;
+          strip.appendChild(extra);
+
+          viewport.appendChild(strip);
+          el.appendChild(viewport);
+          digitStrips.push({ strip: strip, targetIndex: targetIndex });
+        } else {
+          const charSpan = document.createElement('span');
+          charSpan.className = 'motion-char-static';
+          charSpan.innerHTML = ch === ' ' ? '&nbsp;' : ch;
+          charSpan.setAttribute('aria-hidden', 'true');
+          el.appendChild(charSpan);
+          staticChars.push(charSpan);
+        }
+      });
+
+      if (prefersReducedMotion) {
+        digitStrips.forEach(function (item) {
+          item.strip.style.transition = 'none';
+          item.strip.style.transform = 'translateY(-' + item.targetIndex + 'em)';
+        });
+        return;
+      }
+
+      let lastTrigger = 0;
+      function animate() {
+        const now = Date.now();
+        if (now - lastTrigger < 500) return;
+        lastTrigger = now;
+
+        digitStrips.forEach(function (item) {
+          item.strip.style.transition = 'none';
+          item.strip.style.transform = 'translateY(0)';
+        });
+        staticChars.forEach(function (ch) {
+          ch.classList.remove('motion-trend-pop');
+          ch.style.opacity = '0.4';
+        });
+
+        void el.offsetHeight; // Reflow
+
+        const baseDelay = (index % 4) * 110;
+        digitStrips.forEach(function (item, idx) {
+          const staggerDelay = baseDelay + (idx * 65);
+          item.strip.style.transition = 'transform 1.35s cubic-bezier(0.34, 1.35, 0.64, 1) ' + staggerDelay + 'ms';
+          item.strip.style.transform = 'translateY(-' + item.targetIndex + 'em)';
+        });
+
+        setTimeout(function () {
+          staticChars.forEach(function (ch) {
+            ch.classList.add('motion-trend-pop');
+            ch.style.opacity = '1';
+          });
+        }, baseDelay + (digitStrips.length * 65) + 300);
+      }
+
+      el._motionAnimate = animate;
+
+      // Card hover re-trigger
+      const card = el.closest('div, section');
+      if (card) {
+        card.addEventListener('mouseenter', function () {
+          animate();
+        });
+      }
+
+      observer.observe(el);
+    });
+  }
+
   // ── Boot ─────────────────────────────────────────────────────────────────
   function boot() {
     applyRoutes();
@@ -254,6 +447,7 @@
     initMobileMenu();
     handleHashOnLoad();
     prefetchAllPages();
+    initNumberTrends();
 
     // Dismiss preloader smoothly
     setTimeout(dismissPreloader, 150);
