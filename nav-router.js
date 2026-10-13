@@ -265,6 +265,7 @@
       height: 1em !important;
       line-height: 1em !important;
       overflow: hidden !important;
+      clip-path: inset(0 0 0 0) !important;
       vertical-align: baseline !important;
       position: relative !important;
       width: 1ch !important;
