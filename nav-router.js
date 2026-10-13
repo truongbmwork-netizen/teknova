@@ -434,6 +434,148 @@
     });
   }
 
+  // ── Motion Scroll Split Text Engine (motion.dev split-text) ───────────────
+  const SPLIT_TEXT_STYLES = `
+    .motion-split-word {
+      display: inline-block !important;
+      will-change: transform, opacity;
+      transform: translateY(22px);
+      opacity: 0;
+      transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .motion-split-word.motion-split-in {
+      transform: translateY(0) !important;
+      opacity: 1 !important;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .motion-split-word {
+        transform: none !important;
+        opacity: 1 !important;
+        transition: none !important;
+      }
+    }
+  `;
+
+  function injectSplitTextStyles() {
+    if (document.getElementById('motion-split-text-styles')) return;
+    const style = document.createElement('style');
+    style.id = 'motion-split-text-styles';
+    style.textContent = SPLIT_TEXT_STYLES;
+    document.head.appendChild(style);
+  }
+
+  function initSplitText() {
+    injectSplitTextStyles();
+
+    const targets = document.querySelectorAll('h1, h2, [data-split-text], .split-text');
+    if (!targets.length) return;
+
+    const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const splitObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          if (el._motionSplitTrigger && !el._motionSplitHasAnimated) {
+            el._motionSplitTrigger();
+            splitObserver.unobserve(el);
+          }
+        }
+      });
+    }, {
+      threshold: 0.15,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    targets.forEach(function (el) {
+      if (el._motionSplitDone || el.classList.contains('no-split') || el.classList.contains('font-metric-stat') || el.hasAttribute('data-number-trend')) return;
+      el._motionSplitDone = true;
+
+      // Preserve full accessible text for screen readers
+      const fullText = el.textContent.replace(/\s+/g, ' ').trim();
+      el.setAttribute('aria-label', fullText);
+
+      const words = [];
+
+      function processNode(node) {
+        if (node.nodeType === Node.TEXT_NODE) {
+          const text = node.nodeValue;
+          if (!text) return;
+
+          const tokens = text.split(/(\s+)/);
+          const frag = document.createDocumentFragment();
+
+          tokens.forEach(function (token) {
+            if (/^\s+$/.test(token)) {
+              frag.appendChild(document.createTextNode(' '));
+            } else if (token.length > 0) {
+              const wordSpan = document.createElement('span');
+              wordSpan.className = 'motion-split-word';
+              wordSpan.setAttribute('aria-hidden', 'true');
+              wordSpan.textContent = token;
+              frag.appendChild(wordSpan);
+              words.push(wordSpan);
+            }
+          });
+
+          node.parentNode.replaceChild(frag, node);
+        } else if (node.nodeType === Node.ELEMENT_NODE) {
+          if (node.nodeName === 'BR') return;
+
+          // Check if this element uses gradient text clipping (bg-clip-text)
+          const isGradient = node.classList.contains('bg-clip-text') ||
+                             node.classList.contains('text-transparent') ||
+                             (window.getComputedStyle && (getComputedStyle(node).webkitBackgroundClip === 'text' || getComputedStyle(node).backgroundClip === 'text'));
+
+          if (isGradient) {
+            // Treat the gradient element as a single animated unit to preserve seamless background-clip
+            node.classList.add('motion-split-word');
+            node.setAttribute('aria-hidden', 'true');
+            words.push(node);
+          } else {
+            // For standard styled spans, links or formatting, recurse into children
+            Array.from(node.childNodes).forEach(function (child) {
+              processNode(child);
+            });
+          }
+        }
+      }
+
+      Array.from(el.childNodes).forEach(function (child) {
+        processNode(child);
+      });
+
+      if (prefersReducedMotion) {
+        words.forEach(function (w) {
+          w.classList.add('motion-split-in');
+        });
+        return;
+      }
+
+      function triggerAnimation() {
+        if (el._motionSplitHasAnimated) return;
+        el._motionSplitHasAnimated = true;
+
+        words.forEach(function (w, idx) {
+          const delay = idx * 42; // 42ms stagger per word
+          setTimeout(function () {
+            w.classList.add('motion-split-in');
+          }, delay);
+        });
+      }
+
+      el._motionSplitTrigger = triggerAnimation;
+
+      const rect = el.getBoundingClientRect();
+      const inView = rect.top < (window.innerHeight || document.documentElement.clientHeight) && rect.bottom > 0;
+      if (inView) {
+        setTimeout(triggerAnimation, 220);
+      } else {
+        splitObserver.observe(el);
+      }
+    });
+  }
+
   // ── Boot ─────────────────────────────────────────────────────────────────
   function boot() {
     applyRoutes();
@@ -442,6 +584,7 @@
     handleHashOnLoad();
     prefetchAllPages();
     initNumberTrends();
+    initSplitText();
 
     // Dismiss preloader smoothly
     setTimeout(dismissPreloader, 150);
