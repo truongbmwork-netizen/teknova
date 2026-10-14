@@ -588,8 +588,8 @@
     });
   }
 
-  // ── Team Showcase Carousel Engine ─────────────────────────────────────────
-  function initTeamCarousel() {
+  // ── Team Showcase Carousel Engine (Dynamic 12 Key Personnel) ──
+function initTeamCarousel() {
     const track = document.getElementById('team-carousel-track');
     const prevBtn = document.getElementById('team-carousel-prev');
     const nextBtn = document.getElementById('team-carousel-next');
@@ -599,209 +599,119 @@
     if (!track) return;
 
     function getCardWidth() {
-      const card = track.querySelector('.team-card');
-      if (!card) return 360;
-      const style = window.getComputedStyle(track);
-      const gap = parseFloat(style.columnGap || style.gap) || 24;
-      return card.offsetWidth + gap;
+        const card = track.querySelector('.team-card');
+        if (!card) return 360;
+        const style = window.getComputedStyle(track);
+        const gap = parseFloat(style.columnGap || style.gap) || 24;
+        return card.offsetWidth + gap;
     }
 
+    const cards = track.querySelectorAll('.team-card');
+    const totalCards = cards.length || 12;
+
     function scrollNext() {
-      const cardWidth = getCardWidth();
-      const maxScroll = track.scrollWidth - track.clientWidth;
-      if (track.scrollLeft >= maxScroll - 15) {
-        track.scrollTo({ left: 0, behavior: 'smooth' });
-      } else {
-        track.scrollBy({ left: cardWidth, behavior: 'smooth' });
-      }
+        const cardWidth = getCardWidth();
+        const maxScroll = track.scrollWidth - track.clientWidth;
+        if (track.scrollLeft >= maxScroll - 20) {
+            track.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+            track.scrollBy({ left: cardWidth, behavior: 'smooth' });
+        }
     }
 
     function scrollPrev() {
-      const cardWidth = getCardWidth();
-      if (track.scrollLeft <= 15) {
-        const maxScroll = track.scrollWidth - track.clientWidth;
-        track.scrollTo({ left: maxScroll, behavior: 'smooth' });
-      } else {
-        track.scrollBy({ left: -cardWidth, behavior: 'smooth' });
-      }
+        const cardWidth = getCardWidth();
+        if (track.scrollLeft <= 20) {
+            const maxScroll = track.scrollWidth - track.clientWidth;
+            track.scrollTo({ left: maxScroll, behavior: 'smooth' });
+        } else {
+            track.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+        }
     }
 
-    if (nextBtn) nextBtn.addEventListener('click', scrollNext);
-    if (prevBtn) prevBtn.addEventListener('click', scrollPrev);
+    if (nextBtn) nextBtn.onclick = scrollNext;
+    if (prevBtn) prevBtn.onclick = scrollPrev;
 
     let scrollTimeout = null;
     function updateActiveState() {
-      const cardWidth = getCardWidth();
-      if (!cardWidth) return;
-      const rawIndex = Math.round(track.scrollLeft / cardWidth);
-      const activeIndex = rawIndex % 3;
+        const cardWidth = getCardWidth();
+        if (!cardWidth) return;
+        const activeIndex = Math.min(Math.max(0, Math.round(track.scrollLeft / cardWidth)), totalCards - 1);
 
-      if (counterEl) {
-        counterEl.textContent = '0' + (activeIndex + 1);
-      }
-
-      dots.forEach(function (dot, idx) {
-        if (idx === activeIndex) {
-          dot.className = 'team-dot w-7 h-2 rounded-full bg-primary transition-all duration-300 focus:outline-none';
-          dot.setAttribute('aria-current', 'true');
-        } else {
-          dot.className = 'team-dot w-2 h-2 rounded-full bg-outline-variant/40 hover:bg-outline-variant transition-all duration-300 focus:outline-none';
-          dot.removeAttribute('aria-current');
+        if (counterEl) {
+            counterEl.textContent = String(activeIndex + 1).padStart(2, '0') + ' / ' + String(totalCards).padStart(2, '0');
         }
-      });
+
+        const allDots = document.querySelectorAll('.team-dot');
+        allDots.forEach(function (dot, idx) {
+            if (idx === activeIndex) {
+                dot.className = 'team-dot w-7 h-2 rounded-full bg-primary transition-all duration-300 focus:outline-none';
+                dot.setAttribute('aria-current', 'true');
+            } else {
+                dot.className = 'team-dot w-2 h-2 rounded-full bg-outline-variant/40 hover:bg-outline-variant transition-all duration-300 focus:outline-none';
+                dot.removeAttribute('aria-current');
+            }
+        });
     }
 
     track.addEventListener('scroll', function () {
-      if (scrollTimeout) cancelAnimationFrame(scrollTimeout);
-      scrollTimeout = requestAnimationFrame(updateActiveState);
+        if (scrollTimeout) cancelAnimationFrame(scrollTimeout);
+        scrollTimeout = requestAnimationFrame(updateActiveState);
     }, { passive: true });
 
     dots.forEach(function (dot) {
-      dot.addEventListener('click', function () {
-        const idx = parseInt(dot.getAttribute('data-index'), 10) || 0;
-        const cardWidth = getCardWidth();
-        track.scrollTo({ left: idx * cardWidth, behavior: 'smooth' });
-      });
+        dot.addEventListener('click', function () {
+            const idx = parseInt(this.getAttribute('data-index'), 10);
+            if (!isNaN(idx)) {
+                const cardWidth = getCardWidth();
+                track.scrollTo({ left: idx * cardWidth, behavior: 'smooth' });
+            }
+        });
     });
+}
 
-    let isDown = false;
-    let startX = 0;
-    let scrollStart = 0;
-
-    track.addEventListener('mousedown', function (e) {
-      isDown = true;
-      track.classList.add('cursor-grabbing');
-      startX = e.pageX - track.offsetLeft;
-      scrollStart = track.scrollLeft;
-    });
-
-    window.addEventListener('mouseup', function () {
-      if (!isDown) return;
-      isDown = false;
-      track.classList.remove('cursor-grabbing');
-    });
-
-    track.addEventListener('mousemove', function (e) {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - track.offsetLeft;
-      const walk = (x - startX) * 1.5;
-      track.scrollLeft = scrollStart - walk;
-    });
-  }
-
-  // ── Physics Inertia Smooth Scroll Engine (Pure Momentum, Zero Warp) ─────
-  function initSmoothScroll() {
-    // Inject required styles for silky smooth momentum scrolling
-    if (!document.getElementById('teknova-lenis-styles')) {
-      const style = document.createElement('style');
-      style.id = 'teknova-lenis-styles';
-      style.textContent = `
-        html.lenis, html.lenis body {
-          height: auto;
-        }
-        .lenis.lenis-smooth {
-          scroll-behavior: auto !important;
-        }
-        .lenis.lenis-smooth [data-lenis-prevent] {
-          overscroll-behavior: contain;
-        }
-        .lenis.lenis-stopped {
-          overflow: hidden;
-        }
-        .lenis.lenis-scrolling iframe {
-          pointer-events: none;
-        }
-      `;
-      document.head.appendChild(style);
+// ── Global Certificate / Document Modal Viewer ───────────────────
+window.openCertModal = function(imgSrc, title) {
+    let modal = document.getElementById('certModal');
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'certModal';
+        modal.className = 'fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-md transition-opacity duration-300';
+        modal.innerHTML = `
+            <div class="relative max-w-4xl max-h-[92vh] w-full bg-surface-container-lowest rounded-2xl overflow-hidden shadow-2xl flex flex-col border border-surface-container">
+                <div class="p-4 border-b border-surface-container flex items-center justify-between bg-surface-container-low">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary text-[22px]">verified</span>
+                        <h4 id="certModalTitle" class="font-headline-sm text-headline-sm text-on-surface font-bold truncate"></h4>
+                    </div>
+                    <button onclick="closeCertModal()" class="w-9 h-9 rounded-full bg-surface-container hover:bg-surface-container-highest flex items-center justify-center text-on-surface transition-colors cursor-pointer">
+                        <span class="material-symbols-outlined text-[20px]">close</span>
+                    </button>
+                </div>
+                <div class="p-3 overflow-auto flex items-center justify-center bg-black/5 min-h-[300px]">
+                    <img id="certModalImg" src="" alt="Văn bằng chứng chỉ" class="max-h-[75vh] w-auto max-w-full object-contain rounded-lg shadow-md" />
+                </div>
+                <div class="p-3 border-t border-surface-container bg-surface-container-low flex items-center justify-between text-[12px] text-secondary">
+                    <span>Nguồn: Hồ sơ năng lực Công ty Cổ phần Đổi mới Sáng tạo Teknova (2026)</span>
+                    <button onclick="closeCertModal()" class="px-3 py-1 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-highest font-medium transition-colors">Đóng</button>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(modal);
+        modal.addEventListener('click', function(e) {
+            if (e.target === this) closeCertModal();
+        });
     }
+    document.getElementById('certModalTitle').textContent = title || 'Văn bằng chứng chỉ nhân sự Teknova';
+    document.getElementById('certModalImg').src = imgSrc;
+    modal.classList.remove('hidden');
+    modal.style.display = 'flex';
+};
 
-    function setupLenis() {
-      if (typeof Lenis === 'undefined') return;
-      if (window.__lenis) return; // Prevent duplicate instantiation
-
-      const lenis = new Lenis({
-        duration: 1.15, // Thời lượng lướt mượt vật lý
-        easing: function (t) {
-          return Math.min(1, 1.001 - Math.pow(2, -10 * t));
-        },
-        orientation: 'vertical',
-        gestureOrientation: 'vertical',
-        smoothWheel: true,
-        wheelMultiplier: 1.0, // Cường độ lực cuộn (intensity)
-        touchMultiplier: 1.5,
-        infinite: false
-      });
-
-      window.__lenis = lenis;
-
-      function raf(time) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-      }
-      requestAnimationFrame(raf);
+window.closeCertModal = function() {
+    const modal = document.getElementById('certModal');
+    if (modal) {
+        modal.classList.add('hidden');
+        modal.style.display = 'none';
     }
-
-    if (typeof Lenis !== 'undefined') {
-      setupLenis();
-    } else {
-      const s = document.createElement('script');
-      s.src = 'https://unpkg.com/lenis@1.1.18/dist/lenis.min.js';
-      s.onload = setupLenis;
-      document.head.appendChild(s);
-    }
-  }
-
-  // ── 100% Synchronized Header Navigation ───────────────────────────────────
-  function syncHeaderNav() {
-    const desktopNav = document.querySelector('header nav');
-    const mobileDrawer = document.getElementById('mobile-menu-drawer');
-
-    const canonicalDesktopHtml = `
-      <a class="font-medium whitespace-nowrap text-[13px] text-on-surface-variant hover:text-primary transition-colors" data-path="trang-chu" href="index.html">Trang chủ</a>
-      <a class="font-medium whitespace-nowrap text-[13px] text-on-surface-variant hover:text-primary transition-colors" data-path="gioi-thieu" href="gioithieu.html">Giới thiệu</a>
-      <a class="font-medium whitespace-nowrap text-[13px] text-on-surface-variant hover:text-primary transition-colors" data-path="linh-vuc-hoat-dong" href="lichvuc.html">Lĩnh vực hoạt động</a>
-      <a class="font-medium whitespace-nowrap text-[13px] text-on-surface-variant hover:text-primary transition-colors" data-path="du-an-tieu-bieu" href="duan.html">Dự án tiêu biểu</a>
-      <a class="font-medium whitespace-nowrap text-[13px] text-on-surface-variant hover:text-primary transition-colors" data-path="lien-he" href="gioithieu.html#lien-he">Liên hệ</a>
-    `;
-
-    const canonicalMobileHtml = `
-      <a class="py-2 text-[13px] font-medium text-on-surface-variant hover:text-primary transition-colors border-b border-outline-variant/10" data-path="trang-chu" href="index.html">Trang chủ</a>
-      <a class="py-2 text-[13px] font-medium text-on-surface-variant hover:text-primary transition-colors border-b border-outline-variant/10" data-path="gioi-thieu" href="gioithieu.html">Giới thiệu</a>
-      <a class="py-2 text-[13px] font-medium text-on-surface-variant hover:text-primary transition-colors border-b border-outline-variant/10" data-path="linh-vuc-hoat-dong" href="lichvuc.html">Lĩnh vực hoạt động</a>
-      <a class="py-2 text-[13px] font-medium text-on-surface-variant hover:text-primary transition-colors border-b border-outline-variant/10" data-path="du-an-tieu-bieu" href="duan.html">Dự án tiêu biểu</a>
-      <a class="py-2 text-[13px] font-medium text-on-surface-variant hover:text-primary transition-colors" data-path="lien-he" href="gioithieu.html#lien-he">Liên hệ khảo sát</a>
-    `;
-
-    if (desktopNav) desktopNav.innerHTML = canonicalDesktopHtml.trim();
-    if (mobileDrawer) mobileDrawer.innerHTML = canonicalMobileHtml.trim();
-  }
-
-  // ── Boot ─────────────────────────────────────────────────────────────────
-  function boot() {
-    syncHeaderNav();
-    applyRoutes();
-    highlightActive();
-    initMobileMenu();
-    handleHashOnLoad();
-    prefetchAllPages();
-    initNumberTrends();
-    initSplitText();
-    initTeamCarousel();
-    initSmoothScroll();
-
-    // Dismiss preloader smoothly
-    setTimeout(dismissPreloader, 150);
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', boot);
-  } else {
-    boot();
-  }
-
-  // Window load safety fallback
-  window.addEventListener('load', function () {
-    setTimeout(dismissPreloader, 100);
-  });
-})();
+};)();
