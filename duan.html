@@ -309,443 +309,690 @@
                     </div>
                 </section>
                 <!-- Filter Control Bar -->
-                <section class="max-w-[1200px] mx-auto px-margin md:px-margin-md lg:px-margin-lg pb-space-lg">
-                    <div
-                        class="flex items-center justify-center flex-wrap gap-space-xs p-space-xs bg-surface-container-low/80 backdrop-blur-lg rounded-2xl shadow-sm">
-                        <button
-                            class="filter-btn active-filter px-space-lg py-space-xs rounded-xl font-label-md text-label-md transition-all bg-primary text-on-primary shadow-sm flex items-center gap-space-2xs"
-                            data-filter="all" onclick="filterProjects('all')">
-                            <span class="material-symbols-outlined text-[18px]">apps</span>
-                            <span class="">Tất cả dự án</span>
-                        </button>
-                        <button
-                            class="filter-btn px-space-lg py-space-xs rounded-xl font-label-md text-label-md transition-all text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest flex items-center gap-space-2xs"
-                            data-filter="emr" onclick="filterProjects('emr')">
-                            <span class="material-symbols-outlined text-[18px]">local_hospital</span>
-                            <span class="">Y tế &amp; Bệnh án Điện tử (EMR)</span>
-                        </button>
-                        <button
-                            class="filter-btn px-space-lg py-space-xs rounded-xl font-label-md text-label-md transition-all text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest flex items-center gap-space-2xs"
-                            data-filter="public-admin" onclick="filterProjects('public-admin')">
-                            <span class="material-symbols-outlined text-[18px]">account_balance</span>
-                            <span class="">Hành chính công &amp; Dân số</span>
-                        </button>
-                        <button
-                            class="filter-btn px-space-lg py-space-xs rounded-xl font-label-md text-label-md transition-all text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest flex items-center gap-space-2xs"
-                            data-filter="zalo-oa" onclick="filterProjects('zalo-oa')">
-                            <span class="material-symbols-outlined text-[18px]">chat</span>
-                            <span class="">Tích hợp Zalo OA &amp; Tiện ích số</span>
-                        </button>
-                        <button
-                            class="filter-btn px-space-lg py-space-xs rounded-xl font-label-md text-label-md transition-all text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest flex items-center gap-space-2xs"
-                            data-filter="cashless" onclick="filterProjects('cashless')">
-                            <span class="material-symbols-outlined text-[18px]">payments</span>
-                            <span class="">Thanh toán số không tiền mặt</span>
-                        </button>
-                    </div>
-                </section>
+    <section class="max-w-[1200px] mx-auto px-margin md:px-margin-md lg:px-margin-lg pb-space-lg">
+        <div class="flex items-center justify-center flex-wrap gap-space-xs p-space-xs bg-surface-container-low/80 backdrop-blur-lg rounded-2xl shadow-sm">
+            <button class="filter-btn active-filter px-space-lg py-space-xs rounded-xl font-label-md text-label-md transition-all bg-primary text-on-primary shadow-sm flex items-center gap-space-2xs cursor-pointer" data-filter="all" onclick="filterProjects('all')">
+                <span class="material-symbols-outlined text-[18px]">apps</span>
+                <span>Tất cả dự án (22)</span>
+            </button>
+            <button class="filter-btn px-space-lg py-space-xs rounded-xl font-label-md text-label-md transition-all text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest flex items-center gap-space-2xs cursor-pointer" data-filter="emr" onclick="filterProjects('emr')">
+                <span class="material-symbols-outlined text-[18px]">local_hospital</span>
+                <span>Y tế &amp; Bệnh án Điện tử EMR (08)</span>
+            </button>
+            <button class="filter-btn px-space-lg py-space-xs rounded-xl font-label-md text-label-md transition-all text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest flex items-center gap-space-2xs cursor-pointer" data-filter="zalo-oa" onclick="filterProjects('zalo-oa')">
+                <span class="material-symbols-outlined text-[18px]">chat</span>
+                <span>Zalo OA &amp; Kênh số hóa (06)</span>
+            </button>
+            <button class="filter-btn px-space-lg py-space-xs rounded-xl font-label-md text-label-md transition-all text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest flex items-center gap-space-2xs cursor-pointer" data-filter="public-admin" onclick="filterProjects('public-admin')">
+                <span class="material-symbols-outlined text-[18px]">account_balance</span>
+                <span>Chính quyền số &amp; Dữ liệu TP (08)</span>
+            </button>
+        </div>
+    </section>
                 <!-- Case Studies Bento Grid -->
                 <section class="max-w-[1200px] mx-auto px-margin md:px-margin-md lg:px-margin-lg pb-space-3xl">
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-space-lg" id="project-grid">
-                        <!-- Project 1: Bệnh viện Phổi Đà Nẵng EMR (Featured 8 Cols) -->
-                        <article
-                            class="project-card lg:col-span-8 flex flex-col justify-between p-space-xl rounded-3xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_4px_24px_rgba(65, 93, 168,0.06)] hover:shadow-[0_16px_36px_rgba(65, 93, 168,0.12)] transition-all duration-300 group card-elevate"
-                            data-category="emr">
-                            <div>
-                                <div class="flex flex-wrap items-center justify-between gap-space-xs pb-space-md">
-                                    <div class="flex items-center gap-space-2xs">
-                                        <span
-                                            class="px-space-sm py-1 rounded-full bg-surface-container-highest text-primary font-label-sm text-label-sm font-bold uppercase tracking-wide">Y
-                                            tế &amp; Bệnh viện số</span>
-                                        <span
-                                            class="px-space-sm py-1 rounded-full bg-secondary-container/40 text-secondary font-label-sm text-label-sm">Năm
-                                            2024 - 2025</span>
-                                    </div>
-                                    <div
-                                        class="flex items-center gap-space-2xs text-secondary font-label-md text-label-md">
-                                        <span class="material-symbols-outlined text-primary text-[18px]">verified</span>
-                                        <span class="">Khách hàng chính thức</span>
-                                    </div>
-                                </div>
-                                <div class="flex items-center gap-space-xs my-space-xs">
-                                    <div
-                                        class="w-10 h-10 rounded-xl bg-primary-fixed flex items-center justify-center text-primary shrink-0">
-                                        <span class="material-symbols-outlined text-[24px]">domain</span>
-                                    </div>
-                                    <span class="font-headline-sm text-headline-sm text-on-surface font-bold">Bệnh viện
-                                        Phổi Đà Nẵng</span>
-                                </div>
-                                <h3
-                                    class="font-headline-md text-headline-md text-primary mt-space-2xs tracking-tight group-hover:text-primary-container transition-colors">
-                                    Hệ thống Bệnh án điện tử (EMR) chuẩn Bộ Y tế
-                                </h3>
-                                <p
-                                    class="font-body-md text-body-md text-on-surface-variant mt-space-sm leading-relaxed">
-                                    Cung cấp gói giải pháp dịch vụ thuê phần mềm Bệnh án điện tử toàn diện: Quản lý hồ
-                                    sơ bệnh nhân không giấy tờ, tích hợp chữ ký số bác sĩ (PKI), liên thông chuẩn
-                                    HL7/FHIR và đồng bộ thông suốt với hệ thống PACS/RIS/LIS.
-                                </p>
-                                <!-- Visual Feature Preview Mockup inside Card -->
-                                <div
-                                    class="mt-space-lg p-space-md rounded-2xl bg-surface-container-low flex flex-col gap-space-sm">
-                                    <div class="flex items-center justify-between">
-                                        <span
-                                            class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Tỷ
-                                            lệ số hóa hồ sơ điều trị</span>
-                                        <span class="font-label-md text-label-md font-bold text-primary">100% Không dùng
-                                            bệnh án giấy</span>
-                                    </div>
-                                    <div class="w-full h-2 rounded-full bg-surface-container-highest overflow-hidden">
-                                        <div class="h-full bg-primary rounded-full w-full"></div>
-                                    </div>
-                                    <div
-                                        class="flex flex-wrap items-center gap-space-xs pt-space-2xs font-body-sm text-body-sm text-secondary">
-                                        <span
-                                            class="inline-flex items-center gap-1 bg-surface-container-lowest px-2 py-0.5 rounded-lg"><span
-                                                class="w-1.5 h-1.5 rounded-full bg-primary"></span>Chữ ký số
-                                            SmartCA</span>
-                                        <span
-                                            class="inline-flex items-center gap-1 bg-surface-container-lowest px-2 py-0.5 rounded-lg"><span
-                                                class="w-1.5 h-1.5 rounded-full bg-primary"></span>Bảo mật dữ liệu y
-                                            tế</span>
-                                        <span
-                                            class="inline-flex items-center gap-1 bg-surface-container-lowest px-2 py-0.5 rounded-lg"><span
-                                                class="w-1.5 h-1.5 rounded-full bg-primary"></span>Chuẩn liên thông
-                                            BYT</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex items-center justify-between pt-space-lg mt-space-md">
-                                <div class="flex items-center gap-space-2xs">
-                                    <span
-                                        class="px-space-xs py-1 rounded-lg bg-surface-container text-on-surface-variant font-label-sm text-label-sm">PostgreSQL</span>
-                                    <span
-                                        class="px-space-xs py-1 rounded-lg bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Microservices</span>
-                                    <span
-                                        class="px-space-xs py-1 rounded-lg bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Docker</span>
-                                </div>
-                                <button
-                                    class="inline-flex items-center gap-space-2xs text-primary font-label-lg text-label-lg group-hover:translate-x-1 transition-transform"
-                                    onclick="openProjectModal('Bệnh viện Phổi Đà Nẵng - EMR')">
-                                    <span class="">Xem chi tiết giải pháp</span>
-                                    <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-                                </button>
-                            </div>
-                        </article>
-                        <!-- Project 2: TTYT Ngũ Hành Sơn EMR 2025 (4 Cols) -->
-                        <article
-                            class="project-card lg:col-span-4 flex flex-col justify-between p-space-xl rounded-3xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_4px_24px_rgba(65, 93, 168,0.06)] hover:shadow-[0_16px_36px_rgba(65, 93, 168,0.12)] transition-all duration-300 group card-elevate"
-                            data-category="emr">
-                            <div>
-                                <div class="flex items-center justify-between pb-space-md">
-                                    <span
-                                        class="px-space-sm py-1 rounded-full bg-surface-container-highest text-primary font-label-sm text-label-sm font-bold uppercase tracking-wide">Y
-                                        tế cơ sở</span>
-                                    <span
-                                        class="px-space-sm py-1 rounded-full bg-secondary-container/40 text-secondary font-label-sm text-label-sm">2025</span>
-                                </div>
-                                <div class="flex items-center gap-space-2xs my-space-xs">
-                                    <span
-                                        class="material-symbols-outlined text-primary text-[22px]">medical_services</span>
-                                    <span class="font-headline-sm text-headline-sm text-on-surface font-semibold">TTYT
-                                        Ngũ Hành Sơn</span>
-                                </div>
-                                <h3
-                                    class="font-headline-md text-headline-md text-primary mt-space-2xs tracking-tight group-hover:text-primary-container transition-colors">
-                                    Bệnh án điện tử EMR 2025
-                                </h3>
-                                <p
-                                    class="font-body-md text-body-md text-on-surface-variant mt-space-sm leading-relaxed">
-                                    Thuê phần mềm Bệnh án điện tử nâng cấp toàn diện quy trình khám chữa bệnh ngoại trú
-                                    &amp; nội trú, tự động cảnh báo tương tác thuốc và chuẩn hóa viện phí.
-                                </p>
-                                <div
-                                    class="mt-space-md p-space-md rounded-2xl bg-surface-container-low flex items-center justify-between">
-                                    <div>
-                                        <span class="block font-label-sm text-label-sm uppercase text-secondary">Tốc độ
-                                            xử lý hồ sơ</span>
-                                        <span class="font-headline-sm text-headline-sm text-primary font-bold">Giảm
-                                            65%</span>
-                                    </div>
-                                    <span class="material-symbols-outlined text-primary text-[32px]">bolt</span>
-                                </div>
-                            </div>
-                            <div class="flex items-center justify-between pt-space-lg mt-space-md">
-                                <span
-                                    class="px-space-xs py-1 rounded-lg bg-surface-container text-on-surface-variant font-label-sm text-label-sm">HL7
-                                    / Cloud EMR</span>
-                                <button
-                                    class="inline-flex items-center gap-space-2xs text-primary font-label-lg text-label-lg group-hover:translate-x-1 transition-transform"
-                                    onclick="openProjectModal('TTYT Ngũ Hành Sơn - EMR')">
-                                    <span class="">Chi tiết</span>
-                                    <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-                                </button>
-                            </div>
-                        </article>
-                        <!-- Project 3: Cập nhật mẫu đơn thuốc điện tử TT26 (4 Cols) -->
-                        <article
-                            class="project-card lg:col-span-4 flex flex-col justify-between p-space-xl rounded-3xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_4px_24px_rgba(65, 93, 168,0.06)] hover:shadow-[0_16px_36px_rgba(65, 93, 168,0.12)] transition-all duration-300 group card-elevate"
-                            data-category="emr">
-                            <div>
-                                <div class="flex items-center justify-between pb-space-md">
-                                    <span
-                                        class="px-space-sm py-1 rounded-full bg-secondary-container/40 text-on-secondary-container font-label-sm text-label-sm font-bold uppercase tracking-wide">Tuân
-                                        thủ quy chế</span>
-                                    <span
-                                        class="px-space-sm py-1 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm">2025</span>
-                                </div>
-                                <div class="flex items-center gap-space-2xs my-space-xs">
-                                    <span
-                                        class="material-symbols-outlined text-tertiary text-[22px]">prescriptions</span>
-                                    <span class="font-headline-sm text-headline-sm text-on-surface font-semibold">TTYT
-                                        Liên Chiểu</span>
-                                </div>
-                                <h3
-                                    class="font-headline-md text-headline-md text-primary mt-space-2xs tracking-tight group-hover:text-primary-container transition-colors">
-                                    Đơn thuốc điện tử TT 26/2025/TT-BYT
-                                </h3>
-                                <p
-                                    class="font-body-md text-body-md text-on-surface-variant mt-space-sm leading-relaxed">
-                                    Cập nhật biểu mẫu và phân hệ kê đơn thuốc điện tử quốc gia, định danh mã liên thông
-                                    đơn thuốc, gửi tự động SMS/Zalo cho người bệnh.
-                                </p>
-                                <div
-                                    class="mt-space-md p-space-md rounded-2xl bg-surface-container-low flex items-center justify-between">
-                                    <div>
-                                        <span class="block font-label-sm text-label-sm uppercase text-secondary">Liên
-                                            thông cổng Dược QG</span>
-                                        <span class="font-headline-sm text-headline-sm text-tertiary font-bold">100% Hợp
-                                            chuẩn</span>
-                                    </div>
-                                    <span class="material-symbols-outlined text-tertiary text-[32px]">checklist</span>
-                                </div>
-                            </div>
-                            <div class="flex items-center justify-between pt-space-lg mt-space-md">
-                                <span
-                                    class="px-space-xs py-1 rounded-lg bg-surface-container text-on-surface-variant font-label-sm text-label-sm">API
-                                    Quốc gia / HL7</span>
-                                <button
-                                    class="inline-flex items-center gap-space-2xs text-primary font-label-lg text-label-lg group-hover:translate-x-1 transition-transform"
-                                    onclick="openProjectModal('TTYT Liên Chiểu - Đơn thuốc điện tử')">
-                                    <span class="">Chi tiết</span>
-                                    <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-                                </button>
-                            </div>
-                        </article>
-                        <!-- Project 4: Zalo OA Bệnh viện Phổi Đà Nẵng (4 Cols) -->
-                        <article
-                            class="project-card lg:col-span-4 flex flex-col justify-between p-space-xl rounded-3xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_4px_24px_rgba(65, 93, 168,0.06)] hover:shadow-[0_16px_36px_rgba(65, 93, 168,0.12)] transition-all duration-300 group card-elevate"
-                            data-category="zalo-oa">
-                            <div>
-                                <div class="flex items-center justify-between pb-space-md">
-                                    <span
-                                        class="px-space-sm py-1 rounded-full bg-surface-container-highest text-primary font-label-sm text-label-sm font-bold uppercase tracking-wide">Zalo
-                                        Official Account</span>
-                                    <span
-                                        class="px-space-sm py-1 rounded-full bg-secondary-container/40 text-secondary font-label-sm text-label-sm">2024</span>
-                                </div>
-                                <div class="flex items-center gap-space-2xs my-space-xs">
-                                    <span class="material-symbols-outlined text-primary text-[22px]">contactless</span>
-                                    <span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Bệnh
-                                        viện Phổi Đà Nẵng</span>
-                                </div>
-                                <h3
-                                    class="font-headline-md text-headline-md text-primary mt-space-2xs tracking-tight group-hover:text-primary-container transition-colors">
-                                    Quảng bá &amp; Đồng bộ kết quả qua Zalo OA
-                                </h3>
-                                <p
-                                    class="font-body-md text-body-md text-on-surface-variant mt-space-sm leading-relaxed">
-                                    Giải pháp tích hợp cổng Zalo OA với HIS bệnh viện: Tự động gửi kết quả xét nghiệm,
-                                    lịch hẹn tái khám, hướng dẫn dùng thuốc bảo mật đến trực tiếp điện thoại công dân.
-                                </p>
-                                <div
-                                    class="mt-space-md p-space-md rounded-2xl bg-surface-container-low flex items-center justify-between">
-                                    <div>
-                                        <span class="block font-label-sm text-label-sm uppercase text-secondary">Tỷ lệ
-                                            tương tác bệnh nhân</span>
-                                        <span class="font-headline-sm text-headline-sm text-primary font-bold">+340% Sau
-                                            triển khai</span>
-                                    </div>
-                                    <span
-                                        class="material-symbols-outlined text-primary text-[32px]">mark_chat_read</span>
-                                </div>
-                            </div>
-                            <div class="flex items-center justify-between pt-space-lg mt-space-md">
-                                <span
-                                    class="px-space-xs py-1 rounded-lg bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Zalo
-                                    Open API / Webhook</span>
-                                <button
-                                    class="inline-flex items-center gap-space-2xs text-primary font-label-lg text-label-lg group-hover:translate-x-1 transition-transform"
-                                    onclick="openProjectModal('Zalo OA - BV Phổi Đà Nẵng')">
-                                    <span class="">Chi tiết</span>
-                                    <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-                                </button>
-                            </div>
-                        </article>
-                        <!-- Project 5: Dữ liệu dân số Chi cục Dân số TP Đà Nẵng (4 Cols) -->
-                        <article
-                            class="project-card lg:col-span-4 flex flex-col justify-between p-space-xl rounded-3xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_4px_24px_rgba(65, 93, 168,0.06)] hover:shadow-[0_16px_36px_rgba(65, 93, 168,0.12)] transition-all duration-300 group card-elevate"
-                            data-category="public-admin">
-                            <div>
-                                <div class="flex items-center justify-between pb-space-md">
-                                    <span
-                                        class="px-space-sm py-1 rounded-full bg-surface-container-highest text-primary font-label-sm text-label-sm font-bold uppercase tracking-wide">Dữ
-                                        liệu &amp; Thống kê</span>
-                                    <span
-                                        class="px-space-sm py-1 rounded-full bg-secondary-container/40 text-secondary font-label-sm text-label-sm">2024</span>
-                                </div>
-                                <div class="flex items-center gap-space-2xs my-space-xs">
-                                    <span
-                                        class="material-symbols-outlined text-primary-container text-[22px]">analytics</span>
-                                    <span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Chi
-                                        cục Dân số TP Đà Nẵng</span>
-                                </div>
-                                <h3
-                                    class="font-headline-md text-headline-md text-primary mt-space-2xs tracking-tight group-hover:text-primary-container transition-colors">
-                                    Hệ thống Web Thống kê Dân số Toàn diện
-                                </h3>
-                                <p
-                                    class="font-body-md text-body-md text-on-surface-variant mt-space-sm leading-relaxed">
-                                    Xây dựng nền tảng Web tổng hợp số liệu dân cư, dashboard trực quan hóa biến động dân
-                                    số, hỗ trợ chỉ đạo điều hành và tự động hóa xuất báo cáo định kỳ các cấp cơ sở.
-                                </p>
-                                <div
-                                    class="mt-space-md p-space-md rounded-2xl bg-surface-container-low flex items-center justify-between">
-                                    <div>
-                                        <span class="block font-label-sm text-label-sm uppercase text-secondary">Tuyến
-                                            xã/phường kết nối</span>
-                                        <span class="font-headline-sm text-headline-sm text-primary font-bold">56/56 Đơn
-                                            vị</span>
-                                    </div>
-                                    <span class="material-symbols-outlined text-primary text-[32px]">pie_chart</span>
-                                </div>
-                            </div>
-                            <div class="flex items-center justify-between pt-space-lg mt-space-md">
-                                <span
-                                    class="px-space-xs py-1 rounded-lg bg-surface-container text-on-surface-variant font-label-sm text-label-sm">BI
-                                    Analytics / SQL</span>
-                                <button
-                                    class="inline-flex items-center gap-space-2xs text-primary font-label-lg text-label-lg group-hover:translate-x-1 transition-transform"
-                                    onclick="openProjectModal('Dữ liệu Dân số Đà Nẵng')">
-                                    <span class="">Chi tiết</span>
-                                    <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-                                </button>
-                            </div>
-                        </article>
-                        <!-- Project 6: Thanh toán viện phí không dùng tiền mặt (6 Cols) -->
-                        <article
-                            class="project-card lg:col-span-6 flex flex-col justify-between p-space-xl rounded-3xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_4px_24px_rgba(65, 93, 168,0.06)] hover:shadow-[0_16px_36px_rgba(65, 93, 168,0.12)] transition-all duration-300 group card-elevate"
-                            data-category="cashless">
-                            <div>
-                                <div class="flex items-center justify-between pb-space-md">
-                                    <span
-                                        class="px-space-sm py-1 rounded-full bg-surface-container-highest text-primary font-label-sm text-label-sm font-bold uppercase tracking-wide">FinTech
-                                        Y tế</span>
-                                    <span
-                                        class="px-space-sm py-1 rounded-full bg-secondary-container/40 text-secondary font-label-sm text-label-sm">2024
-                                        - 2025</span>
-                                </div>
-                                <div class="flex items-center gap-space-2xs my-space-xs">
-                                    <span
-                                        class="material-symbols-outlined text-primary text-[22px]">account_balance_wallet</span>
-                                    <span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Chuỗi
-                                        cơ sở KCB Đà Nẵng</span>
-                                </div>
-                                <h3
-                                    class="font-headline-md text-headline-md text-primary mt-space-2xs tracking-tight group-hover:text-primary-container transition-colors">
-                                    Hệ thống Thanh toán Viện phí Không dùng Tiền mặt
-                                </h3>
-                                <p
-                                    class="font-body-md text-body-md text-on-surface-variant mt-space-sm leading-relaxed">
-                                    Giải pháp liên thông cổng thanh toán QR Động Napas 247, thẻ ngân hàng và ví điện tử
-                                    tích hợp sâu vào hóa đơn bệnh viện. Giảm thời gian chờ đợi tại quầy thu viện phí từ
-                                    25 phút xuống dưới 45 giây.
-                                </p>
-                                <div
-                                    class="mt-space-md grid grid-cols-2 gap-space-sm p-space-md rounded-2xl bg-surface-container-low">
-                                    <div>
-                                        <span class="block font-label-sm text-label-sm uppercase text-secondary">Tỷ lệ
-                                            thanh toán không tiền mặt</span>
-                                        <span
-                                            class="font-headline-sm text-headline-sm text-primary font-bold">78.5%</span>
-                                    </div>
-                                    <div>
-                                        <span class="block font-label-sm text-label-sm uppercase text-secondary">Thời
-                                            gian đối soát</span>
-                                        <span class="font-headline-sm text-headline-sm text-primary font-bold">Tức thời
-                                            (Real-time)</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex items-center justify-between pt-space-lg mt-space-md">
-                                <span
-                                    class="px-space-xs py-1 rounded-lg bg-surface-container text-on-surface-variant font-label-sm text-label-sm">VietQR
-                                    / ISO 8583 / PCI-DSS</span>
-                                <button
-                                    class="inline-flex items-center gap-space-2xs text-primary font-label-lg text-label-lg group-hover:translate-x-1 transition-transform"
-                                    onclick="openProjectModal('Thanh toán viện phí không tiền mặt')">
-                                    <span class="">Xem giải pháp FinTech</span>
-                                    <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-                                </button>
-                            </div>
-                        </article>
-                        <!-- Project 7: Chuyển đổi số Phường Ngũ Hành Sơn (6 Cols) -->
-                        <article
-                            class="project-card lg:col-span-6 flex flex-col justify-between p-space-xl rounded-3xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_4px_24px_rgba(65, 93, 168,0.06)] hover:shadow-[0_16px_36px_rgba(65, 93, 168,0.12)] transition-all duration-300 group card-elevate"
-                            data-category="public-admin">
-                            <div>
-                                <div class="flex items-center justify-between pb-space-md">
-                                    <span
-                                        class="px-space-sm py-1 rounded-full bg-secondary-container/50 text-on-secondary-container font-label-sm text-label-sm font-bold uppercase tracking-wide">Chính
-                                        quyền điện tử</span>
-                                    <span
-                                        class="px-space-sm py-1 rounded-full bg-secondary-container/40 text-secondary font-label-sm text-label-sm">2024</span>
-                                </div>
-                                <div class="flex items-center gap-space-2xs my-space-xs">
-                                    <span
-                                        class="material-symbols-outlined text-primary-container text-[22px]">location_city</span>
-                                    <span class="font-headline-sm text-headline-sm text-on-surface font-semibold">UBND
-                                        Phường Ngũ Hành Sơn</span>
-                                </div>
-                                <h3
-                                    class="font-headline-md text-headline-md text-primary mt-space-2xs tracking-tight group-hover:text-primary-container transition-colors">
-                                    Cổng Chuyển đổi số &amp; Quản trị Hành chính Công Cấp Phường
-                                </h3>
-                                <p
-                                    class="font-body-md text-body-md text-on-surface-variant mt-space-sm leading-relaxed">
-                                    Số hóa toàn diện 100% thủ tục hành chính, tra cứu tiến độ xử lý hồ sơ trực tuyến cho
-                                    người dân, đồng bộ lịch công tác số và phân loại phản ánh kiến nghị tại địa bàn cơ
-                                    sở.
-                                </p>
-                                <div
-                                    class="mt-space-md grid grid-cols-2 gap-space-sm p-space-md rounded-2xl bg-surface-container-low">
-                                    <div>
-                                        <span class="block font-label-sm text-label-sm uppercase text-secondary">Hài
-                                            lòng của người dân</span>
-                                        <span class="font-headline-sm text-headline-sm text-primary font-bold">99.2%
-                                            Đánh giá tốt</span>
-                                    </div>
-                                    <div>
-                                        <span class="block font-label-sm text-label-sm uppercase text-secondary">Hồ sơ
-                                            giải quyết đúng hạn</span>
-                                        <span class="font-headline-sm text-headline-sm text-primary font-bold">100%
-                                            Tuyệt đối</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex items-center justify-between pt-space-lg mt-space-md">
-                                <span
-                                    class="px-space-xs py-1 rounded-lg bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Single-Sign-On
-                                    / DVC QG</span>
-                                <button
-                                    class="inline-flex items-center gap-space-2xs text-primary font-label-lg text-label-lg group-hover:translate-x-1 transition-transform"
-                                    onclick="openProjectModal('Cổng CĐS Phường Ngũ Hành Sơn')">
-                                    <span class="">Xem giải pháp Chính phủ số</span>
-                                    <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-                                </button>
-                            </div>
-                        </article>
-                    </div>
+<article class="project-card lg:col-span-8 md:col-span-12 flex flex-col justify-between p-space-xl rounded-3xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_4px_24px_rgba(65,93,168,0.06)] hover:shadow-[0_16px_36px_rgba(65,93,168,0.12)] transition-all duration-300 group card-elevate border border-surface-container/50" data-category="emr">
+    <div>
+        <div class="flex items-center justify-between pb-space-sm border-b border-surface-container/60 mb-space-sm">
+            <span class="px-space-sm py-0.5 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm font-bold uppercase tracking-wide">Y tế & EMR</span>
+            <span class="px-space-sm py-0.5 rounded-full bg-secondary-container/40 text-secondary font-label-sm text-label-sm">2024 - 2025</span>
+        </div>
+        <div class="flex items-start gap-space-xs my-space-xs">
+            <span class="material-symbols-outlined text-primary text-[24px] mt-0.5 shrink-0">medical_services</span>
+            <div>
+                <span class="font-label-md text-label-md text-secondary font-medium block">Bệnh viện Phổi Đà Nẵng</span>
+                <span class="text-[12px] text-outline block mt-0.5"><span class="material-symbols-outlined text-[14px] align-middle">location_on</span> Tổ 53 Phước Lý, Hòa Minh, Liên Chiểu, TP. Đà Nẵng</span>
+            </div>
+        </div>
+        <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mt-space-xs group-hover:text-primary transition-colors leading-snug">
+            Bệnh án điện tử EMR tại Bệnh viện Phổi Đà Nẵng
+        </h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed line-clamp-3">
+            Cung cấp trọn gói dịch vụ thuê phần mềm Bệnh án điện tử (EMR) vận hành ổn định, tích hợp số ký số và bệnh án không giấy.
+        </p>
+    </div>
+    <div class="pt-space-md mt-space-sm border-t border-surface-container flex items-center justify-between">
+        <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-secondary px-2.5 py-1 rounded-md bg-surface-container-low">
+            <span class="material-symbols-outlined text-primary text-[14px]">task_alt</span> Thuê dịch vụ EMR (OPEX)
+        </span>
+        <button type="button" class="inline-flex items-center gap-1 text-primary font-label-sm text-label-sm font-semibold group-hover:translate-x-0.5 transition-transform cursor-pointer" onclick="openProjectModal('Bệnh án điện tử EMR tại Bệnh viện Phổi Đà Nẵng')">
+            <span>Chi tiết</span>
+            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </button>
+    </div>
+</article>
+<article class="project-card lg:col-span-4 md:col-span-6 flex flex-col justify-between p-space-xl rounded-3xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_4px_24px_rgba(65,93,168,0.06)] hover:shadow-[0_16px_36px_rgba(65,93,168,0.12)] transition-all duration-300 group card-elevate border border-surface-container/50" data-category="emr">
+    <div>
+        <div class="flex items-center justify-between pb-space-sm border-b border-surface-container/60 mb-space-sm">
+            <span class="px-space-sm py-0.5 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm font-bold uppercase tracking-wide">Tuân thủ BYT</span>
+            <span class="px-space-sm py-0.5 rounded-full bg-secondary-container/40 text-secondary font-label-sm text-label-sm">2024 - 2025</span>
+        </div>
+        <div class="flex items-start gap-space-xs my-space-xs">
+            <span class="material-symbols-outlined text-primary text-[24px] mt-0.5 shrink-0">data_object</span>
+            <div>
+                <span class="font-label-md text-label-md text-secondary font-medium block">Bệnh viện Phổi Đà Nẵng</span>
+                <span class="text-[12px] text-outline block mt-0.5"><span class="material-symbols-outlined text-[14px] align-middle">location_on</span> Số 215 Nguyễn Đình Tứ, Hòa Khánh, TP. Đà Nẵng</span>
+            </div>
+        </div>
+        <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mt-space-xs group-hover:text-primary transition-colors leading-snug">
+            Cập nhật XML theo QĐ 3176/QĐ-BYT tại Bệnh viện Phổi Đà Nẵng
+        </h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed line-clamp-3">
+            Nâng cấp hệ thống phần mềm HIS để định dạng dữ liệu đầu ra phục vụ giám định, thanh toán BHYT theo QĐ 3176 và trích xuất dữ liệu Người bệnh tử vong đẩy cổng DVC thành phố.
+        </p>
+    </div>
+    <div class="pt-space-md mt-space-sm border-t border-surface-container flex items-center justify-between">
+        <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-secondary px-2.5 py-1 rounded-md bg-surface-container-low">
+            <span class="material-symbols-outlined text-primary text-[14px]">task_alt</span> Nâng cấp HIS & DVC
+        </span>
+        <button type="button" class="inline-flex items-center gap-1 text-primary font-label-sm text-label-sm font-semibold group-hover:translate-x-0.5 transition-transform cursor-pointer" onclick="openProjectModal('Cập nhật XML theo QĐ 3176/QĐ-BYT tại Bệnh viện Phổi Đà Nẵng')">
+            <span>Chi tiết</span>
+            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </button>
+    </div>
+</article>
+<article class="project-card lg:col-span-4 md:col-span-6 flex flex-col justify-between p-space-xl rounded-3xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_4px_24px_rgba(65,93,168,0.06)] hover:shadow-[0_16px_36px_rgba(65,93,168,0.12)] transition-all duration-300 group card-elevate border border-surface-container/50" data-category="zalo-oa">
+    <div>
+        <div class="flex items-center justify-between pb-space-sm border-b border-surface-container/60 mb-space-sm">
+            <span class="px-space-sm py-0.5 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm font-bold uppercase tracking-wide">Zalo OA Y tế</span>
+            <span class="px-space-sm py-0.5 rounded-full bg-secondary-container/40 text-secondary font-label-sm text-label-sm">2024</span>
+        </div>
+        <div class="flex items-start gap-space-xs my-space-xs">
+            <span class="material-symbols-outlined text-primary text-[24px] mt-0.5 shrink-0">contactless</span>
+            <div>
+                <span class="font-label-md text-label-md text-secondary font-medium block">Bệnh viện Phổi Đà Nẵng</span>
+                <span class="text-[12px] text-outline block mt-0.5"><span class="material-symbols-outlined text-[14px] align-middle">location_on</span> Tổ 53 Phước Lý, Hòa Minh, Liên Chiểu, TP. Đà Nẵng</span>
+            </div>
+        </div>
+        <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mt-space-xs group-hover:text-primary transition-colors leading-snug">
+            Phần mềm quảng bá & giao tiếp BV Phổi qua Zalo OA
+        </h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed line-clamp-3">
+            Cung cấp giải pháp phần mềm quảng bá thông tin bệnh viện qua Zalo OA tích hợp trực tiếp với phần mềm HIS, hỗ trợ bệnh nhân tra cứu lịch khám và tư vấn trực tuyến.
+        </p>
+    </div>
+    <div class="pt-space-md mt-space-sm border-t border-surface-container flex items-center justify-between">
+        <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-secondary px-2.5 py-1 rounded-md bg-surface-container-low">
+            <span class="material-symbols-outlined text-primary text-[14px]">task_alt</span> Tích hợp HIS & Zalo OA
+        </span>
+        <button type="button" class="inline-flex items-center gap-1 text-primary font-label-sm text-label-sm font-semibold group-hover:translate-x-0.5 transition-transform cursor-pointer" onclick="openProjectModal('Phần mềm quảng bá & giao tiếp BV Phổi qua Zalo OA')">
+            <span>Chi tiết</span>
+            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </button>
+    </div>
+</article>
+<article class="project-card lg:col-span-4 md:col-span-6 flex flex-col justify-between p-space-xl rounded-3xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_4px_24px_rgba(65,93,168,0.06)] hover:shadow-[0_16px_36px_rgba(65,93,168,0.12)] transition-all duration-300 group card-elevate border border-surface-container/50" data-category="emr">
+    <div>
+        <div class="flex items-center justify-between pb-space-sm border-b border-surface-container/60 mb-space-sm">
+            <span class="px-space-sm py-0.5 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm font-bold uppercase tracking-wide">Y tế & EMR</span>
+            <span class="px-space-sm py-0.5 rounded-full bg-secondary-container/40 text-secondary font-label-sm text-label-sm">2025</span>
+        </div>
+        <div class="flex items-start gap-space-xs my-space-xs">
+            <span class="material-symbols-outlined text-primary text-[24px] mt-0.5 shrink-0">clinical_notes</span>
+            <div>
+                <span class="font-label-md text-label-md text-secondary font-medium block">Trung tâm Y tế Khu vực Ngũ Hành Sơn</span>
+                <span class="text-[12px] text-outline block mt-0.5"><span class="material-symbols-outlined text-[14px] align-middle">location_on</span> Phường Ngũ Hành Sơn, TP. Đà Nẵng</span>
+            </div>
+        </div>
+        <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mt-space-xs group-hover:text-primary transition-colors leading-snug">
+            Thuê phần mềm Bệnh án điện tử EMR 2025 tại TTYT Ngũ Hành Sơn
+        </h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed line-clamp-3">
+            Triển khai dịch vụ thuê phần mềm Bệnh án điện tử (EMR) năm 2025 theo mô hình chi phí thường xuyên (OPEX), tuân thủ tiêu chí Thông tư 46/2018/TT-BYT.
+        </p>
+    </div>
+    <div class="pt-space-md mt-space-sm border-t border-surface-container flex items-center justify-between">
+        <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-secondary px-2.5 py-1 rounded-md bg-surface-container-low">
+            <span class="material-symbols-outlined text-primary text-[14px]">task_alt</span> Thuê phần mềm EMR (OPEX)
+        </span>
+        <button type="button" class="inline-flex items-center gap-1 text-primary font-label-sm text-label-sm font-semibold group-hover:translate-x-0.5 transition-transform cursor-pointer" onclick="openProjectModal('Thuê phần mềm Bệnh án điện tử EMR 2025 tại TTYT Ngũ Hành Sơn')">
+            <span>Chi tiết</span>
+            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </button>
+    </div>
+</article>
+<article class="project-card lg:col-span-4 md:col-span-6 flex flex-col justify-between p-space-xl rounded-3xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_4px_24px_rgba(65,93,168,0.06)] hover:shadow-[0_16px_36px_rgba(65,93,168,0.12)] transition-all duration-300 group card-elevate border border-surface-container/50" data-category="emr">
+    <div>
+        <div class="flex items-center justify-between pb-space-sm border-b border-surface-container/60 mb-space-sm">
+            <span class="px-space-sm py-0.5 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm font-bold uppercase tracking-wide">Tuân thủ BYT</span>
+            <span class="px-space-sm py-0.5 rounded-full bg-secondary-container/40 text-secondary font-label-sm text-label-sm">2025</span>
+        </div>
+        <div class="flex items-start gap-space-xs my-space-xs">
+            <span class="material-symbols-outlined text-primary text-[24px] mt-0.5 shrink-0">prescriptions</span>
+            <div>
+                <span class="font-label-md text-label-md text-secondary font-medium block">Trung tâm Y tế Khu vực Liên Chiểu</span>
+                <span class="text-[12px] text-outline block mt-0.5"><span class="material-symbols-outlined text-[14px] align-middle">location_on</span> 525 Tôn Đức Thắng, Phường Hòa Khánh, TP. Đà Nẵng</span>
+            </div>
+        </div>
+        <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mt-space-xs group-hover:text-primary transition-colors leading-snug">
+            Cập nhật đơn thuốc điện tử TT 26/2025/TT-BYT tại TTYT Liên Chiểu
+        </h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed line-clamp-3">
+            Cập nhật cấu trúc mẫu đơn thuốc điện tử và liên thông Hệ thống thông tin quốc gia theo quy định mới nhất của Thông tư 26/2025/TT-BYT.
+        </p>
+    </div>
+    <div class="pt-space-md mt-space-sm border-t border-surface-container flex items-center justify-between">
+        <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-secondary px-2.5 py-1 rounded-md bg-surface-container-low">
+            <span class="material-symbols-outlined text-primary text-[14px]">task_alt</span> Cập nhật chuẩn BYT
+        </span>
+        <button type="button" class="inline-flex items-center gap-1 text-primary font-label-sm text-label-sm font-semibold group-hover:translate-x-0.5 transition-transform cursor-pointer" onclick="openProjectModal('Cập nhật đơn thuốc điện tử TT 26/2025/TT-BYT tại TTYT Liên Chiểu')">
+            <span>Chi tiết</span>
+            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </button>
+    </div>
+</article>
+<article class="project-card lg:col-span-4 md:col-span-6 flex flex-col justify-between p-space-xl rounded-3xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_4px_24px_rgba(65,93,168,0.06)] hover:shadow-[0_16px_36px_rgba(65,93,168,0.12)] transition-all duration-300 group card-elevate border border-surface-container/50" data-category="emr">
+    <div>
+        <div class="flex items-center justify-between pb-space-sm border-b border-surface-container/60 mb-space-sm">
+            <span class="px-space-sm py-0.5 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm font-bold uppercase tracking-wide">Chuẩn hóa dữ liệu</span>
+            <span class="px-space-sm py-0.5 rounded-full bg-secondary-container/40 text-secondary font-label-sm text-label-sm">2024 - 2025</span>
+        </div>
+        <div class="flex items-start gap-space-xs my-space-xs">
+            <span class="material-symbols-outlined text-primary text-[24px] mt-0.5 shrink-0">schema</span>
+            <div>
+                <span class="font-label-md text-label-md text-secondary font-medium block">Trung tâm Y tế Khu vực Liên Chiểu</span>
+                <span class="text-[12px] text-outline block mt-0.5"><span class="material-symbols-outlined text-[14px] align-middle">location_on</span> 525 Tôn Đức Thắng, Phường Hòa Khánh, TP. Đà Nẵng</span>
+            </div>
+        </div>
+        <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mt-space-xs group-hover:text-primary transition-colors leading-snug">
+            Nâng cấp hệ thống trích xuất XML QĐ 3176/QĐ-BYT tại TTYT Liên Chiểu
+        </h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed line-clamp-3">
+            Triển khai nâng cấp hệ thống trích xuất dữ liệu XML theo Quyết định 3176/QĐ-BYT phục vụ giám định thanh toán chi phí KCB BHYT tức thời.
+        </p>
+    </div>
+    <div class="pt-space-md mt-space-sm border-t border-surface-container flex items-center justify-between">
+        <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-secondary px-2.5 py-1 rounded-md bg-surface-container-low">
+            <span class="material-symbols-outlined text-primary text-[14px]">task_alt</span> Nâng cấp module XML
+        </span>
+        <button type="button" class="inline-flex items-center gap-1 text-primary font-label-sm text-label-sm font-semibold group-hover:translate-x-0.5 transition-transform cursor-pointer" onclick="openProjectModal('Nâng cấp hệ thống trích xuất XML QĐ 3176/QĐ-BYT tại TTYT Liên Chiểu')">
+            <span>Chi tiết</span>
+            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </button>
+    </div>
+</article>
+<article class="project-card lg:col-span-4 md:col-span-6 flex flex-col justify-between p-space-xl rounded-3xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_4px_24px_rgba(65,93,168,0.06)] hover:shadow-[0_16px_36px_rgba(65,93,168,0.12)] transition-all duration-300 group card-elevate border border-surface-container/50" data-category="emr">
+    <div>
+        <div class="flex items-center justify-between pb-space-sm border-b border-surface-container/60 mb-space-sm">
+            <span class="px-space-sm py-0.5 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm font-bold uppercase tracking-wide">Đề án 06 & BYT</span>
+            <span class="px-space-sm py-0.5 rounded-full bg-secondary-container/40 text-secondary font-label-sm text-label-sm">2023 - 2024</span>
+        </div>
+        <div class="flex items-start gap-space-xs my-space-xs">
+            <span class="material-symbols-outlined text-primary text-[24px] mt-0.5 shrink-0">verified_user</span>
+            <div>
+                <span class="font-label-md text-label-md text-secondary font-medium block">Trung tâm Y tế Khu vực Liên Chiểu</span>
+                <span class="text-[12px] text-outline block mt-0.5"><span class="material-symbols-outlined text-[14px] align-middle">location_on</span> 525 Tôn Đức Thắng, Phường Hòa Khánh, TP. Đà Nẵng</span>
+            </div>
+        </div>
+        <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mt-space-xs group-hover:text-primary transition-colors leading-snug">
+            Nâng cấp liên thông Đề án 06 & Zalo OA tại TTYT Liên Chiểu
+        </h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed line-clamp-3">
+            Nâng cấp phần mềm quản lý bệnh viện đáp ứng QĐ 130/QĐ-BYT, CV 1165, CV 3617 liên thông dữ liệu Giấy chứng sinh, Giấy báo tử lên cổng giám định BHYT, liên thông GPLX lên DVCQG và gửi kết quả khám qua Zalo OA.
+        </p>
+    </div>
+    <div class="pt-space-md mt-space-sm border-t border-surface-container flex items-center justify-between">
+        <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-secondary px-2.5 py-1 rounded-md bg-surface-container-low">
+            <span class="material-symbols-outlined text-primary text-[14px]">task_alt</span> Liên thông Đề án 06
+        </span>
+        <button type="button" class="inline-flex items-center gap-1 text-primary font-label-sm text-label-sm font-semibold group-hover:translate-x-0.5 transition-transform cursor-pointer" onclick="openProjectModal('Nâng cấp liên thông Đề án 06 & Zalo OA tại TTYT Liên Chiểu')">
+            <span>Chi tiết</span>
+            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </button>
+    </div>
+</article>
+<article class="project-card lg:col-span-4 md:col-span-6 flex flex-col justify-between p-space-xl rounded-3xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_4px_24px_rgba(65,93,168,0.06)] hover:shadow-[0_16px_36px_rgba(65,93,168,0.12)] transition-all duration-300 group card-elevate border border-surface-container/50" data-category="emr">
+    <div>
+        <div class="flex items-center justify-between pb-space-sm border-b border-surface-container/60 mb-space-sm">
+            <span class="px-space-sm py-0.5 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm font-bold uppercase tracking-wide">Tuân thủ BYT</span>
+            <span class="px-space-sm py-0.5 rounded-full bg-secondary-container/40 text-secondary font-label-sm text-label-sm">2024 - 2025</span>
+        </div>
+        <div class="flex items-start gap-space-xs my-space-xs">
+            <span class="material-symbols-outlined text-primary text-[24px] mt-0.5 shrink-0">sync_alt</span>
+            <div>
+                <span class="font-label-md text-label-md text-secondary font-medium block">Trung tâm Y tế Khu vực Cẩm Lệ</span>
+                <span class="text-[12px] text-outline block mt-0.5"><span class="material-symbols-outlined text-[14px] align-middle">location_on</span> 105 Nguyễn Nhàn, Phường Cẩm Lệ, TP. Đà Nẵng</span>
+            </div>
+        </div>
+        <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mt-space-xs group-hover:text-primary transition-colors leading-snug">
+            Cập nhật hệ thống HIS đẩy dữ liệu XML QĐ 3176/QĐ-BYT tại TTYT Cẩm Lệ
+        </h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed line-clamp-3">
+            Cập nhật chuẩn định dạng dữ liệu đầu ra XML theo Quyết định 3176/QĐ-BYT ngày 29/10/2024 của Bộ Y tế trên hệ thống quản lý khám chữa bệnh.
+        </p>
+    </div>
+    <div class="pt-space-md mt-space-sm border-t border-surface-container flex items-center justify-between">
+        <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-secondary px-2.5 py-1 rounded-md bg-surface-container-low">
+            <span class="material-symbols-outlined text-primary text-[14px]">task_alt</span> Cập nhật HIS
+        </span>
+        <button type="button" class="inline-flex items-center gap-1 text-primary font-label-sm text-label-sm font-semibold group-hover:translate-x-0.5 transition-transform cursor-pointer" onclick="openProjectModal('Cập nhật hệ thống HIS đẩy dữ liệu XML QĐ 3176/QĐ-BYT tại TTYT Cẩm Lệ')">
+            <span>Chi tiết</span>
+            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </button>
+    </div>
+</article>
+<article class="project-card lg:col-span-4 md:col-span-6 flex flex-col justify-between p-space-xl rounded-3xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_4px_24px_rgba(65,93,168,0.06)] hover:shadow-[0_16px_36px_rgba(65,93,168,0.12)] transition-all duration-300 group card-elevate border border-surface-container/50" data-category="zalo-oa">
+    <div>
+        <div class="flex items-center justify-between pb-space-sm border-b border-surface-container/60 mb-space-sm">
+            <span class="px-space-sm py-0.5 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm font-bold uppercase tracking-wide">Zalo OA Y tế</span>
+            <span class="px-space-sm py-0.5 rounded-full bg-secondary-container/40 text-secondary font-label-sm text-label-sm">2024</span>
+        </div>
+        <div class="flex items-start gap-space-xs my-space-xs">
+            <span class="material-symbols-outlined text-primary text-[24px] mt-0.5 shrink-0">biotech</span>
+            <div>
+                <span class="font-label-md text-label-md text-secondary font-medium block">Bệnh viện Phụ sản - Nhi Đà Nẵng</span>
+                <span class="text-[12px] text-outline block mt-0.5"><span class="material-symbols-outlined text-[14px] align-middle">location_on</span> 402 Lê Văn Hiến, Phường Ngũ Hành Sơn, TP. Đà Nẵng</span>
+            </div>
+        </div>
+        <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mt-space-xs group-hover:text-primary transition-colors leading-snug">
+            Phần mềm trả kết quả xét nghiệm qua Zalo tại BV Phụ sản - Nhi Đà Nẵng
+        </h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed line-clamp-3">
+            Phát triển và triển khai phần mềm trả kết quả xét nghiệm tự động qua Zalo cho Cơ sở 01, giúp giảm tải xếp hàng nhận phiếu giấy và tăng độ hài lòng người bệnh.
+        </p>
+    </div>
+    <div class="pt-space-md mt-space-sm border-t border-surface-container flex items-center justify-between">
+        <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-secondary px-2.5 py-1 rounded-md bg-surface-container-low">
+            <span class="material-symbols-outlined text-primary text-[14px]">task_alt</span> Số hóa kết quả xét nghiệm
+        </span>
+        <button type="button" class="inline-flex items-center gap-1 text-primary font-label-sm text-label-sm font-semibold group-hover:translate-x-0.5 transition-transform cursor-pointer" onclick="openProjectModal('Phần mềm trả kết quả xét nghiệm qua Zalo tại BV Phụ sản - Nhi Đà Nẵng')">
+            <span>Chi tiết</span>
+            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </button>
+    </div>
+</article>
+<article class="project-card lg:col-span-4 md:col-span-6 flex flex-col justify-between p-space-xl rounded-3xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_4px_24px_rgba(65,93,168,0.06)] hover:shadow-[0_16px_36px_rgba(65,93,168,0.12)] transition-all duration-300 group card-elevate border border-surface-container/50" data-category="zalo-oa">
+    <div>
+        <div class="flex items-center justify-between pb-space-sm border-b border-surface-container/60 mb-space-sm">
+            <span class="px-space-sm py-0.5 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm font-bold uppercase tracking-wide">Fintech & Zalo OA</span>
+            <span class="px-space-sm py-0.5 rounded-full bg-secondary-container/40 text-secondary font-label-sm text-label-sm">2024 - 2025</span>
+        </div>
+        <div class="flex items-start gap-space-xs my-space-xs">
+            <span class="material-symbols-outlined text-primary text-[24px] mt-0.5 shrink-0">account_balance</span>
+            <div>
+                <span class="font-label-md text-label-md text-secondary font-medium block">Ngân hàng TMCP Đại Chúng Việt Nam (PVcomBank)</span>
+                <span class="text-[12px] text-outline block mt-0.5"><span class="material-symbols-outlined text-[14px] align-middle">location_on</span> Số 22 Ngô Quyền, Cửa Nam, Hoàn Kiếm, Hà Nội</span>
+            </div>
+        </div>
+        <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mt-space-xs group-hover:text-primary transition-colors leading-snug">
+            Nâng cấp phần mềm QLBV & Kênh giao tiếp Zalo OA với PVcomBank
+        </h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed line-clamp-3">
+            Nâng cấp, mở rộng phần mềm quản lý bệnh viện và tích hợp kênh giao tiếp điện tử với người bệnh thông qua Zalo OA kết hợp giải pháp thanh toán y tế tiện ích.
+        </p>
+    </div>
+    <div class="pt-space-md mt-space-sm border-t border-surface-container flex items-center justify-between">
+        <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-secondary px-2.5 py-1 rounded-md bg-surface-container-low">
+            <span class="material-symbols-outlined text-primary text-[14px]">task_alt</span> Quản trị BV & Zalo OA
+        </span>
+        <button type="button" class="inline-flex items-center gap-1 text-primary font-label-sm text-label-sm font-semibold group-hover:translate-x-0.5 transition-transform cursor-pointer" onclick="openProjectModal('Nâng cấp phần mềm QLBV & Kênh giao tiếp Zalo OA với PVcomBank')">
+            <span>Chi tiết</span>
+            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </button>
+    </div>
+</article>
+<article class="project-card lg:col-span-4 md:col-span-6 flex flex-col justify-between p-space-xl rounded-3xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_4px_24px_rgba(65,93,168,0.06)] hover:shadow-[0_16px_36px_rgba(65,93,168,0.12)] transition-all duration-300 group card-elevate border border-surface-container/50" data-category="zalo-oa">
+    <div>
+        <div class="flex items-center justify-between pb-space-sm border-b border-surface-container/60 mb-space-sm">
+            <span class="px-space-sm py-0.5 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm font-bold uppercase tracking-wide">Viễn thông số</span>
+            <span class="px-space-sm py-0.5 rounded-full bg-secondary-container/40 text-secondary font-label-sm text-label-sm">2024 - 2025</span>
+        </div>
+        <div class="flex items-start gap-space-xs my-space-xs">
+            <span class="material-symbols-outlined text-primary text-[24px] mt-0.5 shrink-0">cell_tower</span>
+            <div>
+                <span class="font-label-md text-label-md text-secondary font-medium block">MobiFone Đà Nẵng - CN TCT Viễn thông MobiFone</span>
+                <span class="text-[12px] text-outline block mt-0.5"><span class="material-symbols-outlined text-[14px] align-middle">location_on</span> 586 Nguyễn Hữu Thọ, Phường Cẩm Lệ, TP. Đà Nẵng</span>
+            </div>
+        </div>
+        <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mt-space-xs group-hover:text-primary transition-colors leading-snug">
+            Giải pháp giải đáp TTHC trên Zalo OA & Mini App với MobiFone Đà Nẵng
+        </h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed line-clamp-3">
+            Xây dựng phần mềm hỗ trợ giải đáp thủ tục hành chính công trên nền tảng Zalo OA và Zalo Mini App, phục vụ công dân tương tác nhanh chóng không cần cài thêm app.
+        </p>
+    </div>
+    <div class="pt-space-md mt-space-sm border-t border-surface-container flex items-center justify-between">
+        <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-secondary px-2.5 py-1 rounded-md bg-surface-container-low">
+            <span class="material-symbols-outlined text-primary text-[14px]">task_alt</span> Zalo OA & Mini App
+        </span>
+        <button type="button" class="inline-flex items-center gap-1 text-primary font-label-sm text-label-sm font-semibold group-hover:translate-x-0.5 transition-transform cursor-pointer" onclick="openProjectModal('Giải pháp giải đáp TTHC trên Zalo OA & Mini App với MobiFone Đà Nẵng')">
+            <span>Chi tiết</span>
+            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </button>
+    </div>
+</article>
+<article class="project-card lg:col-span-4 md:col-span-6 flex flex-col justify-between p-space-xl rounded-3xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_4px_24px_rgba(65,93,168,0.06)] hover:shadow-[0_16px_36px_rgba(65,93,168,0.12)] transition-all duration-300 group card-elevate border border-surface-container/50" data-category="zalo-oa">
+    <div>
+        <div class="flex items-center justify-between pb-space-sm border-b border-surface-container/60 mb-space-sm">
+            <span class="px-space-sm py-0.5 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm font-bold uppercase tracking-wide">Chính quyền số</span>
+            <span class="px-space-sm py-0.5 rounded-full bg-secondary-container/40 text-secondary font-label-sm text-label-sm">2024 - 2025</span>
+        </div>
+        <div class="flex items-start gap-space-xs my-space-xs">
+            <span class="material-symbols-outlined text-primary text-[24px] mt-0.5 shrink-0">hub</span>
+            <div>
+                <span class="font-label-md text-label-md text-secondary font-medium block">MobiFone Đà Nẵng - CN TCT Viễn thông MobiFone</span>
+                <span class="text-[12px] text-outline block mt-0.5"><span class="material-symbols-outlined text-[14px] align-middle">location_on</span> 586 Nguyễn Hữu Thọ, Phường Cẩm Lệ, TP. Đà Nẵng</span>
+            </div>
+        </div>
+        <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mt-space-xs group-hover:text-primary transition-colors leading-snug">
+            Phần mềm chuyển đổi số phường xã qua Zalo OA với MobiFone Đà Nẵng
+        </h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed line-clamp-3">
+            Cung cấp phần mềm chuyển đổi số toàn diện cho mạng lưới phường xã qua Zalo OA, thông báo tin tức và tiếp nhận phản ánh hiện trường trực tiếp từ người dân.
+        </p>
+    </div>
+    <div class="pt-space-md mt-space-sm border-t border-surface-container flex items-center justify-between">
+        <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-secondary px-2.5 py-1 rounded-md bg-surface-container-low">
+            <span class="material-symbols-outlined text-primary text-[14px]">task_alt</span> CĐS Phường xã
+        </span>
+        <button type="button" class="inline-flex items-center gap-1 text-primary font-label-sm text-label-sm font-semibold group-hover:translate-x-0.5 transition-transform cursor-pointer" onclick="openProjectModal('Phần mềm chuyển đổi số phường xã qua Zalo OA với MobiFone Đà Nẵng')">
+            <span>Chi tiết</span>
+            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </button>
+    </div>
+</article>
+<article class="project-card lg:col-span-4 md:col-span-6 flex flex-col justify-between p-space-xl rounded-3xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_4px_24px_rgba(65,93,168,0.06)] hover:shadow-[0_16px_36px_rgba(65,93,168,0.12)] transition-all duration-300 group card-elevate border border-surface-container/50" data-category="zalo-oa">
+    <div>
+        <div class="flex items-center justify-between pb-space-sm border-b border-surface-container/60 mb-space-sm">
+            <span class="px-space-sm py-0.5 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm font-bold uppercase tracking-wide">Hành chính công</span>
+            <span class="px-space-sm py-0.5 rounded-full bg-secondary-container/40 text-secondary font-label-sm text-label-sm">2024</span>
+        </div>
+        <div class="flex items-start gap-space-xs my-space-xs">
+            <span class="material-symbols-outlined text-primary text-[24px] mt-0.5 shrink-0">mark_chat_read</span>
+            <div>
+                <span class="font-label-md text-label-md text-secondary font-medium block">UBND Phường Ngũ Hành Sơn / Trung tâm PVHCC</span>
+                <span class="text-[12px] text-outline block mt-0.5"><span class="material-symbols-outlined text-[14px] align-middle">location_on</span> Phường Ngũ Hành Sơn, TP. Đà Nẵng</span>
+            </div>
+        </div>
+        <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mt-space-xs group-hover:text-primary transition-colors leading-snug">
+            Hệ thống tin nhắn Zalo OA điều hành tại UBND Phường Ngũ Hành Sơn
+        </h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed line-clamp-3">
+            Xây dựng, tích hợp và vận hành hệ thống gửi thông báo, tin nhắn qua nền tảng Zalo Official Account phục vụ công tác quản lý, điều hành và truyền thông dịch vụ công.
+        </p>
+    </div>
+    <div class="pt-space-md mt-space-sm border-t border-surface-container flex items-center justify-between">
+        <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-secondary px-2.5 py-1 rounded-md bg-surface-container-low">
+            <span class="material-symbols-outlined text-primary text-[14px]">task_alt</span> Tin nhắn Zalo OA hành chính
+        </span>
+        <button type="button" class="inline-flex items-center gap-1 text-primary font-label-sm text-label-sm font-semibold group-hover:translate-x-0.5 transition-transform cursor-pointer" onclick="openProjectModal('Hệ thống tin nhắn Zalo OA điều hành tại UBND Phường Ngũ Hành Sơn')">
+            <span>Chi tiết</span>
+            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </button>
+    </div>
+</article>
+<article class="project-card lg:col-span-4 md:col-span-6 flex flex-col justify-between p-space-xl rounded-3xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_4px_24px_rgba(65,93,168,0.06)] hover:shadow-[0_16px_36px_rgba(65,93,168,0.12)] transition-all duration-300 group card-elevate border border-surface-container/50" data-category="public-admin">
+    <div>
+        <div class="flex items-center justify-between pb-space-sm border-b border-surface-container/60 mb-space-sm">
+            <span class="px-space-sm py-0.5 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm font-bold uppercase tracking-wide">Dữ liệu chuyên ngành</span>
+            <span class="px-space-sm py-0.5 rounded-full bg-secondary-container/40 text-secondary font-label-sm text-label-sm">2024</span>
+        </div>
+        <div class="flex items-start gap-space-xs my-space-xs">
+            <span class="material-symbols-outlined text-primary text-[24px] mt-0.5 shrink-0">analytics</span>
+            <div>
+                <span class="font-label-md text-label-md text-secondary font-medium block">Chi cục Dân số - KHHGĐ Thành phố Đà Nẵng</span>
+                <span class="text-[12px] text-outline block mt-0.5"><span class="material-symbols-outlined text-[14px] align-middle">location_on</span> 118 Lê Đình Lý, Phường Thanh Khê, TP. Đà Nẵng</span>
+            </div>
+        </div>
+        <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mt-space-xs group-hover:text-primary transition-colors leading-snug">
+            Web tổng hợp & thống kê dữ liệu báo cáo tuyến cơ sở Chi cục Dân số
+        </h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed line-clamp-3">
+            Xây dựng Web tổng hợp và thống kê dữ liệu báo cáo chuyên ngành dân số từ tuyến xã, phường lên cấp quận, huyện và thành phố với biểu đồ phân tích trực quan.
+        </p>
+    </div>
+    <div class="pt-space-md mt-space-sm border-t border-surface-container flex items-center justify-between">
+        <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-secondary px-2.5 py-1 rounded-md bg-surface-container-low">
+            <span class="material-symbols-outlined text-primary text-[14px]">task_alt</span> Hệ thống CSDL & BI
+        </span>
+        <button type="button" class="inline-flex items-center gap-1 text-primary font-label-sm text-label-sm font-semibold group-hover:translate-x-0.5 transition-transform cursor-pointer" onclick="openProjectModal('Web tổng hợp & thống kê dữ liệu báo cáo tuyến cơ sở Chi cục Dân số')">
+            <span>Chi tiết</span>
+            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </button>
+    </div>
+</article>
+<article class="project-card lg:col-span-4 md:col-span-6 flex flex-col justify-between p-space-xl rounded-3xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_4px_24px_rgba(65,93,168,0.06)] hover:shadow-[0_16px_36px_rgba(65,93,168,0.12)] transition-all duration-300 group card-elevate border border-surface-container/50" data-category="public-admin">
+    <div>
+        <div class="flex items-center justify-between pb-space-sm border-b border-surface-container/60 mb-space-sm">
+            <span class="px-space-sm py-0.5 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm font-bold uppercase tracking-wide">Cổng thông tin</span>
+            <span class="px-space-sm py-0.5 rounded-full bg-secondary-container/40 text-secondary font-label-sm text-label-sm">2024</span>
+        </div>
+        <div class="flex items-start gap-space-xs my-space-xs">
+            <span class="material-symbols-outlined text-primary text-[24px] mt-0.5 shrink-0">public</span>
+            <div>
+                <span class="font-label-md text-label-md text-secondary font-medium block">Chi cục Dân số - KHHGĐ Thành phố Đà Nẵng</span>
+                <span class="text-[12px] text-outline block mt-0.5"><span class="material-symbols-outlined text-[14px] align-middle">location_on</span> 118 Lê Đình Lý, Phường Thanh Khê, TP. Đà Nẵng</span>
+            </div>
+        </div>
+        <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mt-space-xs group-hover:text-primary transition-colors leading-snug">
+            Cổng thông tin điện tử Website Chi cục Dân số TP Đà Nẵng
+        </h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed line-clamp-3">
+            Xây dựng và vận hành trang thông tin điện tử chính thức của Chi cục Dân số TP Đà Nẵng, đáp ứng chuẩn an toàn thông tin và khả năng tương thích cao.
+        </p>
+    </div>
+    <div class="pt-space-md mt-space-sm border-t border-surface-container flex items-center justify-between">
+        <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-secondary px-2.5 py-1 rounded-md bg-surface-container-low">
+            <span class="material-symbols-outlined text-primary text-[14px]">task_alt</span> Trang thông tin điện tử
+        </span>
+        <button type="button" class="inline-flex items-center gap-1 text-primary font-label-sm text-label-sm font-semibold group-hover:translate-x-0.5 transition-transform cursor-pointer" onclick="openProjectModal('Cổng thông tin điện tử Website Chi cục Dân số TP Đà Nẵng')">
+            <span>Chi tiết</span>
+            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </button>
+    </div>
+</article>
+<article class="project-card lg:col-span-4 md:col-span-6 flex flex-col justify-between p-space-xl rounded-3xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_4px_24px_rgba(65,93,168,0.06)] hover:shadow-[0_16px_36px_rgba(65,93,168,0.12)] transition-all duration-300 group card-elevate border border-surface-container/50" data-category="public-admin">
+    <div>
+        <div class="flex items-center justify-between pb-space-sm border-b border-surface-container/60 mb-space-sm">
+            <span class="px-space-sm py-0.5 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm font-bold uppercase tracking-wide">Chính quyền số</span>
+            <span class="px-space-sm py-0.5 rounded-full bg-secondary-container/40 text-secondary font-label-sm text-label-sm">2024 - 2025</span>
+        </div>
+        <div class="flex items-start gap-space-xs my-space-xs">
+            <span class="material-symbols-outlined text-primary text-[24px] mt-0.5 shrink-0">assessment</span>
+            <div>
+                <span class="font-label-md text-label-md text-secondary font-medium block">Trung tâm Chuyển đổi số & Công nghệ chiến lược Đà Nẵng</span>
+                <span class="text-[12px] text-outline block mt-0.5"><span class="material-symbols-outlined text-[14px] align-middle">location_on</span> Số 02 Quang Trung, Phường Hải Châu, TP. Đà Nẵng</span>
+            </div>
+        </div>
+        <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mt-space-xs group-hover:text-primary transition-colors leading-snug">
+            Nâng cấp phần mềm Đánh giá tiêu chí ứng dụng CNTT TP Đà Nẵng
+        </h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed line-clamp-3">
+            Nâng cấp phần mềm đánh giá các tiêu chí ứng dụng công nghệ thông tin trên địa bàn toàn thành phố Đà Nẵng thuộc Sở Thông tin và Truyền thông.
+        </p>
+    </div>
+    <div class="pt-space-md mt-space-sm border-t border-surface-container flex items-center justify-between">
+        <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-secondary px-2.5 py-1 rounded-md bg-surface-container-low">
+            <span class="material-symbols-outlined text-primary text-[14px]">task_alt</span> Đánh giá xếp hạng CNTT
+        </span>
+        <button type="button" class="inline-flex items-center gap-1 text-primary font-label-sm text-label-sm font-semibold group-hover:translate-x-0.5 transition-transform cursor-pointer" onclick="openProjectModal('Nâng cấp phần mềm Đánh giá tiêu chí ứng dụng CNTT TP Đà Nẵng')">
+            <span>Chi tiết</span>
+            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </button>
+    </div>
+</article>
+<article class="project-card lg:col-span-4 md:col-span-6 flex flex-col justify-between p-space-xl rounded-3xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_4px_24px_rgba(65,93,168,0.06)] hover:shadow-[0_16px_36px_rgba(65,93,168,0.12)] transition-all duration-300 group card-elevate border border-surface-container/50" data-category="public-admin">
+    <div>
+        <div class="flex items-center justify-between pb-space-sm border-b border-surface-container/60 mb-space-sm">
+            <span class="px-space-sm py-0.5 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm font-bold uppercase tracking-wide">R&D Doanh nghiệp</span>
+            <span class="px-space-sm py-0.5 rounded-full bg-secondary-container/40 text-secondary font-label-sm text-label-sm">2024 - 2025</span>
+        </div>
+        <div class="flex items-start gap-space-xs my-space-xs">
+            <span class="material-symbols-outlined text-primary text-[24px] mt-0.5 shrink-0">devices</span>
+            <div>
+                <span class="font-label-md text-label-md text-secondary font-medium block">Công ty TNHH Cloud ACE</span>
+                <span class="text-[12px] text-outline block mt-0.5"><span class="material-symbols-outlined text-[14px] align-middle">location_on</span> 384 Hoàng Diệu, Phường Khánh Hội, TP. Hồ Chí Minh</span>
+            </div>
+        </div>
+        <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mt-space-xs group-hover:text-primary transition-colors leading-snug">
+            R&D Cổng thông tin khách hàng & Mobile App cho Cloud ACE
+        </h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed line-clamp-3">
+            Nghiên cứu và phát triển phần mềm cổng thông tin quản lý khách hàng bao gồm website quản trị và ứng dụng di động (Mobile App) trên iOS và Android.
+        </p>
+    </div>
+    <div class="pt-space-md mt-space-sm border-t border-surface-container flex items-center justify-between">
+        <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-secondary px-2.5 py-1 rounded-md bg-surface-container-low">
+            <span class="material-symbols-outlined text-primary text-[14px]">task_alt</span> Web Portal & Mobile App
+        </span>
+        <button type="button" class="inline-flex items-center gap-1 text-primary font-label-sm text-label-sm font-semibold group-hover:translate-x-0.5 transition-transform cursor-pointer" onclick="openProjectModal('R&D Cổng thông tin khách hàng & Mobile App cho Cloud ACE')">
+            <span>Chi tiết</span>
+            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </button>
+    </div>
+</article>
+<article class="project-card lg:col-span-4 md:col-span-6 flex flex-col justify-between p-space-xl rounded-3xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_4px_24px_rgba(65,93,168,0.06)] hover:shadow-[0_16px_36px_rgba(65,93,168,0.12)] transition-all duration-300 group card-elevate border border-surface-container/50" data-category="public-admin">
+    <div>
+        <div class="flex items-center justify-between pb-space-sm border-b border-surface-container/60 mb-space-sm">
+            <span class="px-space-sm py-0.5 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm font-bold uppercase tracking-wide">Y tế & Cổng thông tin</span>
+            <span class="px-space-sm py-0.5 rounded-full bg-secondary-container/40 text-secondary font-label-sm text-label-sm">2024</span>
+        </div>
+        <div class="flex items-start gap-space-xs my-space-xs">
+            <span class="material-symbols-outlined text-primary text-[24px] mt-0.5 shrink-0">health_and_safety</span>
+            <div>
+                <span class="font-label-md text-label-md text-secondary font-medium block">Bệnh viện Y học Cổ truyền Thành phố Đà Nẵng</span>
+                <span class="text-[12px] text-outline block mt-0.5"><span class="material-symbols-outlined text-[14px] align-middle">location_on</span> 77 Đinh Gia Trinh, Phường Thanh Khê, TP. Đà Nẵng</span>
+            </div>
+        </div>
+        <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mt-space-xs group-hover:text-primary transition-colors leading-snug">
+            Tặng và xây dựng Website Bệnh viện Y học Cổ truyền TP Đà Nẵng
+        </h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed line-clamp-3">
+            Tặng cho và triển khai hoàn thiện website cổng thông tin điện tử của Bệnh viện Y học Cổ truyền Đà Nẵng phục vụ bệnh nhân tra cứu thông tin y tế chuyên sâu.
+        </p>
+    </div>
+    <div class="pt-space-md mt-space-sm border-t border-surface-container flex items-center justify-between">
+        <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-secondary px-2.5 py-1 rounded-md bg-surface-container-low">
+            <span class="material-symbols-outlined text-primary text-[14px]">task_alt</span> Số hóa cổng thông tin
+        </span>
+        <button type="button" class="inline-flex items-center gap-1 text-primary font-label-sm text-label-sm font-semibold group-hover:translate-x-0.5 transition-transform cursor-pointer" onclick="openProjectModal('Tặng và xây dựng Website Bệnh viện Y học Cổ truyền TP Đà Nẵng')">
+            <span>Chi tiết</span>
+            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </button>
+    </div>
+</article>
+<article class="project-card lg:col-span-4 md:col-span-6 flex flex-col justify-between p-space-xl rounded-3xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_4px_24px_rgba(65,93,168,0.06)] hover:shadow-[0_16px_36px_rgba(65,93,168,0.12)] transition-all duration-300 group card-elevate border border-surface-container/50" data-category="public-admin">
+    <div>
+        <div class="flex items-center justify-between pb-space-sm border-b border-surface-container/60 mb-space-sm">
+            <span class="px-space-sm py-0.5 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm font-bold uppercase tracking-wide">Tư vấn CĐS</span>
+            <span class="px-space-sm py-0.5 rounded-full bg-secondary-container/40 text-secondary font-label-sm text-label-sm">2025 - 2026</span>
+        </div>
+        <div class="flex items-start gap-space-xs my-space-xs">
+            <span class="material-symbols-outlined text-primary text-[24px] mt-0.5 shrink-0">assignment</span>
+            <div>
+                <span class="font-label-md text-label-md text-secondary font-medium block">UBND Xã Xuân Phú, Thành phố Đà Nẵng</span>
+                <span class="text-[12px] text-outline block mt-0.5"><span class="material-symbols-outlined text-[14px] align-middle">location_on</span> Thôn Mộc Bài, Xã Xuân Phú, TP. Đà Nẵng</span>
+            </div>
+        </div>
+        <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mt-space-xs group-hover:text-primary transition-colors leading-snug">
+            Đề án Chuyển đổi số 2026-2030, tầm nhìn 2035 Xã Xuân Phú
+        </h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed line-clamp-3">
+            Tư vấn khảo sát, lập báo cáo hiện trạng và xây dựng đề án Chuyển đổi số giai đoạn 2026-2030, định hướng quy hoạch dữ liệu đến năm 2035 cho cấp xã.
+        </p>
+    </div>
+    <div class="pt-space-md mt-space-sm border-t border-surface-container flex items-center justify-between">
+        <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-secondary px-2.5 py-1 rounded-md bg-surface-container-low">
+            <span class="material-symbols-outlined text-primary text-[14px]">task_alt</span> Tư vấn chiến lược CĐS
+        </span>
+        <button type="button" class="inline-flex items-center gap-1 text-primary font-label-sm text-label-sm font-semibold group-hover:translate-x-0.5 transition-transform cursor-pointer" onclick="openProjectModal('Đề án Chuyển đổi số 2026-2030, tầm nhìn 2035 Xã Xuân Phú')">
+            <span>Chi tiết</span>
+            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </button>
+    </div>
+</article>
+<article class="project-card lg:col-span-4 md:col-span-6 flex flex-col justify-between p-space-xl rounded-3xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_4px_24px_rgba(65,93,168,0.06)] hover:shadow-[0_16px_36px_rgba(65,93,168,0.12)] transition-all duration-300 group card-elevate border border-surface-container/50" data-category="public-admin">
+    <div>
+        <div class="flex items-center justify-between pb-space-sm border-b border-surface-container/60 mb-space-sm">
+            <span class="px-space-sm py-0.5 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm font-bold uppercase tracking-wide">Dữ liệu số</span>
+            <span class="px-space-sm py-0.5 rounded-full bg-secondary-container/40 text-secondary font-label-sm text-label-sm">2025</span>
+        </div>
+        <div class="flex items-start gap-space-xs my-space-xs">
+            <span class="material-symbols-outlined text-primary text-[24px] mt-0.5 shrink-0">dataset</span>
+            <div>
+                <span class="font-label-md text-label-md text-secondary font-medium block">UBND Xã Xuân Phú, Thành phố Đà Nẵng</span>
+                <span class="text-[12px] text-outline block mt-0.5"><span class="material-symbols-outlined text-[14px] align-middle">location_on</span> Thôn Mộc Bài, Xã Xuân Phú, TP. Đà Nẵng</span>
+            </div>
+        </div>
+        <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mt-space-xs group-hover:text-primary transition-colors leading-snug">
+            Tạo lập dữ liệu chuyên ngành vào Kho dữ liệu dùng chung Xã Xuân Phú
+        </h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed line-clamp-3">
+            Tư vấn khảo sát, cập nhật, làm sạch và tạo lập dữ liệu cơ sở chuyên ngành vào Kho dữ liệu dùng chung của thành phố Đà Nẵng.
+        </p>
+    </div>
+    <div class="pt-space-md mt-space-sm border-t border-surface-container flex items-center justify-between">
+        <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-secondary px-2.5 py-1 rounded-md bg-surface-container-low">
+            <span class="material-symbols-outlined text-primary text-[14px]">task_alt</span> Tạo lập CSDL cơ sở
+        </span>
+        <button type="button" class="inline-flex items-center gap-1 text-primary font-label-sm text-label-sm font-semibold group-hover:translate-x-0.5 transition-transform cursor-pointer" onclick="openProjectModal('Tạo lập dữ liệu chuyên ngành vào Kho dữ liệu dùng chung Xã Xuân Phú')">
+            <span>Chi tiết</span>
+            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </button>
+    </div>
+</article>
+<article class="project-card lg:col-span-4 md:col-span-6 flex flex-col justify-between p-space-xl rounded-3xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_4px_24px_rgba(65,93,168,0.06)] hover:shadow-[0_16px_36px_rgba(65,93,168,0.12)] transition-all duration-300 group card-elevate border border-surface-container/50" data-category="public-admin">
+    <div>
+        <div class="flex items-center justify-between pb-space-sm border-b border-surface-container/60 mb-space-sm">
+            <span class="px-space-sm py-0.5 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm font-bold uppercase tracking-wide">Dữ liệu cơ sở</span>
+            <span class="px-space-sm py-0.5 rounded-full bg-secondary-container/40 text-secondary font-label-sm text-label-sm">2024 - 2025</span>
+        </div>
+        <div class="flex items-start gap-space-xs my-space-xs">
+            <span class="material-symbols-outlined text-primary text-[24px] mt-0.5 shrink-0">folder_shared</span>
+            <div>
+                <span class="font-label-md text-label-md text-secondary font-medium block">Phòng Văn hóa - Xã hội Xã Tiên Phước</span>
+                <span class="text-[12px] text-outline block mt-0.5"><span class="material-symbols-outlined text-[14px] align-middle">location_on</span> 81 Huỳnh Thúc Kháng, Xã Tiên Phước, TP. Đà Nẵng</span>
+            </div>
+        </div>
+        <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mt-space-xs group-hover:text-primary transition-colors leading-snug">
+            Chuẩn hóa & cập nhật CSDL chuyên ngành Xã Tiên Phước
+        </h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed line-clamp-3">
+            Tạo lập, chuẩn hóa, số hóa và cập nhật dữ liệu vào phần mềm cơ sở dữ liệu chuyên ngành văn hóa - xã hội cấp địa phương.
+        </p>
+    </div>
+    <div class="pt-space-md mt-space-sm border-t border-surface-container flex items-center justify-between">
+        <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-secondary px-2.5 py-1 rounded-md bg-surface-container-low">
+            <span class="material-symbols-outlined text-primary text-[14px]">task_alt</span> Chuẩn hóa dữ liệu
+        </span>
+        <button type="button" class="inline-flex items-center gap-1 text-primary font-label-sm text-label-sm font-semibold group-hover:translate-x-0.5 transition-transform cursor-pointer" onclick="openProjectModal('Chuẩn hóa & cập nhật CSDL chuyên ngành Xã Tiên Phước')">
+            <span>Chi tiết</span>
+            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </button>
+    </div>
+</article>
+<article class="project-card lg:col-span-4 md:col-span-6 flex flex-col justify-between p-space-xl rounded-3xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_4px_24px_rgba(65,93,168,0.06)] hover:shadow-[0_16px_36px_rgba(65,93,168,0.12)] transition-all duration-300 group card-elevate border border-surface-container/50" data-category="public-admin">
+    <div>
+        <div class="flex items-center justify-between pb-space-sm border-b border-surface-container/60 mb-space-sm">
+            <span class="px-space-sm py-0.5 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm font-bold uppercase tracking-wide">Đô thị thông minh</span>
+            <span class="px-space-sm py-0.5 rounded-full bg-secondary-container/40 text-secondary font-label-sm text-label-sm">2024 - 2025</span>
+        </div>
+        <div class="flex items-start gap-space-xs my-space-xs">
+            <span class="material-symbols-outlined text-primary text-[24px] mt-0.5 shrink-0">videocam</span>
+            <div>
+                <span class="font-label-md text-label-md text-secondary font-medium block">Phòng Văn hóa Xã hội Phường Điện Bàn Bắc</span>
+                <span class="text-[12px] text-outline block mt-0.5"><span class="material-symbols-outlined text-[14px] align-middle">location_on</span> Tổ dân phố Xóm Bùng, Phường Điện Bàn Bắc, TP. Đà Nẵng</span>
+            </div>
+        </div>
+        <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mt-space-xs group-hover:text-primary transition-colors leading-snug">
+            Điểm Tổ dân phố thông minh Camera AI tại Phường Điện Bàn Bắc
+        </h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed line-clamp-3">
+            Tư vấn và xây dựng điểm Tổ dân phố thông minh: Hệ thống Camera AI giám sát an ninh trật tự, thiết bị xử lý lưu trữ dữ liệu tập trung.
+        </p>
+    </div>
+    <div class="pt-space-md mt-space-sm border-t border-surface-container flex items-center justify-between">
+        <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-secondary px-2.5 py-1 rounded-md bg-surface-container-low">
+            <span class="material-symbols-outlined text-primary text-[14px]">task_alt</span> Camera AI & Lưu trữ
+        </span>
+        <button type="button" class="inline-flex items-center gap-1 text-primary font-label-sm text-label-sm font-semibold group-hover:translate-x-0.5 transition-transform cursor-pointer" onclick="openProjectModal('Điểm Tổ dân phố thông minh Camera AI tại Phường Điện Bàn Bắc')">
+            <span>Chi tiết</span>
+            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </button>
+    </div>
+</article>
+</div>
                 </section>
                 <!-- PARTNERS & CLIENTS MARQUEE SECTION -->
             <section class="py-space-2xl bg-surface overflow-hidden border-y border-surface-container/60 relative">
