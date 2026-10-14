@@ -127,11 +127,19 @@
             const sec = findSection(hash);
             if (sec) {
               e.preventDefault();
-              sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              if (window.__lenis) {
+                window.__lenis.scrollTo(sec, { offset: -90, duration: 1.15 });
+              } else {
+                sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
             }
           } else {
             e.preventDefault();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            if (window.__lenis) {
+              window.__lenis.scrollTo(0, { duration: 1.0 });
+            } else {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
           }
           closeMobileMenu();
         });
@@ -197,8 +205,14 @@
     if (!hash) return;
     setTimeout(function () {
       const sec = findSection(hash);
-      if (sec) sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 250);
+      if (sec) {
+        if (window.__lenis) {
+          window.__lenis.scrollTo(sec, { offset: -90, duration: 1.15 });
+        } else {
+          sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    }, 300);
   }
 
   // ── Highlight active nav link ─────────────────────────────────────────────
@@ -678,6 +692,68 @@
     });
   }
 
+  // ── Physics Inertia Smooth Scroll Engine (Pure Momentum, Zero Warp) ─────
+  function initSmoothScroll() {
+    // Inject required styles for silky smooth momentum scrolling
+    if (!document.getElementById('teknova-lenis-styles')) {
+      const style = document.createElement('style');
+      style.id = 'teknova-lenis-styles';
+      style.textContent = `
+        html.lenis, html.lenis body {
+          height: auto;
+        }
+        .lenis.lenis-smooth {
+          scroll-behavior: auto !important;
+        }
+        .lenis.lenis-smooth [data-lenis-prevent] {
+          overscroll-behavior: contain;
+        }
+        .lenis.lenis-stopped {
+          overflow: hidden;
+        }
+        .lenis.lenis-scrolling iframe {
+          pointer-events: none;
+        }
+      `;
+      document.head.appendChild(style);
+    }
+
+    function setupLenis() {
+      if (typeof Lenis === 'undefined') return;
+      if (window.__lenis) return; // Prevent duplicate instantiation
+
+      const lenis = new Lenis({
+        duration: 1.15, // Thời lượng lướt mượt vật lý
+        easing: function (t) {
+          return Math.min(1, 1.001 - Math.pow(2, -10 * t));
+        },
+        orientation: 'vertical',
+        gestureOrientation: 'vertical',
+        smoothWheel: true,
+        wheelMultiplier: 1.0, // Cường độ lực cuộn (intensity)
+        touchMultiplier: 1.5,
+        infinite: false
+      });
+
+      window.__lenis = lenis;
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+    }
+
+    if (typeof Lenis !== 'undefined') {
+      setupLenis();
+    } else {
+      const s = document.createElement('script');
+      s.src = 'https://unpkg.com/lenis@1.1.18/dist/lenis.min.js';
+      s.onload = setupLenis;
+      document.head.appendChild(s);
+    }
+  }
+
   // ── Boot ─────────────────────────────────────────────────────────────────
   function boot() {
     applyRoutes();
@@ -688,6 +764,7 @@
     initNumberTrends();
     initSplitText();
     initTeamCarousel();
+    initSmoothScroll();
 
     // Dismiss preloader smoothly
     setTimeout(dismissPreloader, 150);
