@@ -19,8 +19,12 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: "#004ac6",
-                        "primary-container": "#2563eb",
+                        primary: "#415DA8",
+                        "primary-hover": "#344A87",
+                        "primary-light": "#E2EAF5",
+                        sky: { 50: "#F0F4FA", 100: "#E2EAF5", 200: "#C5D5EC", 300: "#9EBCE0", 400: "#6F9BCF", 500: "#4F77BE", 600: "#415DA8", 700: "#344A87", 800: "#2C3D6F", 900: "#26345B", 950: "#17203B" },
+                        blue: { 50: "#F0F4FA", 100: "#E2EAF5", 200: "#C5D5EC", 300: "#9EBCE0", 400: "#6F9BCF", 500: "#4F77BE", 600: "#415DA8", 700: "#344A87", 800: "#2C3D6F", 900: "#26345B", 950: "#17203B" },
+                        "primary-container": "#344A87",
                         secondary: "#565e74",
                         surface: "#f8f9ff",
                         "surface-container-lowest": "#ffffff",
@@ -99,20 +103,20 @@
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             background: rgba(255, 255, 255, 0.94);
-            border: 1px solid rgba(0, 74, 198, 0.18);
-            box-shadow: 0 20px 45px -12px rgba(0, 74, 198, 0.18), 0 2px 6px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(65, 93, 168, 0.18);
+            box-shadow: 0 20px 45px -12px rgba(65, 93, 168, 0.18), 0 2px 6px rgba(0, 0, 0, 0.04);
         }
 
         .mode-btn {
-            border: 1px solid rgba(0, 74, 198, 0.12);
+            border: 1px solid rgba(65, 93, 168, 0.12);
         }
 
         .mode-btn.active {
-            background: #004ac6;
+            background: #415DA8;
             color: #ffffff;
             font-weight: 700;
-            border-color: #004ac6;
-            box-shadow: 0 4px 14px rgba(0, 74, 198, 0.35);
+            border-color: #415DA8;
+            box-shadow: 0 4px 14px rgba(65, 93, 168, 0.35);
         }
     </style>
 </head>
@@ -195,7 +199,7 @@
                     Sử dụng con lăn chuột hoặc vuốt trackpad để trải nghiệm các kiểu phản hồi gia tốc quán tính (inertia momentum), độ uốn cong không gian và độ đàn hồi sống động.
                 </p>
                 <div class="flex items-center gap-4 flex-wrap justify-center">
-                    <a href="gioithieu.html" class="px-6 py-3 rounded-xl bg-primary text-white font-bold text-sm shadow-[0_8px_20px_rgba(0,74,198,0.35)] hover:shadow-[0_12px_28px_rgba(0,74,198,0.5)] transition-all inline-flex items-center gap-2">
+                    <a href="gioithieu.html" class="px-6 py-3 rounded-xl bg-primary text-white font-bold text-sm shadow-[0_8px_20px_rgba(65, 93, 168,0.35)] hover:shadow-[0_12px_28px_rgba(65, 93, 168,0.5)] transition-all inline-flex items-center gap-2">
                         <span>Trang Giới thiệu</span>
                         <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
                     </a>
@@ -207,7 +211,7 @@
 
             <!-- STATS COUNTER BAR -->
             <section class="max-w-[1200px] mx-auto px-6 py-8 w-full">
-                <div class="warp-card grid grid-cols-2 md:grid-cols-4 gap-6 p-8 rounded-3xl bg-white border border-outline-variant/30 shadow-[0_10px_30px_rgba(0,74,198,0.06)]">
+                <div class="warp-card grid grid-cols-2 md:grid-cols-4 gap-6 p-8 rounded-3xl bg-white border border-outline-variant/30 shadow-[0_10px_30px_rgba(65, 93, 168,0.06)]">
                     <div class="flex flex-col items-center text-center">
                         <span class="text-4xl font-extrabold text-primary mb-1">10+</span>
                         <span class="text-xs uppercase font-semibold text-secondary">Năm kinh nghiệm</span>
@@ -241,7 +245,7 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <!-- Card 1 -->
-                    <div class="warp-card rounded-3xl bg-white p-7 border border-outline-variant/25 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgba(0,74,198,0.12)] transition-shadow flex flex-col justify-between">
+                    <div class="warp-card rounded-3xl bg-white p-7 border border-outline-variant/25 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgba(65, 93, 168,0.12)] transition-shadow flex flex-col justify-between">
                         <div>
                             <div class="w-12 h-12 rounded-2xl bg-blue-50 text-primary flex items-center justify-center mb-6">
                                 <span class="material-symbols-outlined text-2xl">local_hospital</span>
@@ -258,7 +262,7 @@
                     </div>
 
                     <!-- Card 2 -->
-                    <div class="warp-card rounded-3xl bg-white p-7 border border-outline-variant/25 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgba(0,74,198,0.12)] transition-shadow flex flex-col justify-between">
+                    <div class="warp-card rounded-3xl bg-white p-7 border border-outline-variant/25 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgba(65, 93, 168,0.12)] transition-shadow flex flex-col justify-between">
                         <div>
                             <div class="w-12 h-12 rounded-2xl bg-cyan-50 text-cyan-600 flex items-center justify-center mb-6">
                                 <span class="material-symbols-outlined text-2xl">account_balance</span>
@@ -275,7 +279,7 @@
                     </div>
 
                     <!-- Card 3 -->
-                    <div class="warp-card rounded-3xl bg-white p-7 border border-outline-variant/25 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgba(0,74,198,0.12)] transition-shadow flex flex-col justify-between">
+                    <div class="warp-card rounded-3xl bg-white p-7 border border-outline-variant/25 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgba(65, 93, 168,0.12)] transition-shadow flex flex-col justify-between">
                         <div>
                             <div class="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-6">
                                 <span class="material-symbols-outlined text-2xl">cloud_sync</span>
@@ -355,7 +359,7 @@
 
             <!-- CALL TO ACTION BANNER -->
             <section class="max-w-[1200px] mx-auto px-6 py-12 w-full">
-                <div class="warp-card rounded-3xl bg-gradient-to-r from-primary via-blue-700 to-indigo-800 p-10 md:p-14 text-white text-center flex flex-col items-center relative overflow-hidden shadow-[0_20px_50px_rgba(0,74,198,0.3)]">
+                <div class="warp-card rounded-3xl bg-gradient-to-r from-primary via-blue-700 to-indigo-800 p-10 md:p-14 text-white text-center flex flex-col items-center relative overflow-hidden shadow-[0_20px_50px_rgba(65, 93, 168,0.3)]">
                     <div class="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-white/10 blur-3xl pointer-events-none"></div>
                     <span class="text-xs font-bold tracking-widest uppercase text-cyan-200 mb-2">ĐỒNG HÀNH CHUYỂN ĐỔI SỐ</span>
                     <h2 class="text-3xl sm:text-4xl font-extrabold max-w-2xl mb-4">Sẵn sàng nâng tầm chuyển đổi số cùng TEKNOVA?</h2>
