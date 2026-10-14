@@ -576,6 +576,108 @@
     });
   }
 
+  // ── Team Showcase Carousel Engine ─────────────────────────────────────────
+  function initTeamCarousel() {
+    const track = document.getElementById('team-carousel-track');
+    const prevBtn = document.getElementById('team-carousel-prev');
+    const nextBtn = document.getElementById('team-carousel-next');
+    const counterEl = document.getElementById('team-carousel-counter');
+    const dots = document.querySelectorAll('.team-dot');
+
+    if (!track) return;
+
+    function getCardWidth() {
+      const card = track.querySelector('.team-card');
+      if (!card) return 360;
+      const style = window.getComputedStyle(track);
+      const gap = parseFloat(style.columnGap || style.gap) || 24;
+      return card.offsetWidth + gap;
+    }
+
+    function scrollNext() {
+      const cardWidth = getCardWidth();
+      const maxScroll = track.scrollWidth - track.clientWidth;
+      if (track.scrollLeft >= maxScroll - 15) {
+        track.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        track.scrollBy({ left: cardWidth, behavior: 'smooth' });
+      }
+    }
+
+    function scrollPrev() {
+      const cardWidth = getCardWidth();
+      if (track.scrollLeft <= 15) {
+        const maxScroll = track.scrollWidth - track.clientWidth;
+        track.scrollTo({ left: maxScroll, behavior: 'smooth' });
+      } else {
+        track.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+      }
+    }
+
+    if (nextBtn) nextBtn.addEventListener('click', scrollNext);
+    if (prevBtn) prevBtn.addEventListener('click', scrollPrev);
+
+    let scrollTimeout = null;
+    function updateActiveState() {
+      const cardWidth = getCardWidth();
+      if (!cardWidth) return;
+      const rawIndex = Math.round(track.scrollLeft / cardWidth);
+      const activeIndex = rawIndex % 3;
+
+      if (counterEl) {
+        counterEl.textContent = '0' + (activeIndex + 1);
+      }
+
+      dots.forEach(function (dot, idx) {
+        if (idx === activeIndex) {
+          dot.className = 'team-dot w-7 h-2 rounded-full bg-primary transition-all duration-300 focus:outline-none';
+          dot.setAttribute('aria-current', 'true');
+        } else {
+          dot.className = 'team-dot w-2 h-2 rounded-full bg-outline-variant/40 hover:bg-outline-variant transition-all duration-300 focus:outline-none';
+          dot.removeAttribute('aria-current');
+        }
+      });
+    }
+
+    track.addEventListener('scroll', function () {
+      if (scrollTimeout) cancelAnimationFrame(scrollTimeout);
+      scrollTimeout = requestAnimationFrame(updateActiveState);
+    }, { passive: true });
+
+    dots.forEach(function (dot) {
+      dot.addEventListener('click', function () {
+        const idx = parseInt(dot.getAttribute('data-index'), 10) || 0;
+        const cardWidth = getCardWidth();
+        track.scrollTo({ left: idx * cardWidth, behavior: 'smooth' });
+      });
+    });
+
+    let isDown = false;
+    let startX = 0;
+    let scrollStart = 0;
+
+    track.addEventListener('mousedown', function (e) {
+      isDown = true;
+      track.classList.add('cursor-grabbing');
+      startX = e.pageX - track.offsetLeft;
+      scrollStart = track.scrollLeft;
+    });
+
+    window.addEventListener('mouseup', function () {
+      if (!isDown) return;
+      isDown = false;
+      track.classList.remove('cursor-grabbing');
+    });
+
+    track.addEventListener('mousemove', function (e) {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - track.offsetLeft;
+      const walk = (x - startX) * 1.5;
+      track.scrollLeft = scrollStart - walk;
+    });
+  }
+
   // ── Boot ─────────────────────────────────────────────────────────────────
   function boot() {
     applyRoutes();
@@ -585,6 +687,7 @@
     prefetchAllPages();
     initNumberTrends();
     initSplitText();
+    initTeamCarousel();
 
     // Dismiss preloader smoothly
     setTimeout(dismissPreloader, 150);

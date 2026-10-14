@@ -534,117 +534,235 @@
                     </div>
                 </div>
             </section>
-            <!-- 4. Đội ngũ chuyên gia (Team Showcase) -->
-            <section class="w-full bg-surface-container-low py-space-3xl">
+            <!-- 4. Đội ngũ chuyên gia (Team Showcase Carousel) -->
+            <section class="w-full bg-surface-container-low py-space-3xl" id="doi-ngu">
                 <div class="max-w-[1200px] mx-auto px-margin md:px-margin-md lg:px-margin-lg">
-                    <div class="flex flex-col md:flex-row md:items-end justify-between mb-space-2xl gap-space-sm">
+                    <div class="flex flex-col md:flex-row md:items-end justify-between mb-space-xl gap-space-md">
                         <div>
                             <h2 class="font-headline-xl text-headline-xl text-on-surface">Đội ngũ chuyên
                                 gia nòng cốt</h2>
+                            <p class="font-body-md text-body-md text-on-surface-variant max-w-xl mt-space-xs">
+                                Sở hữu mạng lưới chuyên gia, kỹ sư với bề dày kinh nghiệm từ 10-20 năm trong ngành CNTT cùng
+                                các tài năng trẻ nhiệt huyết, nhạy bén với công nghệ thế hệ mới.
+                            </p>
                         </div>
-                        <p class="font-body-md text-body-md text-on-surface-variant max-w-md">
-                            Sở hữu mạng lưới chuyên gia, kỹ sư với bề dày kinh nghiệm từ 10-20 năm trong ngành CNTT cùng
-                            các tài năng trẻ nhiệt huyết, nhạy bén với công nghệ thế hệ mới.
-                        </p>
+                        <!-- Carousel Controls -->
+                        <div class="flex items-center gap-space-xs self-start md:self-end">
+                            <span class="text-label-sm font-bold text-primary px-3 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant/30 shadow-sm mr-1">
+                                <span id="team-carousel-counter">01</span> / 03
+                            </span>
+                            <button id="team-carousel-prev" class="w-11 h-11 rounded-full border border-outline-variant/40 bg-surface-container-lowest text-on-surface hover:bg-primary hover:text-on-primary hover:border-primary transition-all flex items-center justify-center shadow-sm active:scale-95 group focus:outline-none focus:ring-2 focus:ring-primary/20" aria-label="Xem chuyên gia trước">
+                                <span class="material-symbols-outlined text-[20px] group-hover:-translate-x-0.5 transition-transform">arrow_back</span>
+                            </button>
+                            <button id="team-carousel-next" class="w-11 h-11 rounded-full border border-outline-variant/40 bg-surface-container-lowest text-on-surface hover:bg-primary hover:text-on-primary hover:border-primary transition-all flex items-center justify-center shadow-sm active:scale-95 group focus:outline-none focus:ring-2 focus:ring-primary/20" aria-label="Xem chuyên gia kế tiếp">
+                                <span class="material-symbols-outlined text-[20px] group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+                            </button>
+                        </div>
                     </div>
-                    <!-- Personnel Cards Grid -->
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
-                        <!-- Profile 1: Lê Thiện Nhân -->
-                        <div
-                            class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col card-elevate">
-                            <div class="relative h-64 w-full bg-surface-container">
-                                <img class="w-full h-full object-cover"
-                                    data-alt="Professional studio portrait of an Asian male computer engineer in modern smart-casual attire, smiling with high confidence against a luminous clean office studio background, soft cinematic lighting, corporate executive photography style."
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPUg2OFyD-AX-fFJ13ayjClXgQZsNuMWBNrRZrjH8dvT1tiqMDWNTEQwX_uBXbHV-40P_uuS0MKoO-RbF_eELCTzfTDP8mW-GNcGZ9wdMhVRSVSwDNjidt5VBOoWuxMoEr6SPkUhripIJo-gOxEj9uRsDc2yrwglZEQC-iHxIfZ8azqNqPLeOCh-xCwbPX5d0lDuOwGD8rff53xNxaYpltmssLc2gQ_ZCC_Zs5RlkO-7rr-ZpEYb_A">
-                                <div
-                                    class="absolute bottom-3 right-3 bg-surface-container-lowest/90 backdrop-blur-md px-space-xs py-space-3xs rounded-md shadow-sm">
-                                    <span class="font-label-sm text-label-sm text-primary font-bold">01 năm kinh
-                                        nghiệm</span>
+
+                    <!-- Personnel Carousel Viewport -->
+                    <div class="relative overflow-hidden">
+                        <div id="team-carousel-track" class="flex gap-space-lg overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar py-space-xs select-none cursor-grab active:cursor-grabbing" style="scrollbar-width: none; -ms-overflow-style: none;">
+                            <!-- Profile 1: Lê Thiện Nhân -->
+                            <div
+                                class="team-card snap-start shrink-0 w-[88vw] sm:w-[360px] md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col card-elevate" data-index="0">
+                                <div class="relative h-64 w-full bg-surface-container">
+                                    <img class="w-full h-full object-cover"
+                                        data-alt="Professional studio portrait of an Asian male computer engineer in modern smart-casual attire, smiling with high confidence against a luminous clean office studio background, soft cinematic lighting, corporate executive photography style."
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPUg2OFyD-AX-fFJ13ayjClXgQZsNuMWBNrRZrjH8dvT1tiqMDWNTEQwX_uBXbHV-40P_uuS0MKoO-RbF_eELCTzfTDP8mW-GNcGZ9wdMhVRSVSwDNjidt5VBOoWuxMoEr6SPkUhripIJo-gOxEj9uRsDc2yrwglZEQC-iHxIfZ8azqNqPLeOCh-xCwbPX5d0lDuOwGD8rff53xNxaYpltmssLc2gQ_ZCC_Zs5RlkO-7rr-ZpEYb_A">
+                                    <div
+                                        class="absolute bottom-3 right-3 bg-surface-container-lowest/90 backdrop-blur-md px-space-xs py-space-3xs rounded-md shadow-sm">
+                                        <span class="font-label-sm text-label-sm text-primary font-bold">01 năm kinh
+                                            nghiệm</span>
+                                    </div>
+                                </div>
+                                <div class="p-space-lg flex flex-col flex-1">
+                                    <h3 class="font-headline-md text-headline-md text-on-surface">Lê Thiện Nhân</h3>
+                                    <span class="font-label-md text-label-md text-primary mt-space-3xs">Kỹ sư Công nghệ Kỹ
+                                        thuật Máy tính</span>
+                                    <p
+                                        class="font-body-md text-body-md text-on-surface-variant mt-space-sm leading-relaxed">
+                                        Chuyên trách nghiên cứu kiến trúc hệ thống nhúng, giải pháp tích hợp phần cứng -
+                                        phần mềm và hạ tầng điện toán cục bộ phục vụ các cơ sở y tế và cơ quan hành chính.
+                                    </p>
+                                    <div class="mt-auto pt-space-md flex flex-wrap gap-space-2xs">
+                                        <span
+                                            class="px-space-xs py-space-3xs rounded-full bg-surface-container text-secondary font-label-sm text-label-sm">Computer
+                                            Engineering</span>
+                                        <span
+                                            class="px-space-xs py-space-3xs rounded-full bg-surface-container text-secondary font-label-sm text-label-sm">Hardware
+                                            Integration</span>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="p-space-lg flex flex-col flex-1">
-                                <h3 class="font-headline-md text-headline-md text-on-surface">Lê Thiện Nhân</h3>
-                                <span class="font-label-md text-label-md text-primary mt-space-3xs">Kỹ sư Công nghệ Kỹ
-                                    thuật Máy tính</span>
-                                <p
-                                    class="font-body-md text-body-md text-on-surface-variant mt-space-sm leading-relaxed">
-                                    Chuyên trách nghiên cứu kiến trúc hệ thống nhúng, giải pháp tích hợp phần cứng -
-                                    phần mềm và hạ tầng điện toán cục bộ phục vụ các cơ sở y tế và cơ quan hành chính.
-                                </p>
-                                <div class="mt-auto pt-space-md flex flex-wrap gap-space-2xs">
-                                    <span
-                                        class="px-space-xs py-space-3xs rounded-full bg-surface-container text-secondary font-label-sm text-label-sm">Computer
-                                        Engineering</span>
-                                    <span
-                                        class="px-space-xs py-space-3xs rounded-full bg-surface-container text-secondary font-label-sm text-label-sm">Hardware
-                                        Integration</span>
+                            <!-- Profile 2: Dương Mạnh Quân -->
+                            <div
+                                class="team-card snap-start shrink-0 w-[88vw] sm:w-[360px] md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col card-elevate" data-index="1">
+                                <div class="relative h-64 w-full bg-surface-container">
+                                    <img class="w-full h-full object-cover"
+                                        data-alt="Modern professional portrait of a young Asian male software developer in a clean studio environment, tech executive posture, sharp focus, luminous azure accent glow in background, high-end corporate photoshoot."
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-tPv964lplwmKhqOEeLla9JGFPOQ681R85BqZh-8G79O6dfD3W3ibjuJ7UXLepyihIVMgZU93DF5tXMPXUujBNJ2t3GASt5BIkc6Hg9aiI6v4dwm8dMMksHj1L-Q2l6fe83-tKsBBu_VPQtZBYa7LQPpwLvh9Dbh_fch1HuWyNrgDQg1_nmVhGYSF98Wc5SomChwOAnJqUXZqSWwrSHhrTOA99zrko8T61FocibEMyc_TyXy6zDE6">
+                                    <div
+                                        class="absolute bottom-3 right-3 bg-surface-container-lowest/90 backdrop-blur-md px-space-xs py-space-3xs rounded-md shadow-sm">
+                                        <span class="font-label-sm text-label-sm text-primary font-bold">01 năm kinh
+                                            nghiệm</span>
+                                    </div>
+                                </div>
+                                <div class="p-space-lg flex flex-col flex-1">
+                                    <h3 class="font-headline-md text-headline-md text-on-surface">Dương Mạnh Quân</h3>
+                                    <span class="font-label-md text-label-md text-primary mt-space-3xs">Cử nhân Công nghệ
+                                        Thông tin</span>
+                                    <p
+                                        class="font-body-md text-body-md text-on-surface-variant mt-space-sm leading-relaxed">
+                                        Trọng tâm phát triển các ứng dụng nền tảng web hiện đại, xây dựng hệ thống cơ sở dữ
+                                        liệu phân tán và tối ưu hóa trải nghiệm tương tác thông suốt trong quản trị nội bộ.
+                                    </p>
+                                    <div class="mt-auto pt-space-md flex flex-wrap gap-space-2xs">
+                                        <span
+                                            class="px-space-xs py-space-3xs rounded-full bg-surface-container text-secondary font-label-sm text-label-sm">Web
+                                            Platforms</span>
+                                        <span
+                                            class="px-space-xs py-space-3xs rounded-full bg-surface-container text-secondary font-label-sm text-label-sm">Cloud
+                                            Database</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Profile 3: Nguyễn Thị Dung -->
+                            <div
+                                class="team-card snap-start shrink-0 w-[88vw] sm:w-[360px] md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col card-elevate" data-index="2">
+                                <div class="relative h-64 w-full bg-surface-container">
+                                    <img class="w-full h-full object-cover"
+                                        data-alt="Polished corporate headshot of an Asian female financial controller and chief accountant in professional business suit, radiant warm smile, soft natural light, minimalist contemporary architecture backdrop."
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlgu9yGbjtrT7I2jgwZkOIcKugOl3Qjj5H5Oo2QUnL_U4_CrVeOAzxCVmLLLa1kh20OlJKXkLi1yfAYyhKpwBgQCaUrxwKw5f469lIeHWEhZwMCh8Qg8IcrLBcMCBFBs2ZaOZJckeesJOESmuA57OTh90sNHd2gQ9PcNrmHcXVLcQaJ-ZbEBp69NYDntqs6yaO6XkYNBJMmO3ERhUds8dbIOsgymF6Fzr6x57Oaxr-Fw6-XmglaXWK">
+                                    <div
+                                        class="absolute bottom-3 right-3 bg-surface-container-lowest/90 backdrop-blur-md px-space-xs py-space-3xs rounded-md shadow-sm">
+                                        <span class="font-label-sm text-label-sm text-primary font-bold">&gt; 5 năm kinh
+                                            nghiệm</span>
+                                    </div>
+                                </div>
+                                <div class="p-space-lg flex flex-col flex-1">
+                                    <h3 class="font-headline-md text-headline-md text-on-surface">Nguyễn Thị Dung</h3>
+                                    <span class="font-label-md text-label-md text-primary mt-space-3xs">Chuyên viên Kế toán
+                                        &amp; Quản trị Tài chính</span>
+                                    <p
+                                        class="font-body-md text-body-md text-on-surface-variant mt-space-sm leading-relaxed">
+                                        Quản trị dòng vốn dự án, hoạch định ngân sách triển khai và bảo đảm tính tuân thủ
+                                        pháp lý tài chính chặt chẽ, tối ưu hiệu quả đầu tư công nghệ cho toàn hệ thống.
+                                    </p>
+                                    <div class="mt-auto pt-space-md flex flex-wrap gap-space-2xs">
+                                        <span
+                                            class="px-space-xs py-space-3xs rounded-full bg-surface-container text-secondary font-label-sm text-label-sm">Project
+                                            Accounting</span>
+                                        <span
+                                            class="px-space-xs py-space-3xs rounded-full bg-surface-container text-secondary font-label-sm text-label-sm">Financial
+                                            Compliance</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Profile 1 Duplicate (for seamless circular carousel on desktop/tablet) -->
+                            <div
+                                class="team-card snap-start shrink-0 w-[88vw] sm:w-[360px] md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col card-elevate" data-index="0" aria-hidden="true">
+                                <div class="relative h-64 w-full bg-surface-container">
+                                    <img class="w-full h-full object-cover"
+                                        alt="Lê Thiện Nhân"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPUg2OFyD-AX-fFJ13ayjClXgQZsNuMWBNrRZrjH8dvT1tiqMDWNTEQwX_uBXbHV-40P_uuS0MKoO-RbF_eELCTzfTDP8mW-GNcGZ9wdMhVRSVSwDNjidt5VBOoWuxMoEr6SPkUhripIJo-gOxEj9uRsDc2yrwglZEQC-iHxIfZ8azqNqPLeOCh-xCwbPX5d0lDuOwGD8rff53xNxaYpltmssLc2gQ_ZCC_Zs5RlkO-7rr-ZpEYb_A">
+                                    <div
+                                        class="absolute bottom-3 right-3 bg-surface-container-lowest/90 backdrop-blur-md px-space-xs py-space-3xs rounded-md shadow-sm">
+                                        <span class="font-label-sm text-label-sm text-primary font-bold">01 năm kinh
+                                            nghiệm</span>
+                                    </div>
+                                </div>
+                                <div class="p-space-lg flex flex-col flex-1">
+                                    <h3 class="font-headline-md text-headline-md text-on-surface">Lê Thiện Nhân</h3>
+                                    <span class="font-label-md text-label-md text-primary mt-space-3xs">Kỹ sư Công nghệ Kỹ
+                                        thuật Máy tính</span>
+                                    <p
+                                        class="font-body-md text-body-md text-on-surface-variant mt-space-sm leading-relaxed">
+                                        Chuyên trách nghiên cứu kiến trúc hệ thống nhúng, giải pháp tích hợp phần cứng -
+                                        phần mềm và hạ tầng điện toán cục bộ phục vụ các cơ sở y tế và cơ quan hành chính.
+                                    </p>
+                                    <div class="mt-auto pt-space-md flex flex-wrap gap-space-2xs">
+                                        <span
+                                            class="px-space-xs py-space-3xs rounded-full bg-surface-container text-secondary font-label-sm text-label-sm">Computer
+                                            Engineering</span>
+                                        <span
+                                            class="px-space-xs py-space-3xs rounded-full bg-surface-container text-secondary font-label-sm text-label-sm">Hardware
+                                            Integration</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Profile 2 Duplicate -->
+                            <div
+                                class="team-card snap-start shrink-0 w-[88vw] sm:w-[360px] md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col card-elevate" data-index="1" aria-hidden="true">
+                                <div class="relative h-64 w-full bg-surface-container">
+                                    <img class="w-full h-full object-cover"
+                                        alt="Dương Mạnh Quân"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-tPv964lplwmKhqOEeLla9JGFPOQ681R85BqZh-8G79O6dfD3W3ibjuJ7UXLepyihIVMgZU93DF5tXMPXUujBNJ2t3GASt5BIkc6Hg9aiI6v4dwm8dMMksHj1L-Q2l6fe83-tKsBBu_VPQtZBYa7LQPpwLvh9Dbh_fch1HuWyNrgDQg1_nmVhGYSF98Wc5SomChwOAnJqUXZqSWwrSHhrTOA99zrko8T61FocibEMyc_TyXy6zDE6">
+                                    <div
+                                        class="absolute bottom-3 right-3 bg-surface-container-lowest/90 backdrop-blur-md px-space-xs py-space-3xs rounded-md shadow-sm">
+                                        <span class="font-label-sm text-label-sm text-primary font-bold">01 năm kinh
+                                            nghiệm</span>
+                                    </div>
+                                </div>
+                                <div class="p-space-lg flex flex-col flex-1">
+                                    <h3 class="font-headline-md text-headline-md text-on-surface">Dương Mạnh Quân</h3>
+                                    <span class="font-label-md text-label-md text-primary mt-space-3xs">Cử nhân Công nghệ
+                                        Thông tin</span>
+                                    <p
+                                        class="font-body-md text-body-md text-on-surface-variant mt-space-sm leading-relaxed">
+                                        Trọng tâm phát triển các ứng dụng nền tảng web hiện đại, xây dựng hệ thống cơ sở dữ
+                                        liệu phân tán và tối ưu hóa trải nghiệm tương tác thông suốt trong quản trị nội bộ.
+                                    </p>
+                                    <div class="mt-auto pt-space-md flex flex-wrap gap-space-2xs">
+                                        <span
+                                            class="px-space-xs py-space-3xs rounded-full bg-surface-container text-secondary font-label-sm text-label-sm">Web
+                                            Platforms</span>
+                                        <span
+                                            class="px-space-xs py-space-3xs rounded-full bg-surface-container text-secondary font-label-sm text-label-sm">Cloud
+                                            Database</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Profile 3 Duplicate -->
+                            <div
+                                class="team-card snap-start shrink-0 w-[88vw] sm:w-[360px] md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col card-elevate" data-index="2" aria-hidden="true">
+                                <div class="relative h-64 w-full bg-surface-container">
+                                    <img class="w-full h-full object-cover"
+                                        alt="Nguyễn Thị Dung"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlgu9yGbjtrT7I2jgwZkOIcKugOl3Qjj5H5Oo2QUnL_U4_CrVeOAzxCVmLLLa1kh20OlJKXkLi1yfAYyhKpwBgQCaUrxwKw5f469lIeHWEhZwMCh8Qg8IcrLBcMCBFBs2ZaOZJckeesJOESmuA57OTh90sNHd2gQ9PcNrmHcXVLcQaJ-ZbEBp69NYDntqs6yaO6XkYNBJMmO3ERhUds8dbIOsgymF6Fzr6x57Oaxr-Fw6-XmglaXWK">
+                                    <div
+                                        class="absolute bottom-3 right-3 bg-surface-container-lowest/90 backdrop-blur-md px-space-xs py-space-3xs rounded-md shadow-sm">
+                                        <span class="font-label-sm text-label-sm text-primary font-bold">&gt; 5 năm kinh
+                                            nghiệm</span>
+                                    </div>
+                                </div>
+                                <div class="p-space-lg flex flex-col flex-1">
+                                    <h3 class="font-headline-md text-headline-md text-on-surface">Nguyễn Thị Dung</h3>
+                                    <span class="font-label-md text-label-md text-primary mt-space-3xs">Chuyên viên Kế toán
+                                        &amp; Quản trị Tài chính</span>
+                                    <p
+                                        class="font-body-md text-body-md text-on-surface-variant mt-space-sm leading-relaxed">
+                                        Quản trị dòng vốn dự án, hoạch định ngân sách triển khai và bảo đảm tính tuân thủ
+                                        pháp lý tài chính chặt chẽ, tối ưu hiệu quả đầu tư công nghệ cho toàn hệ thống.
+                                    </p>
+                                    <div class="mt-auto pt-space-md flex flex-wrap gap-space-2xs">
+                                        <span
+                                            class="px-space-xs py-space-3xs rounded-full bg-surface-container text-secondary font-label-sm text-label-sm">Project
+                                            Accounting</span>
+                                        <span
+                                            class="px-space-xs py-space-3xs rounded-full bg-surface-container text-secondary font-label-sm text-label-sm">Financial
+                                            Compliance</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- Profile 2: Dương Mạnh Quân -->
-                        <div
-                            class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col card-elevate">
-                            <div class="relative h-64 w-full bg-surface-container">
-                                <img class="w-full h-full object-cover"
-                                    data-alt="Modern professional portrait of a young Asian male software developer in a clean studio environment, tech executive posture, sharp focus, luminous azure accent glow in background, high-end corporate photoshoot."
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-tPv964lplwmKhqOEeLla9JGFPOQ681R85BqZh-8G79O6dfD3W3ibjuJ7UXLepyihIVMgZU93DF5tXMPXUujBNJ2t3GASt5BIkc6Hg9aiI6v4dwm8dMMksHj1L-Q2l6fe83-tKsBBu_VPQtZBYa7LQPpwLvh9Dbh_fch1HuWyNrgDQg1_nmVhGYSF98Wc5SomChwOAnJqUXZqSWwrSHhrTOA99zrko8T61FocibEMyc_TyXy6zDE6">
-                                <div
-                                    class="absolute bottom-3 right-3 bg-surface-container-lowest/90 backdrop-blur-md px-space-xs py-space-3xs rounded-md shadow-sm">
-                                    <span class="font-label-sm text-label-sm text-primary font-bold">01 năm kinh
-                                        nghiệm</span>
-                                </div>
-                            </div>
-                            <div class="p-space-lg flex flex-col flex-1">
-                                <h3 class="font-headline-md text-headline-md text-on-surface">Dương Mạnh Quân</h3>
-                                <span class="font-label-md text-label-md text-primary mt-space-3xs">Cử nhân Công nghệ
-                                    Thông tin</span>
-                                <p
-                                    class="font-body-md text-body-md text-on-surface-variant mt-space-sm leading-relaxed">
-                                    Trọng tâm phát triển các ứng dụng nền tảng web hiện đại, xây dựng hệ thống cơ sở dữ
-                                    liệu phân tán và tối ưu hóa trải nghiệm tương tác thông suốt trong quản trị nội bộ.
-                                </p>
-                                <div class="mt-auto pt-space-md flex flex-wrap gap-space-2xs">
-                                    <span
-                                        class="px-space-xs py-space-3xs rounded-full bg-surface-container text-secondary font-label-sm text-label-sm">Web
-                                        Platforms</span>
-                                    <span
-                                        class="px-space-xs py-space-3xs rounded-full bg-surface-container text-secondary font-label-sm text-label-sm">Cloud
-                                        Database</span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Profile 3: Nguyễn Thị Dung -->
-                        <div
-                            class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col card-elevate">
-                            <div class="relative h-64 w-full bg-surface-container">
-                                <img class="w-full h-full object-cover"
-                                    data-alt="Polished corporate headshot of an Asian female financial controller and chief accountant in professional business suit, radiant warm smile, soft natural light, minimalist contemporary architecture backdrop."
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlgu9yGbjtrT7I2jgwZkOIcKugOl3Qjj5H5Oo2QUnL_U4_CrVeOAzxCVmLLLa1kh20OlJKXkLi1yfAYyhKpwBgQCaUrxwKw5f469lIeHWEhZwMCh8Qg8IcrLBcMCBFBs2ZaOZJckeesJOESmuA57OTh90sNHd2gQ9PcNrmHcXVLcQaJ-ZbEBp69NYDntqs6yaO6XkYNBJMmO3ERhUds8dbIOsgymF6Fzr6x57Oaxr-Fw6-XmglaXWK">
-                                <div
-                                    class="absolute bottom-3 right-3 bg-surface-container-lowest/90 backdrop-blur-md px-space-xs py-space-3xs rounded-md shadow-sm">
-                                    <span class="font-label-sm text-label-sm text-primary font-bold">&gt; 5 năm kinh
-                                        nghiệm</span>
-                                </div>
-                            </div>
-                            <div class="p-space-lg flex flex-col flex-1">
-                                <h3 class="font-headline-md text-headline-md text-on-surface">Nguyễn Thị Dung</h3>
-                                <span class="font-label-md text-label-md text-primary mt-space-3xs">Chuyên viên Kế toán
-                                    &amp; Quản trị Tài chính</span>
-                                <p
-                                    class="font-body-md text-body-md text-on-surface-variant mt-space-sm leading-relaxed">
-                                    Quản trị dòng vốn dự án, hoạch định ngân sách triển khai và bảo đảm tính tuân thủ
-                                    pháp lý tài chính chặt chẽ, tối ưu hiệu quả đầu tư công nghệ cho toàn hệ thống.
-                                </p>
-                                <div class="mt-auto pt-space-md flex flex-wrap gap-space-2xs">
-                                    <span
-                                        class="px-space-xs py-space-3xs rounded-full bg-surface-container text-secondary font-label-sm text-label-sm">Project
-                                        Accounting</span>
-                                    <span
-                                        class="px-space-xs py-space-3xs rounded-full bg-surface-container text-secondary font-label-sm text-label-sm">Financial
-                                        Compliance</span>
-                                </div>
-                            </div>
-                        </div>
+                    </div>
+
+                    <!-- Carousel Pagination Dots -->
+                    <div class="flex items-center justify-center gap-2 mt-space-lg">
+                        <button class="team-dot w-7 h-2 rounded-full bg-primary transition-all duration-300 focus:outline-none" data-index="0" aria-label="Chuyên gia 1: Lê Thiện Nhân" aria-current="true"></button>
+                        <button class="team-dot w-2 h-2 rounded-full bg-outline-variant/40 hover:bg-outline-variant transition-all duration-300 focus:outline-none" data-index="1" aria-label="Chuyên gia 2: Dương Mạnh Quân"></button>
+                        <button class="team-dot w-2 h-2 rounded-full bg-outline-variant/40 hover:bg-outline-variant transition-all duration-300 focus:outline-none" data-index="2" aria-label="Chuyên gia 3: Nguyễn Thị Dung"></button>
                     </div>
                     <!-- Advisory & Senior Leadership Banner -->
                     <div
