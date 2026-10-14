@@ -752,8 +752,34 @@
     }
   }
 
+  // ── 100% Synchronized Header Navigation ───────────────────────────────────
+  function syncHeaderNav() {
+    const desktopNav = document.querySelector('header nav');
+    const mobileDrawer = document.getElementById('mobile-menu-drawer');
+
+    const canonicalDesktopHtml = `
+      <a class="font-medium whitespace-nowrap text-[13px] text-on-surface-variant hover:text-primary transition-colors" data-path="trang-chu" href="index.html">Trang chủ</a>
+      <a class="font-medium whitespace-nowrap text-[13px] text-on-surface-variant hover:text-primary transition-colors" data-path="gioi-thieu" href="gioithieu.html">Giới thiệu</a>
+      <a class="font-medium whitespace-nowrap text-[13px] text-on-surface-variant hover:text-primary transition-colors" data-path="linh-vuc-hoat-dong" href="lichvuc.html">Lĩnh vực hoạt động</a>
+      <a class="font-medium whitespace-nowrap text-[13px] text-on-surface-variant hover:text-primary transition-colors" data-path="du-an-tieu-bieu" href="duan.html">Dự án tiêu biểu</a>
+      <a class="font-medium whitespace-nowrap text-[13px] text-on-surface-variant hover:text-primary transition-colors" data-path="lien-he" href="gioithieu.html#lien-he">Liên hệ</a>
+    `;
+
+    const canonicalMobileHtml = `
+      <a class="py-2 text-[13px] font-medium text-on-surface-variant hover:text-primary transition-colors border-b border-outline-variant/10" data-path="trang-chu" href="index.html">Trang chủ</a>
+      <a class="py-2 text-[13px] font-medium text-on-surface-variant hover:text-primary transition-colors border-b border-outline-variant/10" data-path="gioi-thieu" href="gioithieu.html">Giới thiệu</a>
+      <a class="py-2 text-[13px] font-medium text-on-surface-variant hover:text-primary transition-colors border-b border-outline-variant/10" data-path="linh-vuc-hoat-dong" href="lichvuc.html">Lĩnh vực hoạt động</a>
+      <a class="py-2 text-[13px] font-medium text-on-surface-variant hover:text-primary transition-colors border-b border-outline-variant/10" data-path="du-an-tieu-bieu" href="duan.html">Dự án tiêu biểu</a>
+      <a class="py-2 text-[13px] font-medium text-on-surface-variant hover:text-primary transition-colors" data-path="lien-he" href="gioithieu.html#lien-he">Liên hệ khảo sát</a>
+    `;
+
+    if (desktopNav) desktopNav.innerHTML = canonicalDesktopHtml.trim();
+    if (mobileDrawer) mobileDrawer.innerHTML = canonicalMobileHtml.trim();
+  }
+
   // ── Boot ─────────────────────────────────────────────────────────────────
   function boot() {
+    syncHeaderNav();
     applyRoutes();
     highlightActive();
     initMobileMenu();
