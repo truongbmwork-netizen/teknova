@@ -230,9 +230,7 @@
         el.setAttribute('aria-current', 'page');
       } else {
         el.classList.remove('text-primary', 'font-bold');
-        if (!el.classList.contains('glow-btn') && !el.classList.contains('bg-primary')) {
-          el.classList.add('text-on-surface-variant');
-        }
+        el.classList.add('text-on-surface-variant');
         el.removeAttribute('aria-current');
       }
     });
