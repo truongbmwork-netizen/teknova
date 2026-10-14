@@ -1217,7 +1217,278 @@
             });
         </script>
     </main>
-    <footer class="w-full bg-surface-container-low pt-space-3xl pb-space-xl shadow-[0_-1px_8px_rgba(0,0,0,0.02)]">
+    <!-- PARTNERS & CLIENTS MARQUEE SECTION -->
+            <section class="py-space-2xl bg-surface overflow-hidden border-y border-surface-container/60 relative">
+                <style>
+                    @keyframes marqueeScrollRight {
+                        0% {
+                            transform: translateX(-50%);
+                        }
+                        100% {
+                            transform: translateX(0%);
+                        }
+                    }
+
+                    .marquee-track-right {
+                        display: flex;
+                        width: max-content;
+                        animation: marqueeScrollRight 40s linear infinite;
+                    }
+
+                    .marquee-track-right:hover {
+                        animation-play-state: paused;
+                    }
+
+                    .partner-pill {
+                        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+                    }
+
+                    .partner-pill:hover {
+                        border-color: rgba(65, 93, 168, 0.35);
+                        transform: translateY(-2px);
+                        box-shadow: 0 8px 20px -6px rgba(65, 93, 168, 0.12);
+                    }
+                </style>
+
+                <div class="max-w-[1200px] mx-auto px-margin md:px-margin-md lg:px-margin-lg mb-space-lg text-center">
+                    <h3 data-split-text class="font-headline-md text-headline-sm md:text-headline-md text-on-surface tracking-tight">
+                        Được tin cậy đồng hành bởi các <span class="text-primary font-bold">Bệnh viện &amp; Cơ quan Hành chính</span>
+                    </h3>
+                    <p class="font-body-md text-body-sm md:text-body-md text-secondary mt-1">
+                        Hơn 22+ dự án và hợp đồng tiêu biểu tại Đà Nẵng, Quảng Nam, TP.HCM &amp; Hà Nội theo đúng Hồ sơ năng lực 2026
+                    </p>
+                </div>
+
+                <div class="relative w-full overflow-hidden select-none">
+                    <div class="pointer-events-none absolute left-0 top-0 bottom-0 w-24 md:w-36 bg-gradient-to-r from-surface to-transparent z-10"></div>
+                    <div class="pointer-events-none absolute right-0 top-0 bottom-0 w-24 md:w-36 bg-gradient-to-l from-surface to-transparent z-10"></div>
+
+                    <div class="marquee-track-right flex gap-4 py-2">
+                        <div class="flex items-center gap-4 shrink-0">
+                        <div class="partner-pill flex items-center gap-3.5 px-4 py-2.5 rounded-xl bg-surface-container-lowest border border-surface-container shadow-xs group cursor-pointer whitespace-nowrap hover:border-primary/40 hover:shadow-md hover:bg-surface-container-lowest transition-all">
+                            <div class="w-10 h-10 rounded-xl bg-surface-container-low/70 border border-outline-variant/20 flex items-center justify-center p-1.5 shrink-0 group-hover:bg-white group-hover:border-primary/30 transition-all overflow-hidden shadow-2xs">
+                                <img src="assets/img/partners/mobifone_clean.png" alt="MobiFone Đà Nẵng" class="w-full h-full object-contain filter group-hover:scale-110 transition-transform">
+                            </div>
+                            <div class="text-left">
+                                <span class="block font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors font-semibold">MobiFone Đà Nẵng</span>
+                                <span class="block text-[11px] text-secondary">Zalo OA & Mini App DVC Phường Xã</span>
+                            </div>
+                        </div>
+                        <div class="partner-pill flex items-center gap-3.5 px-4 py-2.5 rounded-xl bg-surface-container-lowest border border-surface-container shadow-xs group cursor-pointer whitespace-nowrap hover:border-primary/40 hover:shadow-md hover:bg-surface-container-lowest transition-all">
+                            <div class="w-10 h-10 rounded-xl bg-surface-container-low/70 border border-outline-variant/20 flex items-center justify-center p-1.5 shrink-0 group-hover:bg-white group-hover:border-primary/30 transition-all overflow-hidden shadow-2xs">
+                                <img src="assets/img/partners/pvcombank_icon.png" alt="Ngân hàng PVcomBank" class="w-full h-full object-contain filter group-hover:scale-110 transition-transform">
+                            </div>
+                            <div class="text-left">
+                                <span class="block font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors font-semibold">Ngân hàng PVcomBank</span>
+                                <span class="block text-[11px] text-secondary">Hệ thống quản lý BV & Zalo OA</span>
+                            </div>
+                        </div>
+                        <div class="partner-pill flex items-center gap-3.5 px-4 py-2.5 rounded-xl bg-surface-container-lowest border border-surface-container shadow-xs group cursor-pointer whitespace-nowrap hover:border-primary/40 hover:shadow-md hover:bg-surface-container-lowest transition-all">
+                            <div class="w-10 h-10 rounded-xl bg-surface-container-low/70 border border-outline-variant/20 flex items-center justify-center p-1.5 shrink-0 group-hover:bg-white group-hover:border-primary/30 transition-all overflow-hidden shadow-2xs">
+                                <img src="assets/img/partners/bv_phoi_clean.png" alt="BV Phổi Đà Nẵng" class="w-full h-full object-contain filter group-hover:scale-110 transition-transform">
+                            </div>
+                            <div class="text-left">
+                                <span class="block font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors font-semibold">BV Phổi Đà Nẵng</span>
+                                <span class="block text-[11px] text-secondary">Bệnh án điện tử EMR & QĐ 3176 XML</span>
+                            </div>
+                        </div>
+                        <div class="partner-pill flex items-center gap-3.5 px-4 py-2.5 rounded-xl bg-surface-container-lowest border border-surface-container shadow-xs group cursor-pointer whitespace-nowrap hover:border-primary/40 hover:shadow-md hover:bg-surface-container-lowest transition-all">
+                            <div class="w-10 h-10 rounded-xl bg-surface-container-low/70 border border-outline-variant/20 flex items-center justify-center p-1.5 shrink-0 group-hover:bg-white group-hover:border-primary/30 transition-all overflow-hidden shadow-2xs">
+                                <img src="assets/img/partners/bv_phusan_nhi_clean.png" alt="BV Phụ sản - Nhi Đà Nẵng" class="w-full h-full object-contain filter group-hover:scale-110 transition-transform">
+                            </div>
+                            <div class="text-left">
+                                <span class="block font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors font-semibold">BV Phụ sản - Nhi Đà Nẵng</span>
+                                <span class="block text-[11px] text-secondary">Trả kết quả xét nghiệm qua Zalo OA</span>
+                            </div>
+                        </div>
+                        <div class="partner-pill flex items-center gap-3.5 px-4 py-2.5 rounded-xl bg-surface-container-lowest border border-surface-container shadow-xs group cursor-pointer whitespace-nowrap hover:border-primary/40 hover:shadow-md hover:bg-surface-container-lowest transition-all">
+                            <div class="w-10 h-10 rounded-xl bg-surface-container-low/70 border border-outline-variant/20 flex items-center justify-center p-1.5 shrink-0 group-hover:bg-white group-hover:border-primary/30 transition-all overflow-hidden shadow-2xs">
+                                <img src="assets/img/partners/ttyt_lienchieu_clean.png" alt="TTYT Khu vực Liên Chiểu" class="w-full h-full object-contain filter group-hover:scale-110 transition-transform">
+                            </div>
+                            <div class="text-left">
+                                <span class="block font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors font-semibold">TTYT Khu vực Liên Chiểu</span>
+                                <span class="block text-[11px] text-secondary">Đơn thuốc TT 26/2025 & Đề án 06 QĐ 130</span>
+                            </div>
+                        </div>
+                        <div class="partner-pill flex items-center gap-3.5 px-4 py-2.5 rounded-xl bg-surface-container-lowest border border-surface-container shadow-xs group cursor-pointer whitespace-nowrap hover:border-primary/40 hover:shadow-md hover:bg-surface-container-lowest transition-all">
+                            <div class="w-10 h-10 rounded-xl bg-surface-container-low/70 border border-outline-variant/20 flex items-center justify-center p-1.5 shrink-0 group-hover:bg-white group-hover:border-primary/30 transition-all overflow-hidden shadow-2xs">
+                                <img src="assets/img/partners/ttyt_nguhanhson_clean.png" alt="TTYT Khu vực Ngũ Hành Sơn" class="w-full h-full object-contain filter group-hover:scale-110 transition-transform">
+                            </div>
+                            <div class="text-left">
+                                <span class="block font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors font-semibold">TTYT Khu vực Ngũ Hành Sơn</span>
+                                <span class="block text-[11px] text-secondary">Thuê phần mềm EMR OPEX năm 2025</span>
+                            </div>
+                        </div>
+                        <div class="partner-pill flex items-center gap-3.5 px-4 py-2.5 rounded-xl bg-surface-container-lowest border border-surface-container shadow-xs group cursor-pointer whitespace-nowrap hover:border-primary/40 hover:shadow-md hover:bg-surface-container-lowest transition-all">
+                            <div class="w-10 h-10 rounded-xl bg-surface-container-low/70 border border-outline-variant/20 flex items-center justify-center p-1.5 shrink-0 group-hover:bg-white group-hover:border-primary/30 transition-all overflow-hidden shadow-2xs">
+                                <img src="assets/img/partners/ttyt_camle_clean.png" alt="TTYT Khu vực Cẩm Lệ" class="w-full h-full object-contain filter group-hover:scale-110 transition-transform">
+                            </div>
+                            <div class="text-left">
+                                <span class="block font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors font-semibold">TTYT Khu vực Cẩm Lệ</span>
+                                <span class="block text-[11px] text-secondary">Cập nhật HIS xuất XML QĐ 3176/BYT</span>
+                            </div>
+                        </div>
+                        <div class="partner-pill flex items-center gap-3.5 px-4 py-2.5 rounded-xl bg-surface-container-lowest border border-surface-container shadow-xs group cursor-pointer whitespace-nowrap hover:border-primary/40 hover:shadow-md hover:bg-surface-container-lowest transition-all">
+                            <div class="w-10 h-10 rounded-xl bg-surface-container-low/70 border border-outline-variant/20 flex items-center justify-center p-1.5 shrink-0 group-hover:bg-white group-hover:border-primary/30 transition-all overflow-hidden shadow-2xs">
+                                <img src="assets/img/partners/chicuc_danso_clean.png" alt="Chi cục Dân số TP Đà Nẵng" class="w-full h-full object-contain filter group-hover:scale-110 transition-transform">
+                            </div>
+                            <div class="text-left">
+                                <span class="block font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors font-semibold">Chi cục Dân số TP Đà Nẵng</span>
+                                <span class="block text-[11px] text-secondary">Web thống kê & CSDL Dân số cơ sở</span>
+                            </div>
+                        </div>
+                        <div class="partner-pill flex items-center gap-3.5 px-4 py-2.5 rounded-xl bg-surface-container-lowest border border-surface-container shadow-xs group cursor-pointer whitespace-nowrap hover:border-primary/40 hover:shadow-md hover:bg-surface-container-lowest transition-all">
+                            <div class="w-10 h-10 rounded-xl bg-surface-container-low/70 border border-outline-variant/20 flex items-center justify-center p-1.5 shrink-0 group-hover:bg-white group-hover:border-primary/30 transition-all overflow-hidden shadow-2xs">
+                                <img src="assets/img/partners/danang_gov_clean.png" alt="Trung tâm CĐS Chiến lược ĐN" class="w-full h-full object-contain filter group-hover:scale-110 transition-transform">
+                            </div>
+                            <div class="text-left">
+                                <span class="block font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors font-semibold">Trung tâm CĐS Chiến lược ĐN</span>
+                                <span class="block text-[11px] text-secondary">Hệ thống đánh giá tiêu chí CNTT TP</span>
+                            </div>
+                        </div>
+                        <div class="partner-pill flex items-center gap-3.5 px-4 py-2.5 rounded-xl bg-surface-container-lowest border border-surface-container shadow-xs group cursor-pointer whitespace-nowrap hover:border-primary/40 hover:shadow-md hover:bg-surface-container-lowest transition-all">
+                            <div class="w-10 h-10 rounded-xl bg-surface-container-low/70 border border-outline-variant/20 flex items-center justify-center p-1.5 shrink-0 group-hover:bg-white group-hover:border-primary/30 transition-all overflow-hidden shadow-2xs">
+                                <img src="assets/img/partners/cloud_ace_clean.png" alt="Công ty TNHH Cloud ACE" class="w-full h-full object-contain filter group-hover:scale-110 transition-transform">
+                            </div>
+                            <div class="text-left">
+                                <span class="block font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors font-semibold">Công ty TNHH Cloud ACE</span>
+                                <span class="block text-[11px] text-secondary">R&D Cổng KH & Mobile App (TP.HCM)</span>
+                            </div>
+                        </div>
+                        <div class="partner-pill flex items-center gap-3.5 px-4 py-2.5 rounded-xl bg-surface-container-lowest border border-surface-container shadow-xs group cursor-pointer whitespace-nowrap hover:border-primary/40 hover:shadow-md hover:bg-surface-container-lowest transition-all">
+                            <div class="w-10 h-10 rounded-xl bg-surface-container-low/70 border border-outline-variant/20 flex items-center justify-center p-1.5 shrink-0 group-hover:bg-white group-hover:border-primary/30 transition-all overflow-hidden shadow-2xs">
+                                <img src="assets/img/partners/bv_yhoccotruyen_clean.png" alt="BV Y học Cổ truyền Đà Nẵng" class="w-full h-full object-contain filter group-hover:scale-110 transition-transform">
+                            </div>
+                            <div class="text-left">
+                                <span class="block font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors font-semibold">BV Y học Cổ truyền Đà Nẵng</span>
+                                <span class="block text-[11px] text-secondary">Cổng thông tin & Số hóa dữ liệu KCB</span>
+                            </div>
+                        </div>
+                        <div class="partner-pill flex items-center gap-3.5 px-4 py-2.5 rounded-xl bg-surface-container-lowest border border-surface-container shadow-xs group cursor-pointer whitespace-nowrap hover:border-primary/40 hover:shadow-md hover:bg-surface-container-lowest transition-all">
+                            <div class="w-10 h-10 rounded-xl bg-surface-container-low/70 border border-outline-variant/20 flex items-center justify-center p-1.5 shrink-0 group-hover:bg-white group-hover:border-primary/30 transition-all overflow-hidden shadow-2xs">
+                                <img src="assets/img/partners/danang_gov_clean.png" alt="UBND Phường Ngũ Hành Sơn" class="w-full h-full object-contain filter group-hover:scale-110 transition-transform">
+                            </div>
+                            <div class="text-left">
+                                <span class="block font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors font-semibold">UBND Phường Ngũ Hành Sơn</span>
+                                <span class="block text-[11px] text-secondary">Hệ thống tin nhắn Zalo OA hành chính</span>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="flex items-center gap-4 shrink-0" aria-hidden="true">
+                        <div class="partner-pill flex items-center gap-3.5 px-4 py-2.5 rounded-xl bg-surface-container-lowest border border-surface-container shadow-xs group cursor-pointer whitespace-nowrap hover:border-primary/40 hover:shadow-md hover:bg-surface-container-lowest transition-all">
+                            <div class="w-10 h-10 rounded-xl bg-surface-container-low/70 border border-outline-variant/20 flex items-center justify-center p-1.5 shrink-0 group-hover:bg-white group-hover:border-primary/30 transition-all overflow-hidden shadow-2xs">
+                                <img src="assets/img/partners/mobifone_clean.png" alt="MobiFone Đà Nẵng" class="w-full h-full object-contain filter group-hover:scale-110 transition-transform">
+                            </div>
+                            <div class="text-left">
+                                <span class="block font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors font-semibold">MobiFone Đà Nẵng</span>
+                                <span class="block text-[11px] text-secondary">Zalo OA & Mini App DVC Phường Xã</span>
+                            </div>
+                        </div>
+                        <div class="partner-pill flex items-center gap-3.5 px-4 py-2.5 rounded-xl bg-surface-container-lowest border border-surface-container shadow-xs group cursor-pointer whitespace-nowrap hover:border-primary/40 hover:shadow-md hover:bg-surface-container-lowest transition-all">
+                            <div class="w-10 h-10 rounded-xl bg-surface-container-low/70 border border-outline-variant/20 flex items-center justify-center p-1.5 shrink-0 group-hover:bg-white group-hover:border-primary/30 transition-all overflow-hidden shadow-2xs">
+                                <img src="assets/img/partners/pvcombank_icon.png" alt="Ngân hàng PVcomBank" class="w-full h-full object-contain filter group-hover:scale-110 transition-transform">
+                            </div>
+                            <div class="text-left">
+                                <span class="block font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors font-semibold">Ngân hàng PVcomBank</span>
+                                <span class="block text-[11px] text-secondary">Hệ thống quản lý BV & Zalo OA</span>
+                            </div>
+                        </div>
+                        <div class="partner-pill flex items-center gap-3.5 px-4 py-2.5 rounded-xl bg-surface-container-lowest border border-surface-container shadow-xs group cursor-pointer whitespace-nowrap hover:border-primary/40 hover:shadow-md hover:bg-surface-container-lowest transition-all">
+                            <div class="w-10 h-10 rounded-xl bg-surface-container-low/70 border border-outline-variant/20 flex items-center justify-center p-1.5 shrink-0 group-hover:bg-white group-hover:border-primary/30 transition-all overflow-hidden shadow-2xs">
+                                <img src="assets/img/partners/bv_phoi_clean.png" alt="BV Phổi Đà Nẵng" class="w-full h-full object-contain filter group-hover:scale-110 transition-transform">
+                            </div>
+                            <div class="text-left">
+                                <span class="block font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors font-semibold">BV Phổi Đà Nẵng</span>
+                                <span class="block text-[11px] text-secondary">Bệnh án điện tử EMR & QĐ 3176 XML</span>
+                            </div>
+                        </div>
+                        <div class="partner-pill flex items-center gap-3.5 px-4 py-2.5 rounded-xl bg-surface-container-lowest border border-surface-container shadow-xs group cursor-pointer whitespace-nowrap hover:border-primary/40 hover:shadow-md hover:bg-surface-container-lowest transition-all">
+                            <div class="w-10 h-10 rounded-xl bg-surface-container-low/70 border border-outline-variant/20 flex items-center justify-center p-1.5 shrink-0 group-hover:bg-white group-hover:border-primary/30 transition-all overflow-hidden shadow-2xs">
+                                <img src="assets/img/partners/bv_phusan_nhi_clean.png" alt="BV Phụ sản - Nhi Đà Nẵng" class="w-full h-full object-contain filter group-hover:scale-110 transition-transform">
+                            </div>
+                            <div class="text-left">
+                                <span class="block font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors font-semibold">BV Phụ sản - Nhi Đà Nẵng</span>
+                                <span class="block text-[11px] text-secondary">Trả kết quả xét nghiệm qua Zalo OA</span>
+                            </div>
+                        </div>
+                        <div class="partner-pill flex items-center gap-3.5 px-4 py-2.5 rounded-xl bg-surface-container-lowest border border-surface-container shadow-xs group cursor-pointer whitespace-nowrap hover:border-primary/40 hover:shadow-md hover:bg-surface-container-lowest transition-all">
+                            <div class="w-10 h-10 rounded-xl bg-surface-container-low/70 border border-outline-variant/20 flex items-center justify-center p-1.5 shrink-0 group-hover:bg-white group-hover:border-primary/30 transition-all overflow-hidden shadow-2xs">
+                                <img src="assets/img/partners/ttyt_lienchieu_clean.png" alt="TTYT Khu vực Liên Chiểu" class="w-full h-full object-contain filter group-hover:scale-110 transition-transform">
+                            </div>
+                            <div class="text-left">
+                                <span class="block font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors font-semibold">TTYT Khu vực Liên Chiểu</span>
+                                <span class="block text-[11px] text-secondary">Đơn thuốc TT 26/2025 & Đề án 06 QĐ 130</span>
+                            </div>
+                        </div>
+                        <div class="partner-pill flex items-center gap-3.5 px-4 py-2.5 rounded-xl bg-surface-container-lowest border border-surface-container shadow-xs group cursor-pointer whitespace-nowrap hover:border-primary/40 hover:shadow-md hover:bg-surface-container-lowest transition-all">
+                            <div class="w-10 h-10 rounded-xl bg-surface-container-low/70 border border-outline-variant/20 flex items-center justify-center p-1.5 shrink-0 group-hover:bg-white group-hover:border-primary/30 transition-all overflow-hidden shadow-2xs">
+                                <img src="assets/img/partners/ttyt_nguhanhson_clean.png" alt="TTYT Khu vực Ngũ Hành Sơn" class="w-full h-full object-contain filter group-hover:scale-110 transition-transform">
+                            </div>
+                            <div class="text-left">
+                                <span class="block font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors font-semibold">TTYT Khu vực Ngũ Hành Sơn</span>
+                                <span class="block text-[11px] text-secondary">Thuê phần mềm EMR OPEX năm 2025</span>
+                            </div>
+                        </div>
+                        <div class="partner-pill flex items-center gap-3.5 px-4 py-2.5 rounded-xl bg-surface-container-lowest border border-surface-container shadow-xs group cursor-pointer whitespace-nowrap hover:border-primary/40 hover:shadow-md hover:bg-surface-container-lowest transition-all">
+                            <div class="w-10 h-10 rounded-xl bg-surface-container-low/70 border border-outline-variant/20 flex items-center justify-center p-1.5 shrink-0 group-hover:bg-white group-hover:border-primary/30 transition-all overflow-hidden shadow-2xs">
+                                <img src="assets/img/partners/ttyt_camle_clean.png" alt="TTYT Khu vực Cẩm Lệ" class="w-full h-full object-contain filter group-hover:scale-110 transition-transform">
+                            </div>
+                            <div class="text-left">
+                                <span class="block font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors font-semibold">TTYT Khu vực Cẩm Lệ</span>
+                                <span class="block text-[11px] text-secondary">Cập nhật HIS xuất XML QĐ 3176/BYT</span>
+                            </div>
+                        </div>
+                        <div class="partner-pill flex items-center gap-3.5 px-4 py-2.5 rounded-xl bg-surface-container-lowest border border-surface-container shadow-xs group cursor-pointer whitespace-nowrap hover:border-primary/40 hover:shadow-md hover:bg-surface-container-lowest transition-all">
+                            <div class="w-10 h-10 rounded-xl bg-surface-container-low/70 border border-outline-variant/20 flex items-center justify-center p-1.5 shrink-0 group-hover:bg-white group-hover:border-primary/30 transition-all overflow-hidden shadow-2xs">
+                                <img src="assets/img/partners/chicuc_danso_clean.png" alt="Chi cục Dân số TP Đà Nẵng" class="w-full h-full object-contain filter group-hover:scale-110 transition-transform">
+                            </div>
+                            <div class="text-left">
+                                <span class="block font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors font-semibold">Chi cục Dân số TP Đà Nẵng</span>
+                                <span class="block text-[11px] text-secondary">Web thống kê & CSDL Dân số cơ sở</span>
+                            </div>
+                        </div>
+                        <div class="partner-pill flex items-center gap-3.5 px-4 py-2.5 rounded-xl bg-surface-container-lowest border border-surface-container shadow-xs group cursor-pointer whitespace-nowrap hover:border-primary/40 hover:shadow-md hover:bg-surface-container-lowest transition-all">
+                            <div class="w-10 h-10 rounded-xl bg-surface-container-low/70 border border-outline-variant/20 flex items-center justify-center p-1.5 shrink-0 group-hover:bg-white group-hover:border-primary/30 transition-all overflow-hidden shadow-2xs">
+                                <img src="assets/img/partners/danang_gov_clean.png" alt="Trung tâm CĐS Chiến lược ĐN" class="w-full h-full object-contain filter group-hover:scale-110 transition-transform">
+                            </div>
+                            <div class="text-left">
+                                <span class="block font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors font-semibold">Trung tâm CĐS Chiến lược ĐN</span>
+                                <span class="block text-[11px] text-secondary">Hệ thống đánh giá tiêu chí CNTT TP</span>
+                            </div>
+                        </div>
+                        <div class="partner-pill flex items-center gap-3.5 px-4 py-2.5 rounded-xl bg-surface-container-lowest border border-surface-container shadow-xs group cursor-pointer whitespace-nowrap hover:border-primary/40 hover:shadow-md hover:bg-surface-container-lowest transition-all">
+                            <div class="w-10 h-10 rounded-xl bg-surface-container-low/70 border border-outline-variant/20 flex items-center justify-center p-1.5 shrink-0 group-hover:bg-white group-hover:border-primary/30 transition-all overflow-hidden shadow-2xs">
+                                <img src="assets/img/partners/cloud_ace_clean.png" alt="Công ty TNHH Cloud ACE" class="w-full h-full object-contain filter group-hover:scale-110 transition-transform">
+                            </div>
+                            <div class="text-left">
+                                <span class="block font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors font-semibold">Công ty TNHH Cloud ACE</span>
+                                <span class="block text-[11px] text-secondary">R&D Cổng KH & Mobile App (TP.HCM)</span>
+                            </div>
+                        </div>
+                        <div class="partner-pill flex items-center gap-3.5 px-4 py-2.5 rounded-xl bg-surface-container-lowest border border-surface-container shadow-xs group cursor-pointer whitespace-nowrap hover:border-primary/40 hover:shadow-md hover:bg-surface-container-lowest transition-all">
+                            <div class="w-10 h-10 rounded-xl bg-surface-container-low/70 border border-outline-variant/20 flex items-center justify-center p-1.5 shrink-0 group-hover:bg-white group-hover:border-primary/30 transition-all overflow-hidden shadow-2xs">
+                                <img src="assets/img/partners/bv_yhoccotruyen_clean.png" alt="BV Y học Cổ truyền Đà Nẵng" class="w-full h-full object-contain filter group-hover:scale-110 transition-transform">
+                            </div>
+                            <div class="text-left">
+                                <span class="block font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors font-semibold">BV Y học Cổ truyền Đà Nẵng</span>
+                                <span class="block text-[11px] text-secondary">Cổng thông tin & Số hóa dữ liệu KCB</span>
+                            </div>
+                        </div>
+                        <div class="partner-pill flex items-center gap-3.5 px-4 py-2.5 rounded-xl bg-surface-container-lowest border border-surface-container shadow-xs group cursor-pointer whitespace-nowrap hover:border-primary/40 hover:shadow-md hover:bg-surface-container-lowest transition-all">
+                            <div class="w-10 h-10 rounded-xl bg-surface-container-low/70 border border-outline-variant/20 flex items-center justify-center p-1.5 shrink-0 group-hover:bg-white group-hover:border-primary/30 transition-all overflow-hidden shadow-2xs">
+                                <img src="assets/img/partners/danang_gov_clean.png" alt="UBND Phường Ngũ Hành Sơn" class="w-full h-full object-contain filter group-hover:scale-110 transition-transform">
+                            </div>
+                            <div class="text-left">
+                                <span class="block font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors font-semibold">UBND Phường Ngũ Hành Sơn</span>
+                                <span class="block text-[11px] text-secondary">Hệ thống tin nhắn Zalo OA hành chính</span>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+<footer class="w-full bg-surface-container-low pt-space-3xl pb-space-xl shadow-[0_-1px_8px_rgba(0,0,0,0.02)]">
         <div class="max-w-[1200px] mx-auto px-margin md:px-margin-md lg:px-margin-lg">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-space-xl pb-space-2xl">
                 <div class="lg:col-span-4 flex flex-col items-start gap-space-sm">
