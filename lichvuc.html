@@ -1339,12 +1339,16 @@
                             <h3 class="font-headline-sm text-xl sm:text-2xl text-on-surface font-extrabold leading-snug" id="modalTitle">
                                 Chi tiết dự án
                             </h3>
-                            <div class="flex items-center gap-1.5 text-xs text-secondary mt-0.5" id="modalClientWrapper">
-                                <span class="material-symbols-outlined text-[16px] text-primary">domain</span>
-                                <span class="font-semibold text-on-surface" id="modalClient">Bệnh viện Phổi Đà Nẵng</span>
-                                <span class="text-outline mx-1">•</span>
-                                <span class="material-symbols-outlined text-[14px]">location_on</span>
-                                <span id="modalLocation">Đà Nẵng</span>
+                            <div class="flex items-center gap-2.5 text-xs text-secondary mt-1" id="modalClientWrapper">
+                                <div class="w-8 h-8 rounded-xl bg-surface-container-low border border-outline-variant/30 flex items-center justify-center p-1 shrink-0 overflow-hidden shadow-2xs">
+                                    <img id="modalClientLogo" src="assets/img/partners/bv_phoi_clean.png" alt="Logo đối tác" class="w-full h-full object-contain" onerror="this.onerror=null;this.src='assets/img/partners/danang_gov_clean.png'">
+                                </div>
+                                <div class="flex flex-wrap items-center gap-1.5">
+                                    <span class="font-bold text-on-surface text-[13px]" id="modalClient">Bệnh viện Phổi Đà Nẵng</span>
+                                    <span class="text-outline">•</span>
+                                    <span class="material-symbols-outlined text-[14px] text-secondary">location_on</span>
+                                    <span id="modalLocation" class="text-secondary font-medium">Đà Nẵng</span>
+                                </div>
                             </div>
                         </div>
                         <button
@@ -1421,6 +1425,24 @@
             <!-- Interactive Filter & Modal Logic with Rich Dataset -->
             <script>
                 // Comprehensive Database of Teknova's 23 Authentic Projects
+                const CLIENT_LOGOS = {
+                    "Bệnh viện Phổi Đà Nẵng": "assets/img/partners/bv_phoi_clean.png",
+                    "Trung tâm Y tế Khu vực Liên Chiểu": "assets/img/partners/ttyt_lienchieu_clean.png",
+                    "Trung tâm Y tế Khu vực Ngũ Hành Sơn": "assets/img/partners/ttyt_nguhanhson_clean.png",
+                    "Trung tâm Y tế Khu vực Cẩm Lệ": "assets/img/partners/ttyt_camle_clean.png",
+                    "Bệnh viện Phụ sản - Nhi Đà Nẵng": "assets/img/partners/bv_phusan_nhi_clean.png",
+                    "Bệnh viện Y học Cổ truyền Thành phố Đà Nẵng": "assets/img/partners/bv_yhoccotruyen_clean.png",
+                    "Chi cục Dân số Thành phố Đà Nẵng": "assets/img/partners/chicuc_danso_clean.png",
+                    "MobiFone Đà Nẵng (Chi nhánh TCT Viễn thông MobiFone)": "assets/img/partners/mobifone_clean.png",
+                    "Ngân hàng TMCP Đại Chúng Việt Nam (PVcomBank)": "assets/img/partners/pvcombank_icon.png",
+                    "Công ty TNHH Cloud ACE (Đối tác Google Cloud Partner)": "assets/img/partners/cloud_ace_clean.png",
+                    "Trung Tâm Chuyển Đổi Số Và Công Nghệ Chiến Lược Đà Nẵng": "assets/img/partners/danang_gov_clean.png",
+                    "Trung tâm Phục vụ Hành chính công Phường Ngũ Hành Sơn": "assets/img/partners/danang_gov_clean.png",
+                    "UBND Xã Xuân Phú, TP. Đà Nẵng": "assets/img/partners/danang_gov_clean.png",
+                    "Phòng Văn Hóa Xã Hội Phường Điện Bàn Bắc": "assets/img/partners/danang_gov_clean.png",
+                    "Phòng Văn Hoá – Xã Hội Xã Tiên Phước": "assets/img/partners/danang_gov_clean.png",
+                    "default": "assets/img/partners/danang_gov_clean.png"
+                };
                 const TEKNOVA_PROJECTS = {
                     "Bệnh án điện tử EMR tại Bệnh viện Phổi Đà Nẵng": {
                         category: "Y TẾ SỐ & EMR",
@@ -1932,6 +1954,12 @@
                     document.getElementById('modalYear').innerText = data.year;
                     document.getElementById('modalClient').innerText = data.client;
                     document.getElementById('modalLocation').innerText = data.location;
+                    const clientLogo = CLIENT_LOGOS[data.client] || CLIENT_LOGOS['default'];
+                    const logoImg = document.getElementById('modalClientLogo');
+                    if (logoImg) {
+                        logoImg.src = clientLogo;
+                        logoImg.alt = data.client;
+                    }
                     document.getElementById('modalDesc').innerText = data.desc;
                     document.getElementById('modalModel').innerText = data.model;
                     document.getElementById('modalSLA').innerText = data.sla;
