@@ -329,362 +329,86 @@
                         </div>
                     </div>
                     
-                    <!-- Multi-Domain Interactive Switcher (Y Tế - Chính Quyền - Doanh Nghiệp) -->
-                    <div class="w-full max-w-3xl mx-auto mt-space-xl mb-4">
-                        <div class="inline-flex p-1.5 rounded-2xl bg-surface-container-low border border-outline-variant/30 shadow-xs max-w-full overflow-x-auto gap-1">
-                            <button id="hero-tab-btn-yte" onclick="switchHeroDomain('yte')" type="button" class="flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold transition-all whitespace-nowrap bg-surface-container-lowest text-primary shadow-sm border border-outline-variant/30 font-bold">
-                                <span class="material-symbols-outlined text-[18px] text-primary">local_hospital</span>
-                                <div class="text-left">
-                                    <div class="leading-tight">1. Y Tế Thông Minh</div>
-                                    <div class="text-[10px] font-normal text-primary/80 hidden sm:block">EMR · Ký số Cloud CA · Đơn thuốc TT26</div>
+                    
+                    <!-- 3 Core Domains Cards (Thực Tế & Trực Quan Thay Cho Bảng Giả) -->
+                    <div class="w-full max-w-5xl mx-auto mt-space-2xl">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-space-md text-left">
+                            
+                            <!-- Trụ cột 1: Y Tế Số -->
+                            <div class="p-space-lg rounded-2xl bg-surface-container-lowest border border-outline-variant/30 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+                                <div>
+                                    <div class="w-12 h-12 rounded-xl bg-sky-50 text-primary flex items-center justify-center mb-space-sm group-hover:scale-110 transition-transform">
+                                        <span class="material-symbols-outlined text-[28px]">local_hospital</span>
+                                    </div>
+                                    <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 text-[11px] font-bold font-mono mb-2">
+                                        ✓ TT 46/2018 · TT 26/2025
+                                    </div>
+                                    <h3 class="font-headline-sm text-headline-sm text-on-surface mb-1">
+                                        Y Tế Số &amp; Bệnh Án EMR
+                                    </h3>
+                                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                        Bệnh án điện tử không giấy, tích hợp ký số Cloud CA &amp; dấu thời gian TSA. Liên thông đơn thuốc quốc gia và giám định BHYT QĐ 3176.
+                                    </p>
                                 </div>
-                            </button>
-                            <button id="hero-tab-btn-gov" onclick="switchHeroDomain('gov')" type="button" class="flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold transition-all whitespace-nowrap text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest/50">
-                                <span class="material-symbols-outlined text-[18px] text-secondary">account_balance</span>
-                                <div class="text-left">
-                                    <div class="leading-tight">2. Chính Quyền Số</div>
-                                    <div class="text-[10px] font-normal text-secondary hidden sm:block">Đề án 06 · CSDL Dân số · Zalo Mini App</div>
+                                <div class="mt-space-md pt-space-sm border-t border-outline-variant/20">
+                                    <span class="text-[11px] font-bold text-secondary uppercase tracking-wider block mb-1">Dự án bảo chứng thực tế:</span>
+                                    <p class="font-label-sm text-label-sm text-primary font-semibold mb-0">
+                                        BV Phổi Đà Nẵng · TTYT Liên Chiểu · TTYT Cẩm Lệ · TTYT Ngũ Hành Sơn
+                                    </p>
                                 </div>
-                            </button>
-                            <button id="hero-tab-btn-biz" onclick="switchHeroDomain('biz')" type="button" class="flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold transition-all whitespace-nowrap text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest/50">
-                                <span class="material-symbols-outlined text-[18px] text-secondary">domain</span>
-                                <div class="text-left">
-                                    <div class="leading-tight">3. Doanh Nghiệp & B2B</div>
-                                    <div class="text-[10px] font-normal text-secondary hidden sm:block">Google Cloud Premier · VietQR · Viễn thông</div>
+                            </div>
+
+                            <!-- Trụ cột 2: Chính Quyền Số -->
+                            <div class="p-space-lg rounded-2xl bg-surface-container-lowest border border-outline-variant/30 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+                                <div>
+                                    <div class="w-12 h-12 rounded-xl bg-indigo-50 text-tertiary flex items-center justify-center mb-space-sm group-hover:scale-110 transition-transform">
+                                        <span class="material-symbols-outlined text-[28px]">account_balance</span>
+                                    </div>
+                                    <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-indigo-50 text-indigo-700 text-[11px] font-bold font-mono mb-2">
+                                        ✓ Đề án 06/CP · CSDL Dân Cư
+                                    </div>
+                                    <h3 class="font-headline-sm text-headline-sm text-on-surface mb-1">
+                                        Chính Quyền Số &amp; DVC
+                                    </h3>
+                                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                        CSDL dân cư chuyên ngành kết nối kho dữ liệu dùng chung. Trợ lý ảo giải đáp một cửa và thông báo tiến độ hồ sơ qua Zalo Mini App.
+                                    </p>
                                 </div>
-                            </button>
+                                <div class="mt-space-md pt-space-sm border-t border-outline-variant/20">
+                                    <span class="text-[11px] font-bold text-secondary uppercase tracking-wider block mb-1">Dự án bảo chứng thực tế:</span>
+                                    <p class="font-label-sm text-label-sm text-tertiary font-semibold mb-0">
+                                        Chi cục Dân số ĐN · TT Hành chính công NHS · Xã Xuân Phú
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Trụ cột 3: Doanh Nghiệp & Viễn Thông -->
+                            <div class="p-space-lg rounded-2xl bg-surface-container-lowest border border-outline-variant/30 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+                                <div>
+                                    <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center mb-space-sm group-hover:scale-110 transition-transform">
+                                        <span class="material-symbols-outlined text-[28px]">cloud_done</span>
+                                    </div>
+                                    <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-amber-50 text-amber-800 text-[11px] font-bold font-mono mb-2">
+                                        ✓ Google Cloud · VietQR Napas
+                                    </div>
+                                    <h3 class="font-headline-sm text-headline-sm text-on-surface mb-1">
+                                        Đám Mây &amp; Tích Hợp B2B
+                                    </h3>
+                                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                        Phần mềm Web &amp; Mobile App quản trị khách hàng Google Cloud Premier. Cổng thanh toán viện phí Napas/VietQR gạch nợ tức thì.
+                                    </p>
+                                </div>
+                                <div class="mt-space-md pt-space-sm border-t border-outline-variant/20">
+                                    <span class="text-[11px] font-bold text-secondary uppercase tracking-wider block mb-1">Đối tác triển khai:</span>
+                                    <p class="font-label-sm text-label-sm text-amber-800 font-semibold mb-0">
+                                        Cloud ACE (Google Partner) · Ngân hàng PVcomBank · MobiFone
+                                    </p>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
-                    <!-- Hero Glassmorphism 3D Dashboard Mockup -->
-                    <div class="relative w-full mt-space-2xl">
-                        <!-- Floating Integration Tag Left -->
-                        <div
-                            class="hidden lg:flex absolute -left-6 top-16 z-20 items-center gap-space-xs bg-surface-container-lowest/95 backdrop-blur-xl p-space-sm rounded-xl shadow-xl">
-                            <div
-                                class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
-                                <span id="hero-float-left-icon" class="material-symbols-outlined text-[24px]">local_hospital</span>
-                            </div>
-                            <div class="text-left">
-                                <p id="hero-float-left-title" class="font-label-md text-label-md text-on-surface">Hồ Sơ Bệnh Án EMR</p>
-                                <p id="hero-float-left-sub" class="font-body-sm text-body-sm text-secondary">Liên thông Bộ Y Tế • 100%</p>
-                            </div>
-                        </div>
-                        <!-- Floating AI Copilot Bubble Right -->
-                        <div
-                            class="hidden lg:flex absolute -right-6 bottom-16 z-20 items-center gap-space-xs bg-surface-container-lowest/95 backdrop-blur-xl p-space-sm rounded-xl shadow-xl">
-                            <div
-                                class="w-10 h-10 rounded-lg bg-tertiary-fixed flex items-center justify-center text-tertiary">
-                                <span id="hero-float-right-icon" class="material-symbols-outlined text-[24px]">contactless</span>
-                            </div>
-                            <div class="text-left">
-                                <p id="hero-float-right-title" class="font-label-md text-label-md text-on-surface">Cổng TT Kiosk Y Tế</p>
-                                <p id="hero-float-right-sub" class="font-body-sm text-body-sm text-secondary">Tích hợp CCCD &amp; QR VNeID</p>
-                            </div>
-                        </div>
-                        <!-- Main Glass Panel -->
-                        <div
-                            class="w-full bg-surface-container-lowest/90 backdrop-blur-2xl rounded-2xl p-space-md md:p-space-xl shadow-2xl shadow-primary/10 text-left">
-                            <!-- Top Window Bar -->
-                            <div
-                                class="flex items-center justify-between pb-space-md bg-surface-container-low/50 rounded-lg px-space-md py-space-xs mb-space-md">
-                                <div class="flex items-center gap-space-xs">
-                                    <span class="w-3 h-3 rounded-full bg-error/70"></span>
-                                    <span class="w-3 h-3 rounded-full bg-tertiary-fixed-dim"></span>
-                                    <span class="w-3 h-3 rounded-full bg-primary/70"></span>
-                                    <span
-                                        class="ml-space-sm font-label-md text-label-md text-on-surface-variant">TEKNOVA
-                                        Cloud Core • Smart Hospital &amp; Admin Dashboard</span>
-                                </div>
-                                <div class="flex items-center gap-space-xs">
-                                    <span
-                                        class="inline-flex items-center gap-1 font-label-sm text-label-sm px-space-xs py-1 rounded bg-surface-container-highest text-primary">
-                                        <span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span> Live v4.8
-                                    </span>
-                                </div>
-                            </div>
-                            <!-- Dashboard Grid Internal -->
-                            <div class="grid grid-cols-1 md:grid-cols-12 gap-space-md">
-                                <!-- Sidebar / Quick nav -->
-                                <div
-                                    class="hidden md:flex md:col-span-3 flex-col gap-space-xs bg-surface-container-low/70 p-space-sm rounded-xl">
-                                    <div
-                                        class="flex items-center gap-space-xs p-space-xs rounded-lg bg-surface-container-lowest text-primary font-label-md text-label-md">
-                                        <span class="material-symbols-outlined text-[20px]">monitor_heart</span>
-                                        <span class="">Giám sát Y tế EMR</span>
-                                    </div>
-                                    <div
-                                        class="flex items-center gap-space-xs p-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container font-label-md text-label-md">
-                                        <span class="material-symbols-outlined text-[20px]">receipt_long</span>
-                                        <span class="">TT 26/2025 Kê đơn</span>
-                                    </div>
-                                    <div
-                                        class="flex items-center gap-space-xs p-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container font-label-md text-label-md">
-                                        <span class="material-symbols-outlined text-[20px]">forum</span>
-                                        <span class="">Zalo OA Chăm sóc</span>
-                                    </div>
-                                    <div
-                                        class="flex items-center gap-space-xs p-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container font-label-md text-label-md">
-                                        <span class="material-symbols-outlined text-[20px]">analytics</span>
-                                        <span class="">Chi cục Dân số BI</span>
-                                    </div>
-                                    <!-- Mini Service Card -->
-                                    <div class="mt-auto p-space-sm rounded-lg bg-primary text-on-primary">
-                                        <div class="interactive-tooltip w-full flex-col">
-                                            <div class="flex items-center justify-between">
-                                                <p class="font-label-sm text-label-sm uppercase opacity-80">Trực ban Hệ
-                                                    thống</p><span
-                                                    class="material-symbols-outlined text-[15px] opacity-75">info</span>
-                                            </div>
-                                            <p class="font-headline-xs text-headline-xs mt-1 flex items-center gap-1.5">
-                                                SLA 99.98% <span
-                                                    class="text-[11px] font-normal px-1.5 py-0.5 rounded bg-on-primary/20">Cao
-                                                    cấp</span></p>
-                                            <div
-                                                class="tooltip-content bottom-full mb-2 left-0 w-56 p-2.5 bg-inverse-surface text-inverse-on-surface rounded-lg shadow-xl text-xs">
-                                                <span class="font-semibold text-primary-fixed block mb-0.5">Cam kết SLA
-                                                    99.98%</span>Thời gian downtime tối đa &lt; 1.75 giờ/năm. Đội ngũ kỹ
-                                                sư trực ca 24/7/365 xử lý sự cố trong vòng 15 phút.
-                                            </div>
-                                        </div>
-                                        <div class="w-full bg-on-primary/20 h-1 rounded-full mt-2 overflow-hidden">
-                                            <div class="bg-surface-container-lowest h-full w-[94%]"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Main Metrics & Flow Chart -->
-                                <div id="hero-panel-yte" class="col-span-1 md:col-span-9 flex flex-col gap-space-md">
-                                    <!-- KPI Cards Row -->
-                                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm">
-                                        <div
-                                            class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between">
-                                            <div class="flex items-center justify-between text-secondary">
-                                                <span class="font-label-sm text-label-sm uppercase">Lượt khám &amp; Hồ
-                                                    sơ EMR</span>
-                                                <span
-                                                    class="material-symbols-outlined text-primary text-[20px]">description</span>
-                                            </div>
-                                            <div class="mt-space-xs">
-                                                <span
-                                                    class="font-headline-lg text-headline-lg text-on-surface" data-number-trend="true">32,840</span>
-                                                <span class="font-label-sm text-label-sm text-primary ml-2">+18.4% tháng
-                                                    này</span>
-                                            </div>
-                                        </div>
-                                        <div
-                                            class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between">
-                                            <div class="flex items-center justify-between text-secondary">
-                                                <span class="font-label-sm text-label-sm uppercase">Thanh toán không
-                                                    tiền mặt</span>
-                                                <span
-                                                    class="material-symbols-outlined text-tertiary text-[20px]">payments</span>
-                                            </div>
-                                            <div class="mt-space-xs">
-                                                <span
-                                                    class="font-headline-lg text-headline-lg text-on-surface" data-number-trend="true">94.2%</span>
-                                                <span class="font-label-sm text-label-sm text-primary ml-2">Đạt mục tiêu
-                                                    CP</span>
-                                            </div>
-                                        </div>
-                                        <div
-                                            class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between">
-                                            <div class="flex items-center justify-between text-secondary">
-                                                <span class="font-label-sm text-label-sm uppercase">Đơn thuốc điện
-                                                    tử</span>
-                                                <span
-                                                    class="material-symbols-outlined text-primary text-[20px]">verified_user</span>
-                                            </div>
-                                            <div class="mt-space-xs">
-                                                <span
-                                                    class="font-headline-lg text-headline-lg text-on-surface" data-number-trend="true">100%</span>
-                                                <span class="font-label-sm text-label-sm text-secondary ml-2">Chuẩn BYT
-                                                    26</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Graphic Micro-Workflow Visualizer -->
-                                    <div
-                                        class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-sm">
-                                        <div class="flex items-center justify-between">
-                                            <span class="font-headline-xs text-headline-xs text-on-surface">Quy trình
-                                                điều phối dữ liệu Y tế &amp; Quản trị</span>
-                                            <span class="font-label-sm text-label-sm text-secondary">Hạ tầng Cloud
-                                                On-Premise &amp; Hybrid</span>
-                                        </div>
-                                        <!-- Process pipeline steps -->
-                                        <div class="grid grid-cols-1 sm:grid-cols-4 gap-space-xs pt-space-xs">
-                                            <div
-                                                class="p-space-xs rounded-lg bg-surface-container-lowest flex flex-col items-center text-center">
-                                                <span
-                                                    class="material-symbols-outlined text-primary text-[24px]">badge</span>
-                                                <span class="font-label-md text-label-md text-on-surface mt-1">1. Tiếp
-                                                    đón Kiosk</span>
-                                                <span class="font-body-sm text-body-sm text-secondary">CCCD gắn
-                                                    chip</span>
-                                            </div>
-                                            <div
-                                                class="p-space-xs rounded-lg bg-surface-container-lowest flex flex-col items-center text-center">
-                                                <span
-                                                    class="material-symbols-outlined text-primary text-[24px]">clinical_notes</span>
-                                                <span class="font-label-md text-label-md text-on-surface mt-1">2. Khám
-                                                    &amp; Chỉ định</span>
-                                                <span class="font-body-sm text-body-sm text-secondary">EMR Không
-                                                    giấy</span>
-                                            </div>
-                                            <div
-                                                class="p-space-xs rounded-lg bg-surface-container-lowest flex flex-col items-center text-center">
-                                                <span
-                                                    class="material-symbols-outlined text-primary text-[24px]">qr_code_2</span>
-                                                <span class="font-label-md text-label-md text-on-surface mt-1">3. Viện
-                                                    phí Dynamic QR</span>
-                                                <span class="font-body-sm text-body-sm text-secondary">Ngân hàng / Ví
-                                                    số</span>
-                                            </div>
-                                            <div
-                                                class="p-space-xs rounded-lg bg-surface-container-lowest flex flex-col items-center text-center">
-                                                <span
-                                                    class="material-symbols-outlined text-primary text-[24px]">cloud_sync</span>
-                                                <span class="font-label-md text-label-md text-on-surface mt-1">4. Đồng
-                                                    bộ Bộ Y Tế</span>
-                                                <span class="font-body-sm text-body-sm text-secondary">Ký số HSM tự
-                                                    động</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- PANEL 2: CHÍNH QUYỀN SỐ (ĐỀ ÁN 06 & CƠ SỞ DỮ LIỆU) -->
-                                <div id="hero-panel-gov" class="hidden col-span-1 md:col-span-9 flex flex-col gap-space-md">
-                                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm">
-                                        <div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between">
-                                            <div class="flex items-center justify-between text-secondary">
-                                                <span class="font-label-sm text-label-sm uppercase">CSDL DÂN SỐ ĐÀ NẴNG</span>
-                                                <span class="material-symbols-outlined text-primary text-[20px]">badge</span>
-                                            </div>
-                                            <div class="mt-space-xs">
-                                                <span class="font-headline-lg text-headline-lg text-on-surface">56/56</span>
-                                                <span class="font-label-sm text-label-sm text-primary ml-2">Xã/Phường kết nối</span>
-                                            </div>
-                                        </div>
-                                        <div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between">
-                                            <div class="flex items-center justify-between text-secondary">
-                                                <span class="font-label-sm text-label-sm uppercase">HỒ SƠ MỘT CỬA QUA ZALO</span>
-                                                <span class="material-symbols-outlined text-tertiary text-[20px]">forum</span>
-                                            </div>
-                                            <div class="mt-space-xs">
-                                                <span class="font-headline-lg text-headline-lg text-on-surface">100%</span>
-                                                <span class="font-label-sm text-label-sm text-primary ml-2">Đúng hẹn</span>
-                                            </div>
-                                        </div>
-                                        <div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between">
-                                            <div class="flex items-center justify-between text-secondary">
-                                                <span class="font-label-sm text-label-sm uppercase">CAMERA AN NINH AI</span>
-                                                <span class="material-symbols-outlined text-primary text-[20px]">videocam</span>
-                                            </div>
-                                            <div class="mt-space-xs">
-                                                <span class="font-headline-lg text-headline-lg text-on-surface">24/7</span>
-                                                <span class="font-label-sm text-label-sm text-secondary ml-2">Tổ dân phố thông minh</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Flow Steps Gov -->
-                                    <div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-sm">
-                                        <div class="flex items-center justify-between">
-                                            <span class="font-headline-xs text-headline-xs text-on-surface">Quy trình điều hành Dịch vụ công &amp; Dữ liệu số cấp cơ sở</span>
-                                            <span class="font-label-sm text-label-sm text-secondary">Đề án 06/CP &amp; Kho dữ liệu TP</span>
-                                        </div>
-                                        <div class="grid grid-cols-1 sm:grid-cols-4 gap-space-xs pt-space-xs">
-                                            <div class="p-space-xs rounded-lg bg-surface-container-lowest flex flex-col items-center text-center">
-                                                <span class="material-symbols-outlined text-primary text-[24px]">id_card</span>
-                                                <span class="font-label-md text-label-md text-on-surface mt-1">1. Quét VNeID / CCCD</span>
-                                                <span class="font-body-sm text-body-sm text-secondary">Xác thực công dân</span>
-                                            </div>
-                                            <div class="p-space-xs rounded-lg bg-surface-container-lowest flex flex-col items-center text-center">
-                                                <span class="material-symbols-outlined text-primary text-[24px]">smart_toy</span>
-                                                <span class="font-label-md text-label-md text-on-surface mt-1">2. Trợ lý ảo Zalo</span>
-                                                <span class="font-body-sm text-body-sm text-secondary">Hướng dẫn thủ tục</span>
-                                            </div>
-                                            <div class="p-space-xs rounded-lg bg-surface-container-lowest flex flex-col items-center text-center">
-                                                <span class="material-symbols-outlined text-primary text-[24px]">database</span>
-                                                <span class="font-label-md text-label-md text-on-surface mt-1">3. CSDL Dùng Chung</span>
-                                                <span class="font-body-sm text-body-sm text-secondary">Làm sạch &amp; Số hóa</span>
-                                            </div>
-                                            <div class="p-space-xs rounded-lg bg-surface-container-lowest flex flex-col items-center text-center">
-                                                <span class="material-symbols-outlined text-primary text-[24px]">dashboard_customize</span>
-                                                <span class="font-label-md text-label-md text-on-surface mt-1">4. Điều hành IOC</span>
-                                                <span class="font-body-sm text-body-sm text-secondary">Báo cáo thời gian thực</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- PANEL 3: DOANH NGHIỆP & B2B ENTERPRISE -->
-                                <div id="hero-panel-biz" class="hidden col-span-1 md:col-span-9 flex flex-col gap-space-md">
-                                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm">
-                                        <div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between">
-                                            <div class="flex items-center justify-between text-secondary">
-                                                <span class="font-label-sm text-label-sm uppercase">GOOGLE CLOUD PREMIER</span>
-                                                <span class="material-symbols-outlined text-primary text-[20px]">cloud_done</span>
-                                            </div>
-                                            <div class="mt-space-xs">
-                                                <span class="font-headline-lg text-headline-lg text-on-surface">Web &amp; App</span>
-                                                <span class="font-label-sm text-label-sm text-primary ml-2">Cloud ACE Premier</span>
-                                            </div>
-                                        </div>
-                                        <div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between">
-                                            <div class="flex items-center justify-between text-secondary">
-                                                <span class="font-label-sm text-label-sm uppercase">VIỆN PHÍ VIETQR / NAPAS</span>
-                                                <span class="material-symbols-outlined text-tertiary text-[20px]">account_balance_wallet</span>
-                                            </div>
-                                            <div class="mt-space-xs">
-                                                <span class="font-headline-lg text-headline-lg text-on-surface">PVcomBank</span>
-                                                <span class="font-label-sm text-label-sm text-primary ml-2">Gạch nợ tức thì</span>
-                                            </div>
-                                        </div>
-                                        <div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between">
-                                            <div class="flex items-center justify-between text-secondary">
-                                                <span class="font-label-sm text-label-sm uppercase">HẠ TẦNG VIỄN THÔNG</span>
-                                                <span class="material-symbols-outlined text-primary text-[20px]">cell_tower</span>
-                                            </div>
-                                            <div class="mt-space-xs">
-                                                <span class="font-headline-lg text-headline-lg text-on-surface">MobiFone</span>
-                                                <span class="font-label-sm text-label-sm text-secondary ml-2">CĐS Phường xã Zalo</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Flow Steps Biz -->
-                                    <div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-sm">
-                                        <div class="flex items-center justify-between">
-                                            <span class="font-headline-xs text-headline-xs text-on-surface">Hạ tầng Đám mây &amp; Giải pháp Tích hợp Doanh nghiệp lớn</span>
-                                            <span class="font-label-sm text-label-sm text-secondary">Bảo mật Nghị định 13 &amp; Cấp độ 3</span>
-                                        </div>
-                                        <div class="grid grid-cols-1 sm:grid-cols-4 gap-space-xs pt-space-xs">
-                                            <div class="p-space-xs rounded-lg bg-surface-container-lowest flex flex-col items-center text-center">
-                                                <span class="material-symbols-outlined text-primary text-[24px]">cloud_sync</span>
-                                                <span class="font-label-md text-label-md text-on-surface mt-1">1. Premier Cloud</span>
-                                                <span class="font-body-sm text-body-sm text-secondary">Cổng Google Partner</span>
-                                            </div>
-                                            <div class="p-space-xs rounded-lg bg-surface-container-lowest flex flex-col items-center text-center">
-                                                <span class="material-symbols-outlined text-primary text-[24px]">qr_code</span>
-                                                <span class="font-label-md text-label-md text-on-surface mt-1">2. Cổng Thanh Toán</span>
-                                                <span class="font-body-sm text-body-sm text-secondary">Napas &amp; VietQR Động</span>
-                                            </div>
-                                            <div class="p-space-xs rounded-lg bg-surface-container-lowest flex flex-col items-center text-center">
-                                                <span class="material-symbols-outlined text-primary text-[24px]">support_agent</span>
-                                                <span class="font-label-md text-label-md text-on-surface mt-1">3. Mini App Zalo</span>
-                                                <span class="font-body-sm text-body-sm text-secondary">Hệ sinh thái MobiFone</span>
-                                            </div>
-                                            <div class="p-space-xs rounded-lg bg-surface-container-lowest flex flex-col items-center text-center">
-                                                <span class="material-symbols-outlined text-primary text-[24px]">shield_with_heart</span>
-                                                <span class="font-label-md text-label-md text-on-surface mt-1">4. An Toàn Thông Tin</span>
-                                                <span class="font-body-sm text-body-sm text-secondary">Mã hóa dữ liệu HSM</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </section>
             <!-- STATS BAR SECTION -->
@@ -1646,61 +1370,6 @@
 
         <script src="nav-router.js"></script>
     <script type="module" src="motion-hover.js"></script>
-
-<script>
-function switchHeroDomain(domain) {
-    const btnYte = document.getElementById('hero-tab-btn-yte');
-    const btnGov = document.getElementById('hero-tab-btn-gov');
-    const btnBiz = document.getElementById('hero-tab-btn-biz');
-
-    const panelYte = document.getElementById('hero-panel-yte');
-    const panelGov = document.getElementById('hero-panel-gov');
-    const panelBiz = document.getElementById('hero-panel-biz');
-
-    const floatLeftTitle = document.getElementById('hero-float-left-title');
-    const floatLeftSub = document.getElementById('hero-float-left-sub');
-    const floatLeftIcon = document.getElementById('hero-float-left-icon');
-
-    const floatRightTitle = document.getElementById('hero-float-right-title');
-    const floatRightSub = document.getElementById('hero-float-right-sub');
-    const floatRightIcon = document.getElementById('hero-float-right-icon');
-
-    const activeBtnClass = "flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold transition-all whitespace-nowrap bg-surface-container-lowest text-primary shadow-sm border border-outline-variant/30 font-bold";
-    const inactiveBtnClass = "flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold transition-all whitespace-nowrap text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest/50";
-
-    [btnYte, btnGov, btnBiz].forEach(b => { if(b) b.className = inactiveBtnClass; });
-    [panelYte, panelGov, panelBiz].forEach(p => { if(p) p.classList.add('hidden'); });
-
-    if (domain === 'yte') {
-        if(btnYte) btnYte.className = activeBtnClass;
-        if(panelYte) panelYte.classList.remove('hidden');
-        if(floatLeftTitle) floatLeftTitle.innerText = "Hồ Sơ Bệnh Án EMR";
-        if(floatLeftSub) floatLeftSub.innerText = "Liên thông Bộ Y Tế • 100%";
-        if(floatLeftIcon) floatLeftIcon.innerText = "local_hospital";
-        if(floatRightTitle) floatRightTitle.innerText = "Cổng TT Kiosk Y Tế";
-        if(floatRightSub) floatRightSub.innerText = "Tích hợp CCCD & QR VNeID";
-        if(floatRightIcon) floatRightIcon.innerText = "contactless";
-    } else if (domain === 'gov') {
-        if(btnGov) btnGov.className = activeBtnClass;
-        if(panelGov) panelGov.classList.remove('hidden');
-        if(floatLeftTitle) floatLeftTitle.innerText = "CSDL Dân Số Tuyến Cơ Sở";
-        if(floatLeftSub) floatLeftSub.innerText = "Đà Nẵng • 56 Xã/Phường";
-        if(floatLeftIcon) floatLeftIcon.innerText = "groups";
-        if(floatRightTitle) floatRightTitle.innerText = "Trợ Lý Ảo Zalo Mini App";
-        if(floatRightSub) floatRightSub.innerText = "Giải đáp DVC 24/7";
-        if(floatRightIcon) floatRightIcon.innerText = "smart_toy";
-    } else if (domain === 'biz') {
-        if(btnBiz) btnBiz.className = activeBtnClass;
-        if(panelBiz) panelBiz.classList.remove('hidden');
-        if(floatLeftTitle) floatLeftTitle.innerText = "Google Cloud Premier";
-        if(floatLeftSub) floatLeftSub.innerText = "Cloud ACE • Portal & App";
-        if(floatLeftIcon) floatLeftIcon.innerText = "cloud_done";
-        if(floatRightTitle) floatRightTitle.innerText = "Viện Phí Napas / VietQR";
-        if(floatRightSub) floatRightSub.innerText = "PVcomBank • Tức thì";
-        if(floatRightIcon) floatRightIcon.innerText = "payments";
-    }
-}
-</script>
 
 </body>
 
