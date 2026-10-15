@@ -517,468 +517,457 @@
                     </div>
                 </div>
             </section>
-                <section class="max-w-[1200px] mx-auto px-margin md:px-margin-md lg:px-margin-lg py-space-xl">
+                <!-- DANH MỤC DỊCH VỤ & GIẢI PHÁP (ENGMA STYLE SERVICE CATALOG) -->
+                <section class="max-w-[1200px] mx-auto px-margin md:px-margin-md lg:px-margin-lg py-space-2xl" id="danh-muc-dich-vu">
                     <!-- Section Header -->
-                    <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-xl">
-                        <div>
-                            <h2 class="font-headline-xl text-headline-xl text-on-surface">
-                                4 Trụ cột Công nghệ Mũi nhọn
-                            </h2>
+                    <div class="text-center max-w-3xl mx-auto mb-space-xl">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-primary/10 border border-primary/20 text-xs font-bold text-primary mb-3">
+                            <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                            <span class="tracking-wide uppercase text-[11px]">Hệ sinh thái Giải pháp Số</span>
                         </div>
-                        <p class="font-body-md text-body-md text-on-surface-variant max-w-md">
-                            Được xây dựng với kiến trúc module mở, khả năng tích hợp API đa nền tảng và tuân thủ nghiêm
-                            ngặt khung kiến trúc chính phủ điện tử 2.0.
+                        <h2 class="font-headline-xl text-3xl md:text-4xl text-on-surface font-extrabold tracking-tight">
+                            Danh Mục Dịch Vụ &amp; Giải Pháp
+                        </h2>
+                        <p class="font-body-md text-base text-on-surface-variant mt-2.5 max-w-xl mx-auto">
+                            Lựa chọn dịch vụ công nghệ chuyên sâu phù hợp với nhu cầu chuyển đổi số của đơn vị bạn
                         </p>
                     </div>
-                    <!-- Interactive Tab Selection -->
-                    <div class="flex items-center gap-space-xs overflow-x-auto pb-space-xs mb-space-lg"
-                        id="pillars-tab-nav">
-                        <button
-                            class="pillar-tab-btn px-space-lg py-space-sm rounded-xl font-label-lg text-label-lg transition-all flex items-center gap-space-2xs bg-primary text-on-primary shadow-md"
-                            data-target="pillar-emr" onclick="switchPillar('pillar-emr')">
-                            <span class="material-symbols-outlined text-[20px]">local_hospital</span>
-                            <span class="">Y tế &amp; Bệnh án Điện tử (EMR)</span>
+
+                    <!-- Filter Pill Tabs (Engma Style) -->
+                    <div class="flex items-center justify-center gap-2.5 overflow-x-auto pb-3 mb-space-xl custom-scrollbar" id="service-filters">
+                        <button class="service-filter-btn px-5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all shadow-xs bg-primary text-on-primary shadow-primary/20"
+                            data-filter="all" onclick="filterServices('all')">
+                            Tất cả dịch vụ (8)
                         </button>
-                        <button
-                            class="pillar-tab-btn px-space-lg py-space-sm rounded-xl font-label-lg text-label-lg transition-all flex items-center gap-space-2xs bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container shadow-sm"
-                            data-target="pillar-custom" onclick="switchPillar('pillar-custom')">
-                            <span class="material-symbols-outlined text-[20px]">terminal</span>
-                            <span class="">Phần mềm &amp; App theo yêu cầu</span>
+                        <button class="service-filter-btn px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface"
+                            data-filter="y-te" onclick="filterServices('y-te')">
+                            Y tế &amp; EMR (2)
                         </button>
-                        <button
-                            class="pillar-tab-btn px-space-lg py-space-sm rounded-xl font-label-lg text-label-lg transition-all flex items-center gap-space-2xs bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container shadow-sm"
-                            data-target="pillar-ai" onclick="switchPillar('pillar-ai')">
-                            <span class="material-symbols-outlined text-[20px]">smart_toy</span>
-                            <span class="">AI, Cloud &amp; Dữ liệu lớn</span>
+                        <button class="service-filter-btn px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface"
+                            data-filter="phan-mem" onclick="filterServices('phan-mem')">
+                            Phát triển phần mềm (2)
                         </button>
-                        <button
-                            class="pillar-tab-btn px-space-lg py-space-sm rounded-xl font-label-lg text-label-lg transition-all flex items-center gap-space-2xs bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container shadow-sm"
-                            data-target="pillar-infra" onclick="switchPillar('pillar-infra')">
-                            <span class="material-symbols-outlined text-[20px]">security</span>
-                            <span class="">Hạ tầng &amp; An toàn Thông tin</span>
+                        <button class="service-filter-btn px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface"
+                            data-filter="ai-cloud" onclick="filterServices('ai-cloud')">
+                            AI, Cloud &amp; Dữ liệu (2)
+                        </button>
+                        <button class="service-filter-btn px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface"
+                            data-filter="ha-tang" onclick="filterServices('ha-tang')">
+                            Hạ tầng &amp; An toàn TT (2)
                         </button>
                     </div>
-                    <!-- Tab Content 1: EMR Healthcare (Default Active) -->
-                    <div class="pillar-content grid grid-cols-1 lg:grid-cols-12 gap-space-lg" id="pillar-emr">
-                        <div class="lg:col-span-7 flex flex-col gap-space-lg">
-                            <div
-                                class="p-space-xl rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
-                                <div>
-                                    <div class="flex items-center justify-between mb-space-md">
-                                        <span
-                                            class="inline-flex items-center gap-space-3xs px-space-sm py-space-3xs rounded-full bg-secondary-container text-primary font-label-sm text-label-sm">
-                                            <span class="material-symbols-outlined text-[14px]">verified</span>
-                                            KHUNG THÔNG TƯ 46 &amp; TT 26/2025/TT-BYT
-                                        </span>
-                                        <span class="font-label-sm text-label-sm text-secondary">MÃ: TEK-EMR-PRO</span>
-                                    </div>
-                                    <h3 class="font-headline-lg text-headline-lg text-on-surface mb-space-sm">
-                                        Giải pháp Bệnh án Điện tử Thông minh (Smart EMR) &amp; Hệ sinh thái Y tế Số
-                                    </h3>
-                                    <p class="font-body-lg text-body-lg text-on-surface-variant mb-space-lg">
-                                        Hệ thống EMR đạt chuẩn không sử dụng hồ sơ bệnh án giấy, đồng bộ dữ liệu hình
-                                        ảnh PACS, kết quả xét nghiệm LIS và cổng thông tin Giám định BHYT theo thời gian
-                                        thực.
-                                    </p>
-                                </div>
-                                <div
-                                    class="grid grid-cols-1 sm:grid-cols-2 gap-space-md pt-space-md bg-surface-container-low/60 p-space-md rounded-lg">
-                                    <div class="flex items-start gap-space-sm">
-                                        <div
-                                            class="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                                            <span
-                                                class="material-symbols-outlined text-primary text-[20px]">prescriptions</span>
-                                        </div>
-                                        <div>
-                                            <h4 class="font-headline-xs text-headline-xs text-on-surface">Đơn thuốc điện
-                                                tử quốc gia</h4>
-                                            <p class="font-body-md text-body-md text-on-surface-variant">Liên thông mã
-                                                định danh người kê đơn, dược thư quốc gia tự động cảnh báo dị ứng.</p>
-                                        </div>
-                                    </div>
-                                    <div class="flex items-start gap-space-sm">
-                                        <div
-                                            class="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                                            <span
-                                                class="material-symbols-outlined text-primary text-[20px]">credit_card</span>
-                                        </div>
-                                        <div>
-                                            <h4 class="font-headline-xs text-headline-xs text-on-surface">Thanh toán
-                                                không tiền mặt</h4>
-                                            <p class="font-body-md text-body-md text-on-surface-variant">Tích hợp VietQR
-                                                tĩnh/động, POS ngân hàng, thẻ khám bệnh thông minh liên kết viện phí.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="flex items-start gap-space-sm">
-                                        <div
-                                            class="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                                            <span
-                                                class="material-symbols-outlined text-primary text-[20px]">save_as</span>
-                                        </div>
-                                        <div>
-                                            <h4 class="font-headline-xs text-headline-xs text-on-surface">Ký số tập
-                                                trung HSM / Token</h4>
-                                            <p class="font-body-md text-body-md text-on-surface-variant">Tích hợp ký số
-                                                điện tử bác sĩ, hộ lý theo chuẩn bảo mật PKI không cần tháo token rời.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="flex items-start gap-space-sm">
-                                        <div
-                                            class="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                                            <span class="material-symbols-outlined text-primary text-[20px]">sync</span>
-                                        </div>
-                                        <div>
-                                            <h4 class="font-headline-xs text-headline-xs text-on-surface">Cổng giám định
-                                                BHYT 4210</h4>
-                                            <p class="font-body-md text-body-md text-on-surface-variant">XML liên thông
-                                                tức thì, tự động kiểm tra đối chiếu thẻ và chi phí tránh xuất toán.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="lg:col-span-5 flex flex-col gap-space-md">
-                            <div
-                                class="p-space-xl rounded-xl bg-gradient-to-br from-primary to-primary-container text-on-primary shadow-lg flex flex-col justify-between h-full">
-                                <div>
-                                    <div class="flex items-center justify-between pb-space-sm">
-                                        <span
-                                            class="font-label-md text-label-md uppercase tracking-wider text-on-primary/80">Kiến
-                                            trúc Luồng EMR</span>
-                                        <span
-                                            class="px-space-xs py-space-3xs rounded-full bg-surface-container-lowest/20 font-label-sm text-label-sm">HL7
-                                            FHIR v4</span>
-                                    </div>
-                                    <h4 class="font-headline-md text-headline-md mb-space-sm">Mô hình Đồng bộ Dữ liệu Y
-                                        tế Tức thì</h4>
-                                    <p class="font-body-md text-body-md text-on-primary/90 mb-space-lg">
-                                        Mọi tác vụ từ Tiếp đón → Khám lâm sàng → Chỉ định CLS → Thu ngân được phản hồi
-                                        trong vòng &lt; 0.2s với kiến trúc Message Queue RabbitMQ &amp; Redis Cluster.
-                                    </p>
-                                </div>
-                                <!-- Visual Flow Micro-Diagram -->
-                                <div
-                                    class="p-space-md rounded-lg bg-surface-container-lowest/10 backdrop-blur-md flex flex-col gap-space-sm">
-                                    <div
-                                        class="flex items-center justify-between font-label-sm text-label-sm text-on-primary">
-                                        <span class="">Trạm tiếp nhận (HIS)</span>
-                                        <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-                                        <span class="">Lưu trữ PACS/LIS</span>
-                                        <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-                                        <span class="">Cổng BHYT</span>
-                                    </div>
-                                    <div class="w-full bg-surface-container-lowest/20 h-2 rounded-full overflow-hidden">
-                                        <div class="bg-surface-container-lowest h-full w-4/5 rounded-full"></div>
-                                    </div>
-                                    <div
-                                        class="flex justify-between items-center text-on-primary/80 font-body-sm text-body-sm">
-                                        <span class="">Độ trễ trung bình: 142ms</span>
-                                        <span class="font-bold text-on-primary">Đạt chuẩn Bộ TT&amp;TT</span>
-                                    </div>
-                                </div>
-                                <div class="pt-space-md">
-                                    <a class="w-full inline-flex items-center justify-center gap-space-2xs py-space-sm px-space-md rounded-xl bg-surface-container-lowest text-primary font-label-lg text-label-lg hover:bg-surface-container transition-all"
-                                        data-path="lien-he" href="#">
-                                        <span class="">Nhận đề án triển khai EMR Bệnh viện</span>
-                                        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Tab Content 2: Custom Software (Chuẩn hóa 100% theo Hồ Sơ Năng Lực Teknova 2026) -->
-                    <div class="pillar-content hidden grid grid-cols-1 lg:grid-cols-12 gap-space-lg" id="pillar-custom">
-                        <div class="lg:col-span-7 flex flex-col gap-space-lg">
-                            <div class="p-space-xl rounded-xl bg-surface-container-lowest shadow-sm">
-                                <span
-                                    class="inline-flex items-center gap-space-3xs px-space-sm py-space-3xs rounded-full bg-secondary-container text-primary font-label-sm text-label-sm mb-space-md">
-                                    <span class="material-symbols-outlined text-[14px]">code</span>
-                                    THỰC NGƯỜI • THỰC VIỆC • THỰC GIÁ TRỊ
-                                </span>
-                                <h3 class="font-headline-lg text-headline-lg text-on-surface mb-space-sm">
-                                    Phát triển Phần mềm Nghiệp vụ &amp; Hệ thống Theo Yêu cầu
-                                </h3>
-                                <p class="font-body-lg text-body-lg text-on-surface-variant mb-space-lg">
-                                    Giải pháp lập trình và chuyển giao hệ thống công nghệ tùy biến cao, giải quyết triệt để các bài toán nghiệp vụ đặc thù cho Bệnh viện, Cơ quan Nhà nước và Doanh nghiệp viễn thông – tài chính.
-                                </p>
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
-                                    <div class="p-space-md rounded-lg bg-surface-container-low">
-                                        <h4
-                                            class="font-headline-xs text-headline-xs text-on-surface flex items-center gap-space-2xs">
-                                            <span
-                                                class="material-symbols-outlined text-primary text-[18px]">medical_services</span>
-                                            Phần mềm QLBV &amp; KCB (HIS/LIS)
-                                        </h4>
-                                        <p class="font-body-md text-body-md text-on-surface-variant mt-space-2xs">
-                                            Tùy biến luồng khám chữa bệnh, trích xuất dữ liệu XML theo QĐ 3176/QĐ-BYT phục vụ giám định BHYT và liên thông dữ liệu y tế (đã triển khai tại BV Phổi, TTYT Cẩm Lệ, TTYT Liên Chiểu).
-                                        </p>
-                                    </div>
-                                    <div class="p-space-md rounded-lg bg-surface-container-low">
-                                        <h4
-                                            class="font-headline-xs text-headline-xs text-on-surface flex items-center gap-space-2xs">
-                                            <span
-                                                class="material-symbols-outlined text-primary text-[18px]">chat</span>
-                                            Kênh Zalo OA &amp; Zalo Mini App
-                                        </h4>
-                                        <p class="font-body-md text-body-md text-on-surface-variant mt-space-2xs">
-                                            Tích hợp cổng giao tiếp tự động trả kết quả xét nghiệm, giải đáp thủ tục hành chính công và gửi tin nhắn điều hành (đối tác MobiFone Đà Nẵng, PVcomBank, BV Phụ sản - Nhi).
-                                        </p>
-                                    </div>
-                                    <div class="p-space-md rounded-lg bg-surface-container-low">
-                                        <h4
-                                            class="font-headline-xs text-headline-xs text-on-surface flex items-center gap-space-2xs">
-                                            <span
-                                                class="material-symbols-outlined text-primary text-[18px]">database</span>
-                                            Kho CSDL Dân số &amp; Chuyên ngành
-                                        </h4>
-                                        <p class="font-body-md text-body-md text-on-surface-variant mt-space-2xs">
-                                            Web tổng hợp, thống kê dữ liệu báo cáo tuyến cơ sở và số hóa, chuẩn hóa làm sạch cơ sở dữ liệu chuyên ngành (Chi cục Dân số TP. Đà Nẵng, xã Xuân Phú, Tiên Phước).
-                                        </p>
-                                    </div>
-                                    <div class="p-space-md rounded-lg bg-surface-container-low">
-                                        <h4
-                                            class="font-headline-xs text-headline-xs text-on-surface flex items-center gap-space-2xs">
-                                            <span class="material-symbols-outlined text-primary text-[18px]">hub</span>
-                                            Liên thông DVCQG &amp; Đề án 06
-                                        </h4>
-                                        <p class="font-body-md text-body-md text-on-surface-variant mt-space-2xs">
-                                            Tích hợp API kết nối Cổng Dịch vụ công Quốc gia, liên thông dữ liệu Giấy chứng sinh, Giấy báo tử, Giấy phép lái xe phục vụ chuyển đổi số quốc gia (QĐ 130/QĐ-BYT).
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div
-                            class="lg:col-span-5 flex flex-col justify-between p-space-xl rounded-xl bg-surface-container shadow-sm">
+
+                    <!-- Service Cards Grid (Engma Style: 4 columns on lg, 2 on md, 1 on mobile) -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5" id="service-cards-grid">
+                        
+                        <!-- Service Card 1: Bệnh án điện tử EMR -->
+                        <div class="service-card group rounded-2xl bg-surface-container-lowest p-5 border border-outline-variant/60 shadow-xs hover:shadow-xl hover:border-primary/40 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between"
+                            data-category="y-te">
                             <div>
-                                <h4 class="font-headline-md text-headline-md text-on-surface mb-space-sm">Năng lực Công nghệ &amp; Đội ngũ Thực chiến</h4>
-                                <p class="font-body-md text-body-md text-on-surface-variant mb-space-lg">
-                                    Đội ngũ Thạc sĩ, Kỹ sư 10–20 năm kinh nghiệm trực tiếp tham gia lập trình và chuyển giao, làm chủ hoàn toàn các ngăn xếp công nghệ hiện đại.
+                                <div class="flex items-center justify-between mb-4">
+                                    <div class="w-12 h-12 rounded-2xl bg-blue-50 text-primary flex items-center justify-center shadow-xs group-hover:scale-110 transition-transform">
+                                        <span class="material-symbols-outlined text-[26px]">local_hospital</span>
+                                    </div>
+                                    <div class="flex items-center gap-1 text-xs font-bold text-amber-500 bg-amber-50 px-2 py-0.5 rounded-full">
+                                        <span class="material-symbols-outlined text-[15px] fill-current">star</span>
+                                        <span>4.9</span>
+                                    </div>
+                                </div>
+                                <h3 class="font-headline-sm text-lg font-bold text-on-surface group-hover:text-primary transition-colors leading-snug">
+                                    Bệnh Án Điện Tử (EMR)
+                                </h3>
+                                <p class="font-body-md text-xs text-on-surface-variant mt-2 line-clamp-3 leading-relaxed">
+                                    Triển khai EMR không giấy tờ theo Thông tư 46/2018/TT-BYT, tích hợp ký số bác sĩ HSM và liên thông BHYT theo thời gian thực.
                                 </p>
-                                <div class="flex flex-wrap gap-space-2xs mb-space-xl">
-                                    <span
-                                        class="px-space-sm py-space-3xs rounded-md bg-surface-container-lowest text-primary font-label-md text-label-md shadow-sm">Zalo OA API / SDK</span>
-                                    <span
-                                        class="px-space-sm py-space-3xs rounded-md bg-surface-container-lowest text-primary font-label-md text-label-md shadow-sm">Chuẩn HL7 / FHIR</span>
-                                    <span
-                                        class="px-space-sm py-space-3xs rounded-md bg-surface-container-lowest text-primary font-label-md text-label-md shadow-sm">XML QĐ 3176 BYT</span>
-                                    <span
-                                        class="px-space-sm py-space-3xs rounded-md bg-surface-container-lowest text-primary font-label-md text-label-md shadow-sm">Python / FastAPI</span>
-                                    <span
-                                        class="px-space-sm py-space-3xs rounded-md bg-surface-container-lowest text-primary font-label-md text-label-md shadow-sm">Node.js / React</span>
-                                    <span
-                                        class="px-space-sm py-space-3xs rounded-md bg-surface-container-lowest text-primary font-label-md text-label-md shadow-sm">PostgreSQL / Oracle</span>
-                                    <span
-                                        class="px-space-sm py-space-3xs rounded-md bg-surface-container-lowest text-primary font-label-md text-label-md shadow-sm">Flutter Mobile</span>
-                                    <span
-                                        class="px-space-sm py-space-3xs rounded-md bg-surface-container-lowest text-primary font-label-md text-label-md shadow-sm">Google Cloud / Docker</span>
+                                
+                                <div class="mt-4 pt-3 border-t border-surface-container space-y-1.5 text-xs">
+                                    <div class="flex items-center justify-between text-secondary">
+                                        <span class="text-outline">Mô hình:</span>
+                                        <span class="font-bold text-on-surface">Thuê SaaS / OPEX 0đ</span>
+                                    </div>
+                                    <div class="flex items-center justify-between text-secondary">
+                                        <span class="text-outline">Tiêu chuẩn:</span>
+                                        <span class="font-bold text-primary">HL7 / FHIR • QĐ BYT</span>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-wrap gap-1.5 mt-3 pt-2">
+                                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-[11px] font-semibold text-secondary">HL7 / FHIR</span>
+                                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-[11px] font-semibold text-secondary">Chữ ký số PKI</span>
+                                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-[11px] font-semibold text-secondary">Microservices</span>
                                 </div>
                             </div>
-                            <div
-                                class="p-space-md rounded-lg bg-surface-container-lowest flex items-center justify-between">
+
+                            <div class="mt-5 pt-3 border-t border-surface-container flex items-center justify-between">
                                 <div>
-                                    <div class="font-headline-sm text-headline-sm text-primary">22+ Hợp Đồng</div>
-                                    <div class="font-body-sm text-body-sm text-secondary">Đã triển khai &amp; nghiệm thu thành công thực tế</div>
+                                    <span class="block text-[10px] text-outline uppercase font-medium">Chi phí</span>
+                                    <span class="text-sm font-extrabold text-primary">Liên hệ</span>
                                 </div>
-                                <a class="p-space-xs rounded-lg bg-primary text-on-primary" data-path="du-an-tieu-bieu"
-                                    href="duan.html">
-                                    <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+                                <button onclick="openProjectModal('Bệnh án điện tử EMR tại Bệnh viện Phổi Đà Nẵng')"
+                                    class="inline-flex items-center gap-1 text-xs font-bold text-primary group-hover:text-primary-container group-hover:translate-x-0.5 transition-all cursor-pointer">
+                                    <span>Xem chi tiết</span>
+                                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Service Card 2: Quản lý Bệnh viện HIS & TT 26 -->
+                        <div class="service-card group rounded-2xl bg-surface-container-lowest p-5 border border-outline-variant/60 shadow-xs hover:shadow-xl hover:border-primary/40 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between"
+                            data-category="y-te">
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <div class="w-12 h-12 rounded-2xl bg-teal-50 text-teal-600 flex items-center justify-center shadow-xs group-hover:scale-110 transition-transform">
+                                        <span class="material-symbols-outlined text-[26px]">prescriptions</span>
+                                    </div>
+                                    <div class="flex items-center gap-1 text-xs font-bold text-amber-500 bg-amber-50 px-2 py-0.5 rounded-full">
+                                        <span class="material-symbols-outlined text-[15px] fill-current">star</span>
+                                        <span>4.9</span>
+                                    </div>
+                                </div>
+                                <h3 class="font-headline-sm text-lg font-bold text-on-surface group-hover:text-primary transition-colors leading-snug">
+                                    HIS &amp; Đơn Thuốc TT 26
+                                </h3>
+                                <p class="font-body-md text-xs text-on-surface-variant mt-2 line-clamp-3 leading-relaxed">
+                                    Phần mềm quản lý viện phí HIS/LIS, liên thông đơn thuốc quốc gia theo TT 26/2025/TT-BYT và xuất XML chuẩn QĐ 3176/QĐ-BYT.
+                                </p>
+                                
+                                <div class="mt-4 pt-3 border-t border-surface-container space-y-1.5 text-xs">
+                                    <div class="flex items-center justify-between text-secondary">
+                                        <span class="text-outline">Triển khai:</span>
+                                        <span class="font-bold text-on-surface">BV Phổi, TTYT Liên Chiểu</span>
+                                    </div>
+                                    <div class="flex items-center justify-between text-secondary">
+                                        <span class="text-outline">Cổng liên thông:</span>
+                                        <span class="font-bold text-teal-600">donthuocquocgia.vn</span>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-wrap gap-1.5 mt-3 pt-2">
+                                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-[11px] font-semibold text-secondary">XML 3176 BYT</span>
+                                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-[11px] font-semibold text-secondary">Mã QR Thuốc</span>
+                                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-[11px] font-semibold text-secondary">PostgreSQL</span>
+                                </div>
+                            </div>
+
+                            <div class="mt-5 pt-3 border-t border-surface-container flex items-center justify-between">
+                                <div>
+                                    <span class="block text-[10px] text-outline uppercase font-medium">Chi phí</span>
+                                    <span class="text-sm font-extrabold text-primary">Liên hệ</span>
+                                </div>
+                                <button onclick="openProjectModal('Cập nhật đơn thuốc điện tử TT 26/2025/TT-BYT tại TTYT Liên Chiểu')"
+                                    class="inline-flex items-center gap-1 text-xs font-bold text-primary group-hover:text-primary-container group-hover:translate-x-0.5 transition-all cursor-pointer">
+                                    <span>Xem chi tiết</span>
+                                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Service Card 3: Zalo OA & Mini App Y tế / DVC -->
+                        <div class="service-card group rounded-2xl bg-surface-container-lowest p-5 border border-outline-variant/60 shadow-xs hover:shadow-xl hover:border-primary/40 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between"
+                            data-category="phan-mem">
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <div class="w-12 h-12 rounded-2xl bg-sky-50 text-sky-600 flex items-center justify-center shadow-xs group-hover:scale-110 transition-transform">
+                                        <span class="material-symbols-outlined text-[26px]">chat</span>
+                                    </div>
+                                    <div class="flex items-center gap-1 text-xs font-bold text-amber-500 bg-amber-50 px-2 py-0.5 rounded-full">
+                                        <span class="material-symbols-outlined text-[15px] fill-current">star</span>
+                                        <span>4.9</span>
+                                    </div>
+                                </div>
+                                <h3 class="font-headline-sm text-lg font-bold text-on-surface group-hover:text-primary transition-colors leading-snug">
+                                    Zalo OA &amp; Mini App
+                                </h3>
+                                <p class="font-body-md text-xs text-on-surface-variant mt-2 line-clamp-3 leading-relaxed">
+                                    Tự động trả kết quả xét nghiệm bảo mật OTP, đặt lịch khám, giải đáp TTHC phường xã và gửi tin nhắn điều hành khẩn cấp.
+                                </p>
+                                
+                                <div class="mt-4 pt-3 border-t border-surface-container space-y-1.5 text-xs">
+                                    <div class="flex items-center justify-between text-secondary">
+                                        <span class="text-outline">Đối tác:</span>
+                                        <span class="font-bold text-on-surface">MobiFone, PVcomBank</span>
+                                    </div>
+                                    <div class="flex items-center justify-between text-secondary">
+                                        <span class="text-outline">Tương tác:</span>
+                                        <span class="font-bold text-sky-600">&gt;100K lượt/tháng</span>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-wrap gap-1.5 mt-3 pt-2">
+                                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-[11px] font-semibold text-secondary">Zalo API</span>
+                                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-[11px] font-semibold text-secondary">Mini App SDK</span>
+                                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-[11px] font-semibold text-secondary">ZNS Template</span>
+                                </div>
+                            </div>
+
+                            <div class="mt-5 pt-3 border-t border-surface-container flex items-center justify-between">
+                                <div>
+                                    <span class="block text-[10px] text-outline uppercase font-medium">Chi phí</span>
+                                    <span class="text-sm font-extrabold text-primary">Liên hệ</span>
+                                </div>
+                                <button onclick="openProjectModal('Phần mềm trả kết quả xét nghiệm qua Zalo tại BV Phụ sản - Nhi Đà Nẵng')"
+                                    class="inline-flex items-center gap-1 text-xs font-bold text-primary group-hover:text-primary-container group-hover:translate-x-0.5 transition-all cursor-pointer">
+                                    <span>Xem chi tiết</span>
+                                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Service Card 4: Phần mềm Theo Yêu Cầu & Web/Mobile App -->
+                        <div class="service-card group rounded-2xl bg-surface-container-lowest p-5 border border-outline-variant/60 shadow-xs hover:shadow-xl hover:border-primary/40 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between"
+                            data-category="phan-mem">
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <div class="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center shadow-xs group-hover:scale-110 transition-transform">
+                                        <span class="material-symbols-outlined text-[26px]">terminal</span>
+                                    </div>
+                                    <div class="flex items-center gap-1 text-xs font-bold text-amber-500 bg-amber-50 px-2 py-0.5 rounded-full">
+                                        <span class="material-symbols-outlined text-[15px] fill-current">star</span>
+                                        <span>4.8</span>
+                                    </div>
+                                </div>
+                                <h3 class="font-headline-sm text-lg font-bold text-on-surface group-hover:text-primary transition-colors leading-snug">
+                                    Phát Triển Web &amp; App
+                                </h3>
+                                <p class="font-body-md text-xs text-on-surface-variant mt-2 line-clamp-3 leading-relaxed">
+                                    Lập trình phần mềm nghiệp vụ chuyên sâu, Web portal quản lý và ứng dụng di động iOS/Android tùy biến theo đặc thù đơn vị.
+                                </p>
+                                
+                                <div class="mt-4 pt-3 border-t border-surface-container space-y-1.5 text-xs">
+                                    <div class="flex items-center justify-between text-secondary">
+                                        <span class="text-outline">Quy mô:</span>
+                                        <span class="font-bold text-on-surface">22+ Dự án nghiệm thu</span>
+                                    </div>
+                                    <div class="flex items-center justify-between text-secondary">
+                                        <span class="text-outline">Kinh nghiệm:</span>
+                                        <span class="font-bold text-indigo-600">Kỹ sư 10-20 năm KN</span>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-wrap gap-1.5 mt-3 pt-2">
+                                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-[11px] font-semibold text-secondary">React / Node.js</span>
+                                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-[11px] font-semibold text-secondary">Flutter</span>
+                                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-[11px] font-semibold text-secondary">Python FastAPI</span>
+                                </div>
+                            </div>
+
+                            <div class="mt-5 pt-3 border-t border-surface-container flex items-center justify-between">
+                                <div>
+                                    <span class="block text-[10px] text-outline uppercase font-medium">Chi phí</span>
+                                    <span class="text-sm font-extrabold text-primary">Liên hệ</span>
+                                </div>
+                                <button onclick="openProjectModal('R&D Cổng thông tin khách hàng & Mobile App cho Cloud ACE')"
+                                    class="inline-flex items-center gap-1 text-xs font-bold text-primary group-hover:text-primary-container group-hover:translate-x-0.5 transition-all cursor-pointer">
+                                    <span>Xem chi tiết</span>
+                                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Service Card 5: Kho CSDL Dân Số & BI Analytics -->
+                        <div class="service-card group rounded-2xl bg-surface-container-lowest p-5 border border-outline-variant/60 shadow-xs hover:shadow-xl hover:border-primary/40 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between"
+                            data-category="ai-cloud">
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <div class="w-12 h-12 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center shadow-xs group-hover:scale-110 transition-transform">
+                                        <span class="material-symbols-outlined text-[26px]">database</span>
+                                    </div>
+                                    <div class="flex items-center gap-1 text-xs font-bold text-amber-500 bg-amber-50 px-2 py-0.5 rounded-full">
+                                        <span class="material-symbols-outlined text-[15px] fill-current">star</span>
+                                        <span>4.9</span>
+                                    </div>
+                                </div>
+                                <h3 class="font-headline-sm text-lg font-bold text-on-surface group-hover:text-primary transition-colors leading-snug">
+                                    Kho CSDL Dân Số &amp; BI
+                                </h3>
+                                <p class="font-body-md text-xs text-on-surface-variant mt-2 line-clamp-3 leading-relaxed">
+                                    Cổng thông tin tổng hợp, phân tích dữ liệu biến động dân số tuyến cơ sở và làm sạch, cập nhật vào CSDL dùng chung thành phố.
+                                </p>
+                                
+                                <div class="mt-4 pt-3 border-t border-surface-container space-y-1.5 text-xs">
+                                    <div class="flex items-center justify-between text-secondary">
+                                        <span class="text-outline">Đơn vị:</span>
+                                        <span class="font-bold text-on-surface">Chi cục Dân số ĐN</span>
+                                    </div>
+                                    <div class="flex items-center justify-between text-secondary">
+                                        <span class="text-outline">Báo cáo:</span>
+                                        <span class="font-bold text-purple-600">Rút ngắn 15 ngày → 1 ngày</span>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-wrap gap-1.5 mt-3 pt-2">
+                                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-[11px] font-semibold text-secondary">Data Warehouse</span>
+                                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-[11px] font-semibold text-secondary">BI Dashboard</span>
+                                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-[11px] font-semibold text-secondary">OCR Số hóa</span>
+                                </div>
+                            </div>
+
+                            <div class="mt-5 pt-3 border-t border-surface-container flex items-center justify-between">
+                                <div>
+                                    <span class="block text-[10px] text-outline uppercase font-medium">Chi phí</span>
+                                    <span class="text-sm font-extrabold text-primary">Liên hệ</span>
+                                </div>
+                                <button onclick="openProjectModal('Web tổng hợp & thống kê dữ liệu báo cáo tuyến cơ sở Chi cục Dân số')"
+                                    class="inline-flex items-center gap-1 text-xs font-bold text-primary group-hover:text-primary-container group-hover:translate-x-0.5 transition-all cursor-pointer">
+                                    <span>Xem chi tiết</span>
+                                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Service Card 6: Camera AI & Tổ Dân Phố Thông Minh -->
+                        <div class="service-card group rounded-2xl bg-surface-container-lowest p-5 border border-outline-variant/60 shadow-xs hover:shadow-xl hover:border-primary/40 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between"
+                            data-category="ai-cloud">
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center shadow-xs group-hover:scale-110 transition-transform">
+                                        <span class="material-symbols-outlined text-[26px]">videocam</span>
+                                    </div>
+                                    <div class="flex items-center gap-1 text-xs font-bold text-amber-500 bg-amber-50 px-2 py-0.5 rounded-full">
+                                        <span class="material-symbols-outlined text-[15px] fill-current">star</span>
+                                        <span>4.8</span>
+                                    </div>
+                                </div>
+                                <h3 class="font-headline-sm text-lg font-bold text-on-surface group-hover:text-primary transition-colors leading-snug">
+                                    Camera AI &amp; Smart City
+                                </h3>
+                                <p class="font-body-md text-xs text-on-surface-variant mt-2 line-clamp-3 leading-relaxed">
+                                    Xây dựng điểm tổ dân phố thông minh: Camera AI Edge Computing phát hiện chuyển động bất thường và cảnh báo an ninh tức thời.
+                                </p>
+                                
+                                <div class="mt-4 pt-3 border-t border-surface-container space-y-1.5 text-xs">
+                                    <div class="flex items-center justify-between text-secondary">
+                                        <span class="text-outline">Mô hình:</span>
+                                        <span class="font-bold text-on-surface">Edge AI + Cloud IoT</span>
+                                    </div>
+                                    <div class="flex items-center justify-between text-secondary">
+                                        <span class="text-outline">Hiệu quả:</span>
+                                        <span class="font-bold text-emerald-600">Giảm 100% trộm cắp</span>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-wrap gap-1.5 mt-3 pt-2">
+                                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-[11px] font-semibold text-secondary">Edge AI</span>
+                                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-[11px] font-semibold text-secondary">Computer Vision</span>
+                                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-[11px] font-semibold text-secondary">Cloud Alert</span>
+                                </div>
+                            </div>
+
+                            <div class="mt-5 pt-3 border-t border-surface-container flex items-center justify-between">
+                                <div>
+                                    <span class="block text-[10px] text-outline uppercase font-medium">Chi phí</span>
+                                    <span class="text-sm font-extrabold text-primary">Liên hệ</span>
+                                </div>
+                                <button onclick="openProjectModal('Điểm Tổ dân phố thông minh Camera AI tại Phường Điện Bàn Bắc')"
+                                    class="inline-flex items-center gap-1 text-xs font-bold text-primary group-hover:text-primary-container group-hover:translate-x-0.5 transition-all cursor-pointer">
+                                    <span>Xem chi tiết</span>
+                                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Service Card 7: An Toàn Thông Tin Cấp Độ 3 -->
+                        <div class="service-card group rounded-2xl bg-surface-container-lowest p-5 border border-outline-variant/60 shadow-xs hover:shadow-xl hover:border-primary/40 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between"
+                            data-category="ha-tang">
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <div class="w-12 h-12 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shadow-xs group-hover:scale-110 transition-transform">
+                                        <span class="material-symbols-outlined text-[26px]">security</span>
+                                    </div>
+                                    <div class="flex items-center gap-1 text-xs font-bold text-amber-500 bg-amber-50 px-2 py-0.5 rounded-full">
+                                        <span class="material-symbols-outlined text-[15px] fill-current">star</span>
+                                        <span>4.9</span>
+                                    </div>
+                                </div>
+                                <h3 class="font-headline-sm text-lg font-bold text-on-surface group-hover:text-primary transition-colors leading-snug">
+                                    An Toàn Thông Tin Cấp Độ 3
+                                </h3>
+                                <p class="font-body-md text-xs text-on-surface-variant mt-2 line-clamp-3 leading-relaxed">
+                                    Hồ sơ đề xuất cấp độ an toàn thông tin theo Nghị định 85/2016/NĐ-CP, kiểm thử bảo mật Pentest và rà quét lỗ hổng ứng dụng.
+                                </p>
+                                
+                                <div class="mt-4 pt-3 border-t border-surface-container space-y-1.5 text-xs">
+                                    <div class="flex items-center justify-between text-secondary">
+                                        <span class="text-outline">Quy chuẩn:</span>
+                                        <span class="font-bold text-on-surface">NĐ 85 / ISO 27001</span>
+                                    </div>
+                                    <div class="flex items-center justify-between text-secondary">
+                                        <span class="text-outline">Bảo vệ:</span>
+                                        <span class="font-bold text-red-600">Dữ liệu Y tế &amp; Dân cư</span>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-wrap gap-1.5 mt-3 pt-2">
+                                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-[11px] font-semibold text-secondary">Pentest</span>
+                                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-[11px] font-semibold text-secondary">NGFW Firewall</span>
+                                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-[11px] font-semibold text-secondary">Audit Trail</span>
+                                </div>
+                            </div>
+
+                            <div class="mt-5 pt-3 border-t border-surface-container flex items-center justify-between">
+                                <div>
+                                    <span class="block text-[10px] text-outline uppercase font-medium">Chi phí</span>
+                                    <span class="text-sm font-extrabold text-primary">Liên hệ</span>
+                                </div>
+                                <button onclick="openProjectModal('Nâng cấp phần mềm Đánh giá tiêu chí ứng dụng CNTT TP Đà Nẵng')"
+                                    class="inline-flex items-center gap-1 text-xs font-bold text-primary group-hover:text-primary-container group-hover:translate-x-0.5 transition-all cursor-pointer">
+                                    <span>Xem chi tiết</span>
+                                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Service Card 8: Hạ Tầng Máy Chủ & Mạng Chính Hãng -->
+                        <div class="service-card group rounded-2xl bg-surface-container-lowest p-5 border border-outline-variant/60 shadow-xs hover:shadow-xl hover:border-primary/40 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between"
+                            data-category="ha-tang">
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center shadow-xs group-hover:scale-110 transition-transform">
+                                        <span class="material-symbols-outlined text-[26px]">dns</span>
+                                    </div>
+                                    <div class="flex items-center gap-1 text-xs font-bold text-amber-500 bg-amber-50 px-2 py-0.5 rounded-full">
+                                        <span class="material-symbols-outlined text-[15px] fill-current">star</span>
+                                        <span>4.8</span>
+                                    </div>
+                                </div>
+                                <h3 class="font-headline-sm text-lg font-bold text-on-surface group-hover:text-primary transition-colors leading-snug">
+                                    Hạ Tầng Máy Chủ &amp; Thiết Bị
+                                </h3>
+                                <p class="font-body-md text-xs text-on-surface-variant mt-2 line-clamp-3 leading-relaxed">
+                                    Tích hợp cụm máy chủ SAN Storage, thiết bị định tuyến Cisco/Dell/Fortinet và hệ thống sao lưu dự phòng DR 3-2-1.
+                                </p>
+                                
+                                <div class="mt-4 pt-3 border-t border-surface-container space-y-1.5 text-xs">
+                                    <div class="flex items-center justify-between text-secondary">
+                                        <span class="text-outline">Hãng đối tác:</span>
+                                        <span class="font-bold text-on-surface">Dell, Cisco, Fortinet</span>
+                                    </div>
+                                    <div class="flex items-center justify-between text-secondary">
+                                        <span class="text-outline">Bảo hành:</span>
+                                        <span class="font-bold text-amber-600">24/7 On-site SLA Cấp 1</span>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-wrap gap-1.5 mt-3 pt-2">
+                                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-[11px] font-semibold text-secondary">SAN Storage</span>
+                                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-[11px] font-semibold text-secondary">VMware Cluster</span>
+                                    <span class="px-2 py-0.5 rounded-md bg-surface-container text-[11px] font-semibold text-secondary">DR Backup</span>
+                                </div>
+                            </div>
+
+                            <div class="mt-5 pt-3 border-t border-surface-container flex items-center justify-between">
+                                <div>
+                                    <span class="block text-[10px] text-outline uppercase font-medium">Chi phí</span>
+                                    <span class="text-sm font-extrabold text-primary">Liên hệ</span>
+                                </div>
+                                <a href="gioithieu.html#lien-he"
+                                    class="inline-flex items-center gap-1 text-xs font-bold text-primary group-hover:text-primary-container group-hover:translate-x-0.5 transition-all cursor-pointer">
+                                    <span>Tư vấn ngay</span>
+                                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
                                 </a>
                             </div>
                         </div>
-                    </div>
-                    <!-- Tab Content 3: AI, Cloud & Big Data (Hidden by default) -->
-                    <div class="pillar-content hidden grid grid-cols-1 lg:grid-cols-12 gap-space-lg" id="pillar-ai">
-                        <div class="lg:col-span-7 flex flex-col gap-space-lg">
-                            <div class="p-space-xl rounded-xl bg-surface-container-lowest shadow-sm">
-                                <span
-                                    class="inline-flex items-center gap-space-3xs px-space-sm py-space-3xs rounded-full bg-secondary-container text-primary font-label-sm text-label-sm mb-space-md">
-                                    <span class="material-symbols-outlined text-[14px]">psychology</span>
-                                    INTELLIGENCE ARCHITECTURE
-                                </span>
-                                <h3 class="font-headline-lg text-headline-lg text-on-surface mb-space-sm">
-                                    Chuyển đổi số, Trí tuệ Nhân tạo &amp; Điện toán Đám mây
-                                </h3>
-                                <p class="font-body-lg text-body-lg text-on-surface-variant mb-space-lg">
-                                    Giải phóng giá trị từ dữ liệu phân tán. Chúng tôi tích hợp mô hình ngôn ngữ lớn (LLM
-                                    On-Premise), giải pháp OCR thông minh và nền tảng BI trực quan giúp lãnh đạo ra
-                                    quyết định chính xác theo thời gian thực.
-                                </p>
-                                <div class="space-y-space-md">
-                                    <div
-                                        class="p-space-md rounded-lg bg-surface-container-low flex items-start gap-space-md">
-                                        <span
-                                            class="material-symbols-outlined text-primary text-[28px] shrink-0">analytics</span>
-                                        <div>
-                                            <h4 class="font-headline-xs text-headline-xs text-on-surface">Kho Dữ liệu Dân số &amp; Báo cáo Tuyến Cơ sở</h4>
-                                            <p class="font-body-md text-body-md text-on-surface-variant mt-space-3xs">
-                                                Web tổng hợp, thống kê tự động số liệu biến động dân số từ cấp xã/phường lên thành phố (đã triển khai tại Chi cục Dân số TP. Đà Nẵng).
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div
-                                        class="p-space-md rounded-lg bg-surface-container-low flex items-start gap-space-md">
-                                        <span
-                                            class="material-symbols-outlined text-primary text-[28px] shrink-0">cloud_sync</span>
-                                        <div>
-                                            <h4 class="font-headline-xs text-headline-xs text-on-surface">Cổng Thông tin Khách hàng &amp; Cloud Portal</h4>
-                                            <p class="font-body-md text-body-md text-on-surface-variant mt-space-3xs">
-                                                Nghiên cứu &amp; phát triển phần mềm cổng thông tin quản lý khách hàng bao gồm Web Portal và Mobile App dịch vụ đám mây (đối tác Cloud ACE).
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div
-                                        class="p-space-md rounded-lg bg-surface-container-low flex items-start gap-space-md">
-                                        <span
-                                            class="material-symbols-outlined text-primary text-[28px] shrink-0">videocam</span>
-                                        <div>
-                                            <h4 class="font-headline-xs text-headline-xs text-on-surface">Hệ thống Camera AI Tổ Dân phố Thông minh</h4>
-                                            <p class="font-body-md text-body-md text-on-surface-variant mt-space-3xs">
-                                                Thiết bị xử lý lưu trữ tại biên (Edge AI), camera giám sát an ninh trật tự và gửi cảnh báo tự động cho cán bộ phụ trách (Phường Điện Bàn Bắc).
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div
-                            class="lg:col-span-5 flex flex-col justify-between p-space-xl rounded-xl bg-surface-container shadow-sm">
-                            <div>
-                                <h4 class="font-headline-md text-headline-md text-on-surface mb-space-sm">Năng lực Lưu
-                                    trữ &amp; Xử lý Đám mây</h4>
-                                <p class="font-body-md text-body-md text-on-surface-variant mb-space-lg">
-                                    Hạ tầng Hybrid Cloud đạt chứng nhận an toàn dữ liệu ISO/IEC 27001 và chuẩn an toàn
-                                    thông tin cấp độ 3.
-                                </p>
-                                <div
-                                    class="p-space-md rounded-lg bg-surface-container-lowest space-y-space-sm mb-space-lg">
-                                    <div
-                                        class="flex justify-between items-center text-body-sm font-body-sm text-secondary">
-                                        <span class="">Tốc độ xử lý bóc tách OCR</span>
-                                        <span class="text-primary font-bold">~ 0.8 giây / trang</span>
-                                    </div>
-                                    <div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
-                                        <div class="bg-primary h-full w-[92%] rounded-full"></div>
-                                    </div>
-                                    <div
-                                        class="flex justify-between items-center text-body-sm font-body-sm text-secondary">
-                                        <span class="">Tỷ lệ nén dữ liệu y tế PACS</span>
-                                        <span class="text-primary font-bold">Giảm 65% dung lượng</span>
-                                    </div>
-                                    <div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
-                                        <div class="bg-primary h-full w-[65%] rounded-full"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a class="w-full py-space-sm px-space-md rounded-xl bg-primary text-on-primary text-center font-label-lg text-label-lg shadow-md hover:bg-primary-container transition-all"
-                                data-path="lien-he" href="#">
-                                Đăng ký khảo sát AI &amp; Cloud
-                            </a>
-                        </div>
-                    </div>
-                    <!-- Tab Content 4: Infrastructure & Security (Hidden by default) -->
-                    <div class="pillar-content hidden grid grid-cols-1 lg:grid-cols-12 gap-space-lg" id="pillar-infra">
-                        <div class="lg:col-span-7 flex flex-col gap-space-lg">
-                            <div class="p-space-xl rounded-xl bg-surface-container-lowest shadow-sm">
-                                <span
-                                    class="inline-flex items-center gap-space-3xs px-space-sm py-space-3xs rounded-full bg-secondary-container text-primary font-label-sm text-label-sm mb-space-md">
-                                    <span class="material-symbols-outlined text-[14px]">shield</span>
-                                    ENTERPRISE DEFENSE
-                                </span>
-                                <h3 class="font-headline-lg text-headline-lg text-on-surface mb-space-sm">
-                                    Hạ tầng Trung tâm Dữ liệu &amp; An toàn Thông tin Cấp độ
-                                </h3>
-                                <p class="font-body-lg text-body-lg text-on-surface-variant mb-space-lg">
-                                    Cung cấp trọn gói từ thiết bị phần cứng chính hãng (Cisco, Dell, Fortinet) đến dịch
-                                    vụ đánh giá lỗ hổng bảo mật Pentest, thiết lập phòng thủ chuyên sâu theo Nghị định
-                                    85/2016/NĐ-CP.
-                                </p>
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
-                                    <div class="p-space-md rounded-lg bg-surface-container-low">
-                                        <h4
-                                            class="font-headline-xs text-headline-xs text-on-surface flex items-center gap-space-2xs">
-                                            <span class="material-symbols-outlined text-primary text-[18px]">dns</span>
-                                            Máy chủ &amp; SAN Storage
-                                        </h4>
-                                        <p class="font-body-md text-body-md text-on-surface-variant mt-space-2xs">
-                                            Thiết kế cụm máy chủ ảo hóa VMware/Proxmox, dự phòng nóng N+1 chống gián
-                                            đoạn dịch vụ.
-                                        </p>
-                                    </div>
-                                    <div class="p-space-md rounded-lg bg-surface-container-low">
-                                        <h4
-                                            class="font-headline-xs text-headline-xs text-on-surface flex items-center gap-space-2xs">
-                                            <span
-                                                class="material-symbols-outlined text-primary text-[18px]">vpn_lock</span>
-                                            Tường lửa &amp; Bảo mật Mạng
-                                        </h4>
-                                        <p class="font-body-md text-body-md text-on-surface-variant mt-space-2xs">
-                                            Triển khai giải pháp Next-Gen Firewall (NGFW), chống DDoS, phân tách mạng
-                                            nội bộ và vùng DMZ.
-                                        </p>
-                                    </div>
-                                    <div class="p-space-md rounded-lg bg-surface-container-low">
-                                        <h4
-                                            class="font-headline-xs text-headline-xs text-on-surface flex items-center gap-space-2xs">
-                                            <span
-                                                class="material-symbols-outlined text-primary text-[18px]">security_update_good</span>
-                                            Đánh giá An toàn Cấp độ 3
-                                        </h4>
-                                        <p class="font-body-md text-body-md text-on-surface-variant mt-space-2xs">
-                                            Lập hồ sơ đề xuất cấp độ, kiểm thử mã độc và tối ưu hóa hệ điều hành bảo vệ
-                                            dữ liệu bí mật.
-                                        </p>
-                                    </div>
-                                    <div class="p-space-md rounded-lg bg-surface-container-low">
-                                        <h4
-                                            class="font-headline-xs text-headline-xs text-on-surface flex items-center gap-space-2xs">
-                                            <span
-                                                class="material-symbols-outlined text-primary text-[18px]">settings_backup_restore</span>
-                                            Sao lưu DR &amp; Phục hồi Thảm họa
-                                        </h4>
-                                        <p class="font-body-md text-body-md text-on-surface-variant mt-space-2xs">
-                                            Giải pháp backup tự động đa điểm theo nguyên tắc 3-2-1, khôi phục dữ liệu
-                                            tức thì khi gặp sự cố.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div
-                            class="lg:col-span-5 flex flex-col justify-between p-space-xl rounded-xl bg-surface-container shadow-sm">
-                            <div>
-                                <h4 class="font-headline-md text-headline-md text-on-surface mb-space-sm">Đối tác Công
-                                    nghệ Hạ tầng</h4>
-                                <p class="font-body-md text-body-md text-on-surface-variant mb-space-lg">
-                                    TEKNOVA là đơn vị tích hợp hệ thống uy tín liên kết phân phối cùng các tập đoàn công
-                                    nghệ hàng đầu thế giới.
-                                </p>
-                                <div class="grid grid-cols-2 gap-space-sm mb-space-xl">
-                                    <div
-                                        class="p-space-md rounded-lg bg-surface-container-lowest text-center font-headline-xs text-headline-xs text-secondary">
-                                        DELL EMC
-                                    </div>
-                                    <div
-                                        class="p-space-md rounded-lg bg-surface-container-lowest text-center font-headline-xs text-headline-xs text-secondary">
-                                        CISCO
-                                    </div>
-                                    <div
-                                        class="p-space-md rounded-lg bg-surface-container-lowest text-center font-headline-xs text-headline-xs text-secondary">
-                                        FORTINET
-                                    </div>
-                                    <div
-                                        class="p-space-md rounded-lg bg-surface-container-lowest text-center font-headline-xs text-headline-xs text-secondary">
-                                        HPE
-                                    </div>
-                                </div>
-                            </div>
-                            <a class="w-full py-space-sm px-space-md rounded-xl bg-primary text-on-primary text-center font-label-lg text-label-lg shadow-md hover:bg-primary-container transition-all"
-                                data-path="lien-he" href="#">
-                                Yêu cầu báo giá thiết bị &amp; Hạ tầng
-                            </a>
-                        </div>
+
                     </div>
                 </section>
                 <!-- Section 3: Quy trình triển khai 4 bước chuẩn mực (Horizontal Flow Moodboard Inspiration) -->
@@ -1333,43 +1322,706 @@
                     </div>
                 </section>
             </div>
-            <!-- Interactive Logic for Pillar Tabs & Submission -->
+            <!-- Interactive Logic for Service Filters, Modal & Form Submission -->
+<!-- Interactive Project Detail Modal (Showcasing Technologies & Value Delivered) -->
+            <div class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-inverse-surface/60 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300"
+                id="projectModal">
+                <div class="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto p-6 sm:p-8 rounded-3xl bg-surface-container-lowest shadow-2xl scale-95 transition-all duration-300 flex flex-col gap-5 border border-outline-variant/30 custom-modal-scroll"
+                    id="modalCard">
+                    
+                    <!-- Header -->
+                    <div class="flex items-start justify-between gap-4 pb-3 border-b border-surface-container">
+                        <div class="flex flex-col gap-1.5">
+                            <div class="flex flex-wrap items-center gap-2">
+                                <span class="px-2.5 py-0.5 rounded-full bg-primary-fixed text-primary font-bold text-xs uppercase tracking-wide" id="modalCategory">Y TẾ & EMR</span>
+                                <span class="px-2.5 py-0.5 rounded-full bg-secondary-container/50 text-secondary font-semibold text-xs" id="modalYear">2024 - 2025</span>
+                            </div>
+                            <h3 class="font-headline-sm text-xl sm:text-2xl text-on-surface font-extrabold leading-snug" id="modalTitle">
+                                Chi tiết dự án
+                            </h3>
+                            <div class="flex items-center gap-1.5 text-xs text-secondary mt-0.5" id="modalClientWrapper">
+                                <span class="material-symbols-outlined text-[16px] text-primary">domain</span>
+                                <span class="font-semibold text-on-surface" id="modalClient">Bệnh viện Phổi Đà Nẵng</span>
+                                <span class="text-outline mx-1">•</span>
+                                <span class="material-symbols-outlined text-[14px]">location_on</span>
+                                <span id="modalLocation">Đà Nẵng</span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-9 h-9 rounded-full bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors shrink-0 cursor-pointer"
+                            onclick="closeProjectModal()" aria-label="Close modal">
+                            <span class="material-symbols-outlined text-[22px]">close</span>
+                        </button>
+                    </div>
+
+                    <!-- Project Overview Description -->
+                    <p class="font-body-md text-sm sm:text-[15px] text-on-surface-variant leading-relaxed" id="modalDesc">
+                        Giải pháp được thiết kế tùy biến chuyên sâu cho đơn vị, đáp ứng đầy đủ thông tư hướng dẫn của Bộ Y tế và tiêu chuẩn dữ liệu Chính phủ điện tử.
+                    </p>
+
+                    <!-- Section 1: Công nghệ & Chuẩn tích hợp áp dụng (Technologies Applied) -->
+                    <div class="p-4 sm:p-5 rounded-2xl bg-surface-container-low border border-surface-container/60 flex flex-col gap-3">
+                        <div class="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-wider">
+                            <span class="material-symbols-outlined text-[18px]">memory</span>
+                            <span>Công nghệ & Chuẩn kết nối áp dụng</span>
+                        </div>
+                        <div class="flex flex-wrap gap-2" id="modalTechBadges">
+                            <span class="px-3 py-1 rounded-lg bg-surface-container-lowest text-xs font-semibold text-on-surface shadow-xs border border-outline-variant/30">HL7 / FHIR</span>
+                        </div>
+                    </div>
+
+                    <!-- Section 2: Kết quả & Giá trị mang lại (Results & Measurable Value Delivered) -->
+                    <div class="p-4 sm:p-5 rounded-2xl bg-emerald-50/50 border border-emerald-200/60 flex flex-col gap-3">
+                        <div class="flex items-center gap-2 text-emerald-800 font-bold text-xs uppercase tracking-wider">
+                            <span class="material-symbols-outlined text-[18px] text-emerald-600">verified</span>
+                            <span>Kết quả & Giá trị mang lại</span>
+                        </div>
+                        <ul class="space-y-2 text-xs sm:text-[13px] text-slate-700 font-medium leading-relaxed" id="modalResults">
+                            <li class="flex items-start gap-2">
+                                <span class="material-symbols-outlined text-emerald-600 text-[18px] shrink-0 mt-0.5">check_circle</span>
+                                <span>100% tuân thủ quy chuẩn Bộ Y Tế.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Meta specs strip (Mô hình, SLA, Bảo mật) -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs text-secondary py-2 border-y border-surface-container/70">
+                        <div class="flex flex-col">
+                            <span class="text-[11px] text-outline font-medium">Mô hình vận hành:</span>
+                            <span class="font-bold text-on-surface mt-0.5" id="modalModel">Thuê phần mềm OPEX 0đ vốn đầu tư</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-[11px] text-outline font-medium">Hỗ trợ kỹ thuật:</span>
+                            <span class="font-bold text-on-surface mt-0.5" id="modalSLA">24/7 SLA Cấp 1 (On-site Đà Nẵng)</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-[11px] text-outline font-medium">An toàn thông tin:</span>
+                            <span class="font-bold text-emerald-700 mt-0.5 flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[14px]">shield</span> An toàn Cấp độ 3 (NĐ 85)
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Footer Action Buttons -->
+                    <div class="flex items-center justify-end gap-3 pt-1">
+                        <button
+                            class="px-5 py-2.5 rounded-xl bg-surface-container text-on-surface font-semibold text-xs hover:bg-surface-container-high transition-colors cursor-pointer"
+                            onclick="closeProjectModal()">
+                            Đóng
+                        </button>
+                        <a class="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl bg-primary text-on-primary font-semibold text-xs hover:bg-primary-container transition-all shadow-md shadow-primary/20 glow-btn"
+                            href="gioithieu.html#lien-he">
+                            <span>Liên hệ tư vấn giải pháp tương tự</span>
+                            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Filter & Modal Logic with Rich Dataset -->
             <script>
-                function switchPillar(targetId) {
-                    // Toggle Tab Buttons Appearance
-                    const buttons = document.querySelectorAll('.pillar-tab-btn');
-                    buttons.forEach(btn => {
-                        if (btn.getAttribute('data-target') === targetId) {
-                            btn.classList.remove('bg-surface-container-lowest', 'text-on-surface-variant', 'hover:bg-surface-container');
-                            btn.classList.add('bg-primary', 'text-on-primary', 'shadow-md');
-                        } else {
-                            btn.classList.remove('bg-primary', 'text-on-primary', 'shadow-md');
-                            btn.classList.add('bg-surface-container-lowest', 'text-on-surface-variant', 'hover:bg-surface-container');
-                        }
-                    });
-
-                    // Toggle Pillar Content Sections
-                    const contents = document.querySelectorAll('.pillar-content');
-                    contents.forEach(content => {
-                        if (content.id === targetId) {
-                            content.classList.remove('hidden');
-                        } else {
-                            content.classList.add('hidden');
-                        }
-                    });
-                }
-
-                function handleFormSubmit(event) {
-                    event.preventDefault();
-                    const successMsg = document.getElementById('submitSuccessMsg');
-                    if (successMsg) {
-                        successMsg.classList.remove('hidden');
-                        setTimeout(() => {
-                            document.getElementById('solutionConsultForm').reset();
-                        }, 1500);
+                // Comprehensive Database of Teknova's 23 Authentic Projects
+                const TEKNOVA_PROJECTS = {
+                    "Bệnh án điện tử EMR tại Bệnh viện Phổi Đà Nẵng": {
+                        category: "Y TẾ SỐ & EMR",
+                        year: "2024 - 2025",
+                        client: "Bệnh viện Phổi Đà Nẵng",
+                        location: "Tổ 53 Phước Lý, Hòa Minh, TP. Đà Nẵng",
+                        desc: "Cung cấp trọn gói dịch vụ thuê phần mềm Bệnh án điện tử (EMR) vận hành ổn định, tích hợp chữ ký số bác sĩ và số hóa 100% hồ sơ bệnh án không giấy theo Thông tư 46/2018/TT-BYT.",
+                        tech: [
+                            "Chuẩn HL7 / FHIR",
+                            "Chữ ký số PKI / Token Bác sĩ",
+                            "Kiến trúc Microservices EMR",
+                            "PostgreSQL Cluster / High Availability",
+                            "Tiêu chuẩn bảo mật Cấp độ 3"
+                        ],
+                        results: [
+                            "Cắt giảm 100% chi phí in ấn phim X-quang, giấy bệnh án truyền thống.",
+                            "Bác sĩ ký số và đóng dấu bệnh án điện tử trực tiếp, rút ngắn 65% thời gian làm thủ tục xuất viện.",
+                            "Đạt chuẩn thẩm định Bệnh án điện tử của Bộ Y tế, không cần lưu trữ hồ sơ giấy vật lý.",
+                            "Vận hành liên tục 24/7 với cam kết SLA 99.98% không gián đoạn cấp cứu."
+                        ],
+                        model: "Thuê dịch vụ EMR trọn gói (OPEX)",
+                        sla: "24/7 On-site tại Đà Nẵng"
+                    },
+                    "Cập nhật XML theo QĐ 3176/QĐ-BYT tại Bệnh viện Phổi Đà Nẵng": {
+                        category: "TUÂN THỦ BYT & BHYT",
+                        year: "2024 - 2025",
+                        client: "Bệnh viện Phổi Đà Nẵng",
+                        location: "215 Nguyễn Đình Tứ, Hòa Khánh, TP. Đà Nẵng",
+                        desc: "Nâng cấp hệ thống phần mềm HIS để chuẩn hóa dữ liệu đầu ra phục vụ quản lý, giám định, thanh toán chi phí KCB BHYT theo Quyết định 3176/QĐ-BYT và trích xuất dữ liệu Người bệnh tử vong đẩy cổng DVC thành phố.",
+                        tech: [
+                            "Đặc tả XML Chuẩn QĐ 3176/QĐ-BYT",
+                            "API Cổng Giám định BHYT Quốc gia",
+                            "Dịch vụ công Liên thông Đề án 06",
+                            "Hệ thống xác thực dữ liệu tự động (Schema Validator)"
+                        ],
+                        results: [
+                            "Tự động trích xuất và kiểm tra tính hợp lệ của dữ liệu XML trước khi đẩy lên cổng BHYT.",
+                            "Giảm thiểu 90% lỗi từ chối thanh toán bảo hiểm y tế do sai lệch cấu trúc dữ liệu.",
+                            "Tích hợp tự động đẩy dữ liệu tử vong liên thông Cổng dịch vụ công hành chính Đà Nẵng.",
+                            "Đảm bảo tiến độ kiểm định quyết toán định kỳ của Bảo hiểm Xã hội thành phố."
+                        ],
+                        model: "Nâng cấp phần mềm & Tích hợp cổng",
+                        sla: "24/7 Cấp 1"
+                    },
+                    "Phần mềm quảng bá & giao tiếp BV Phổi qua Zalo OA": {
+                        category: "ZALO OA & Y TẾ SỐ",
+                        year: "2024",
+                        client: "Bệnh viện Phổi Đà Nẵng",
+                        location: "Tổ 53 Phước Lý, Liên Chiểu, TP. Đà Nẵng",
+                        desc: "Cung cấp phần mềm quảng bá và kênh giao tiếp điện tử bệnh viện qua Zalo Official Account, tích hợp trực tiếp 2 chiều với hệ thống HIS để người bệnh tra cứu lịch khám, nhận thông báo kết quả xét nghiệm.",
+                        tech: [
+                            "Zalo OA API / Zalo Notification Service (ZNS)",
+                            "Webhook 2-Way Sync với HIS Bệnh viện",
+                            "Node.js / FastAPI Middleware",
+                            "Mã hóa dữ liệu bệnh nhân end-to-end"
+                        ],
+                        results: [
+                            "Hơn 15,000 lượt bệnh nhân theo dõi và tương tác nhận tin nhắn thông báo tự động.",
+                            "Người bệnh tự tra cứu số thứ tự khám và nhận kết quả trực tiếp qua tin nhắn Zalo.",
+                            "Giảm 45% thời gian tập trung chờ đợi tại quầy tiếp đón và phòng lấy kết quả.",
+                            "Chi phí gửi tin nhắn tương tác thấp hơn 70% so với SMS Brandname truyền thống."
+                        ],
+                        model: "Phần mềm tích hợp Cloud & Zalo",
+                        sla: "24/7 SLA Cấp 1"
+                    },
+                    "Thuê phần mềm Bệnh án điện tử EMR 2025 tại TTYT Ngũ Hành Sơn": {
+                        category: "Y TẾ SỐ & EMR",
+                        year: "2025",
+                        client: "Trung tâm Y tế Khu vực Ngũ Hành Sơn",
+                        location: "Phường Ngũ Hành Sơn, TP. Đà Nẵng",
+                        desc: "Gói thuê phần mềm Bệnh án điện tử EMR toàn diện năm 2025 thay thế hoàn toàn hồ sơ giấy cho toàn bộ các khoa phòng nội trú và ngoại trú.",
+                        tech: [
+                            "Hệ thống EMR Web-based kiến trúc Cloud",
+                            "Chữ ký số tập trung HSM & SmartCA",
+                            "Chuẩn liên thông hồ sơ sức khỏe điện tử EHR",
+                            "Cơ sở dữ liệu Oracle / PostgreSQL song hành"
+                        ],
+                        results: [
+                            "Triển khai không tốn chi phí đầu tư ban đầu phần cứng (mô hình SaaS OPEX).",
+                            "Tất cả hồ sơ điều trị, chỉ định cận lâm sàng được luân chuyển tức thời giữa các khoa.",
+                            "Tối ưu 100% thời gian tìm kiếm hồ sơ bệnh án cũ của bệnh nhân tái khám.",
+                            "Đáp ứng tiêu chí xếp hạng chuyển đổi số bệnh viện tuyến quận huyện."
+                        ],
+                        model: "Thuê phần mềm dịch vụ trọn gói (SaaS)",
+                        sla: "Cam kết 99.98% Uptime"
+                    },
+                    "Cập nhật đơn thuốc điện tử TT 26/2025/TT-BYT tại TTYT Liên Chiểu": {
+                        category: "TUÂN THỦ BYT & ĐƠN THUỐC QG",
+                        year: "2025",
+                        client: "Trung tâm Y tế Khu vực Liên Chiểu",
+                        location: "525 Tôn Đức Thắng, Hòa Khánh, TP. Đà Nẵng",
+                        desc: "Cập nhật cấu trúc mẫu đơn thuốc điện tử và liên thông Hệ thống thông tin đơn thuốc quốc gia (donthuocquocgia.vn) theo quy định mới nhất của Thông tư 26/2025/TT-BYT.",
+                        tech: [
+                            "API Cổng Đơn thuốc Quốc gia (donthuocquocgia.vn)",
+                            "Chuẩn mã hóa thông tư 26/2025/TT-BYT",
+                            "Định danh mã cơ sở KCB và mã bác sĩ kê đơn (CCHN)",
+                            "Mã QR tra cứu đơn thuốc điện tử trên smartphone"
+                        ],
+                        results: [
+                            "100% đơn thuốc ngoại trú được cấp mã định danh quốc gia ngay khi bác sĩ kê đơn.",
+                            "Bệnh nhân quét mã QR để mua thuốc tại tất cả các nhà thuốc đạt chuẩn GPP trên cả nước.",
+                            "Kiểm soát triệt để tình trạng bán thuốc kê đơn không có đơn hợp lệ và trùng lặp đơn thuốc.",
+                            "Hạn chế sai sót thông tin liều dùng và tương tác thuốc nhờ cảnh báo thông minh."
+                        ],
+                        model: "Nâng cấp mô-đun nghiệp vụ",
+                        sla: "Hỗ trợ 24/7 trực tiếp"
+                    },
+                    "Nâng cấp hệ thống trích xuất XML QĐ 3176/QĐ-BYT tại TTYT Liên Chiểu": {
+                        category: "TUÂN THỦ BYT & BHYT",
+                        year: "2024 - 2025",
+                        client: "Trung tâm Y tế Khu vực Liên Chiểu",
+                        location: "525 Tôn Đức Thắng, Hòa Khánh, TP. Đà Nẵng",
+                        desc: "Nâng cấp toàn bộ mô-đun xuất định dạng dữ liệu đầu ra XML của phần mềm quản lý bệnh viện phục vụ giám định thanh toán chi phí khám chữa bệnh BHYT theo QĐ 3176/QĐ-BYT.",
+                        tech: [
+                            "Engine phân tích cú pháp XML đa luồng",
+                            "Đối chiếu tự động bảng mã dịch vụ kỹ thuật BYT",
+                            "Tích hợp API cổng giám định BHXH Việt Nam",
+                            "Log audit kiểm soát thay đổi dữ liệu chi phí"
+                        ],
+                        results: [
+                            "Xử lý và xuất dữ liệu hàng ngàn lượt khám mỗi ngày với tốc độ dưới 3 giây/lô.",
+                            "Loại bỏ hoàn toàn các lỗi sai sót mã thẻ BHYT, trùng lặp chỉ định thuốc và vật tư.",
+                            "Đảm bảo tỷ lệ chấp nhận dữ liệu giám định bảo hiểm đạt trên 99.8%.",
+                            "Tự động đồng bộ báo cáo phục vụ thanh quyết toán quý của ban giám đốc."
+                        ],
+                        model: "Nâng cấp hệ thống lõi",
+                        sla: "24/7 SLA Cấp 1"
+                    },
+                    "Nâng cấp liên thông Đề án 06 & Zalo OA tại TTYT Liên Chiểu": {
+                        category: "ĐỀ ÁN 06 & DỊCH VỤ CÔNG",
+                        year: "2024",
+                        client: "Trung tâm Y tế Khu vực Liên Chiểu",
+                        location: "525 Tôn Đức Thắng, Hòa Khánh, TP. Đà Nẵng",
+                        desc: "Nâng cấp phần mềm HIS đáp ứng QĐ 130/QĐ-BYT, CV 1165, CV 3617 liên thông dữ liệu Giấy chứng sinh, Giấy báo tử lên Cổng giám định BHYT phục vụ Đề án 06; liên thông Giấy khám sức khỏe lái xe lên Cổng DVCQG và gửi kết quả khám qua Zalo OA.",
+                        tech: [
+                            "Xác thực CCCD gắn chip (Đề án 06)",
+                            "API Cổng Dịch vụ công Quốc gia (dichvucong.gov.vn)",
+                            "Cổng Giám định BHYT liên thông chứng sinh / báo tử",
+                            "Zalo Notification Service (ZNS)"
+                        ],
+                        results: [
+                            "Người dân đăng ký cấp đổi GPLX trực tuyến không cần mang giấy khám sức khỏe bản giấy.",
+                            "Thủ tục đăng ký khai sinh và cấp thẻ BHYT cho trẻ sơ sinh thực hiện liên thông tự động.",
+                            "Tiết kiệm hàng trăm giờ làm việc hành chính mỗi tháng cho nhân viên y tế và phòng kế hoạch.",
+                            "Tăng chỉ số chuyển đổi số DVC của quận Liên Chiểu lên nhóm dẫn đầu TP. Đà Nẵng."
+                        ],
+                        model: "Phần mềm tích hợp CSDL Quốc gia",
+                        sla: "Hỗ trợ kỹ thuật On-site 24/7"
+                    },
+                    "Cập nhật hệ thống HIS đẩy dữ liệu XML QĐ 3176/QĐ-BYT tại TTYT Cẩm Lệ": {
+                        category: "TUÂN THỦ BYT & BHYT",
+                        year: "2024 - 2025",
+                        client: "Trung tâm Y tế Khu vực Cẩm Lệ",
+                        location: "105 Nguyễn Nhàn, P. Cẩm Lệ, TP. Đà Nẵng",
+                        desc: "Cập nhật hệ thống quản lý bệnh viện (HIS) để đồng bộ và đẩy dữ liệu định dạng XML chuẩn xác theo Quyết định 3176/QĐ-BYT ngày 29/10/2024 của Bộ Y tế.",
+                        tech: [
+                            "Cấu trúc dữ liệu XML 4210 / 3176 BYT",
+                            "Dịch vụ kiểm tra chéo cơ sở dữ liệu danh mục",
+                            "Bảo mật truyền dẫn SSL/TLS 1.3",
+                            "Hệ thống giám sát truyền nhận thời gian thực"
+                        ],
+                        results: [
+                            "Hoàn thành chuyển đổi dữ liệu đúng hạn quy định của Bộ Y tế không làm ngắt quãng khám chữa bệnh.",
+                            "Tỷ lệ hồ sơ gửi giám định thành công ngay lần đầu đạt 99.5%.",
+                            "Đồng bộ hóa dữ liệu danh mục thuốc, vật tư tiêu hao giữa các khoa lâm sàng và nhà thuốc bệnh viện.",
+                            "Giảm thời gian kết toán viện phí cuối ngày cho bộ phận thu ngân."
+                        ],
+                        model: "Nâng cấp phần mềm HIS",
+                        sla: "24/7 SLA Cấp 1"
+                    },
+                    "Phần mềm trả kết quả xét nghiệm qua Zalo tại BV Phụ sản - Nhi Đà Nẵng": {
+                        category: "ZALO OA & Y TẾ SỐ",
+                        year: "2024",
+                        client: "Bệnh viện Phụ sản - Nhi Đà Nẵng",
+                        location: "402 Lê Văn Hiến, Q. Ngũ Hành Sơn, TP. Đà Nẵng",
+                        desc: "Triển khai phần mềm tự động trả kết quả xét nghiệm qua kênh Zalo OA cho Cơ sở 01 Bệnh viện Phụ sản - Nhi Đà Nẵng, giúp giảm tình trạng chen lấn chờ nhận kết quả.",
+                        tech: [
+                            "Kết nối tự động hệ thống LIS xét nghiệm với Zalo OA",
+                            "Mã hóa file PDF kết quả xét nghiệm có mật khẩu OTP",
+                            "Nền tảng Cloud bảo mật thông tin thai sản & nhi khoa",
+                            "Thông báo đẩy tự động khi có kết quả hoàn tất"
+                        ],
+                        results: [
+                            "Phục vụ trung bình hơn 1,200 lượt sản phụ và phụ huynh mỗi ngày nhận kết quả online.",
+                            "Giảm đến 70% áp lực tập trung đông người tại phòng chờ xét nghiệm.",
+                            "Tăng mức độ hài lòng của người bệnh đối với chất lượng phục vụ của bệnh viện lên trên 96%.",
+                            "Dữ liệu xét nghiệm được bảo mật riêng tư tuyệt đối qua cơ chế xác thực OTP số điện thoại."
+                        ],
+                        model: "Phần mềm tích hợp LIS & Zalo Cloud",
+                        sla: "Hỗ trợ 24/7 On-site"
+                    },
+                    "Nâng cấp phần mềm QLBV & Kênh giao tiếp Zalo OA với PVcomBank": {
+                        category: "FINTECH & Y TẾ SỐ",
+                        year: "2024",
+                        client: "Ngân hàng TMCP Đại Chúng Việt Nam (PVcomBank)",
+                        location: "Số 22 Ngô Quyền, Cửa Nam, Hà Nội",
+                        desc: "Nâng cấp, mở rộng phần mềm quản lý bệnh viện và tích hợp kênh giao tiếp điện tử với người bệnh thông qua Zalo OA kết hợp giải pháp thanh toán viện phí thông minh không tiền mặt với PVcomBank.",
+                        tech: [
+                            "Cổng thanh toán QR Code động liên ngân hàng VietQR",
+                            "Tích hợp Core Banking API của PVcomBank",
+                            "Zalo Mini App & Zalo Official Account",
+                            "Bảo mật giao dịch chuẩn PCI-DSS & ISO 27001"
+                        ],
+                        results: [
+                            "Người bệnh quét mã QR viện phí tại giường bệnh hoặc phòng khám, thanh toán tức thì trong 3 giây.",
+                            "Tỷ lệ thanh toán không dùng tiền mặt tại bệnh viện đối tác tăng trưởng vượt bậc từ 15% lên 68%.",
+                            "Kế toán bệnh viện không còn đối mặt với rủi ro thất thoát tiền mặt và sai lệch số liệu cuối ca.",
+                            "Mở rộng dịch vụ tài chính y tế tiện lợi cho cộng đồng."
+                        ],
+                        model: "Hợp tác chuyển đổi số B2B / Fintech",
+                        sla: "24/7 SLA Cấp 1"
+                    },
+                    "Giải pháp giải đáp TTHC trên Zalo OA & Mini App với MobiFone Đà Nẵng": {
+                        category: "CHÍNH QUYỀN SỐ & MINI APP",
+                        year: "2024",
+                        client: "MobiFone Đà Nẵng (Chi nhánh TCT Viễn thông MobiFone)",
+                        location: "586 Nguyễn Hữu Thọ, Cẩm Lệ, TP. Đà Nẵng",
+                        desc: "Phần mềm hỗ trợ giải đáp thủ tục hành chính công trên Zalo OA và Zalo Mini App kết hợp trợ lý ảo AI hướng dẫn người dân làm hồ sơ trực tuyến thuận tiện trên điện thoại.",
+                        tech: [
+                            "Zalo Mini App SDK & Framework",
+                            "Chatbot AI xử lý ngôn ngữ tự nhiên (NLP)",
+                            "Cơ sở tri thức thủ tục hành chính công Đà Nẵng",
+                            "Kiến trúc Cloud serverless chịu tải cao"
+                        ],
+                        results: [
+                            "Hơn 50,000 lượt người dân tương tác tra cứu thủ tục hành chính không cần đến bộ phận 1 cửa.",
+                            "Tự động trả lời 24/7 hơn 85% các câu hỏi thường gặp về hộ tịch, đất đai, bảo trợ xã hội.",
+                            "Rút ngắn thời gian hướng dẫn chuẩn bị hồ sơ cho cán bộ công chức từ 20 phút xuống dưới 2 phút.",
+                            "Được đánh giá là sáng kiến số hóa kiểu mẫu trong công tác cải cách hành chính tại cơ sở."
+                        ],
+                        model: "Phần mềm theo yêu cầu & Hợp tác MobiFone",
+                        sla: "24/7 Uptime 99.98%"
+                    },
+                    "Phần mềm chuyển đổi số phường xã qua Zalo OA với MobiFone Đà Nẵng": {
+                        category: "CHÍNH QUYỀN SỐ & CỘNG ĐỒNG",
+                        year: "2024",
+                        client: "MobiFone Đà Nẵng (Chi nhánh TCT Viễn thông MobiFone)",
+                        location: "586 Nguyễn Hữu Thọ, Cẩm Lệ, TP. Đà Nẵng",
+                        desc: "Triển khai nền tảng phần mềm chuyển đổi số toàn diện cấp phường xã thông qua kênh Zalo OA kết hợp giải pháp hạ tầng viễn thông MobiFone, phục vụ chỉ đạo điều hành và tiếp nhận phản ánh kiến nghị.",
+                        tech: [
+                            "Phân hệ tiếp nhận & điều phối phản ánh hiện trường",
+                            "Zalo Broadcast theo phân loại tổ dân phố / khu dân cư",
+                            "Dashboard thống kê số liệu điều hành cho lãnh đạo phường",
+                            "Mã hóa phân quyền cán bộ nghiệp vụ theo chức năng"
+                        ],
+                        results: [
+                            "Kết nối liên lạc tức thì giữa UBND phường với hơn 90% hộ gia đình trên địa bàn.",
+                            "100% các tin báo an ninh trật tự, vệ sinh môi trường được tiếp nhận và xử lý có giám sát thời gian.",
+                            "Thay thế việc phát loa truyền thanh bằng các bản tin số sinh động ngay trên Zalo.",
+                            "Nâng cao sự tin tưởng và gắn kết giữa chính quyền địa phương với người dân."
+                        ],
+                        model: "Triển khai phần mềm diện rộng",
+                        sla: "Hỗ trợ 24/7 trực tiếp"
+                    },
+                    "Hệ thống tin nhắn Zalo OA điều hành tại UBND Phường Ngũ Hành Sơn": {
+                        category: "CHÍNH QUYỀN SỐ",
+                        year: "2024",
+                        client: "Trung tâm Phục vụ Hành chính công Phường Ngũ Hành Sơn",
+                        location: "Phường Ngũ Hành Sơn, TP. Đà Nẵng",
+                        desc: "Xây dựng, tích hợp và vận hành hệ thống gửi thông báo, tin nhắn qua nền tảng Zalo Official Account phục vụ công tác quản lý, điều hành và truyền thông số của UBND Phường.",
+                        tech: [
+                            "Zalo OA API & ZNS Template chuyên ngành hành chính",
+                            "Phần mềm quản lý danh bạ tổ dân phố số hóa",
+                            "Hệ thống gửi tin nhắn khẩn cấp thiên tai, bão lũ tự động",
+                            "Bảo đảm an toàn bảo mật CSDL dân cư cấp độ 3"
+                        ],
+                        results: [
+                            "Phát thông báo họp dân, lịch tiêm chủng, hỗ trợ an sinh xã hội tức thì đến từng hộ dân.",
+                            "Tỷ lệ người dân đọc thông báo đạt 92% trong vòng 1 giờ đầu tiên phát tin.",
+                            "Tiết kiệm chi phí in ấn giấy mời và nhân lực phát giấy báo đến từng ngõ xóm.",
+                            "Hỗ trợ chỉ đạo phòng chống thiên tai mưa bão cực kỳ nhanh chóng và an toàn."
+                        ],
+                        model: "Triển khai & Vận hành trọn gói",
+                        sla: "24/7 SLA Cấp 1"
+                    },
+                    "Web tổng hợp & thống kê dữ liệu báo cáo tuyến cơ sở Chi cục Dân số": {
+                        category: "CSDL & DỮ LIỆU DÙNG CHUNG",
+                        year: "2024",
+                        client: "Chi cục Dân số Thành phố Đà Nẵng",
+                        location: "118 Lê Đình Lý, Thanh Khê, TP. Đà Nẵng",
+                        desc: "Xây dựng Web tổng hợp và thống kê dữ liệu báo cáo biến động dân số của tuyến cơ sở (xã, phường, quận huyện) lên cấp thành phố phục vụ hoạch định chính sách dân số và phát triển.",
+                        tech: [
+                            "Kiến trúc kho dữ liệu Data Warehouse Dân số",
+                            "Dashboard BI trực quan hóa biểu đồ tháp tuổi, giới tính",
+                            "Thuật toán đối soát và làm sạch dữ liệu tự động",
+                            "Hạ tầng máy chủ web tuân thủ an toàn thông tin TP Đà Nẵng"
+                        ],
+                        results: [
+                            "Tự động tổng hợp số liệu dân số từ gần 60 xã/phường trên toàn thành phố.",
+                            "Loại bỏ việc cộng dồn báo cáo thủ công trên bảng tính Excel dễ sai sót.",
+                            "Rút ngắn thời gian lập báo cáo định kỳ cho Chi cục từ 15 ngày xuống còn dưới 1 ngày.",
+                            "Cung cấp số liệu chính xác phục vụ phân tích tỷ số giới tính khi sinh và già hóa dân số."
+                        ],
+                        model: "Xây dựng phần mềm trọn gói",
+                        sla: "24/7 Bảo trì dài hạn"
+                    },
+                    "Cổng thông tin điện tử Website Chi cục Dân số TP Đà Nẵng": {
+                        category: "CỔNG THÔNG TIN SỐ",
+                        year: "2024",
+                        client: "Chi cục Dân số Thành phố Đà Nẵng",
+                        location: "118 Lê Đình Lý, Thanh Khê, TP. Đà Nẵng",
+                        desc: "Xây dựng và vận hành trang thông tin điện tử chính thức của Chi cục Dân số TP Đà Nẵng đạt chuẩn tiếp cận thông tin Chính phủ điện tử và tối ưu giao diện di động.",
+                        tech: [
+                            "Hệ quản trị nội dung CMS bảo mật cao",
+                            "Chuẩn tiếp cận thông tin Web Accessibility (WCAG 2.1)",
+                            "Tối ưu hóa công cụ tìm kiếm (SEO) và tốc độ tải trang cao",
+                            "Hệ thống phòng thủ tường lửa WAF chống tấn công DDoS"
+                        ],
+                        results: [
+                            "Hơn 100,000 lượt truy cập hàng năm tìm hiểu thông tin chính sách dân số và KHHGĐ.",
+                            "Tốc độ tải trang dưới 1.2 giây trên mọi thiết bị di động.",
+                            "Đảm bảo an toàn thông tin 100%, không bị gián đoạn hay xâm nhập trái phép.",
+                            "Kênh truyền thông tin cậy số 1 của ngành Dân số thành phố."
+                        ],
+                        model: "Xây dựng & Vận hành Cloud",
+                        sla: "24/7 SLA Cấp 1"
+                    },
+                    "Nâng cấp phần mềm Đánh giá tiêu chí ứng dụng CNTT TP Đà Nẵng": {
+                        category: "CHÍNH QUYỀN SỐ & ĐÁNH GIÁ DTI",
+                        year: "2024",
+                        client: "Trung Tâm Chuyển Đổi Số Và Công Nghệ Chiến Lược Đà Nẵng",
+                        location: "Số 02 Quang Trung, Hải Châu, TP. Đà Nẵng",
+                        desc: "Nâng cấp phần mềm Đánh giá các tiêu chí ứng dụng công nghệ thông tin và chuyển đổi số (DTI) cho các cơ quan, sở ban ngành, quận huyện trên địa bàn thành phố Đà Nẵng.",
+                        tech: [
+                            "Hệ thống chấm điểm động theo bộ tiêu chí DTI của Bộ TTTT",
+                            "Cơ chế tải minh chứng số hóa và chữ ký số xác thực hồ sơ",
+                            "Thuật toán xếp hạng tự động và phân tích điểm nghẽn",
+                            "Bảo mật tài khoản SSO tích hợp cổng hành chính công thành phố"
+                        ],
+                        results: [
+                            "Phục vụ đánh giá xếp hạng ứng dụng CNTT cho 100% sở ngành và UBND quận huyện.",
+                            "Tự động tính điểm và xếp hạng ngay khi hoàn tất chấm thẩm định, giảm 80% thời gian tổng hợp thủ công.",
+                            "Cung cấp báo cáo phân tích trực quan giúp lãnh đạo thành phố chỉ đạo chuyển đổi số có trọng tâm.",
+                            "Đóng góp vào việc giữ vững vị trí dẫn đầu toàn quốc về chỉ số DTI của Đà Nẵng."
+                        ],
+                        model: "Nâng cấp phần mềm theo đặt hàng",
+                        sla: "24/7 Hỗ trợ kỹ thuật"
+                    },
+                    "R&D Cổng thông tin khách hàng & Mobile App cho Cloud ACE": {
+                        category: "CLOUD & DOANH NGHIỆP B2B",
+                        year: "2024",
+                        client: "Công ty TNHH Cloud ACE (Đối tác Google Cloud Partner)",
+                        location: "384 Hoàng Diệu, Phường Khánh Hội, TP. Hồ Chí Minh",
+                        desc: "Nghiên cứu và phát triển phần mềm cổng thông tin quản lý khách hàng bao gồm hệ thống Website portal và ứng dụng trên thiết bị di động (Mobile App) quản lý dịch vụ đám mây.",
+                        tech: [
+                            "Flutter / React Native Cross-Platform Mobile App",
+                            "Google Cloud Platform (GCP) Serverless Architecture",
+                            "Billing API & Cost Management Integration",
+                            "Kiến trúc Clean Architecture & CI/CD tự động"
+                        ],
+                        results: [
+                            "Cho phép doanh nghiệp theo dõi chi phí sử dụng tài nguyên Google Cloud theo thời gian thực.",
+                            "Cảnh báo tự động khi phát sinh chi phí bất thường qua thông báo Notification trên App.",
+                            "Tăng 40% mức độ tương tác và quản lý hợp đồng giữa khách hàng doanh nghiệp và Cloud ACE.",
+                            "Chứng minh năng lực R&D đạt chuẩn đối tác công nghệ quốc tế của Teknova."
+                        ],
+                        model: "R&D Sản phẩm công nghệ cao",
+                        sla: "24/7 SLA Cấp 1"
+                    },
+                    "Tặng và xây dựng Website Bệnh viện Y học Cổ truyền TP Đà Nẵng": {
+                        category: "CỘNG ĐỒNG & Y TẾ SỐ",
+                        year: "2024",
+                        client: "Bệnh viện Y học Cổ truyền Thành phố Đà Nẵng",
+                        location: "77 Đinh Gia Trinh, Cẩm Lệ, TP. Đà Nẵng",
+                        desc: "Tài trợ toàn bộ kinh phí thiết kế, xây dựng và đưa vào vận hành Website Bệnh viện Y học cổ truyền Đà Nẵng với giao diện thân thiện, hỗ trợ đặt lịch khám bệnh trực tuyến cho người cao tuổi.",
+                        tech: [
+                            "Giao diện Responsive hỗ trợ cỡ chữ lớn cho người cao tuổi",
+                            "Hệ thống đăng ký lịch khám bệnh trực tuyến theo chuyên khoa",
+                            "Tra cứu danh mục cây thuốc, vị thuốc y học cổ truyền",
+                            "Tối ưu chuẩn an toàn thông tin cổng y tế"
+                        ],
+                        results: [
+                            "Hỗ trợ hơn 300 lượt bệnh nhân cao tuổi đặt lịch khám trực tuyến mỗi tuần không cần xếp hàng sớm.",
+                            "Được Sở Y tế và Ban giám đốc bệnh viện gửi thư cảm ơn ghi nhận đóng góp vì cộng đồng.",
+                            "Nâng tầm hình ảnh chuyên nghiệp và hiện đại của bệnh viện y học cổ truyền tuyến thành phố.",
+                            "Miễn phí bảo trì và vận hành máy chủ liên tục 24/7."
+                        ],
+                        model: "Dự án CSR đóng góp cộng đồng (Tài trợ 100%)",
+                        sla: "Bảo hành & Vận hành vĩnh viễn"
+                    },
+                    "Dự án Chuyển đổi số 2026-2030, tầm nhìn 2035 Xã Xuân Phú": {
+                        category: "TƯ VẤN CHUYỂN ĐỔI SỐ",
+                        year: "2024 - 2025",
+                        client: "UBND Xã Xuân Phú, TP. Đà Nẵng",
+                        location: "Thôn Mộc Bài, Xã Xuân Phú, TP. Đà Nẵng",
+                        desc: "Tư vấn khảo sát hiện trạng, xây dựng Đề án Chuyển đổi số tổng thể giai đoạn 2026–2030, tầm nhìn 2035 với lộ trình cụ thể về chính quyền số, kinh tế số và xã hội số cấp xã.",
+                        tech: [
+                            "Phương pháp luận khung kiến trúc Chính phủ điện tử Việt Nam (VNeGA)",
+                            "Khảo sát đo lường mức độ sẵn sàng số hóa (Digital Readiness Assessment)",
+                            "Quy hoạch hạ tầng mạng LAN/WAN và camera an ninh cơ sở",
+                            "Đề xuất mô hình kinh tế số nông nghiệp, OCOP địa phương"
+                        ],
+                        results: [
+                            "Xây dựng thành công Đề án chuyển đổi số được Hội đồng thẩm định cấp thành phố thông qua.",
+                            "Định hình rõ ràng danh mục 15 dự án ưu tiên triển khai theo từng năm với ngân sách tối ưu.",
+                            "Tạo tiền đề vững chắc để xã Xuân Phú đạt chuẩn Xã nông thôn mới thông minh.",
+                            "Trực tiếp đào tạo nâng cao nhận thức số cho toàn bộ cán bộ chủ chốt của xã."
+                        ],
+                        model: "Tư vấn chiến lược chuyển đổi số",
+                        sla: "Đồng hành tư vấn chuyên sâu"
+                    },
+                    "Tạo lập dữ liệu chuyên ngành vào Kho dữ liệu dùng chung Xã Xuân Phú": {
+                        category: "CSDL & DỮ LIỆU DÙNG CHUNG",
+                        year: "2024 - 2025",
+                        client: "UBND Xã Xuân Phú, TP. Đà Nẵng",
+                        location: "Thôn Mộc Bài, Xã Xuân Phú, TP. Đà Nẵng",
+                        desc: "Tư vấn khảo sát, số hóa, làm sạch và cập nhật dữ liệu cơ sở chuyên ngành (đất đai, hộ tịch, chính sách người có công) vào Kho dữ liệu dùng chung của thành phố.",
+                        tech: [
+                            "Công nghệ nhận dạng ký tự quang học (OCR) số hóa hồ sơ cũ",
+                            "Quy trình chuẩn hóa và xác thực dữ liệu (Data Cleaning Pipeline)",
+                            "Định dạng API nạp dữ liệu vào CSDL Dùng chung TP Đà Nẵng",
+                            "Bảo mật phân quyền mã hóa dữ liệu cá nhân"
+                        ],
+                        results: [
+                            "Số hóa thành công hơn 20,000 trang hồ sơ giấy lưu trữ từ nhiều năm trước.",
+                            "Dữ liệu được làm sạch, đồng bộ 100% vào kho dữ liệu tập trung của thành phố.",
+                            "Cán bộ xã tra cứu thông tin thửa đất, hộ tịch chỉ mất 5 giây thay vì lục tìm kho lưu trữ 2 ngày.",
+                            "Tránh thất lạc tài liệu quý trong điều kiện thời tiết khắc nghiệt."
+                        ],
+                        model: "Dịch vụ số hóa & Nạp CSDL",
+                        sla: "Bảo đảm toàn vẹn dữ liệu 100%"
+                    },
+                    "Chuẩn hóa & cập nhật CSDL chuyên ngành Xã Tiên Phước": {
+                        category: "CSDL & CHÍNH QUYỀN SỐ",
+                        year: "2024",
+                        client: "Phòng Văn Hoá – Xã Hội Xã Tiên Phước",
+                        location: "81 Huỳnh Thúc Kháng, TP. Đà Nẵng",
+                        desc: "Tạo lập, chuẩn hóa và cập nhật dữ liệu chuyên ngành văn hóa - xã hội vào phần mềm cơ sở dữ liệu chuyên ngành phục vụ quản lý đối tượng bảo trợ xã hội và di tích lịch sử.",
+                        tech: [
+                            "Mô hình dữ liệu quan hệ chuẩn hóa 3NF",
+                            "Phần mềm quản lý danh mục đối tượng chính sách",
+                            "Giao diện nhập liệu kiểm tra logic tự động",
+                            "Xuất báo cáo theo biểu mẫu quy định của Bộ LĐTBXH"
+                        ],
+                        results: [
+                            "Hoàn thành chuẩn hóa 100% dữ liệu đối tượng người có công và bảo trợ xã hội trên địa bàn.",
+                            "Chi trả trợ cấp xã hội đúng người, đúng thời hạn, không còn trùng lặp hoặc sót đối tượng.",
+                            "Hỗ trợ quản lý di tích lịch sử và danh lam thắng cảnh bằng hồ sơ số hóa.",
+                            "Nâng cao hiệu quả quản lý nhà nước của phòng Văn hóa - Xã hội."
+                        ],
+                        model: "Chuẩn hóa & Cập nhật CSDL",
+                        sla: "24/7 SLA Cấp 1"
+                    },
+                    "Điểm Tổ dân phố thông minh Camera AI tại Phường Điện Bàn Bắc": {
+                        category: "AI & SMART CITY",
+                        year: "2024",
+                        client: "Phòng Văn Hóa Xã Hội Phường Điện Bàn Bắc",
+                        location: "Tổ dân phố Xóm Bùng, Phường Điện Bàn Bắc, TP. Đà Nẵng",
+                        desc: "Xây dựng điểm tổ dân phố thông minh kiểu mẫu: Hệ thống Camera AI thông minh, thiết bị xử lý lưu trữ dữ liệu tại biên (Edge AI) và cảnh báo an ninh trật tự tự động.",
+                        tech: [
+                            "Camera AI Edge Computing phát hiện chuyển động bất thường",
+                            "Thuật toán nhận diện biển số xe và cảnh báo đối tượng lạ",
+                            "Hệ thống lưu trữ dữ liệu đám mây kết hợp lưu trữ tại chỗ",
+                            "Cảnh báo tức thì qua ứng dụng di động cho tổ bảo vệ dân phố"
+                        ],
+                        results: [
+                            "Giảm 100% các vụ trộm cắp và tệ nạn tại khu vực thí điểm từ khi lắp đặt hệ thống.",
+                            "Tự động cảnh báo các hành vi đổ rác trộm, lấn chiếm lòng lề đường tới điện thoại tổ trưởng.",
+                            "Cung cấp bằng chứng hình ảnh sắc nét hỗ trợ lực lượng công an phường điều tra xử lý vi phạm.",
+                            "Được nhân dân đồng thuận cao và đề xuất nhân rộng ra toàn bộ các tổ dân phố trong phường."
+                        ],
+                        model: "Giải pháp IoT & Camera AI thông minh",
+                        sla: "24/7 Bảo trì trực tiếp On-site"
                     }
+                };
+
+                function filterProjects(category) {
+                    const cards = document.querySelectorAll('.project-card');
+                    const buttons = document.querySelectorAll('.filter-btn');
+
+                    buttons.forEach(btn => {
+                        if (btn.getAttribute('data-filter') === category) {
+                            btn.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+                            btn.classList.remove('text-on-surface-variant', 'hover:bg-surface-container-lowest');
+                        } else {
+                            btn.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+                            btn.classList.add('text-on-surface-variant', 'hover:bg-surface-container-lowest');
+                        }
+                    });
+
+                    cards.forEach(card => {
+                        const itemCategory = card.getAttribute('data-category');
+                        if (category === 'all' || itemCategory === category) {
+                            card.style.display = 'flex';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
                 }
+
+                function openProjectModal(title) {
+                    const modal = document.getElementById('projectModal');
+                    const card = document.getElementById('modalCard');
+                    
+                    const data = TEKNOVA_PROJECTS[title] || {
+                        category: "CHUYỂN ĐỔI SỐ",
+                        year: "2024 - 2025",
+                        client: "Đơn vị đối tác TEKNOVA",
+                        location: "TP. Đà Nẵng",
+                        desc: "Dự án chuyển đổi số và phát triển phần mềm nghiệp vụ chuyên sâu theo tiêu chuẩn chất lượng cao của TEKNOVA.",
+                        tech: ["Kiến trúc Cloud Hiện đại", "Bảo mật Cấp độ 3", "API Chuẩn hóa"],
+                        results: ["Nâng cao hiệu quả vận hành và số hóa quy trình nghiệp vụ.", "Cam kết bảo hành và hỗ trợ kỹ thuật 24/7 trực tiếp."],
+                        model: "Thuê phần mềm trọn gói (SaaS/OPEX)",
+                        sla: "24/7 SLA Cấp 1"
+                    };
+
+                    document.getElementById('modalTitle').innerText = title;
+                    document.getElementById('modalCategory').innerText = data.category;
+                    document.getElementById('modalYear').innerText = data.year;
+                    document.getElementById('modalClient').innerText = data.client;
+                    document.getElementById('modalLocation').innerText = data.location;
+                    document.getElementById('modalDesc').innerText = data.desc;
+                    document.getElementById('modalModel').innerText = data.model;
+                    document.getElementById('modalSLA').innerText = data.sla;
+
+                    // Render Technologies Applied Badges
+                    const techContainer = document.getElementById('modalTechBadges');
+                    techContainer.innerHTML = '';
+                    data.tech.forEach(item => {
+                        const span = document.createElement('span');
+                        span.className = 'inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-surface-container-lowest text-xs font-semibold text-primary shadow-xs border border-primary/20';
+                        span.innerHTML = `<span class="material-symbols-outlined text-[15px] text-primary">terminal</span><span>${item}</span>`;
+                        techContainer.appendChild(span);
+                    });
+
+                    // Render Results & Value Delivered Bullet List
+                    const resultsContainer = document.getElementById('modalResults');
+                    resultsContainer.innerHTML = '';
+                    data.results.forEach(result => {
+                        const li = document.createElement('li');
+                        li.className = 'flex items-start gap-2.5';
+                        li.innerHTML = `
+                            <span class="material-symbols-outlined text-emerald-600 text-[18px] shrink-0 mt-0.5">check_circle</span>
+                            <span class="text-slate-700 font-medium">${result}</span>
+                        `;
+                        resultsContainer.appendChild(li);
+                    });
+
+                    modal.classList.remove('opacity-0', 'pointer-events-none');
+                    card.classList.remove('scale-95');
+                    card.classList.add('scale-100');
+                    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                }
+
+                function closeProjectModal() {
+                    const modal = document.getElementById('projectModal');
+                    const card = document.getElementById('modalCard');
+
+                    modal.classList.add('opacity-0', 'pointer-events-none');
+                    card.classList.remove('scale-100');
+                    card.classList.add('scale-95');
+                    document.body.style.overflow = '';
+                }
+
+                document.getElementById('projectModal').addEventListener('click', function (e) {
+                    if (e.target === this) {
+                        closeProjectModal();
+                    }
+                });
+
+                // Escape key support to close modal
+                document.addEventListener('keydown', function (e) {
+                    if (e.key === 'Escape') {
+                        closeProjectModal();
+                    }
+                });
             </script>
+<script>
+    function filterServices(category) {
+        const cards = document.querySelectorAll('.service-card');
+        const buttons = document.querySelectorAll('.service-filter-btn');
+
+        buttons.forEach(btn => {
+            if (btn.getAttribute('data-filter') === category) {
+                btn.className = 'service-filter-btn px-5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all shadow-xs bg-primary text-on-primary shadow-primary/20';
+            } else {
+                btn.className = 'service-filter-btn px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface';
+            }
+        });
+
+        cards.forEach(card => {
+            const cardCategory = card.getAttribute('data-category');
+            if (category === 'all' || cardCategory === category) {
+                card.style.display = 'flex';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    function handleFormSubmit(event) {
+        event.preventDefault();
+        const successMsg = document.getElementById('submitSuccessMsg');
+        if (successMsg) {
+            successMsg.classList.remove('hidden');
+            setTimeout(() => {
+                document.getElementById('solutionConsultForm').reset();
+            }, 1500);
+        }
+    }
+</script>
         </div>
     </main>
     <footer class="w-full bg-surface-container-low pt-space-3xl pb-space-xl shadow-[0_-1px_8px_rgba(0,0,0,0.02)]">
