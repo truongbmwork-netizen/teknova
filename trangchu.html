@@ -310,63 +310,63 @@
                             </div>
                         </div>
 
-                        <!-- CỘT PHẢI: VIDEO SHOWCASE CARD & OVERLAYS CHUẨN TEKNOVA -->
+                        <!-- CỘT PHẢI: VIDEO SHOWCASE CARD (BLANK PLACEHOLDER ĐỂ DEV HÌNH DUNG) -->
                         <div class="lg:col-span-6 w-full">
                             <div class="relative w-full rounded-3xl overflow-hidden shadow-2xl border border-outline-variant/30 group bg-slate-950 aspect-[16/10] sm:aspect-[16/10] flex items-center justify-center">
-                                
-                                <!-- Video Player / Interactive Video Loop -->
-                                <video id="hero-showcase-video" autoplay loop muted playsinline class="w-full h-full object-cover opacity-85 group-hover:opacity-95 transition-opacity duration-500" poster="assets/img/partners/cloud_ace_clean.png">
-                                    <source src="https://assets.mixkit.co/videos/preview/mixkit-software-developer-working-on-code-screen-close-up-1738-large.mp4" type="video/mp4">
-                                </video>
-
-                                <!-- Dark Gradient Overlay for Readability -->
-                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/35 to-slate-950/45 pointer-events-none"></div>
+                                 
+                                <!-- Background Ambient Grid & Glow (Clean tech background) -->
+                                <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900/25 via-slate-950/80 to-slate-950"></div>
+                                <div class="absolute inset-0 bg-[linear-gradient(to_right,#1e293b15_1px,transparent_1px),linear-gradient(to_bottom,#1e293b15_1px,transparent_1px)] bg-[size:2rem_2rem] opacity-35"></div>
 
                                 <!-- Brand Badge Top Left -->
                                 <div class="absolute top-4 left-4 z-20 flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-900/80 backdrop-blur-md border border-white/10 text-white">
                                     <img src="logo.png" alt="Teknova" class="h-4 w-auto object-contain brightness-0 invert" onerror="this.src='favicon.png'">
-                                    <span class="text-xs font-bold tracking-wider font-mono">TEKNOVA · LIVE PRODUCTION</span>
+                                    <span class="text-xs font-bold tracking-wider font-mono">TEKNOVA · SHOWCASE</span>
                                 </div>
 
-                                <!-- Fullscreen Button Top Right -->
-                                <button onclick="toggleVideoFullscreen()" type="button" class="absolute top-4 right-4 z-20 flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary/90 hover:bg-primary text-white text-xs font-semibold backdrop-blur-md transition shadow-md">
-                                    <span class="material-symbols-outlined text-[16px]">fullscreen</span>
-                                    <span>Mở rộng</span>
-                                </button>
+                                <!-- Badge Trạng thái Placeholder Top Right -->
+                                <div class="absolute top-4 right-4 z-20 flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900/80 backdrop-blur-md border border-white/10 text-slate-300 text-xs font-medium font-mono">
+                                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                                    <span>VIDEO LOOP SPOT</span>
+                                </div>
 
                                 <!-- 3 Feature Icons Row (Teknova Core Value Proposition) -->
-                                <div class="absolute top-1/4 left-0 right-0 z-20 px-4 sm:px-6 flex items-center justify-around text-center text-white">
-                                    <div class="flex flex-col items-center gap-1 drop-shadow-md">
-                                        <div class="w-10 h-10 rounded-xl bg-white/15 backdrop-blur-md border border-white/20 flex items-center justify-center text-cyan-300">
-                                            <span class="material-symbols-outlined text-[22px]">local_hospital</span>
+                                <div class="absolute top-[22%] left-0 right-0 z-20 px-4 sm:px-6 flex items-center justify-around text-center text-white">
+                                    <div class="flex flex-col items-center gap-1.5 drop-shadow-md">
+                                        <div class="w-11 h-11 rounded-xl bg-white/10 backdrop-blur-md border border-white/15 flex items-center justify-center text-cyan-300 shadow-sm">
+                                            <span class="material-symbols-outlined text-[24px]">local_hospital</span>
                                         </div>
-                                        <span class="text-[11px] font-semibold opacity-95">Y tế số &amp; EMR</span>
+                                        <span class="text-[12px] font-semibold opacity-95">Y tế số &amp; EMR</span>
                                     </div>
 
-                                    <div class="flex flex-col items-center gap-1 drop-shadow-md">
-                                        <div class="w-10 h-10 rounded-xl bg-white/15 backdrop-blur-md border border-white/20 flex items-center justify-center text-amber-300">
-                                            <span class="material-symbols-outlined text-[22px]">account_balance</span>
+                                    <div class="flex flex-col items-center gap-1.5 drop-shadow-md">
+                                        <div class="w-11 h-11 rounded-xl bg-white/10 backdrop-blur-md border border-white/15 flex items-center justify-center text-amber-300 shadow-sm">
+                                            <span class="material-symbols-outlined text-[24px]">account_balance</span>
                                         </div>
-                                        <span class="text-[11px] font-semibold opacity-95">Chính quyền số</span>
+                                        <span class="text-[12px] font-semibold opacity-95">Chính quyền số</span>
                                     </div>
 
-                                    <div class="flex flex-col items-center gap-1 drop-shadow-md">
-                                        <div class="w-10 h-10 rounded-xl bg-white/15 backdrop-blur-md border border-white/20 flex items-center justify-center text-blue-300">
-                                            <span class="material-symbols-outlined text-[22px]">cloud_sync</span>
+                                    <div class="flex flex-col items-center gap-1.5 drop-shadow-md">
+                                        <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-white/10 backdrop-blur-md border border-white/15 flex items-center justify-center text-blue-300 shadow-sm">
+                                            <span class="material-symbols-outlined text-[24px]">cloud_sync</span>
                                         </div>
-                                        <span class="text-[11px] font-semibold opacity-95">Cloud &amp; B2B</span>
+                                        <span class="text-[12px] font-semibold opacity-95">Cloud &amp; B2B</span>
                                     </div>
                                 </div>
 
-                                <!-- Center Play/Pause Button -->
-                                <button id="video-play-pause-btn" onclick="togglePlayPause()" type="button" class="absolute z-20 w-12 h-12 rounded-full bg-white text-slate-900 shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all" aria-label="Play or Pause Video">
-                                    <span id="play-pause-icon" class="material-symbols-outlined text-[26px]">pause</span>
-                                </button>
+                                <!-- Center Blank Placeholder Info For Dev -->
+                                <div class="relative z-10 flex flex-col items-center justify-center text-center px-4 py-2 mt-4">
+                                    <div class="w-12 h-12 rounded-full border-2 border-dashed border-white/30 flex items-center justify-center text-white/60 mb-2">
+                                        <span class="material-symbols-outlined text-[24px]">play_circle</span>
+                                    </div>
+                                    <span class="text-xs font-medium text-slate-300 font-mono tracking-wide">[ Khung Video Loop 16:9 ]</span>
+                                    <p class="text-[11px] text-slate-400 mt-0.5 max-w-[280px]">Vị trí chèn video reel giới thiệu giải pháp hoặc motion graphic ngầm</p>
+                                </div>
 
                                 <!-- Bottom Info Cards Row (Authentic Evidence from Teknova Portfolio) -->
                                 <div class="absolute bottom-4 left-4 right-4 z-20 grid grid-cols-1 sm:grid-cols-2 gap-3">
                                     <!-- Card Left: Real Hospital / Gov Deployment Evidence -->
-                                    <div class="p-3.5 rounded-2xl bg-black/70 backdrop-blur-xl border border-white/15 text-white shadow-xl">
+                                    <div class="p-3.5 rounded-2xl bg-black/75 backdrop-blur-xl border border-white/15 text-white shadow-xl">
                                         <div class="flex items-center gap-1.5 text-cyan-300 font-semibold text-[11px] mb-1">
                                             <span class="material-symbols-outlined text-[15px]">verified_user</span>
                                             <span>Thực tế vận hành</span>
@@ -377,23 +377,13 @@
                                     </div>
 
                                     <!-- Card Right: OPEX & SLA Guarantee -->
-                                    <div class="p-3.5 rounded-2xl bg-black/70 backdrop-blur-xl border border-white/15 text-white shadow-xl flex flex-col justify-center">
+                                    <div class="p-3.5 rounded-2xl bg-black/75 backdrop-blur-xl border border-white/15 text-white shadow-xl flex flex-col justify-center">
                                         <span class="text-[10.5px] text-slate-300 font-medium">Mô hình thuê dịch vụ OPEX</span>
                                         <div class="text-sm sm:text-base font-extrabold text-white mt-0.5">
                                             0đ vốn đầu tư • <span class="text-sky-400">SLA 99.98%</span>
                                         </div>
                                         <span class="text-[10px] text-slate-400 mt-0.5">Hỗ trợ kỹ thuật On-site 24/7 trực tiếp</span>
                                     </div>
-                                </div>
-
-                                <!-- Sound Mute/Unmute & Signature Tag Bottom -->
-                                <div class="absolute bottom-2 right-4 z-20 flex items-center gap-2">
-                                    <button onclick="toggleVideoSound()" type="button" class="w-8 h-8 rounded-full bg-black/60 hover:bg-black/90 backdrop-blur-md border border-white/20 text-white flex items-center justify-center transition">
-                                        <span id="sound-icon" class="material-symbols-outlined text-[16px]">volume_off</span>
-                                    </button>
-                                </div>
-                                <div class="absolute bottom-3 left-4 z-10 text-[10px] text-white/60 font-mono">
-                                    Video bởi TEKNOVA
                                 </div>
                             </div>
                         </div>
