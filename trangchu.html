@@ -328,6 +328,34 @@
                             </div>
                         </div>
                     </div>
+                    
+                    <!-- Multi-Domain Interactive Switcher (Y Tế - Chính Quyền - Doanh Nghiệp) -->
+                    <div class="w-full max-w-3xl mx-auto mt-space-xl mb-4">
+                        <div class="inline-flex p-1.5 rounded-2xl bg-surface-container-low border border-outline-variant/30 shadow-xs max-w-full overflow-x-auto gap-1">
+                            <button id="hero-tab-btn-yte" onclick="switchHeroDomain('yte')" type="button" class="flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold transition-all whitespace-nowrap bg-surface-container-lowest text-primary shadow-sm border border-outline-variant/30 font-bold">
+                                <span class="material-symbols-outlined text-[18px] text-primary">local_hospital</span>
+                                <div class="text-left">
+                                    <div class="leading-tight">1. Y Tế Thông Minh</div>
+                                    <div class="text-[10px] font-normal text-primary/80 hidden sm:block">EMR · Ký số Cloud CA · Đơn thuốc TT26</div>
+                                </div>
+                            </button>
+                            <button id="hero-tab-btn-gov" onclick="switchHeroDomain('gov')" type="button" class="flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold transition-all whitespace-nowrap text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest/50">
+                                <span class="material-symbols-outlined text-[18px] text-secondary">account_balance</span>
+                                <div class="text-left">
+                                    <div class="leading-tight">2. Chính Quyền Số</div>
+                                    <div class="text-[10px] font-normal text-secondary hidden sm:block">Đề án 06 · CSDL Dân số · Zalo Mini App</div>
+                                </div>
+                            </button>
+                            <button id="hero-tab-btn-biz" onclick="switchHeroDomain('biz')" type="button" class="flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold transition-all whitespace-nowrap text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest/50">
+                                <span class="material-symbols-outlined text-[18px] text-secondary">domain</span>
+                                <div class="text-left">
+                                    <div class="leading-tight">3. Doanh Nghiệp & B2B</div>
+                                    <div class="text-[10px] font-normal text-secondary hidden sm:block">Google Cloud Premier · VietQR · Viễn thông</div>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+
                     <!-- Hero Glassmorphism 3D Dashboard Mockup -->
                     <div class="relative w-full mt-space-2xl">
                         <!-- Floating Integration Tag Left -->
@@ -335,11 +363,11 @@
                             class="hidden lg:flex absolute -left-6 top-16 z-20 items-center gap-space-xs bg-surface-container-lowest/95 backdrop-blur-xl p-space-sm rounded-xl shadow-xl">
                             <div
                                 class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
-                                <span class="material-symbols-outlined text-[24px]">local_hospital</span>
+                                <span id="hero-float-left-icon" class="material-symbols-outlined text-[24px]">local_hospital</span>
                             </div>
                             <div class="text-left">
-                                <p class="font-label-md text-label-md text-on-surface">Hồ Sơ Bệnh Án EMR</p>
-                                <p class="font-body-sm text-body-sm text-secondary">Liên thông Bộ Y Tế • 100%</p>
+                                <p id="hero-float-left-title" class="font-label-md text-label-md text-on-surface">Hồ Sơ Bệnh Án EMR</p>
+                                <p id="hero-float-left-sub" class="font-body-sm text-body-sm text-secondary">Liên thông Bộ Y Tế • 100%</p>
                             </div>
                         </div>
                         <!-- Floating AI Copilot Bubble Right -->
@@ -347,11 +375,11 @@
                             class="hidden lg:flex absolute -right-6 bottom-16 z-20 items-center gap-space-xs bg-surface-container-lowest/95 backdrop-blur-xl p-space-sm rounded-xl shadow-xl">
                             <div
                                 class="w-10 h-10 rounded-lg bg-tertiary-fixed flex items-center justify-center text-tertiary">
-                                <span class="material-symbols-outlined text-[24px]">contactless</span>
+                                <span id="hero-float-right-icon" class="material-symbols-outlined text-[24px]">contactless</span>
                             </div>
                             <div class="text-left">
-                                <p class="font-label-md text-label-md text-on-surface">Cổng TT Kiosk Y Tế</p>
-                                <p class="font-body-sm text-body-sm text-secondary">Tích hợp CCCD &amp; QR VNeID</p>
+                                <p id="hero-float-right-title" class="font-label-md text-label-md text-on-surface">Cổng TT Kiosk Y Tế</p>
+                                <p id="hero-float-right-sub" class="font-body-sm text-body-sm text-secondary">Tích hợp CCCD &amp; QR VNeID</p>
                             </div>
                         </div>
                         <!-- Main Glass Panel -->
@@ -425,7 +453,7 @@
                                     </div>
                                 </div>
                                 <!-- Main Metrics & Flow Chart -->
-                                <div class="col-span-1 md:col-span-9 flex flex-col gap-space-md">
+                                <div id="hero-panel-yte" class="col-span-1 md:col-span-9 flex flex-col gap-space-md">
                                     <!-- KPI Cards Row -->
                                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm">
                                         <div
@@ -520,6 +548,136 @@
                                                     bộ Bộ Y Tế</span>
                                                 <span class="font-body-sm text-body-sm text-secondary">Ký số HSM tự
                                                     động</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- PANEL 2: CHÍNH QUYỀN SỐ (ĐỀ ÁN 06 & CƠ SỞ DỮ LIỆU) -->
+                                <div id="hero-panel-gov" class="hidden col-span-1 md:col-span-9 flex flex-col gap-space-md">
+                                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm">
+                                        <div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between">
+                                            <div class="flex items-center justify-between text-secondary">
+                                                <span class="font-label-sm text-label-sm uppercase">CSDL DÂN SỐ ĐÀ NẴNG</span>
+                                                <span class="material-symbols-outlined text-primary text-[20px]">badge</span>
+                                            </div>
+                                            <div class="mt-space-xs">
+                                                <span class="font-headline-lg text-headline-lg text-on-surface">56/56</span>
+                                                <span class="font-label-sm text-label-sm text-primary ml-2">Xã/Phường kết nối</span>
+                                            </div>
+                                        </div>
+                                        <div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between">
+                                            <div class="flex items-center justify-between text-secondary">
+                                                <span class="font-label-sm text-label-sm uppercase">HỒ SƠ MỘT CỬA QUA ZALO</span>
+                                                <span class="material-symbols-outlined text-tertiary text-[20px]">forum</span>
+                                            </div>
+                                            <div class="mt-space-xs">
+                                                <span class="font-headline-lg text-headline-lg text-on-surface">100%</span>
+                                                <span class="font-label-sm text-label-sm text-primary ml-2">Đúng hẹn</span>
+                                            </div>
+                                        </div>
+                                        <div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between">
+                                            <div class="flex items-center justify-between text-secondary">
+                                                <span class="font-label-sm text-label-sm uppercase">CAMERA AN NINH AI</span>
+                                                <span class="material-symbols-outlined text-primary text-[20px]">videocam</span>
+                                            </div>
+                                            <div class="mt-space-xs">
+                                                <span class="font-headline-lg text-headline-lg text-on-surface">24/7</span>
+                                                <span class="font-label-sm text-label-sm text-secondary ml-2">Tổ dân phố thông minh</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Flow Steps Gov -->
+                                    <div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-sm">
+                                        <div class="flex items-center justify-between">
+                                            <span class="font-headline-xs text-headline-xs text-on-surface">Quy trình điều hành Dịch vụ công &amp; Dữ liệu số cấp cơ sở</span>
+                                            <span class="font-label-sm text-label-sm text-secondary">Đề án 06/CP &amp; Kho dữ liệu TP</span>
+                                        </div>
+                                        <div class="grid grid-cols-1 sm:grid-cols-4 gap-space-xs pt-space-xs">
+                                            <div class="p-space-xs rounded-lg bg-surface-container-lowest flex flex-col items-center text-center">
+                                                <span class="material-symbols-outlined text-primary text-[24px]">id_card</span>
+                                                <span class="font-label-md text-label-md text-on-surface mt-1">1. Quét VNeID / CCCD</span>
+                                                <span class="font-body-sm text-body-sm text-secondary">Xác thực công dân</span>
+                                            </div>
+                                            <div class="p-space-xs rounded-lg bg-surface-container-lowest flex flex-col items-center text-center">
+                                                <span class="material-symbols-outlined text-primary text-[24px]">smart_toy</span>
+                                                <span class="font-label-md text-label-md text-on-surface mt-1">2. Trợ lý ảo Zalo</span>
+                                                <span class="font-body-sm text-body-sm text-secondary">Hướng dẫn thủ tục</span>
+                                            </div>
+                                            <div class="p-space-xs rounded-lg bg-surface-container-lowest flex flex-col items-center text-center">
+                                                <span class="material-symbols-outlined text-primary text-[24px]">database</span>
+                                                <span class="font-label-md text-label-md text-on-surface mt-1">3. CSDL Dùng Chung</span>
+                                                <span class="font-body-sm text-body-sm text-secondary">Làm sạch &amp; Số hóa</span>
+                                            </div>
+                                            <div class="p-space-xs rounded-lg bg-surface-container-lowest flex flex-col items-center text-center">
+                                                <span class="material-symbols-outlined text-primary text-[24px]">dashboard_customize</span>
+                                                <span class="font-label-md text-label-md text-on-surface mt-1">4. Điều hành IOC</span>
+                                                <span class="font-body-sm text-body-sm text-secondary">Báo cáo thời gian thực</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- PANEL 3: DOANH NGHIỆP & B2B ENTERPRISE -->
+                                <div id="hero-panel-biz" class="hidden col-span-1 md:col-span-9 flex flex-col gap-space-md">
+                                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm">
+                                        <div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between">
+                                            <div class="flex items-center justify-between text-secondary">
+                                                <span class="font-label-sm text-label-sm uppercase">GOOGLE CLOUD PREMIER</span>
+                                                <span class="material-symbols-outlined text-primary text-[20px]">cloud_done</span>
+                                            </div>
+                                            <div class="mt-space-xs">
+                                                <span class="font-headline-lg text-headline-lg text-on-surface">Web &amp; App</span>
+                                                <span class="font-label-sm text-label-sm text-primary ml-2">Cloud ACE Premier</span>
+                                            </div>
+                                        </div>
+                                        <div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between">
+                                            <div class="flex items-center justify-between text-secondary">
+                                                <span class="font-label-sm text-label-sm uppercase">VIỆN PHÍ VIETQR / NAPAS</span>
+                                                <span class="material-symbols-outlined text-tertiary text-[20px]">account_balance_wallet</span>
+                                            </div>
+                                            <div class="mt-space-xs">
+                                                <span class="font-headline-lg text-headline-lg text-on-surface">PVcomBank</span>
+                                                <span class="font-label-sm text-label-sm text-primary ml-2">Gạch nợ tức thì</span>
+                                            </div>
+                                        </div>
+                                        <div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between">
+                                            <div class="flex items-center justify-between text-secondary">
+                                                <span class="font-label-sm text-label-sm uppercase">HẠ TẦNG VIỄN THÔNG</span>
+                                                <span class="material-symbols-outlined text-primary text-[20px]">cell_tower</span>
+                                            </div>
+                                            <div class="mt-space-xs">
+                                                <span class="font-headline-lg text-headline-lg text-on-surface">MobiFone</span>
+                                                <span class="font-label-sm text-label-sm text-secondary ml-2">CĐS Phường xã Zalo</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Flow Steps Biz -->
+                                    <div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-sm">
+                                        <div class="flex items-center justify-between">
+                                            <span class="font-headline-xs text-headline-xs text-on-surface">Hạ tầng Đám mây &amp; Giải pháp Tích hợp Doanh nghiệp lớn</span>
+                                            <span class="font-label-sm text-label-sm text-secondary">Bảo mật Nghị định 13 &amp; Cấp độ 3</span>
+                                        </div>
+                                        <div class="grid grid-cols-1 sm:grid-cols-4 gap-space-xs pt-space-xs">
+                                            <div class="p-space-xs rounded-lg bg-surface-container-lowest flex flex-col items-center text-center">
+                                                <span class="material-symbols-outlined text-primary text-[24px]">cloud_sync</span>
+                                                <span class="font-label-md text-label-md text-on-surface mt-1">1. Premier Cloud</span>
+                                                <span class="font-body-sm text-body-sm text-secondary">Cổng Google Partner</span>
+                                            </div>
+                                            <div class="p-space-xs rounded-lg bg-surface-container-lowest flex flex-col items-center text-center">
+                                                <span class="material-symbols-outlined text-primary text-[24px]">qr_code</span>
+                                                <span class="font-label-md text-label-md text-on-surface mt-1">2. Cổng Thanh Toán</span>
+                                                <span class="font-body-sm text-body-sm text-secondary">Napas &amp; VietQR Động</span>
+                                            </div>
+                                            <div class="p-space-xs rounded-lg bg-surface-container-lowest flex flex-col items-center text-center">
+                                                <span class="material-symbols-outlined text-primary text-[24px]">support_agent</span>
+                                                <span class="font-label-md text-label-md text-on-surface mt-1">3. Mini App Zalo</span>
+                                                <span class="font-body-sm text-body-sm text-secondary">Hệ sinh thái MobiFone</span>
+                                            </div>
+                                            <div class="p-space-xs rounded-lg bg-surface-container-lowest flex flex-col items-center text-center">
+                                                <span class="material-symbols-outlined text-primary text-[24px]">shield_with_heart</span>
+                                                <span class="font-label-md text-label-md text-on-surface mt-1">4. An Toàn Thông Tin</span>
+                                                <span class="font-body-sm text-body-sm text-secondary">Mã hóa dữ liệu HSM</span>
                                             </div>
                                         </div>
                                     </div>
@@ -1488,6 +1646,62 @@
 
         <script src="nav-router.js"></script>
     <script type="module" src="motion-hover.js"></script>
+
+<script>
+function switchHeroDomain(domain) {
+    const btnYte = document.getElementById('hero-tab-btn-yte');
+    const btnGov = document.getElementById('hero-tab-btn-gov');
+    const btnBiz = document.getElementById('hero-tab-btn-biz');
+
+    const panelYte = document.getElementById('hero-panel-yte');
+    const panelGov = document.getElementById('hero-panel-gov');
+    const panelBiz = document.getElementById('hero-panel-biz');
+
+    const floatLeftTitle = document.getElementById('hero-float-left-title');
+    const floatLeftSub = document.getElementById('hero-float-left-sub');
+    const floatLeftIcon = document.getElementById('hero-float-left-icon');
+
+    const floatRightTitle = document.getElementById('hero-float-right-title');
+    const floatRightSub = document.getElementById('hero-float-right-sub');
+    const floatRightIcon = document.getElementById('hero-float-right-icon');
+
+    const activeBtnClass = "flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold transition-all whitespace-nowrap bg-surface-container-lowest text-primary shadow-sm border border-outline-variant/30 font-bold";
+    const inactiveBtnClass = "flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold transition-all whitespace-nowrap text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest/50";
+
+    [btnYte, btnGov, btnBiz].forEach(b => { if(b) b.className = inactiveBtnClass; });
+    [panelYte, panelGov, panelBiz].forEach(p => { if(p) p.classList.add('hidden'); });
+
+    if (domain === 'yte') {
+        if(btnYte) btnYte.className = activeBtnClass;
+        if(panelYte) panelYte.classList.remove('hidden');
+        if(floatLeftTitle) floatLeftTitle.innerText = "Hồ Sơ Bệnh Án EMR";
+        if(floatLeftSub) floatLeftSub.innerText = "Liên thông Bộ Y Tế • 100%";
+        if(floatLeftIcon) floatLeftIcon.innerText = "local_hospital";
+        if(floatRightTitle) floatRightTitle.innerText = "Cổng TT Kiosk Y Tế";
+        if(floatRightSub) floatRightSub.innerText = "Tích hợp CCCD & QR VNeID";
+        if(floatRightIcon) floatRightIcon.innerText = "contactless";
+    } else if (domain === 'gov') {
+        if(btnGov) btnGov.className = activeBtnClass;
+        if(panelGov) panelGov.classList.remove('hidden');
+        if(floatLeftTitle) floatLeftTitle.innerText = "CSDL Dân Số Tuyến Cơ Sở";
+        if(floatLeftSub) floatLeftSub.innerText = "Đà Nẵng • 56 Xã/Phường";
+        if(floatLeftIcon) floatLeftIcon.innerText = "groups";
+        if(floatRightTitle) floatRightTitle.innerText = "Trợ Lý Ảo Zalo Mini App";
+        if(floatRightSub) floatRightSub.innerText = "Giải đáp DVC 24/7";
+        if(floatRightIcon) floatRightIcon.innerText = "smart_toy";
+    } else if (domain === 'biz') {
+        if(btnBiz) btnBiz.className = activeBtnClass;
+        if(panelBiz) panelBiz.classList.remove('hidden');
+        if(floatLeftTitle) floatLeftTitle.innerText = "Google Cloud Premier";
+        if(floatLeftSub) floatLeftSub.innerText = "Cloud ACE • Portal & App";
+        if(floatLeftIcon) floatLeftIcon.innerText = "cloud_done";
+        if(floatRightTitle) floatRightTitle.innerText = "Viện Phí Napas / VietQR";
+        if(floatRightSub) floatRightSub.innerText = "PVcomBank • Tức thì";
+        if(floatRightIcon) floatRightIcon.innerText = "payments";
+    }
+}
+</script>
+
 </body>
 
 </html>
