@@ -677,10 +677,10 @@
     if (!modal) {
       modal = document.createElement('div');
       modal.id = 'certModal';
-      modal.className = 'fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-md transition-opacity duration-300';
+      modal.className = 'fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md transition-opacity duration-300';
       modal.innerHTML = `
         <div class="relative max-w-4xl max-h-[92vh] w-full bg-surface-container-lowest rounded-2xl overflow-hidden shadow-2xl flex flex-col border border-surface-container">
-          <div class="p-4 border-b border-surface-container flex items-center justify-between bg-surface-container-low">
+          <div class="p-4 border-b border-surface-container flex items-center justify-between bg-surface-container-low shrink-0">
             <div class="flex items-center gap-2">
               <span class="material-symbols-outlined text-primary text-[22px]">verified</span>
               <h4 id="certModalTitle" class="font-headline-sm text-headline-sm text-on-surface font-bold truncate"></h4>
@@ -689,12 +689,12 @@
               <span class="material-symbols-outlined text-[20px]">close</span>
             </button>
           </div>
-          <div class="p-3 overflow-auto flex items-center justify-center bg-black/5 min-h-[300px]">
-            <img id="certModalImg" src="" alt="Văn bằng chứng chỉ" class="max-h-[75vh] w-auto max-w-full object-contain rounded-lg shadow-md" />
+          <div class="p-4 overflow-y-auto flex items-center justify-center bg-slate-900/5 min-h-[300px]" data-lenis-prevent>
+            <img id="certModalImg" src="" alt="Văn bằng chứng chỉ" class="max-h-[72vh] w-auto max-w-full object-contain rounded-lg shadow-md transition-transform" />
           </div>
-          <div class="p-3 border-t border-surface-container bg-surface-container-low flex items-center justify-between text-[12px] text-secondary">
+          <div class="p-3.5 border-t border-surface-container bg-surface-container-low flex items-center justify-between text-[12px] text-secondary shrink-0">
             <span>Nguồn: Hồ sơ năng lực Công ty Cổ phần Đổi mới Sáng tạo Teknova (2026)</span>
-            <button onclick="closeCertModal()" class="px-3 py-1 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-highest font-medium transition-colors">Đóng</button>
+            <button onclick="closeCertModal()" class="px-4 py-1.5 rounded-lg bg-primary text-on-primary hover:bg-primary-container font-medium transition-colors cursor-pointer text-xs">Đóng</button>
           </div>
         </div>
       `;
@@ -702,11 +702,18 @@
       modal.addEventListener('click', function(e) {
         if (e.target === this) closeCertModal();
       });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeCertModal();
+      });
     }
-    document.getElementById('certModalTitle').textContent = title || 'Văn bằng chứng chỉ nhân sự Teknova';
+    document.getElementById('certModalTitle').textContent = title || 'Văn bằng chứng chỉ & Minh chứng Pháp lý Teknova';
     document.getElementById('certModalImg').src = imgSrc;
     modal.classList.remove('hidden');
     modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    if (window.__lenis) {
+      window.__lenis.stop();
+    }
   };
 
   window.closeCertModal = function() {
@@ -714,6 +721,10 @@
     if (modal) {
       modal.classList.add('hidden');
       modal.style.display = 'none';
+      document.body.style.overflow = '';
+      if (window.__lenis) {
+        window.__lenis.start();
+      }
     }
   };
 
