@@ -17,7 +17,7 @@
     'du-an-tieu-bieu':    'duan.html',
     'tin-tuc':            'tintuc.html',
     'doi-ngu-chuyen-gia': 'gioithieu.html#doi-ngu',
-    'lien-he':            'gioithieu.html#lien-he',
+    'lien-he':            'lienhe.html',
     'profile-pdf':        'Teknova_Profile_2026.pdf'
   };
 
@@ -788,7 +788,8 @@
       <a class="font-medium whitespace-nowrap text-[13px] text-on-surface-variant hover:text-primary transition-colors" data-path="gioi-thieu" href="gioithieu.html">Giới thiệu</a>
       <a class="font-medium whitespace-nowrap text-[13px] text-on-surface-variant hover:text-primary transition-colors" data-path="linh-vuc-hoat-dong" href="lichvuc.html">Lĩnh vực hoạt động</a>
       <a class="font-medium whitespace-nowrap text-[13px] text-on-surface-variant hover:text-primary transition-colors" data-path="du-an-tieu-bieu" href="duan.html">Dự án tiêu biểu</a>
-      <a class="font-medium whitespace-nowrap text-[13px] text-on-surface-variant hover:text-primary transition-colors" data-path="lien-he" href="gioithieu.html#lien-he">Liên hệ</a>
+      <a class="font-medium whitespace-nowrap text-[13px] text-on-surface-variant hover:text-primary transition-colors" data-path="tin-tuc" href="tintuc.html">Tin tức</a>
+      <a class="font-medium whitespace-nowrap text-[13px] text-on-surface-variant hover:text-primary transition-colors" data-path="lien-he" href="lienhe.html">Liên hệ</a>
     `;
 
     const canonicalMobileHtml = `
@@ -796,7 +797,8 @@
       <a class="py-2 text-[13px] font-medium text-on-surface-variant hover:text-primary transition-colors border-b border-outline-variant/10" data-path="gioi-thieu" href="gioithieu.html">Giới thiệu</a>
       <a class="py-2 text-[13px] font-medium text-on-surface-variant hover:text-primary transition-colors border-b border-outline-variant/10" data-path="linh-vuc-hoat-dong" href="lichvuc.html">Lĩnh vực hoạt động</a>
       <a class="py-2 text-[13px] font-medium text-on-surface-variant hover:text-primary transition-colors border-b border-outline-variant/10" data-path="du-an-tieu-bieu" href="duan.html">Dự án tiêu biểu</a>
-      <a class="py-2 text-[13px] font-medium text-on-surface-variant hover:text-primary transition-colors border-b border-outline-variant/10" data-path="lien-he" href="gioithieu.html#lien-he">Liên hệ khảo sát</a>
+      <a class="py-2 text-[13px] font-medium text-on-surface-variant hover:text-primary transition-colors border-b border-outline-variant/10" data-path="tin-tuc" href="tintuc.html">Tin tức</a>
+      <a class="py-2 text-[13px] font-medium text-on-surface-variant hover:text-primary transition-colors border-b border-outline-variant/10" data-path="lien-he" href="lienhe.html">Liên hệ khảo sát</a>
     `;
 
     if (desktopNav) desktopNav.innerHTML = canonicalDesktopHtml.trim();

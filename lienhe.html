@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="vi" style="">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="web_standard" name="shell-type">
+    <title>Liên hệ & Khảo sát Tư vấn Chuyển Đổi Số | TEKNOVA</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&amp;display=swap"
+        rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            font-family: 'Be Vietnam Pro', sans-serif !important;
+        }
+
+        .card-elevate {
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .card-elevate:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px -10px rgba(65, 93, 168, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border-color: rgba(65, 93, 168, 0.4);
+        }
+
+        .glow-btn {
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glow-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px -2px rgba(65, 93, 168, 0.45);
+        }
+    </style>
+    <style>
+        @layer base {
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                overscroll-behavior: none;
+            }
+
+            main>:first-child {
+                margin-top: 0 !important;
+            }
+
+            main>:last-child {
+                margin-bottom: 0 !important;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+        id="tailwind-config">tailwind.config = { "darkMode": "class", "theme": { "extend": { "colors": { "secondary": "#565e74", "on-surface-variant": "#434655", "tertiary-fixed": "#c4e7ff", "surface-bright": "#f8f9ff", "surface-tint": "#415DA8", "error-container": "#ffdad6", "on-tertiary-fixed": "#001e2c", "outline-variant": "#c3c6d7", "tertiary-container": "#00759f", "on-secondary-fixed-variant": "#3f465c", "on-error": "#ffffff", "on-tertiary": "#ffffff", "secondary-container": "#dae2fd", "background": "#f8f9ff", "on-background": "#0b1c30", "tertiary": "#005b7c", "on-tertiary-fixed-variant": "#004c69", "on-primary-fixed-variant": "#344A87", "on-tertiary-container": "#e1f2ff", "on-secondary-container": "#5c647a", "on-primary": "#ffffff", "primary-hover": "#344A87", "primary-light": "#E2EAF5", "primary-focus": "#4F77BE", "sky": { "50": "#F0F4FA", "100": "#E2EAF5", "200": "#C5D5EC", "300": "#9EBCE0", "400": "#6F9BCF", "500": "#4F77BE", "600": "#415DA8", "700": "#344A87", "800": "#2C3D6F", "900": "#26345B", "950": "#17203B" }, "blue": { "50": "#F0F4FA", "100": "#E2EAF5", "200": "#C5D5EC", "300": "#9EBCE0", "400": "#6F9BCF", "500": "#4F77BE", "600": "#415DA8", "700": "#344A87", "800": "#2C3D6F", "900": "#26345B", "950": "#17203B" }, "primary": "#415DA8", "surface-container-highest": "#d3e4fe", "secondary-fixed-dim": "#bec6e0", "inverse-primary": "#9EBCE0", "error": "#ba1a1a", "surface": "#f8f9ff", "primary-fixed-dim": "#9EBCE0", "surface-container-high": "#dce9ff", "surface-variant": "#d3e4fe", "surface-container-lowest": "#ffffff", "inverse-surface": "#213145", "on-secondary": "#ffffff", "on-secondary-fixed": "#131b2e", "surface-dim": "#cbdbf5", "secondary-fixed": "#dae2fd", "outline": "#737686", "on-primary-container": "#F0F4FA", "tertiary-fixed-dim": "#7bd0ff", "inverse-on-surface": "#eaf1ff", "on-error-container": "#93000a", "primary-container": "#344A87", "on-surface": "#0b1c30", "surface-container-low": "#eff4ff", "on-primary-fixed": "#17203B", "primary-fixed": "#E2EAF5", "surface-container": "#e5eeff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-lg": "5rem", "gutter-sm": "1rem", "margin": "1.5rem", "space-xs": "0.5rem", "space-4xl": "6rem", "space-lg": "1.5rem", "space-xl": "2rem", "space-sm": "0.75rem", "space-md": "1rem", "margin-md": "3rem", "space-3xl": "4.5rem", "space-3xs": "0.125rem", "gutter-lg": "2rem", "space-2xs": "0.25rem", "space-2xl": "3rem", "gutter": "1.5rem" }, "fontFamily": { "sans": ["'Be Vietnam Pro'", "sans-serif"], "headline": ["'Be Vietnam Pro'", "sans-serif"], "headline-lg-mobile": ["'Be Vietnam Pro'", "sans-serif"], "display-hero": ["'Be Vietnam Pro'", "sans-serif"], "body-xl": ["'Be Vietnam Pro'", "sans-serif"], "body-lg": ["'Be Vietnam Pro'", "sans-serif"], "headline-sm": ["'Be Vietnam Pro'", "sans-serif"], "body-md": ["'Be Vietnam Pro'", "sans-serif"], "label-lg": ["'Be Vietnam Pro'", "sans-serif"], "headline-xs": ["'Be Vietnam Pro'", "sans-serif"], "label-md": ["'Be Vietnam Pro'", "sans-serif"], "headline-lg": ["'Be Vietnam Pro'", "sans-serif"], "label-sm": ["'Be Vietnam Pro'", "sans-serif"], "body-sm": ["'Be Vietnam Pro'", "sans-serif"], "metric-stat": ["'Be Vietnam Pro'", "sans-serif"], "headline-xl-mobile": ["'Be Vietnam Pro'", "sans-serif"], "headline-md": ["'Be Vietnam Pro'", "sans-serif"], "headline-xl": ["'Be Vietnam Pro'", "sans-serif"], "display-hero-mobile": ["'Be Vietnam Pro'", "sans-serif"] }, "fontSize": { "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "body-xl": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }], "label-lg": ["15px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "600" }], "headline-xs": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "700" }], "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }], "metric-stat": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.025em", "fontWeight": "700" }], "display-hero-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "800" }] } } } };</script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <style>
+        .material-symbols-outlined,
+        .material-symbols-rounded {
+            font-family: 'Material Symbols Rounded', 'Material Symbols Outlined' !important;
+            font-weight: normal !important;
+            font-style: normal !important;
+            line-height: 1 !important;
+            display: inline-block !important;
+            white-space: nowrap !important;
+        }
+    </style>
+    <style id="teknova-preload-styles">
+        html {
+            scrollbar-gutter: stable;
+        }
+        @view-transition {
+            navigation: auto;
+        }
+        #top-progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            width: 0%;
+            background: linear-gradient(90deg, #344A87, #415DA8, #6F9BCF);
+            box-shadow: 0 0 10px rgba(65, 93, 168, 0.7);
+            z-index: 999999;
+            transition: width 0.2s cubic-bezier(0.1, 0.9, 0.2, 1), opacity 0.3s ease;
+            pointer-events: none;
+        }
+        #page-preloader {
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s ease;
+        }
+        #page-preloader.loaded {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        .preloader-spinner {
+            width: 32px;
+            height: 32px;
+            border: 2.5px solid rgba(65, 93, 168, 0.12);
+            border-top-color: #415DA8;
+            border-radius: 50%;
+            animation: preloaderSpin 0.7s linear infinite;
+        }
+        @keyframes preloaderSpin {
+            to { transform: rotate(360deg); }
+        }
+        body {
+            opacity: 1;
+            transition: opacity 0.15s ease-out;
+        }
+        body.page-leaving {
+            opacity: 0.65;
+        }
+    </style>
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+
+<body class="bg-surface text-on-surface antialiased overflow-x-hidden">
+    <div id="top-progress-bar"></div>
+
+    <!-- Page Preloader Screen -->
+    <div id="page-preloader">
+        <div class="flex flex-col items-center gap-3">
+            <img alt="TEKNOVA" class="h-9 w-auto object-contain animate-pulse" src="logo.png" onerror="this.onerror=null;this.src='https://www.teknova.com.vn/assets/logo-BiDi42zj.png'">
+            <div class="preloader-spinner mt-1"></div>
+        </div>
+    </div>
+
+    <!-- Unified Global Header -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-surface-container-lowest/85 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)] border-b border-outline-variant/20">
+        <div class="h-20 max-w-[1240px] mx-auto px-4 md:px-8 flex items-center justify-between gap-4">
+            <a class="flex items-center shrink-0 py-1" href="index.html">
+                <img alt="TEKNOVA" class="h-10 md:h-11 w-auto object-contain" src="logo.png" onerror="this.onerror=null;this.src='https://www.teknova.com.vn/assets/logo-BiDi42zj.png'">
+            </a>
+            <nav class="hidden xl:flex items-center gap-5 shrink-0" data-active-classes="text-primary font-bold">
+                <a class="font-medium whitespace-nowrap text-[13px] text-on-surface-variant hover:text-primary transition-colors" data-path="trang-chu" href="index.html">Trang chủ</a>
+                <a class="font-medium whitespace-nowrap text-[13px] text-on-surface-variant hover:text-primary transition-colors" data-path="gioi-thieu" href="gioithieu.html">Giới thiệu</a>
+                <a class="font-medium whitespace-nowrap text-[13px] text-on-surface-variant hover:text-primary transition-colors" data-path="linh-vuc-hoat-dong" href="lichvuc.html">Lĩnh vực hoạt động</a>
+                <a class="font-medium whitespace-nowrap text-[13px] text-on-surface-variant hover:text-primary transition-colors" data-path="du-an-tieu-bieu" href="duan.html">Dự án tiêu biểu</a>
+                <a class="font-medium whitespace-nowrap text-[13px] text-on-surface-variant hover:text-primary transition-colors" data-path="tin-tuc" href="tintuc.html">Tin tức</a>
+                <a class="font-medium whitespace-nowrap text-[13px] text-primary font-bold transition-colors" data-path="lien-he" href="lienhe.html">Liên hệ</a>
+            </nav>
+            <div class="flex items-center gap-2.5 shrink-0">
+                <a class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container hover:text-on-surface transition-all text-xs font-semibold whitespace-nowrap shadow-[0_1px_3px_rgba(0,0,0,0.03)]" data-path="profile-pdf" href="Teknova_Profile_2026.pdf" download="Teknova_Profile_2026.pdf">
+                    <span class="material-symbols-outlined text-[16px]">download</span>
+                    <span>Tải Profile PDF</span>
+                </a>
+                <a class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary transition-all text-xs font-semibold whitespace-nowrap shadow-[0_4px_14px_rgba(65,93,168,0.35)] glow-btn" data-path="lien-he" href="lienhe.html">
+                    <span>Tư vấn dự án</span>
+                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                </a>
+                <button id="mobile-menu-btn" aria-label="Menu" class="xl:hidden w-8 h-8 rounded-lg flex items-center justify-center text-on-surface hover:bg-surface-container-low transition-colors">
+                    <span class="material-symbols-outlined text-[22px]">menu</span>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Dropdown Navigation -->
+        <div id="mobile-menu-drawer" class="hidden xl:hidden w-full bg-surface-container-lowest border-t border-outline-variant/20 shadow-md px-6 py-4 flex flex-col gap-2">
+            <a class="py-2 text-[13px] font-medium text-on-surface-variant hover:text-primary transition-colors border-b border-outline-variant/10" data-path="trang-chu" href="index.html">Trang chủ</a>
+            <a class="py-2 text-[13px] font-medium text-on-surface-variant hover:text-primary transition-colors border-b border-outline-variant/10" data-path="gioi-thieu" href="gioithieu.html">Giới thiệu</a>
+            <a class="py-2 text-[13px] font-medium text-on-surface-variant hover:text-primary transition-colors border-b border-outline-variant/10" data-path="linh-vuc-hoat-dong" href="lichvuc.html">Lĩnh vực hoạt động</a>
+            <a class="py-2 text-[13px] font-medium text-on-surface-variant hover:text-primary transition-colors border-b border-outline-variant/10" data-path="du-an-tieu-bieu" href="duan.html">Dự án tiêu biểu</a>
+            <a class="py-2 text-[13px] font-medium text-on-surface-variant hover:text-primary transition-colors border-b border-outline-variant/10" data-path="tin-tuc" href="tintuc.html">Tin tức</a>
+            <a class="py-2 text-[13px] font-medium text-primary font-bold transition-colors" data-path="lien-he" href="lienhe.html">Liên hệ khảo sát</a>
+        </div>
+    </header>
+
+    <main class="w-full pt-20 bg-surface">
+        <div class="flex flex-col w-full">
+            <!-- Subtle Ambient Glowing Mesh Background for Hero -->
+            <div class="relative w-full overflow-hidden">
+                <div
+                    class="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[450px] bg-gradient-to-b from-primary-fixed/60 via-surface-container-high/40 to-transparent blur-3xl pointer-events-none -z-10 rounded-full">
+                </div>
+                
+                <!-- 1. Hero Header Section -->
+                <section class="max-w-[1200px] mx-auto px-margin md:px-margin-md lg:px-margin-lg pt-space-2xl pb-space-lg text-center flex flex-col items-center">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-xs font-bold text-primary mb-4">
+                        <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                        <span class="uppercase tracking-wide text-[11px]">KẾT NỐI & HỢP TÁC CÔNG NGHỆ</span>
+                    </div>
+                    <h1 class="font-display-hero text-headline-xl md:text-display-hero text-on-surface max-w-4xl tracking-tight mb-space-md">
+                        Liên Hệ Đội Ngũ <span class="text-primary whitespace-nowrap">Chuyên Gia TEKNOVA</span>
+                    </h1>
+                    <p class="font-body-xl text-body-xl text-on-surface-variant max-w-2xl mx-auto leading-relaxed mb-space-md">
+                        Chúng tôi luôn sẵn sàng lắng nghe bài toán thực tế của đơn vị, khảo sát hiện trạng và đề xuất giải pháp số hóa, tối ưu quy trình với cam kết SLA cao nhất.
+                    </p>
+                </section>
+            </div>
+
+            <!-- 2. Contact Main Section (Legal Info & Form) -->
+            <section class="max-w-[1200px] mx-auto px-margin md:px-margin-md lg:px-margin-lg py-space-xl w-full">
+                <div class="bg-surface-container-lowest rounded-3xl shadow-xl border border-outline-variant/30 overflow-hidden grid grid-cols-1 lg:grid-cols-12">
+                    
+                    <!-- Left Column: Legal, Office & Contact Information -->
+                    <div class="lg:col-span-6 p-space-xl md:p-space-2xl flex flex-col justify-between bg-surface-container-lowest">
+                        <div>
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-low text-xs font-semibold text-secondary mb-4">
+                                <span class="material-symbols-outlined text-[16px] text-primary">verified</span>
+                                <span>Pháp nhân chính thức</span>
+                            </div>
+                            <h2 class="font-headline-xl text-2xl sm:text-3xl text-on-surface font-extrabold mb-3">
+                                CÔNG TY CỔ PHẦN ĐỔI MỚI SÁNG TẠO TEKNOVA
+                            </h2>
+                            <p class="font-body-md text-sm text-secondary mb-8 leading-relaxed">
+                                Đơn vị hoạt động chuyên sâu trong lĩnh vực phát triển phần mềm theo yêu cầu, giải pháp Y tế số (HIS/EMR) và chuyển đổi số hành chính công tại Miền Trung - Tây Nguyên.
+                            </p>
+                            
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                                <div class="flex items-start gap-3 p-4 rounded-2xl bg-surface-container-low/70 border border-surface-container/60">
+                                    <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center shrink-0 shadow-xs text-primary">
+                                        <span class="material-symbols-outlined text-[22px]">apartment</span>
+                                    </div>
+                                    <div>
+                                        <span class="text-[11px] font-bold text-secondary uppercase tracking-wider block">Văn phòng làm việc</span>
+                                        <span class="font-body-md text-xs sm:text-[13px] text-on-surface font-bold block mt-0.5">Tầng 3, 456 Nguyễn Hữu Thọ, Cẩm Lệ, TP. Đà Nẵng</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3 p-4 rounded-2xl bg-surface-container-low/70 border border-surface-container/60">
+                                    <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center shrink-0 shadow-xs text-primary">
+                                        <span class="material-symbols-outlined text-[22px]">location_on</span>
+                                    </div>
+                                    <div>
+                                        <span class="text-[11px] font-bold text-secondary uppercase tracking-wider block">Trụ sở ĐKKD</span>
+                                        <span class="font-body-md text-xs sm:text-[13px] text-on-surface font-bold block mt-0.5">K131/18 Lý Thái Tổ, Thanh Khê, TP. Đà Nẵng</span>
+                                        <span class="text-[11px] text-outline block mt-0.5">MST: 0402300331</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3 p-4 rounded-2xl bg-surface-container-low/70 border border-surface-container/60">
+                                    <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center shrink-0 shadow-xs text-primary">
+                                        <span class="material-symbols-outlined text-[22px]">phone_in_talk</span>
+                                    </div>
+                                    <div>
+                                        <span class="text-[11px] font-bold text-secondary uppercase tracking-wider block">Hotline kinh doanh 24/7</span>
+                                        <a href="tel:0935722579" class="font-body-md text-sm sm:text-base text-primary font-extrabold block mt-0.5 hover:underline">0935 722 579</a>
+                                        <span class="text-[11px] text-emerald-700 font-semibold block mt-0.5">Tư vấn trực tiếp 1-on-1</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3 p-4 rounded-2xl bg-surface-container-low/70 border border-surface-container/60">
+                                    <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center shrink-0 shadow-xs text-primary">
+                                        <span class="material-symbols-outlined text-[22px]">mail</span>
+                                    </div>
+                                    <div>
+                                        <span class="text-[11px] font-bold text-secondary uppercase tracking-wider block">Email tiếp nhận hồ sơ</span>
+                                        <a href="mailto:Teknova0925@gmail.com" class="font-body-md text-xs sm:text-[13px] text-on-surface font-bold block mt-0.5 hover:text-primary transition-colors break-all">Teknova0925@gmail.com</a>
+                                        <span class="text-[11px] text-outline block mt-0.5">Phản hồi trong 24h</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Highlights Badges -->
+                        <div class="pt-6 border-t border-surface-container flex flex-wrap items-center gap-4 text-xs font-semibold text-secondary">
+                            <div class="flex items-center gap-1.5">
+                                <span class="material-symbols-outlined text-primary text-[18px]">verified_user</span>
+                                <span>Pháp nhân đầy đủ &amp; hợp lệ</span>
+                            </div>
+                            <div class="flex items-center gap-1.5">
+                                <span class="material-symbols-outlined text-primary text-[18px]">security</span>
+                                <span>An toàn thông tin Cấp độ 3</span>
+                            </div>
+                            <div class="flex items-center gap-1.5">
+                                <span class="material-symbols-outlined text-primary text-[18px]">support_agent</span>
+                                <span>Hỗ trợ kỹ thuật On-site 24/7</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Interactive Consultation Card -->
+                    <div class="lg:col-span-6 bg-surface-container-low/50 p-space-xl md:p-space-2xl border-t lg:border-t-0 lg:border-l border-surface-container/70 flex flex-col justify-between">
+                        <div>
+                            <div class="mb-6">
+                                <span class="px-2.5 py-1 rounded-md bg-primary-fixed text-primary font-bold text-xs uppercase tracking-wider">Phiếu khảo sát</span>
+                                <h3 class="font-headline-md text-xl sm:text-2xl text-on-surface font-bold mt-2">
+                                    Gửi yêu cầu tư vấn &amp; Khảo sát hệ thống
+                                </h3>
+                                <p class="font-body-md text-xs sm:text-sm text-on-surface-variant mt-1.5 leading-relaxed">
+                                    Đội ngũ kỹ sư giải pháp TEKNOVA sẽ liên hệ trực tiếp trong vòng 24 giờ để tư vấn kiến trúc kỹ thuật và báo giá tối ưu nhất.
+                                </p>
+                            </div>
+
+                            <form class="flex flex-col gap-4" id="contact-form"
+                                onsubmit="event.preventDefault(); document.getElementById('contact-success').classList.remove('hidden'); this.classList.add('hidden');">
+                                <div>
+                                    <label class="block font-label-sm text-xs font-semibold text-on-surface mb-1.5">Họ và tên đại diện *</label>
+                                    <input
+                                        class="w-full bg-surface-container-lowest px-4 py-2.5 rounded-xl font-body-md text-sm text-on-surface border border-outline-variant/40 outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 shadow-xs transition-all"
+                                        placeholder="Ví dụ: Nguyễn Văn A" required="" type="text">
+                                </div>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block font-label-sm text-xs font-semibold text-on-surface mb-1.5">Số điện thoại liên hệ *</label>
+                                        <input
+                                            class="w-full bg-surface-container-lowest px-4 py-2.5 rounded-xl font-body-md text-sm text-on-surface border border-outline-variant/40 outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 shadow-xs transition-all"
+                                            placeholder="09xx xxx xxx" required="" type="tel">
+                                    </div>
+                                    <div>
+                                        <label class="block font-label-sm text-xs font-semibold text-on-surface mb-1.5">Đơn vị / Bệnh viện / Cơ quan</label>
+                                        <input
+                                            class="w-full bg-surface-container-lowest px-4 py-2.5 rounded-xl font-body-md text-sm text-on-surface border border-outline-variant/40 outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 shadow-xs transition-all"
+                                            placeholder="Tên đơn vị công tác" type="text">
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block font-label-sm text-xs font-semibold text-on-surface mb-1.5">Lĩnh vực &amp; Dịch vụ quan tâm</label>
+                                    <select
+                                        class="w-full bg-surface-container-lowest px-4 py-2.5 rounded-xl font-body-md text-sm text-on-surface border border-outline-variant/40 outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 shadow-xs transition-all">
+                                        <option value="emr">Giải pháp Y tế Bệnh viện (HIS / EMR không giấy / Đề án 06)</option>
+                                        <option value="software">Phần mềm quản lý chuyên ngành theo yêu cầu (Custom Dev)</option>
+                                        <option value="zalo">Kênh giao tiếp số Zalo Official Account &amp; Mini App</option>
+                                        <option value="gov">Cổng thông tin &amp; Chuyển đổi số Hành chính công DTI</option>
+                                        <option value="cloud">R&amp;D Kiến trúc Cloud, Data Warehouse &amp; Mobile App</option>
+                                        <option value="hardware">Phân phối thiết bị CNTT &amp; Máy chủ chuyên dụng</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block font-label-sm text-xs font-semibold text-on-surface mb-1.5">Nội dung tóm tắt nhu cầu</label>
+                                    <textarea
+                                        class="w-full bg-surface-container-lowest px-4 py-2.5 rounded-xl font-body-md text-sm text-on-surface border border-outline-variant/40 outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 shadow-xs resize-none transition-all"
+                                        placeholder="Mô tả sơ lược quy mô cơ sở, tính năng cần nâng cấp hoặc lộ trình dự kiến..."
+                                        rows="3"></textarea>
+                                </div>
+                                <button
+                                    class="w-full mt-2 py-3 px-6 bg-primary hover:bg-primary-container text-on-primary rounded-xl font-label-lg text-sm font-bold transition-all shadow-md shadow-primary/25 flex items-center justify-center gap-2 glow-btn cursor-pointer"
+                                    type="submit">
+                                    <span>Gửi yêu cầu khảo sát &amp; Báo giá</span>
+                                    <span class="material-symbols-outlined text-[18px]">send</span>
+                                </button>
+                            </form>
+
+                            <div class="hidden p-6 rounded-2xl bg-surface-container-lowest text-center border border-emerald-200 shadow-sm"
+                                id="contact-success">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto mb-3">
+                                    <span class="material-symbols-outlined text-[28px]">check_circle</span>
+                                </div>
+                                <h4 class="font-headline-sm text-lg text-on-surface font-bold">Đã tiếp nhận yêu cầu thành công!</h4>
+                                <p class="font-body-md text-xs sm:text-sm text-on-surface-variant mt-2 leading-relaxed">
+                                    Chuyên viên tư vấn giải pháp TEKNOVA sẽ liên hệ trực tiếp qua số điện thoại để trao đổi chi tiết và gửi hồ sơ kỹ thuật trong thời gian sớm nhất.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 pt-4 border-t border-surface-container/60 text-center">
+                            <span class="font-body-sm text-xs text-secondary">
+                                Cần phản hồi khẩn cấp? Gọi trực tiếp: <a class="text-primary font-bold hover:underline"
+                                    href="tel:0935722579">0935 722 579</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. Google Maps / Location Info Card Section -->
+            <section class="max-w-[1200px] mx-auto px-margin md:px-margin-md lg:px-margin-lg pb-space-3xl w-full">
+                <div class="p-6 sm:p-8 rounded-3xl bg-surface-container-low border border-surface-container flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-white text-primary flex items-center justify-center shrink-0 shadow-sm">
+                            <span class="material-symbols-outlined text-[28px]">map</span>
+                        </div>
+                        <div>
+                            <h4 class="font-headline-sm text-base sm:text-lg font-bold text-on-surface">Văn phòng làm việc &amp; Tiếp đón đối tác TEKNOVA</h4>
+                            <p class="font-body-md text-xs sm:text-sm text-secondary mt-1">
+                                Tầng 3, Tòa nhà 456 Nguyễn Hữu Thọ, Phường Khuê Trung, Quận Cẩm Lệ, TP. Đà Nẵng
+                            </p>
+                            <p class="text-[12px] text-outline mt-1">
+                                Thời gian tiếp khách: 08:00 - 17:30 từ Thứ Hai đến Thứ Sáu (Vui lòng đặt lịch trước qua Hotline)
+                            </p>
+                        </div>
+                    </div>
+                    <a href="https://maps.google.com/?q=456+Nguyễn+Hữu+Thọ,+Cẩm+Lệ,+Đà+Nẵng" target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-surface-container-lowest text-primary font-bold text-xs sm:text-sm shadow-xs hover:bg-white hover:shadow-md transition-all shrink-0">
+                        <span class="material-symbols-outlined text-[18px]">near_me</span>
+                        <span>Mở trên Google Maps</span>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="w-full bg-surface-container-low pt-space-3xl pb-space-xl shadow-[0_-1px_8px_rgba(0,0,0,0.02)]">
+        <div class="max-w-[1200px] mx-auto px-margin md:px-margin-md lg:px-margin-lg">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-space-xl pb-space-2xl">
+                <div class="lg:col-span-4 flex flex-col items-start gap-space-sm">
+                    <div class="flex items-center mb-1">
+                        <img alt="TEKNOVA" class="h-10 md:h-11 w-auto object-contain" src="logo.png" onerror="this.onerror=null;this.src='https://www.teknova.com.vn/assets/logo-BiDi42zj.png'">
+                    </div>
+                    <div
+                        class="inline-flex items-center px-space-sm py-space-3xs rounded-full bg-surface-container-highest text-primary font-label-sm text-label-sm tracking-widest uppercase">
+                        NOW OR NEVER</div>
+                    <p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Công ty Cổ phần Đổi mới Sáng
+                        tạo TEKNOVA - Tiên phong giải pháp phần mềm, chuyển đổi số y tế, giáo dục, hành chính công và
+                        viễn thông.</p>
+                </div>
+                <div class="lg:col-span-3 flex flex-col gap-space-sm">
+                    <h4 class="font-headline-xs text-headline-xs text-on-surface">Lĩnh vực dịch vụ</h4>
+                    <ul class="flex flex-col gap-space-xs font-body-md text-body-md text-on-surface-variant">
+                        <li class=""><a class="hover:text-primary transition-colors" data-path="linh-vuc-hoat-dong"
+                                href="lichvuc.html">Phần mềm theo yêu cầu</a></li>
+                        <li class=""><a class="hover:text-primary transition-colors" data-path="linh-vuc-hoat-dong"
+                                href="lichvuc.html">Chuyển đổi số &amp; Cloud</a></li>
+                        <li class=""><a class="hover:text-primary transition-colors" data-path="linh-vuc-hoat-dong"
+                                href="lichvuc.html">Giải pháp Y tế Bệnh viện EMR</a></li>
+                        <li class=""><a class="hover:text-primary transition-colors" data-path="linh-vuc-hoat-dong"
+                                href="lichvuc.html">Phân phối thiết bị CNTT</a></li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-2 flex flex-col gap-space-sm">
+                    <h4 class="font-headline-xs text-headline-xs text-on-surface">Liên kết nhanh</h4>
+                    <ul class="flex flex-col gap-space-xs font-body-md text-body-md text-on-surface-variant">
+                        <li class=""><a class="hover:text-primary transition-colors" data-path="gioi-thieu" href="gioithieu.html">Về TEKNOVA</a></li>
+                        <li class=""><a class="hover:text-primary transition-colors" data-path="du-an-tieu-bieu" href="duan.html">Dự án tiêu biểu</a></li>
+                        <li class=""><a class="hover:text-primary transition-colors" data-path="tin-tuc" href="tintuc.html">Tin tức</a></li>
+                        <li class=""><a class="hover:text-primary transition-colors" data-path="lien-he" href="lienhe.html">Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-3 flex flex-col gap-space-sm">
+                    <h4 class="font-headline-xs text-headline-xs text-on-surface">Thông tin liên hệ</h4>
+                    <div class="flex flex-col gap-space-xs font-body-md text-body-md text-on-surface-variant">
+                        <div class="flex items-start gap-space-xs"><span class="material-symbols-outlined text-[20px] text-primary shrink-0">location_on</span><span class="">VP: Tầng 3, 456 Nguyễn Hữu Thọ, Cẩm Lệ, Đà Nẵng<br><span class="text-[12px] text-secondary">ĐKKD: K131/18 Lý Thái Tổ, Thanh Khê, Đà Nẵng (MST: 0402300331)</span></span></div>
+                        <div class="flex items-center gap-space-xs"><span
+                                class="material-symbols-outlined text-[20px] text-primary shrink-0">call</span><span
+                                class="">Hotline: 0935 722 579</span></div>
+                        <div class="flex items-center gap-space-xs"><span
+                                class="material-symbols-outlined text-[20px] text-primary shrink-0">mail</span><span
+                                class="">Teknova0925@gmail.com</span></div>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-sm font-body-sm text-body-sm text-secondary">
+                <p class="">© 2026 TEKNOVA. Tất cả quyền được bảo lưu.</p>
+                <div class="flex items-center gap-space-md"><a class="hover:text-primary transition-colors"
+                        href="#">Điều khoản sử dụng</a><a class="hover:text-primary transition-colors" href="#">Chính
+                        sách bảo mật</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="nav-router.js"></script>
+    <script type="module" src="motion-hover.js"></script>
+</body>
+
+</html>
