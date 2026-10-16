@@ -15,6 +15,7 @@
     'gioi-thieu':         'gioithieu.html',
     'linh-vuc-hoat-dong': 'lichvuc.html',
     'du-an-tieu-bieu':    'duan.html',
+    'tin-tuc':            'tintuc.html',
     'doi-ngu-chuyen-gia': 'gioithieu.html#doi-ngu',
     'lien-he':            'gioithieu.html#lien-he',
     'profile-pdf':        'Teknova_Profile_2026.pdf'
@@ -89,7 +90,7 @@
   }
 
   function prefetchAllPages() {
-    const pages = ['index.html', 'gioithieu.html', 'lichvuc.html', 'duan.html'];
+    const pages = ['index.html', 'gioithieu.html', 'lichvuc.html', 'duan.html', 'tintuc.html'];
     pages.forEach(function (p) {
       prefetchTarget(p);
     });
