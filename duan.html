@@ -1375,7 +1375,7 @@
             <div class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-inverse-surface/60 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300"
                 id="projectModal">
                 <div class="relative w-full max-w-2xl max-h-[92vh] sm:max-h-[88vh] rounded-3xl bg-surface-container-lowest shadow-2xl scale-95 transition-all duration-300 flex flex-col border border-outline-variant/30 overflow-hidden"
-                    id="modalCard">
+                    id="modalCard" data-lenis-prevent>
                     
                     <!-- Sticky Header (Always visible) -->
                     <div class="shrink-0 p-5 sm:p-6 pb-4 border-b border-surface-container bg-surface-container-lowest/95 backdrop-blur-sm z-10 flex items-start justify-between gap-4">
@@ -1407,7 +1407,7 @@
                     </div>
 
                     <!-- Scrollable Modal Body (Contents scroll smoothly without overflowing screen) -->
-                    <div class="flex-1 overflow-y-auto p-5 sm:p-6 space-y-5 custom-modal-scroll">
+                    <div class="flex-1 overflow-y-auto p-5 sm:p-6 space-y-5 custom-modal-scroll" data-lenis-prevent>
                         <!-- Project Overview Description -->
                         <p class="font-body-md text-sm sm:text-[15px] text-on-surface-variant leading-relaxed" id="modalDesc">
                             Giải pháp được thiết kế tùy biến chuyên sâu cho đơn vị, đáp ứng đầy đủ thông tư hướng dẫn của Bộ Y tế và tiêu chuẩn dữ liệu Chính phủ điện tử.
@@ -2042,6 +2042,9 @@
                     card.classList.remove('scale-95');
                     card.classList.add('scale-100');
                     document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                    if (window.__lenis) {
+                        window.__lenis.stop();
+                    }
                 }
 
                 function closeProjectModal() {
@@ -2052,6 +2055,9 @@
                     card.classList.remove('scale-100');
                     card.classList.add('scale-95');
                     document.body.style.overflow = '';
+                    if (window.__lenis) {
+                        window.__lenis.start();
+                    }
                 }
 
                 document.getElementById('projectModal').addEventListener('click', function (e) {
