@@ -222,21 +222,78 @@
     return dir ? dir + '/' : './';
   }
 
+  // ── Auto-adjust on DOM layout shifts (Tailwind compilation, webfonts, images) ──
+  function observeLayoutShift(hash) {
+    if (!hash || typeof ResizeObserver === 'undefined') return;
+
+    let timer = null;
+    let attempts = 0;
+    const maxAttempts = 6;
+
+    const ro = new ResizeObserver(function () {
+      if (attempts >= maxAttempts) {
+        ro.disconnect();
+        return;
+      }
+      clearTimeout(timer);
+      timer = setTimeout(function () {
+        attempts++;
+        const target = findSection(hash);
+        if (target) {
+          const currentTop = target.getBoundingClientRect().top;
+          // If out of alignment (more than 18px away from 96px header offset)
+          if (Math.abs(currentTop - 96) > 18) {
+            scrollToTarget(target, false);
+          }
+        }
+      }, 120);
+    });
+
+    if (document.body) {
+      ro.observe(document.body);
+    }
+
+    setTimeout(function () {
+      ro.disconnect();
+    }, 4000);
+  }
+
   // ── On load: handle hash scroll ──────────────────────────────────────────
   function handleHashOnLoad() {
     const hash = window.location.hash.replace('#', '');
     if (!hash) return;
 
-    // Multi-phase attempts: early (100ms), post-preloader (400ms), and late settle (900ms)
-    [100, 400, 900].forEach(function (delay) {
+    // Multi-phase attempts: early (100ms), post-preloader (400ms), font-paint (800ms), post-settle (1400ms)
+    [100, 400, 800, 1400].forEach(function (delay) {
       setTimeout(function () {
         const sec = findSection(hash);
         if (sec) {
-          scrollToTarget(sec, delay === 100 && !window.__lenis);
+          const currentTop = sec.getBoundingClientRect().top;
+          if (delay === 100 || Math.abs(currentTop - 96) > 18) {
+            scrollToTarget(sec, delay === 100 && !window.__lenis);
+          }
         }
       }, delay);
     });
+
+    // Start observer for dynamic DOM layout shifts
+    observeLayoutShift(hash);
   }
+
+  // Final check once window assets (images, fonts, stylesheets) are fully loaded
+  window.addEventListener('load', function () {
+    const hash = window.location.hash.replace('#', '');
+    if (!hash) return;
+    setTimeout(function () {
+      const sec = findSection(hash);
+      if (sec) {
+        const currentTop = sec.getBoundingClientRect().top;
+        if (Math.abs(currentTop - 96) > 18) {
+          scrollToTarget(sec, false);
+        }
+      }
+    }, 200);
+  });
 
   // Support dynamic hash change without page reload
   window.addEventListener('hashchange', function () {
