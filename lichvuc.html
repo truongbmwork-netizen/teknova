@@ -2085,6 +2085,14 @@
         }
     }
 
+    // Auto-filter based on URL parameter ?filter=...
+    window.addEventListener('DOMContentLoaded', function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const filter = urlParams.get('filter');
+        if (filter && typeof filterServices === 'function') {
+            filterServices(filter);
+        }
+    });
 </script>
         </div>
     </main>
