@@ -1145,55 +1145,67 @@
                         </button>
                     </div>
 
-                    <!-- Step Detail Interactive Preview Board -->
-                    <div class="p-6 sm:p-8 rounded-2xl bg-surface-container-low/70 border border-surface-container relative overflow-hidden" id="emr-step-display">
-                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-                            <div class="lg:col-span-7 flex flex-col gap-3">
-                                <div class="flex items-center gap-2">
-                                    <span class="px-2.5 py-0.5 rounded-full bg-primary text-on-primary font-bold text-xs" id="emr-badge-step">BƯỚC 1/5</span>
-                                    <span class="text-xs font-semibold text-secondary" id="emr-badge-module">MODULE: RECEPTION &amp; VNeID IDENTITY</span>
+                    <!-- Step Detail Interactive Preview Board (Spacious 2-Column Clinical Layout) -->
+                    <div class="p-6 sm:p-8 md:p-10 rounded-2xl bg-surface-container-low/70 border border-surface-container relative overflow-hidden shadow-xs" id="emr-step-display">
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+                            <!-- Cột 1: Luồng Nghiệp Vụ Lâm Sàng & Quy Trình Khám Chữa Bệnh (7 Cột) -->
+                            <div class="lg:col-span-7 flex flex-col gap-4">
+                                <div class="flex flex-wrap items-center gap-2.5">
+                                    <span class="px-3 py-1 rounded-full bg-primary text-on-primary font-bold text-xs tracking-wider shadow-xs" id="emr-badge-step">BƯỚC 1/5</span>
+                                    <span class="text-xs font-semibold text-secondary tracking-wide uppercase" id="emr-badge-module">MODULE: RECEPTION &amp; VNeID IDENTITY</span>
                                 </div>
-                                <h3 class="font-headline-md text-xl sm:text-2xl text-on-surface font-extrabold" id="emr-step-title">
+                                <h3 class="font-headline-md text-xl sm:text-2xl md:text-[26px] text-on-surface font-extrabold leading-snug" id="emr-step-title">
                                     Tiếp nhận bệnh nhân &amp; Quét CCCD Gắn Chip (Đề án 06)
                                 </h3>
                                 <p class="font-body-md text-sm sm:text-base text-on-surface-variant leading-relaxed" id="emr-step-desc">
                                     Người bệnh quét thẻ CCCD gắn chip hoặc ứng dụng VNeID tại kiosk/quầy tiếp đón. Hệ thống tự động xác thực danh tính với CSDL Quốc gia về dân cư, tự động kiểm tra tính hợp lệ của thẻ BHYT và phân buồng khám theo chuyên khoa chỉ trong 3 giây.
                                 </p>
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-2">
-                                    <div class="p-3 rounded-xl bg-surface-container-lowest border border-surface-container">
-                                        <span class="text-[11px] font-bold text-outline uppercase block">Tiêu chuẩn tuân thủ</span>
-                                        <span class="font-bold text-xs sm:text-sm text-primary mt-0.5 block" id="emr-step-standard">Đề án 06 • VNeID API • BHYT Cổng 130</span>
+                                <div class="pt-3 mt-1 flex flex-wrap items-center gap-4 text-xs text-on-surface-variant border-t border-surface-container">
+                                    <div class="flex items-center gap-1.5 text-secondary font-medium">
+                                        <span class="material-symbols-outlined text-[18px] text-primary">verified</span>
+                                        <span>Chuẩn EMR Mức 6 - 7 Bộ Y tế</span>
                                     </div>
-                                    <div class="p-3 rounded-xl bg-surface-container-lowest border border-surface-container">
-                                        <span class="text-[11px] font-bold text-outline uppercase block">Thời gian xử lý</span>
-                                        <span class="font-bold text-xs sm:text-sm text-emerald-700 mt-0.5 flex items-center gap-1" id="emr-step-latency">
-                                            <span class="material-symbols-outlined text-[16px]">speed</span> &lt; 3.0 Giây / Bệnh nhân
-                                        </span>
+                                    <div class="flex items-center gap-1.5 text-secondary font-medium">
+                                        <span class="material-symbols-outlined text-[18px] text-emerald-600">lock</span>
+                                        <span>Bảo mật dữ liệu cá nhân Nghị định 13/2023/NĐ-CP</span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="lg:col-span-5 w-full">
-                                <div class="p-4 sm:p-5 rounded-2xl bg-slate-950 text-slate-200 font-mono text-xs shadow-xl border border-slate-800 flex flex-col gap-2.5">
-                                    <div class="flex items-center justify-between pb-2 border-b border-slate-800 text-[11px] text-slate-400">
-                                        <div class="flex items-center gap-1.5">
-                                            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                                            <span class="font-bold text-slate-200">EMR_LIVE_EVENT_LOGGER</span>
+
+                            <!-- Cột 2: Tiêu Chuẩn Pháp Lý & Hiệu Năng Vận Hành Bệnh Viện (5 Cột) -->
+                            <div class="lg:col-span-5 flex flex-col gap-4">
+                                <!-- Card 1: Pháp lý & Tiêu chuẩn y tế -->
+                                <div class="p-5 sm:p-6 rounded-2xl bg-surface-container-lowest border border-surface-container shadow-xs flex flex-col gap-2 hover:border-primary/40 transition-colors">
+                                    <div class="flex items-center justify-between text-outline">
+                                        <div class="flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-[20px] text-primary">policy</span>
+                                            <span class="text-[11px] font-bold uppercase tracking-wider text-on-surface-variant">Tiêu chuẩn &amp; Pháp lý</span>
                                         </div>
-                                        <span id="emr-console-status">ONLINE 24/7</span>
+                                        <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-primary/10 text-primary">BẮT BUỘC</span>
                                     </div>
-                                    <pre class="overflow-x-auto text-[11px] leading-relaxed text-emerald-400 custom-scrollbar" id="emr-console-payload">{
-  "event": "PATIENT_CHECKIN",
-  "auth_method": "CCCD_CHIP_VNEID",
-  "patient_id": "BN-2026-09823",
-  "bhyt_status": "VALID_ACTIVE",
-  "room_dispatch": "PHONG_KHAM_NOI_03",
-  "latency": "142ms",
-  "dean_06_synced": true
-}</pre>
-                                    <div class="pt-2 border-t border-slate-800/80 flex items-center justify-between text-[11px] text-slate-400">
-                                        <span>Node: Danang-MedCloud-01</span>
-                                        <span class="text-emerald-400 font-semibold">SSL 256-Bit</span>
+                                    <div class="font-bold text-sm sm:text-base text-primary leading-snug" id="emr-step-standard">
+                                        Đề án 06 • VNeID API • BHYT Cổng 130
                                     </div>
+                                    <p class="text-xs text-on-surface-variant leading-normal mt-0.5">
+                                        Đồng bộ định danh CSDL Quốc gia, sẵn sàng tích hợp hồ sơ bệnh án điện tử không giấy tờ.
+                                    </p>
+                                </div>
+
+                                <!-- Card 2: Hiệu năng & Tốc độ lâm sàng -->
+                                <div class="p-5 sm:p-6 rounded-2xl bg-surface-container-lowest border border-surface-container shadow-xs flex flex-col gap-2 hover:border-emerald-600/40 transition-colors">
+                                    <div class="flex items-center justify-between text-outline">
+                                        <div class="flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-[20px] text-emerald-600">speed</span>
+                                            <span class="text-[11px] font-bold uppercase tracking-wider text-on-surface-variant">Tốc độ xử lý lâm sàng</span>
+                                        </div>
+                                        <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-700">REALTIME</span>
+                                    </div>
+                                    <div class="font-bold text-sm sm:text-base text-emerald-700 flex items-center gap-1.5 leading-snug" id="emr-step-latency">
+                                        <span class="material-symbols-outlined text-[16px]">speed</span> &lt; 3.0 Giây / Bệnh nhân
+                                    </div>
+                                    <p class="text-xs text-on-surface-variant leading-normal mt-0.5">
+                                        Giảm thiểu tối đa thời gian chờ đợi, nâng cao trải nghiệm người bệnh và hiệu suất bác sĩ.
+                                    </p>
                                 </div>
                             </div>
                         </div>
