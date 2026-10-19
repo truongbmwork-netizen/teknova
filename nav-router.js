@@ -17,13 +17,21 @@
     'du-an-tieu-bieu':    'duan.html',
     'tin-tuc':            'tintuc.html',
     'doi-ngu-chuyen-gia': 'gioithieu.html#doi-ngu',
+    'can-cu-phap-ly':     'gioithieu.html#can-cu-phap-ly',
+    'danh-muc-du-an':     'duan.html#danh-muc-du-an',
     'lien-he':            'lienhe.html',
     'profile-pdf':        'Teknova_Profile_2026.pdf'
   };
 
   const SECTION_MAP = {
     'doi-ngu': '#doi-ngu, [data-path="doi-ngu-chuyen-gia"]',
-    'lien-he': '#lien-he, #contact-form, #solutionConsultForm'
+    'doi-ngu-chuyen-gia': '#doi-ngu, [data-path="doi-ngu-chuyen-gia"]',
+    'can-cu-phap-ly': '#can-cu-phap-ly',
+    'phap-ly': '#can-cu-phap-ly',
+    'danh-muc-du-an': '#danh-muc-du-an, #project-grid',
+    'project-grid': '#danh-muc-du-an, #project-grid',
+    'lien-he': '#lien-he, #contact-form, #solutionConsultForm',
+    'footer': '#footer, footer'
   };
 
   // ── Preload / Top Progress Bar ────────────────────────────────────────────
@@ -128,11 +136,7 @@
             const sec = findSection(hash);
             if (sec) {
               e.preventDefault();
-              if (window.__lenis) {
-                window.__lenis.scrollTo(sec, { offset: -90, duration: 1.15 });
-              } else {
-                sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              }
+              scrollToTarget(sec, false);
             }
           } else {
             e.preventDefault();
@@ -166,21 +170,39 @@
     });
   }
 
+  // ── Scroll to target section with header clearance ───────────────────────
+  function scrollToTarget(sec, immediate) {
+    if (!sec) return;
+    const offset = -96; // 80px fixed header + 16px buffer
+    if (window.__lenis) {
+      window.__lenis.scrollTo(sec, { offset: offset, duration: immediate ? 0 : 1.15, immediate: !!immediate });
+    } else {
+      const top = sec.getBoundingClientRect().top + window.pageYOffset + offset;
+      window.scrollTo({ top: Math.max(0, top), behavior: immediate ? 'auto' : 'smooth' });
+    }
+  }
+
   // ── Find section element by hash ─────────────────────────────────────────
   function findSection(hash) {
-    let el = document.getElementById(hash);
+    if (!hash) return null;
+    const cleanHash = hash.replace(/^#/, '');
+
+    let el = document.getElementById(cleanHash);
     if (el) return el;
 
-    const sel = SECTION_MAP[hash];
+    const sel = SECTION_MAP[cleanHash];
     if (sel) {
       el = document.querySelector(sel);
       if (el) return el;
     }
 
-    const headings = document.querySelectorAll('h2, h3, h4, section');
+    // Normalized accent-insensitive search
+    const normalizedHash = cleanHash.replace(/[-_]/g, ' ').toLowerCase();
+    const headings = document.querySelectorAll('h2, h3, h4, section, div');
     for (let i = 0; i < headings.length; i++) {
       const h = headings[i];
-      if (h.textContent.toLowerCase().includes(hash.replace(/-/g, ' '))) return h;
+      const text = (h.textContent || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+      if (text.includes(normalizedHash)) return h;
     }
     return null;
   }
@@ -204,17 +226,27 @@
   function handleHashOnLoad() {
     const hash = window.location.hash.replace('#', '');
     if (!hash) return;
-    setTimeout(function () {
-      const sec = findSection(hash);
-      if (sec) {
-        if (window.__lenis) {
-          window.__lenis.scrollTo(sec, { offset: -90, duration: 1.15 });
-        } else {
-          sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    // Multi-phase attempts: early (100ms), post-preloader (400ms), and late settle (900ms)
+    [100, 400, 900].forEach(function (delay) {
+      setTimeout(function () {
+        const sec = findSection(hash);
+        if (sec) {
+          scrollToTarget(sec, delay === 100 && !window.__lenis);
         }
-      }
-    }, 300);
+      }, delay);
+    });
   }
+
+  // Support dynamic hash change without page reload
+  window.addEventListener('hashchange', function () {
+    const hash = window.location.hash.replace('#', '');
+    if (!hash) return;
+    const sec = findSection(hash);
+    if (sec) {
+      scrollToTarget(sec, false);
+    }
+  });
 
   // ── Highlight active nav link ─────────────────────────────────────────────
   function highlightActive() {
@@ -734,6 +766,12 @@
       const style = document.createElement('style');
       style.id = 'teknova-lenis-styles';
       style.textContent = `
+        html {
+          scroll-padding-top: 96px !important;
+        }
+        [id] {
+          scroll-margin-top: 96px !important;
+        }
         html.lenis, html.lenis body {
           height: auto;
         }
@@ -777,6 +815,17 @@
         requestAnimationFrame(raf);
       }
       requestAnimationFrame(raf);
+
+      // Deep link jump on initial load with Lenis
+      if (window.location.hash) {
+        const hash = window.location.hash.replace('#', '');
+        const sec = findSection(hash);
+        if (sec) {
+          setTimeout(function () {
+            lenis.scrollTo(sec, { offset: -96, duration: 0.9, immediate: false });
+          }, 80);
+        }
+      }
     }
 
     if (typeof Lenis !== 'undefined') {
